@@ -1,68 +1,102 @@
+/*
+ * Agora — ink on paper.
+ * Layout concept: the app is a graphic novel you work inside. Every surface is a
+ * panel drawn in ink on paper; color is spot ink, used the way a printer would.
+ * Legacy token names (--bg-*, --text-*, --blue …) are kept and remapped so every
+ * component inherits the new world.
+ */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* Surfaces */
-  --bg-0: #05070c;
-  --bg-1: #080b12;
-  --bg-2: #0c1019;
-  --bg-3: #111622;
-  --bg-4: #161c2a;
-  --glass: rgba(14, 18, 28, 0.72);
-  --glass-strong: rgba(12, 16, 25, 0.9);
+  /* Paper & ink */
+  --paper: #efede7;
+  --paper-hi: #f8f7f3;
+  --paper-lo: #e4e1d8;
+  --paper-deep: #d6d2c6;
+  --ink: #171614;
+  --ink-2: #2b2926;
+  --ink-soft: #57524a;
+  --ink-faint: #8b857a;
 
-  /* Lines */
-  --line-0: rgba(148, 163, 200, 0.06);
-  --line-1: rgba(148, 163, 200, 0.1);
-  --line-2: rgba(148, 163, 200, 0.16);
-  --line-3: rgba(148, 163, 200, 0.26);
+  /* Spot inks */
+  --ochre: #a8864f;
+  --ochre-ink: #86652e;
+  --ochre-wash: #e7d9bb;
+  --oxblood: #8e1f1a;
+  --oxblood-wash: #efd6d0;
+  --slate: #2d5170;
+  --slate-wash: #d6e0e8;
+  --verdigris: #2f6a60;
+  --plum: #69385b;
+  --olive: #5d6526;
+  --marker: #f2dc55; /* debate highlighter */
+  --marker-2: #9fdcef;
 
-  /* Text */
-  --text-0: #eef1f8;
-  --text-1: #b7bfd0;
-  --text-2: #7c869b;
-  --text-3: #535c70;
-  --text-4: #3a4152;
+  /* Legacy surface tokens (remapped) */
+  --bg-0: var(--paper);
+  --bg-1: var(--paper-hi);
+  --bg-2: #f3f1ec;
+  --bg-3: var(--paper-lo);
+  --bg-4: var(--paper-deep);
+  --glass: var(--paper-hi);
+  --glass-strong: var(--paper-hi);
 
-  /* Accents */
-  --blue: #7aa7ff;
-  --violet: #a992ff;
-  --cyan: #62dbe6;
-  --green: #72e0a6;
-  --orange: #ffb370;
-  --rose: #ff8a9a;
-  --amber: #f2d27a;
+  --line-0: rgba(23, 22, 20, 0.12);
+  --line-1: rgba(23, 22, 20, 0.22);
+  --line-2: rgba(23, 22, 20, 0.5);
+  --line-3: var(--ink);
 
-  --accent: var(--blue);
-  --accent-rgb: 122, 167, 255;
+  --text-0: var(--ink);
+  --text-1: #34312c;
+  --text-2: var(--ink-soft);
+  --text-3: var(--ink-faint);
+  --text-4: #b1ab9f;
 
-  /* Entity colors — one per kind, used consistently everywhere */
-  --k-philosopher: var(--violet);
-  --k-concept: var(--cyan);
-  --k-school: var(--green);
-  --k-text: var(--orange);
-  --k-passage: var(--orange);
-  --k-argument: var(--blue);
-  --k-debate: var(--rose);
-  --k-essay: var(--amber);
-  --k-note: #9aa6bd;
-  --k-user: #9aa6bd;
-  --k-custom: #c7cfdf;
+  --blue: var(--slate);
+  --violet: var(--plum);
+  --cyan: var(--verdigris);
+  --green: #3f6b34;
+  --orange: var(--ochre-ink);
+  --rose: var(--oxblood);
+  --amber: #9a7a1e;
 
-  /* Argument node colors */
-  --n-claim: var(--blue);
-  --n-premise: var(--cyan);
-  --n-inference: var(--violet);
-  --n-conclusion: var(--green);
-  --n-objection: var(--rose);
-  --n-counter: var(--orange);
-  --n-rebuttal: #8fe3c4;
-  --n-evidence: var(--amber);
-  --n-definition: #9fc3ff;
-  --n-assumption: #c3b5ff;
+  --accent: var(--oxblood);
+  --accent-rgb: 142, 31, 26;
+
+  --aff: var(--slate);
+  --neg: var(--oxblood);
+
+  --k-philosopher: var(--plum);
+  --k-concept: var(--slate);
+  --k-school: var(--verdigris);
+  --k-text: var(--ochre-ink);
+  --k-passage: var(--ochre-ink);
+  --k-argument: #1f3f66;
+  --k-debate: var(--oxblood);
+  --k-essay: var(--olive);
+  --k-note: var(--ink-soft);
+  --k-user: var(--ink-soft);
+  --k-custom: var(--ink);
+  --k-source: #6b4a1f;
+  --k-doc: var(--ink);
+
+  --n-claim: var(--slate);
+  --n-premise: var(--verdigris);
+  --n-inference: var(--plum);
+  --n-conclusion: #3f6b34;
+  --n-objection: var(--oxblood);
+  --n-counter: var(--ochre-ink);
+  --n-rebuttal: #2f6a4a;
+  --n-evidence: #9a7a1e;
+  --n-definition: #3d5f8a;
+  --n-assumption: #7a4f7a;
 
   /* Type */
-  --font-ui: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-serif: 'Newsreader Variable', 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-ui: 'Archivo Variable', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Archivo Variable', 'Archivo Narrow', 'Arial Narrow', Impact, sans-serif;
+  --font-letter: 'Shantell Sans Variable', 'Comic Neue', 'Segoe Print', 'Chalkboard SE', sans-serif;
+  --font-serif: 'Newsreader Variable', 'Iowan Old Style', Georgia, serif;
+  --font-engraved: 'IM Fell English', 'Newsreader Variable', Georgia, serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --fs-10: 10.5px;
@@ -77,33 +111,41 @@
   --fs-36: 36px;
   --fs-48: 48px;
 
-  /* Radii — deliberately small */
-  --r-1: 3px;
-  --r-2: 5px;
-  --r-3: 7px;
-  --r-4: 10px;
+  /* Panels are square, like a comic page */
+  --r-1: 1px;
+  --r-2: 2px;
+  --r-3: 3px;
+  --r-4: 4px;
 
-  /* Motion */
+  --stroke: 2px;
+  --stroke-heavy: 3px;
+
   --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --dur-1: 120ms;
-  --dur-2: 220ms;
-  --dur-3: 420ms;
+  --dur-1: 110ms;
+  --dur-2: 200ms;
+  --dur-3: 380ms;
 
-  --shadow-1: 0 1px 0 rgba(255, 255, 255, 0.02) inset, 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-2: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 8px 24px -8px rgba(0, 0, 0, 0.6);
-  --shadow-3: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 24px 64px -16px rgba(0, 0, 0, 0.8), 0 0 0 1px var(--line-1);
+  /* Hard offset shadows instead of glows */
+  --shadow-1: 2px 2px 0 var(--ink);
+  --shadow-2: 4px 4px 0 var(--ink);
+  --shadow-3: 6px 6px 0 var(--ink);
+
+  --paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0 0.07 0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  --halftone: radial-gradient(circle at center, rgba(23, 22, 20, 0.22) 1.1px, transparent 1.3px);
+  --hatch: repeating-linear-gradient(-45deg, rgba(23, 22, 20, 0.16) 0 1px, transparent 1px 5px);
 
   --sidebar-w: 236px;
-  --topbar-h: 52px;
-  --statusbar-h: 26px;
+  --topbar-h: 58px;
+  --statusbar-h: 28px;
   --gutter: 28px;
 }
 
-[data-accent='violet'] { --accent: var(--violet); --accent-rgb: 169, 146, 255; }
-[data-accent='cyan'] { --accent: var(--cyan); --accent-rgb: 98, 219, 230; }
-[data-accent='green'] { --accent: var(--green); --accent-rgb: 114, 224, 166; }
-[data-accent='orange'] { --accent: var(--orange); --accent-rgb: 255, 179, 112; }
+[data-accent='violet'] { --accent: var(--plum); --accent-rgb: 105, 56, 91; }
+[data-accent='cyan'] { --accent: var(--verdigris); --accent-rgb: 47, 106, 96; }
+[data-accent='green'] { --accent: var(--olive); --accent-rgb: 93, 101, 38; }
+[data-accent='orange'] { --accent: var(--ochre-ink); --accent-rgb: 134, 101, 46; }
+[data-accent='blue'] { --accent: var(--oxblood); --accent-rgb: 142, 31, 26; }
 
 [data-density='compact'] {
   --gutter: 20px;
@@ -112,7 +154,7 @@
 }
 
 @media (max-width: 1100px) {
-  :root { --sidebar-w: 60px; --gutter: 22px; }
+  :root { --sidebar-w: 64px; --gutter: 22px; }
 }
 @media (max-width: 720px) {
   :root { --sidebar-w: 0px; --gutter: 16px; }

@@ -2,7 +2,7 @@ import { philosophers, philosopherById } from '../data/philosophers'
 import { concepts, conceptById } from '../data/concepts'
 import { schools, schoolById } from '../data/schools'
 import { passages, texts, textById } from '../data/texts'
-import type { Argument, Debate, EntityKind, EntityRef, Essay, GraphNode, Note, Relationship, RelationType } from './types'
+import type { Argument, Debate, Doc, EntityKind, EntityRef, Essay, GraphNode, Note, Relationship, RelationType, Source } from './types'
 
 export interface KnowledgeGraph {
   nodes: Map<string, GraphNode>
@@ -40,6 +40,9 @@ export const KIND_LABEL: Record<EntityKind, string> = {
   essay: 'Essay',
   note: 'Note',
   user: 'Person',
+  source: 'Source',
+  doc: 'Speech doc',
+  flow: 'Flow',
 }
 
 function norm(s: string) {
@@ -124,7 +127,7 @@ export const staticGraph = buildStatic()
 /** Layer user- and network-created entities onto the static knowledge graph. */
 export function extendGraph(
   base: KnowledgeGraph,
-  layer: { arguments: Argument[]; debates: Debate[]; essays: Essay[]; notes: Note[] },
+  layer: { arguments: Argument[]; debates: Debate[]; essays: Essay[]; notes: Note[]; docs?: Doc[]; sources?: Source[] },
 ): KnowledgeGraph {
   const g: KnowledgeGraph = {
     nodes: new Map(base.nodes),
@@ -152,6 +155,13 @@ export function extendGraph(
   for (const n of layer.notes) {
     addNode(g, { id: n.id, kind: 'note', label: n.title, sublabel: 'Note', summary: n.body.slice(0, 160), extra: n.body })
     for (const l of n.links) if (g.nodes.has(l)) addEdge(g, n.id, l, 'references')
+  }
+  for (const s of layer.sources ?? []) {
+    addNode(g, { id: s.id, kind: 'source', label: s.title, sublabel: [s.authors[0], s.date].filter(Boolean).join(' · ') || 'Source', summary: [s.qualifications, s.container].filter(Boolean).join(' · '), extra: s.authors.join(' ') })
+  }
+  for (const d of layer.docs ?? []) {
+    const tags = (d.content.content ?? []).filter((n) => n.type === 'heading' && n.attrs?.level === 4).map((n) => (n.content ?? []).map((t) => t.text ?? '').join(''))
+    addNode(g, { id: d.id, kind: 'doc', label: d.title, sublabel: d.type === 'speech' ? 'Speech doc' : d.type === 'file' ? 'Research file' : 'Notes', summary: tags.slice(0, 3).join(' · ') || 'Empty document', extra: tags.join(' ') })
   }
   return g
 }
@@ -264,6 +274,12 @@ export function routeFor(ref: EntityRef | GraphNode | { kind: EntityKind; id: st
       return `/app/notes/${ref.id}`
     case 'user':
       return `/app/debates/people/${ref.id}`
+    case 'source':
+      return `/app/browser?source=${ref.id}`
+    case 'doc':
+      return `/app/docs/${ref.id}`
+    case 'flow':
+      return `/app/flow/${ref.id}`
   }
 }
 

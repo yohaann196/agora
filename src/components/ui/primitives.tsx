@@ -3,7 +3,9 @@ import {
   Bookmark,
   BookmarkCheck,
   FileText,
+  Globe,
   Landmark,
+  TableProperties,
   NotebookPen,
   Orbit,
   PenLine,
@@ -32,6 +34,9 @@ export const KIND_ICON: Record<EntityKind | 'custom', LucideIcon> = {
   note: NotebookPen,
   user: User,
   custom: Sparkles,
+  source: Globe,
+  doc: FileText,
+  flow: TableProperties,
 }
 
 export function KindIcon({ kind, size = 14 }: { kind: EntityKind | 'custom'; size?: number }) {

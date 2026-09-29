@@ -1,7 +1,11 @@
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 import { seedArguments } from '../data/arguments'
+import { seedDocs, seedFlows, seedSources } from '../data/debateSeeds'
 import { seedDebates, seedEssays, seedNotes, seedReading } from '../data/social'
+import { sourceKey } from '../research/cite'
+import { appendNodes, emptyDoc } from '../research/docModel'
+import { FORMATS } from '../research/formats'
 import type {
   ArgLink,
   ArgNode,
@@ -9,7 +13,14 @@ import type {
   Debate,
   DebateMove,
   DebateMoveType,
+  Doc,
+  DocJSON,
+  DocType,
   EntityKind,
+  Flow,
+  FlowFormat,
+  FlowSheet,
+  Source,
   EntityRef,
   Essay,
   Note,
@@ -82,8 +93,28 @@ export interface IdeaMapEdge {
 }
 
 export type Accent = 'blue' | 'violet' | 'cyan' | 'green' | 'orange'
-export const HOME_CARDS = ['library', 'concepts', 'arguments', 'compare', 'essay', 'socratic', 'map', 'schools', 'explorer'] as const
+export const HOME_CARDS = ['browser', 'docs', 'flow', 'arguments', 'socratic', 'library', 'explorer', 'compare', 'essay', 'concepts', 'map', 'schools'] as const
 export type HomeCard = (typeof HOME_CARDS)[number]
+
+export interface BrowserTab {
+  id: string
+  uri: string
+  title: string
+}
+
+export interface HistoryEntry {
+  uri: string
+  title: string
+  at: number
+}
+
+export interface ResearchSettings {
+  wikipedia: boolean
+  openalex: boolean
+  openlibrary: boolean
+  agora: boolean
+  contactEmail: string
+}
 
 export interface Settings {
   name: string
@@ -96,6 +127,7 @@ export interface Settings {
   apiKey: string
   showSourceBadges: boolean
   sidebarCollapsed: boolean
+  research: ResearchSettings
 }
 
 interface OSState {
@@ -117,6 +149,13 @@ interface OSState {
   ideaCenter: string
   settings: Settings
   windows: OSWindow[]
+  sources: Source[]
+  docs: Doc[]
+  flows: Flow[]
+  tabs: BrowserTab[]
+  activeTab: string
+  history: HistoryEntry[]
+  cutTarget: string
 
   // ephemeral ui
   paletteOpen: boolean
@@ -193,6 +232,31 @@ interface OSState {
   addIdeaEdge: (from: string, to: string, label: string) => void
   removeIdeaEdge: (id: string) => void
   resetIdeaMap: () => void
+
+  // research
+  addSource: (s: Omit<Source, 'id' | 'kind' | 'accessed'> & { accessed?: number }) => string
+  updateSource: (id: string, patch: Partial<Source>) => void
+  removeSource: (id: string) => void
+  openTab: (uri: string, title?: string, background?: boolean) => string
+  navigateTab: (id: string, uri: string, title?: string) => void
+  setTabTitle: (id: string, title: string) => void
+  closeTab: (id: string) => void
+  setActiveTab: (id: string) => void
+
+  // docs
+  createDoc: (type?: DocType, title?: string) => string
+  updateDoc: (id: string, patch: Partial<Doc>) => void
+  deleteDoc: (id: string) => void
+  appendToDoc: (id: string, nodes: DocJSON[]) => void
+  setCutTarget: (id: string) => void
+
+  // flows
+  createFlow: (format?: FlowFormat, title?: string) => string
+  updateFlow: (id: string, patch: Partial<Flow>) => void
+  updateSheet: (flowId: string, sheetId: string, patch: Partial<FlowSheet>) => void
+  addSheet: (flowId: string, title: string) => void
+  removeSheet: (flowId: string, sheetId: string) => void
+  deleteFlow: (id: string) => void
 }
 
 const LINK_RE = /\[\[([a-z0-9-]+)\]\]/g
@@ -218,11 +282,17 @@ const defaultSettings: Settings = {
   apiKey: '',
   showSourceBadges: true,
   sidebarCollapsed: false,
+  research: { wikipedia: true, openalex: true, openlibrary: true, agora: true, contactEmail: '' },
+}
+
+export function emptySheet(format: FlowFormat, title: string): FlowSheet {
+  return { id: uid('sh'), title, marks: {}, columns: FORMATS[format].flowColumns.map(() => ['', '', '']) }
 }
 
 const now = () => Date.now()
 
 const seedNotifications = (): OSNotification[] => [
+  { id: 'n0', title: 'Your AC is ready to read', body: 'AC — Civil disobedience: 5 cards, about 1:20 of highlighted text. Open it in Speech Docs.', at: now() - 1000 * 60 * 6, read: false, tone: 'system', href: '/app/docs/doc-ac' },
   { id: 'n1', title: 'Amara challenged your objection', body: '“Rawls needs more than maximin…” on the veil of ignorance debate.', at: now() - 1000 * 60 * 18, read: false, tone: 'debate', href: '/app/debates/deb-veil' },
   { id: 'n2', title: 'Reading streak: Groundwork', body: 'You are 46% through. Section II introduces the formulas of the categorical imperative.', at: now() - 1000 * 60 * 60 * 3, read: false, tone: 'reading', href: '/app/texts/groundwork' },
   { id: 'n3', title: 'Leo published a new thesis', body: 'Existentialism provides a stronger account of moral responsibility…', at: now() - 1000 * 60 * 60 * 26, read: true, tone: 'debate', href: '/app/debates/deb-responsibility' },
@@ -257,6 +327,13 @@ const initialData = () => ({
   ideaExpanded: ['justice'],
   ideaCenter: 'justice',
   windows: [] as OSWindow[],
+  sources: seedSources,
+  docs: seedDocs,
+  flows: seedFlows,
+  tabs: [{ id: 'tab-1', uri: 'agora:new', title: 'New tab' }] as BrowserTab[],
+  activeTab: 'tab-1',
+  history: [] as HistoryEntry[],
+  cutTarget: 'doc-ac',
 })
 
 export const useOS = create<OSState>()(
@@ -487,9 +564,88 @@ export const useOS = create<OSState>()(
       addIdeaEdge: (from, to, label) => set((s) => ({ ideaEdges: [...s.ideaEdges, { id: uid('e'), from, to, label }] })),
       removeIdeaEdge: (id) => set((s) => ({ ideaEdges: s.ideaEdges.filter((e) => e.id !== id) })),
       resetIdeaMap: () => set({ ideaNodes: [], ideaEdges: [], ideaExpanded: ['justice'], ideaCenter: 'justice' }),
+
+      addSource: (src) => {
+        const existing = get().sources.find((x) => sourceKey(x) === sourceKey(src))
+        if (existing) return existing.id
+        const id = uid('src')
+        set((s) => ({ sources: [{ ...src, id, kind: 'source', accessed: src.accessed ?? now() }, ...s.sources] }))
+        return id
+      },
+      updateSource: (id, patch) => set((s) => ({ sources: s.sources.map((x) => (x.id === id ? { ...x, ...patch } : x)) })),
+      removeSource: (id) => set((s) => ({ sources: s.sources.filter((x) => x.id !== id) })),
+      openTab: (uri, title = 'Loading…', background = false) => {
+        const id = uid('tab')
+        set((s) => ({
+          tabs: [...s.tabs, { id, uri, title }].slice(-12),
+          activeTab: background ? s.activeTab : id,
+          history: uri === 'agora:new' ? s.history : [{ uri, title, at: now() }, ...s.history.filter((h) => h.uri !== uri)].slice(0, 80),
+        }))
+        return id
+      },
+      navigateTab: (id, uri, title) =>
+        set((s) => ({
+          tabs: s.tabs.map((t) => (t.id === id ? { ...t, uri, title: title ?? t.title } : t)),
+          history: uri === 'agora:new' ? s.history : [{ uri, title: title ?? uri, at: now() }, ...s.history.filter((h) => h.uri !== uri)].slice(0, 80),
+        })),
+      setTabTitle: (id, title) =>
+        set((s) => {
+          const uri = s.tabs.find((t) => t.id === id)?.uri
+          return {
+            tabs: s.tabs.map((t) => (t.id === id ? { ...t, title } : t)),
+            history: s.history.map((h) => (h.uri === uri ? { ...h, title } : h)),
+          }
+        }),
+      closeTab: (id) =>
+        set((s) => {
+          const idx = s.tabs.findIndex((t) => t.id === id)
+          const tabs = s.tabs.filter((t) => t.id !== id)
+          if (!tabs.length) {
+            const fresh = uid('tab')
+            return { tabs: [{ id: fresh, uri: 'agora:new', title: 'New tab' }], activeTab: fresh }
+          }
+          return { tabs, activeTab: s.activeTab === id ? tabs[Math.max(0, idx - 1)].id : s.activeTab }
+        }),
+      setActiveTab: (id) => set({ activeTab: id }),
+
+      createDoc: (type = 'speech', title) => {
+        const id = uid('doc')
+        const name = title ?? (type === 'speech' ? 'Untitled speech doc' : type === 'file' ? 'Untitled file' : 'Research notes')
+        set((s) => ({ docs: [{ id, kind: 'doc', title: name, type, content: emptyDoc(type), updatedAt: now() }, ...s.docs] }))
+        return id
+      },
+      updateDoc: (id, patch) => set((s) => ({ docs: s.docs.map((d) => (d.id === id ? { ...d, ...patch, updatedAt: now() } : d)) })),
+      deleteDoc: (id) =>
+        set((s) => ({
+          docs: s.docs.filter((d) => d.id !== id),
+          cutTarget: s.cutTarget === id ? (s.docs.find((d) => d.id !== id)?.id ?? '') : s.cutTarget,
+        })),
+      appendToDoc: (id, nodes) =>
+        set((s) => ({ docs: s.docs.map((d) => (d.id === id ? { ...d, content: appendNodes(d.content, nodes), updatedAt: now() } : d)) })),
+      setCutTarget: (id) => set({ cutTarget: id }),
+
+      createFlow: (format = 'ld', title) => {
+        const id = uid('flow')
+        const [a, b] = format === 'pf' ? ['Pro case', 'Con case'] : format === 'ld' ? ['AC', 'NC'] : ['Case', 'Off-case']
+        const f: Flow = { id, kind: 'flow', title: title ?? `Round — ${FORMATS[format].short}`, format, affFirst: true, updatedAt: now(), sheets: [emptySheet(format, a), emptySheet(format, b)] }
+        set((s) => ({ flows: [f, ...s.flows] }))
+        return id
+      },
+      updateFlow: (id, patch) => set((s) => ({ flows: s.flows.map((f) => (f.id === id ? { ...f, ...patch, updatedAt: now() } : f)) })),
+      updateSheet: (flowId, sheetId, patch) =>
+        set((s) => ({
+          flows: s.flows.map((f) => (f.id === flowId ? { ...f, updatedAt: now(), sheets: f.sheets.map((sh) => (sh.id === sheetId ? { ...sh, ...patch } : sh)) } : f)),
+        })),
+      addSheet: (flowId, title) =>
+        set((s) => ({ flows: s.flows.map((f) => (f.id === flowId ? { ...f, updatedAt: now(), sheets: [...f.sheets, emptySheet(f.format, title)] } : f)) })),
+      removeSheet: (flowId, sheetId) =>
+        set((s) => ({
+          flows: s.flows.map((f) => (f.id === flowId && f.sheets.length > 1 ? { ...f, updatedAt: now(), sheets: f.sheets.filter((sh) => sh.id !== sheetId) } : f)),
+        })),
+      deleteFlow: (id) => set((s) => ({ flows: s.flows.filter((f) => f.id !== id) })),
     }),
     {
-      name: 'philosophyos:v1',
+      name: 'agora:v1',
       version: 1,
       storage: createJSONStorage(() => localStorage),
       partialize: (s) => ({
@@ -510,10 +666,22 @@ export const useOS = create<OSState>()(
         ideaCenter: s.ideaCenter,
         settings: s.settings,
         windows: s.windows,
+        sources: s.sources,
+        docs: s.docs,
+        flows: s.flows,
+        tabs: s.tabs,
+        activeTab: s.activeTab,
+        history: s.history,
+        cutTarget: s.cutTarget,
       }),
       merge: (persisted, current) => {
         const p = (persisted ?? {}) as Partial<OSState>
-        return { ...current, ...p, settings: { ...current.settings, ...(p.settings ?? {}) } }
+        const settings = { ...current.settings, ...(p.settings ?? {}) }
+        settings.research = { ...current.settings.research, ...(p.settings?.research ?? {}) }
+        // Cards added in newer versions appear on the Desk automatically.
+        const known = HOME_CARDS as readonly string[]
+        settings.homeCards = [...settings.homeCards.filter((c) => known.includes(c)), ...HOME_CARDS.filter((c) => !settings.homeCards.includes(c))]
+        return { ...current, ...p, settings }
       },
     },
   ),

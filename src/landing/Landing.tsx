@@ -1,460 +1,393 @@
-import { motion, useInView } from 'framer-motion'
-import { ArrowDown, ArrowRight, BrainCircuit, Columns3, Orbit, PenLine, ScanSearch, Swords, Waypoints } from 'lucide-react'
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
-import { Link, useNavigate } from 'react-router'
-import { analyzeArgument } from '../ai/analyzeArgument'
-import { respond } from '../ai/socratic'
-import { PhiMark } from '../components/shell/Sidebar'
-import { MiniGraph } from '../components/ui/MiniGraph'
-import { SourceBadge } from '../components/ui/primitives'
-import { RichText } from '../components/ui/RichText'
-import { seedArguments } from '../data/arguments'
-import { compareById } from '../data/compare'
-import { ArgAnalysisPanel } from '../features/arguments/ArgAnalysis'
-import { ArgCanvas } from '../features/arguments/ArgCanvas'
-import { PositionColumn } from '../features/compare/ComparePage'
+import { motion, useReducedMotion, useScroll, useTransform, type Variants } from 'framer-motion'
+import { ArrowRight, BrainCircuit, FileText, Globe, Scissors, TableProperties } from 'lucide-react'
+import { useEffect, type ReactNode } from 'react'
+import { Link } from 'react-router'
+import { AgoraMark } from '../components/ui/AgoraMark'
 import './landing.css'
 
-const VERBS = ['Read.', 'Analyze.', 'Compare.', 'Argue.', 'Build better ideas.']
-
 /* ------------------------------------------------------------------ */
-/* Constellation                                                        */
+/*  Ink illustration: Athens at noon, a man with a lamp.               */
 /* ------------------------------------------------------------------ */
 
-const STARS: [string, number, number, string][] = [
-  ['Kant', 14, 30, 'var(--violet)'], ['Justice', 30, 18, 'var(--cyan)'], ['Mill', 22, 62, 'var(--violet)'], ['Liberty', 38, 44, 'var(--cyan)'],
-  ['Rawls', 50, 22, 'var(--violet)'], ['Veil of ignorance', 64, 12, 'var(--cyan)'], ['Duty', 8, 52, 'var(--cyan)'], ['Sartre', 76, 40, 'var(--violet)'],
-  ['Bad faith', 88, 26, 'var(--cyan)'], ['Beauvoir', 84, 62, 'var(--violet)'], ['The Other', 94, 48, 'var(--cyan)'], ['Existentialism', 70, 70, 'var(--green)'],
-  ['Utilitarianism', 12, 80, 'var(--green)'], ['Aristotle', 40, 78, 'var(--violet)'], ['Eudaimonia', 54, 88, 'var(--cyan)'], ['Republic', 58, 58, 'var(--orange)'],
-  ['Plato', 46, 64, 'var(--violet)'], ['Nietzsche', 90, 84, 'var(--violet)'], ['Will to power', 78, 90, 'var(--cyan)'], ['Hume', 4, 16, 'var(--violet)'],
-  ['Is–ought', 20, 8, 'var(--cyan)'], ['Marx', 30, 92, 'var(--violet)'],
-]
-const LINKS: [number, number][] = [[0, 1], [0, 6], [0, 19], [19, 20], [1, 3], [1, 4], [4, 5], [2, 3], [2, 12], [3, 16], [16, 15], [15, 1], [7, 8], [7, 9], [9, 10], [7, 11], [11, 9], [13, 14], [13, 16], [17, 18], [11, 17], [2, 21], [21, 13], [4, 7], [0, 2]]
-
-function Constellation() {
+function InkDefs() {
   return (
-    <svg className="constellation" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
-      {LINKS.map(([a, b], i) => (
-        <motion.line
-          key={i}
-          x1={STARS[a][1]}
-          y1={STARS[a][2]}
-          x2={STARS[b][1]}
-          y2={STARS[b][2]}
-          stroke="rgba(148,163,200,0.2)"
-          strokeWidth={1}
-          vectorEffect="non-scaling-stroke"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 + i * 0.05, duration: 1.4, ease: 'easeOut' }}
-        />
+    <defs>
+      <filter id="ink-rough" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n" />
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+      <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-38)">
+        <line x1="0" y1="0" x2="0" y2="7" stroke="#171614" strokeWidth="1.6" />
+      </pattern>
+      <pattern id="hatch-fine" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(52)">
+        <line x1="0" y1="0" x2="0" y2="5" stroke="#171614" strokeWidth="0.9" />
+      </pattern>
+      <pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse">
+        <circle cx="3.5" cy="3.5" r="1.1" fill="#f8f7f3" opacity="0.28" />
+      </pattern>
+      <radialGradient id="lamp-glow">
+        <stop offset="0" stopColor="#f2dc55" stopOpacity="0.95" />
+        <stop offset="0.45" stopColor="#f2dc55" stopOpacity="0.45" />
+        <stop offset="1" stopColor="#f2dc55" stopOpacity="0" />
+      </radialGradient>
+    </defs>
+  )
+}
+
+function Column({ x, top = 170, bottom = 560, w = 64 }: { x: number; top?: number; bottom?: number; w?: number }) {
+  const flutes = [0.2, 0.4, 0.6, 0.8].map((f) => x + w * f)
+  return (
+    <g>
+      <rect x={x - 10} y={top - 8} width={w + 20} height={12} fill="#f8f7f3" stroke="#171614" strokeWidth="3" />
+      <path d={`M${x - 4} ${top + 4} h${w + 8} v14 h${-w - 8} z`} fill="#f8f7f3" stroke="#171614" strokeWidth="3" />
+      <circle cx={x - 2} cy={top + 16} r="9" fill="#f8f7f3" stroke="#171614" strokeWidth="3" />
+      <circle cx={x + w + 2} cy={top + 16} r="9" fill="#f8f7f3" stroke="#171614" strokeWidth="3" />
+      <circle cx={x - 2} cy={top + 16} r="3" fill="#171614" />
+      <circle cx={x + w + 2} cy={top + 16} r="3" fill="#171614" />
+      <rect x={x} y={top + 22} width={w} height={bottom - top - 40} fill="#f8f7f3" stroke="#171614" strokeWidth="3" />
+      <rect x={x + w * 0.62} y={top + 22} width={w * 0.38} height={bottom - top - 40} fill="url(#hatch)" />
+      {flutes.map((fx) => (
+        <line key={fx} x1={fx} y1={top + 28} x2={fx} y2={bottom - 24} stroke="#171614" strokeWidth="1.4" />
       ))}
+      <rect x={x - 8} y={bottom - 18} width={w + 16} height={10} fill="#f8f7f3" stroke="#171614" strokeWidth="3" />
+      <rect x={x - 14} y={bottom - 8} width={w + 28} height={10} fill="#f8f7f3" stroke="#171614" strokeWidth="3" />
+    </g>
+  )
+}
+
+function Cloud({ d }: { d: string }) {
+  return (
+    <g>
+      <path d={d} fill="#f8f7f3" stroke="#171614" strokeWidth="3.5" strokeLinejoin="round" />
+      <path d={d} fill="url(#hatch-fine)" opacity="0.28" transform="translate(6 10)" style={{ clipPath: 'inset(55% 0 0 0)' }} />
+    </g>
+  )
+}
+
+function AthensScene() {
+  const reduce = useReducedMotion()
+  const { scrollY } = useScroll()
+  const drift = useTransform(scrollY, [0, 800], [0, reduce ? 0 : -90])
+  const drift2 = useTransform(scrollY, [0, 800], [0, reduce ? 0 : 60])
+  return (
+    <svg className="athens" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Ink drawing: a hooded man carrying a lit lamp across the Athenian agora at noon, between marble columns.">
+      <InkDefs />
+      {/* sky */}
+      <rect width="1200" height="620" fill="#171614" />
+      <rect width="1200" height="620" fill="url(#dots)" />
+      <g stroke="#f8f7f3" strokeWidth="1.2" opacity="0.18">
+        {Array.from({ length: 30 }, (_, i) => (
+          <line key={i} x1={i * 46 - 200} y1="0" x2={i * 46 + 40} y2="300" />
+        ))}
+      </g>
+      <g filter="url(#ink-rough)">
+        <motion.g style={{ x: drift }}>
+          <Cloud d="M560 180c-14-50 34-86 78-66 14-46 84-60 116-16 30-34 104-20 110 34 50-6 78 40 58 76-6 12-20 18-34 18H596c-30 0-48-20-36-46z" />
+          <Cloud d="M980 110c-8-34 26-58 56-44 12-30 60-36 80-6 26-10 56 10 50 40 26 4 36 34 16 48H1004c-26 0-40-18-24-38z" />
+        </motion.g>
+        <motion.g style={{ x: drift2 }}>
+          <Cloud d="M120 120c-10-36 26-62 58-48 10-32 62-40 84-10 24-14 64 2 62 34 34 0 50 34 28 54-4 4-12 6-20 6H146c-24 0-38-16-26-36z" />
+        </motion.g>
+
+        {/* distant stoa */}
+        <g>
+          <rect x="360" y="420" width="840" height="14" fill="#f8f7f3" stroke="#171614" strokeWidth="3" />
+          {Array.from({ length: 15 }, (_, i) => (
+            <rect key={i} x={380 + i * 54} y="434" width="16" height="96" fill="#f8f7f3" stroke="#171614" strokeWidth="2.5" />
+          ))}
+          <path d="M360 420 L780 360 L1200 420 Z" fill="#f8f7f3" stroke="#171614" strokeWidth="3" />
+          <path d="M420 412 L780 370 L1140 412 Z" fill="url(#hatch-fine)" opacity="0.55" />
+        </g>
+
+        {/* ground */}
+        <path d="M0 530 C200 520 420 526 600 522 C820 518 1000 526 1200 520 V620 H0 Z" fill="#e7d9bb" stroke="#171614" strokeWidth="3.5" />
+        <path d="M0 560 C300 556 600 566 1200 552 V620 H0 Z" fill="url(#hatch)" opacity="0.35" />
+        {[90, 260, 480, 700, 930, 1110].map((x, i) => (
+          <path key={x} d={`M${x} ${548 + (i % 2) * 22} h${38 + (i % 3) * 10}`} stroke="#171614" strokeWidth="2.5" strokeLinecap="round" />
+        ))}
+
+        {/* foreground colonnade */}
+        <rect x="20" y="140" width="330" height="24" fill="#f8f7f3" stroke="#171614" strokeWidth="3.5" />
+        <rect x="20" y="140" width="330" height="24" fill="url(#hatch-fine)" opacity="0.4" />
+        <Column x={60} />
+        <Column x={220} />
+
+        {/* lamp glow */}
+        <circle cx="650" cy="286" r="120" fill="url(#lamp-glow)" />
+
+        {/* the man */}
+        <g>
+          <path d="M700 560 C704 470 716 400 730 344 C738 300 746 272 764 256 C784 244 806 250 818 266 C836 296 842 344 850 404 C860 472 866 520 878 560 Z" fill="#a8864f" stroke="#171614" strokeWidth="3.5" strokeLinejoin="round" />
+          <path d="M800 262 C826 300 838 350 846 410 C856 476 862 524 876 560 L820 560 C826 480 822 380 800 262 Z" fill="url(#hatch)" opacity="0.8" />
+          <path d="M728 470 C760 480 800 478 840 470 M720 520 C770 530 820 528 868 520" stroke="#171614" strokeWidth="2" fill="none" />
+          <path d="M760 300 C756 380 752 460 748 556 M792 300 C796 380 800 470 806 556" stroke="#171614" strokeWidth="1.8" fill="none" />
+          {/* hood */}
+          <path d="M744 282 C736 238 758 204 792 204 C824 206 840 236 832 280 C822 262 806 252 788 252 C768 252 752 264 744 282 Z" fill="#a8864f" stroke="#171614" strokeWidth="3.5" strokeLinejoin="round" />
+          <path d="M756 276 C760 258 774 250 790 250 C808 250 820 260 824 276 C816 290 800 296 788 296 C772 296 762 290 756 276 Z" fill="#171614" />
+          <path d="M796 208 C818 214 832 240 830 270" stroke="#171614" strokeWidth="1.5" fill="url(#hatch-fine)" opacity="0.7" />
+          {/* arm and staff */}
+          <path d="M744 330 C724 330 704 322 690 306 L680 316 C694 336 716 350 746 352 Z" fill="#a8864f" stroke="#171614" strokeWidth="3" strokeLinejoin="round" />
+          <circle cx="684" cy="310" r="8" fill="#e7d9bb" stroke="#171614" strokeWidth="2.5" />
+          <line x1="676" y1="236" x2="706" y2="560" stroke="#171614" strokeWidth="5" strokeLinecap="round" />
+          {/* lamp */}
+          <path d="M676 236 C664 236 656 244 652 252" stroke="#171614" strokeWidth="3" fill="none" />
+          <path d="M634 256 h36 l-6 12 h-24 z" fill="#171614" />
+          <rect x="632" y="268" width="40" height="38" fill="#f2dc55" stroke="#171614" strokeWidth="3" />
+          <line x1="652" y1="268" x2="652" y2="306" stroke="#171614" strokeWidth="2" />
+          <path d="M646 296 C644 286 652 280 652 274 C656 282 660 286 658 296 Z" fill="#8e1f1a" />
+          <path d="M630 306 h44 l-6 10 h-32 z" fill="#171614" />
+        </g>
+
+        {/* light rays */}
+        <g stroke="#171614" strokeWidth="2" strokeLinecap="round">
+          {[-150, -115, -75, -40, 200, 160, 120].map((a) => {
+            const r1 = 34
+            const r2 = 56
+            const rad = (a * Math.PI) / 180
+            return <line key={a} x1={652 + Math.cos(rad) * r1} y1={287 + Math.sin(rad) * r1} x2={652 + Math.cos(rad) * r2} y2={287 + Math.sin(rad) * r2} />
+          })}
+        </g>
+      </g>
     </svg>
   )
 }
 
-function StarLabels() {
-  return (
-    <div className="star-labels" aria-hidden>
-      {STARS.map(([label, x, y, c], i) => (
-        <motion.span key={label} style={{ left: `${x}%`, top: `${y}%`, ['--sc' as string]: c }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 + i * 0.05, duration: 1 }}>
-          <i style={{ animationDelay: `${(i % 7) * 0.6}s` }} />
-          {label}
-        </motion.span>
-      ))}
-    </div>
-  )
-}
-
-/* ------------------------------------------------------------------ */
-/* Live preview                                                         */
 /* ------------------------------------------------------------------ */
 
-type PreviewTab = 'arguments' | 'map' | 'socratic' | 'compare'
-const PREVIEW_TABS: { id: PreviewTab; label: string; icon: typeof Waypoints }[] = [
-  { id: 'arguments', label: 'Argument Builder', icon: Waypoints },
-  { id: 'map', label: 'Idea Map', icon: Orbit },
-  { id: 'socratic', label: 'Socratic AI', icon: BrainCircuit },
-  { id: 'compare', label: 'Philosopher Compare', icon: Columns3 },
-]
+const panelIn: Variants = {
+  hidden: { opacity: 0, y: 46, rotate: -1.2 },
+  shown: { opacity: 1, y: 0, rotate: 0, transition: { type: 'spring', stiffness: 110, damping: 18 } },
+}
 
-function PreviewArgument() {
-  const arg = seedArguments[0]
-  const analysis = useMemo(() => analyzeArgument(arg), [arg])
-  const [heights, setHeights] = useState<Record<string, number>>({})
-  const [highlight, setHighlight] = useState<string[]>([])
-  const [view, setView] = useState({ x: 24, y: 12, k: 0.78 })
+function Panel({ children, className = '', delay = 0, label }: { children: ReactNode; className?: string; delay?: number; label?: string }) {
+  const reduce = useReducedMotion()
   return (
-    <div className="pv-arg">
-      <div className="pv-canvas">
-        <ArgCanvas
-          arg={arg}
-          selected={null}
-          onSelect={() => undefined}
-          highlight={highlight}
-          flags={{}}
-          heights={heights}
-          onHeight={(id, h) => setHeights((m) => (m[id] === h ? m : { ...m, [id]: h }))}
-          view={view}
-          onView={setView}
-          onMove={() => undefined}
-          onText={() => undefined}
-          onConnect={() => undefined}
-          onAttach={() => undefined}
-          onDelete={() => undefined}
-          readOnly
-        />
-      </div>
-      <div className="pv-side">
-        <ArgAnalysisPanel analysis={analysis} onHighlight={setHighlight} onAddObjection={() => undefined} onAddCounter={() => undefined} />
-      </div>
-    </div>
+    <motion.section
+      className={`lp-panel ${className}`}
+      aria-label={label}
+      variants={panelIn}
+      initial={reduce ? false : 'hidden'}
+      whileInView="shown"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ delay }}
+    >
+      {children}
+    </motion.section>
   )
 }
 
-function PreviewSocratic() {
-  const turns = useMemo(() => {
-    const a = 'Lying is always wrong because it destroys trust.'
-    const r1 = respond(a, 'socratic', [])
-    const b = 'I mean any intentional deception — even misleading someone with true statements.'
-    const r2 = respond(b, 'socratic', [{ role: 'user', text: a }, { role: 'ai', text: r1.text }])
-    return [
-      { who: 'You', text: a, ai: false },
-      { who: 'Socratic', text: r1.text, ai: true },
-      { who: 'You', text: b, ai: false },
-      { who: 'Socratic', text: r2.text, ai: true },
-    ]
-  }, [])
+function Sfx({ children, className = '' }: { children: ReactNode; className?: string }) {
+  const reduce = useReducedMotion()
   return (
-    <div className="pv-soc">
-      {turns.map((t, i) => (
-        <motion.div key={i} className={`pv-turn ${t.ai ? 'ai' : ''}`} initial={{ opacity: 0, y: 6 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.25 }}>
-          <span className="mono">{t.who}</span>
-          <div>{t.ai ? <RichText text={t.text} /> : <p className="serif">{t.text}</p>}</div>
-        </motion.div>
-      ))}
-    </div>
+    <motion.span
+      className={`sfx ${className}`}
+      aria-hidden
+      initial={reduce ? false : { scale: 0.2, rotate: -30, opacity: 0 }}
+      whileInView={{ scale: 1, rotate: -8, opacity: 1 }}
+      viewport={{ once: true, amount: 0.8 }}
+      transition={{ type: 'spring', stiffness: 380, damping: 12, delay: 0.25 }}
+    >
+      {children}
+    </motion.span>
   )
 }
 
-function PreviewCompare() {
-  const q = compareById['lying']
-  return (
-    <div className="pv-cmp">
-      <h3 className="serif">{q.question}</h3>
-      <div className="pv-cmp-grid">
-        {q.positions.slice(0, 3).map((p, i) => (
-          <PositionColumn key={p.philosopher} pos={p} index={i} />
-        ))}
-      </div>
-    </div>
-  )
-}
-
-function LivePreview() {
-  const [tab, setTab] = useState<PreviewTab>('arguments')
-  return (
-    <div className="preview-window" id="preview">
-      <div className="pw-bar">
-        <span className="lights"><i /><i /><i /></span>
-        <div className="pw-tabs" role="tablist">
-          {PREVIEW_TABS.map((t) => {
-            const I = t.icon
-            return (
-              <button key={t.id} role="tab" aria-selected={tab === t.id} onClick={() => setTab(t.id)}>
-                <I size={13} /> {t.label}
-              </button>
-            )
-          })}
-        </div>
-        <span className="pw-live mono"><i /> live</span>
-      </div>
-      <div className="pw-body">
-        {tab === 'arguments' && <PreviewArgument />}
-        {tab === 'map' && (
-          <div className="pv-map">
-            <MiniGraph id="justice" size={520} max={18} />
-            <div className="pv-map-note">
-              <div className="eyebrow">Knowledge graph</div>
-              <p className="serif">Justice, one step out.</p>
-              <p className="dim">Every thinker, concept, text and argument is a node. Hover to trace a relationship; in the app, click to expand and add your own.</p>
-            </div>
-          </div>
-        )}
-        {tab === 'socratic' && <PreviewSocratic />}
-        {tab === 'compare' && <PreviewCompare />}
-      </div>
-    </div>
-  )
-}
-
-/* ------------------------------------------------------------------ */
-/* Feature demos                                                        */
-/* ------------------------------------------------------------------ */
-
-function SocraticDemo() {
-  const [claim, setClaim] = useState('Happiness is the only thing that matters.')
-  const [reply, setReply] = useState<string | null>(() => respond('Happiness is the only thing that matters.', 'socratic', []).text)
-  return (
-    <div className="demo demo-soc">
-      <form
-        onSubmit={(e) => {
-          e.preventDefault()
-          setReply(respond(claim, 'socratic', []).text)
-        }}
-      >
-        <input className="input serif" value={claim} onChange={(e) => { setClaim(e.target.value); setReply(null) }} aria-label="Your claim" />
-        <button className="btn primary sm">Question me</button>
-      </form>
-      <div className="demo-reply">
-        {reply ? (
-          <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }}>
-            <RichText text={reply} />
-          </motion.div>
-        ) : (
-          <p className="dim">Type any position and press enter. The reply is generated live by the in-browser reasoning engine.</p>
-        )}
-      </div>
-    </div>
-  )
-}
-
-function ArgumentDemo() {
-  const [shown, setShown] = useState(false)
-  const steps: [string, string, string][] = [
-    ['Claim', 'Greater happiness is morally valuable.', 'var(--n-claim)'],
-    ['Premise', 'Moral actions should maximize happiness.', 'var(--n-premise)'],
-    ['Conclusion', 'Therefore, sacrificing one person can sometimes be morally justified.', 'var(--n-conclusion)'],
-  ]
-  const flags = ['Premise 1 stands without support', 'The conclusion introduces “sacrificing” and “justified”', 'Hidden assumption: value can be summed across persons', 'Objection: the separateness of persons (Rawls)']
-  return (
-    <div className="demo demo-arg">
-      <div className="chain">
-        {steps.map(([t, s, c], i) => (
-          <div key={t} className="chain-step" style={{ ['--nc' as string]: c }}>
-            <span className="mono">{t}</span>
-            <p className="serif">{s}</p>
-            {i < steps.length - 1 && <span className="chain-arrow" />}
-          </div>
-        ))}
-      </div>
-      <button className="btn sm" onClick={() => setShown((s) => !s)}>
-        <ScanSearch /> {shown ? 'Hide analysis' : 'Analyze argument'}
-      </button>
-      {shown && (
-        <ul className="demo-flags">
-          {flags.map((f, i) => (
-            <motion.li key={f} initial={{ opacity: 0, x: -6 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.12 }}>
-              {f}
-            </motion.li>
-          ))}
-        </ul>
-      )}
-    </div>
-  )
-}
-
-function CompareDemo() {
-  const q = compareById['lying']
-  return (
-    <div className="demo demo-cmp">
-      {q.positions.slice(0, 3).map((p) => (
-        <div key={p.philosopher} className="mini-col">
-          <span className="mono">{p.philosopher}</span>
-          <p className="serif">{p.headline}</p>
-          <SourceBadge type={p.support[0].source === 'quotation' ? 'quotation' : p.support[0].source === 'summary' ? 'summary' : 'interpretation'} label={p.support[0].source === 'quotation' ? 'Textual support' : undefined} />
-        </div>
-      ))}
-    </div>
-  )
-}
-
-function EssayDemo() {
-  const rows: [string, number][] = [['Thesis clarity', 3], ['Premise support', 2], ['Counterarguments', 1], ['Definitions', 2], ['Evidence', 3]]
-  return (
-    <div className="demo demo-essay">
-      <div className="doc">
-        <span className="mono">Thesis</span>
-        <p className="serif">Lying is sometimes justified, because a duty of truthfulness cannot be owed to someone who uses our answer to commit a grave wrong.</p>
-        <span className="mono">Counterargument</span>
-        <p className="serif dim">The strongest objection to your thesis…</p>
-      </div>
-      <div className="signals">
-        {rows.map(([l, n]) => (
-          <div key={l}>
-            <span>{l}</span>
-            <span className={`sig s${n}`}><i /><i /><i /></span>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-function DebateDemo() {
-  const items: [string, string, number][] = [
-    ['argument', 'Existentialism provides a stronger account of moral responsibility than Kantian deontology.', 0],
-    ['objection', 'Responsibility requires a standard we can fail to meet.', 1],
-    ['response', 'Sartre’s standard is formal too: in choosing, I choose an image of humanity.', 2],
-    ['rebuttal', 'Then the existentialist account borrows the Kantian test it claims to beat.', 3],
-  ]
-  return (
-    <div className="demo demo-debate">
-      {items.map(([t, s, d]) => (
-        <div key={t} className="d-row" style={{ marginLeft: d * 18 }}>
-          <span className={`move-pill ${t}`}>{t}</span>
-          <p className="serif">{s}</p>
-        </div>
-      ))}
-    </div>
-  )
-}
-
-function Feature({ n, icon: I, title, lede, points, children, color, flip }: { n: string; icon: typeof Waypoints; title: string; lede: string; points: string[]; children: ReactNode; color: string; flip?: boolean }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
-  return (
-    <section ref={ref} className={`feature ${flip ? 'flip' : ''}`} style={{ ['--fc' as string]: color }}>
-      <motion.div className="f-text" initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
-        <div className="f-num mono">{n}</div>
-        <div className="f-icon"><I /></div>
-        <h2>{title}</h2>
-        <p className="f-lede">{lede}</p>
-        <ul>
-          {points.map((p) => (
-            <li key={p}>{p}</li>
-          ))}
-        </ul>
-      </motion.div>
-      <motion.div className="f-visual" initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}>
-        {children}
-      </motion.div>
-    </section>
-  )
+function Cap({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return <p className={`caption lp-cap ${className}`}>{children}</p>
 }
 
 /* ------------------------------------------------------------------ */
 
 export function Landing() {
-  const navigate = useNavigate()
-  const [verb, setVerb] = useState(0)
   useEffect(() => {
-    document.body.classList.add('landing-body')
-    return () => document.body.classList.remove('landing-body')
+    document.title = 'Agora — Research & Debate'
   }, [])
-  useEffect(() => {
-    if (verb >= VERBS.length) return
-    const t = setTimeout(() => setVerb((v) => v + 1), 380)
-    return () => clearTimeout(t)
-  }, [verb])
 
   return (
     <div className="landing">
-      <nav className="l-nav">
-        <Link to="/" className="l-brand">
-          <PhiMark size={24} />
-          <span>Philosophy<span className="mono">OS</span></span>
-        </Link>
-        <div className="l-links">
-          <a href="#preview">Preview</a>
-          <a href="#features">Features</a>
-          <a href="#principle">Principle</a>
-        </div>
-        <button className="btn primary" onClick={() => navigate('/app')}>
-          Enter PhilosophyOS <ArrowRight />
-        </button>
-      </nav>
-
-      <header className="hero">
-        <Constellation />
-        <StarLabels />
-        <div className="hero-inner">
-          <motion.div className="hero-badge mono" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            <span className="dot" /> v1.0 · A workspace for philosophy &amp; debate
-          </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 14, filter: 'blur(8px)' }} animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}>
-            Philosophy<span className="os">OS</span>
-          </motion.h1>
-          <motion.p className="hero-sub" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.8 }}>
-            An operating system for thinking.
-          </motion.p>
-          <p className="hero-verbs" aria-label={VERBS.join(' ')}>
-            {VERBS.map((v, i) => (
-              <motion.span key={v} initial={{ opacity: 0, y: 6 }} animate={i < verb ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.4 }} className={i === VERBS.length - 1 ? 'last' : ''}>
-                {v}
-              </motion.span>
-            ))}
-          </p>
-          <motion.div className="hero-cta" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
-            <button className="btn primary lg" onClick={() => navigate('/app')}>
-              Enter PhilosophyOS <ArrowRight />
-            </button>
-            <a className="btn lg" href="#preview">
-              Explore the system <ArrowDown />
-            </a>
-          </motion.div>
-        </div>
+      <header className="lp-nav">
+        <nav className="lp-nav-box" aria-label="Site">
+          <a href="#research" className="lp-nav-link">Research</a>
+          <Link to="/app" className="lp-nav-mark" aria-label="Agora — open the app">
+            <AgoraMark size={46} />
+            <span>Agora</span>
+          </Link>
+          <a href="#round" className="lp-nav-link">Debate</a>
+        </nav>
+        <Link to="/app" className="btn primary lp-nav-cta">Enter <ArrowRight /></Link>
       </header>
 
-      <section className="preview-section">
-        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
-          <LivePreview />
-        </motion.div>
-        <p className="preview-caption">This is the real application running on this page — not a screenshot. Hover a finding to see which cards it refers to.</p>
-      </section>
+      <main className="lp-book">
+        {/* 1 — Athens */}
+        <Panel className="lp-hero" label="Athens, fourth century BC">
+          <AthensScene />
+          <Cap className="lp-cap-tl">Athens, the fourth century <span className="spot">BC</span>.<br />Noon in the agora — the marketplace, the court, the place where arguments happen.</Cap>
+          <figure className="caption lp-cap lp-quote">
+            <blockquote>He lit a lamp in broad daylight and said, as he went about, “I am looking for a <mark className="ox">man</mark>.”</blockquote>
+            <figcaption>Diogenes Laërtius, <em>Lives of Eminent Philosophers</em> VI.41, on Diogenes of Sinope · trans. R. D. Hicks</figcaption>
+          </figure>
+        </Panel>
 
-      <div id="features" className="features">
-        <div className="features-head">
-          <div className="eyebrow">The system</div>
-          <h2>Six instruments for rigorous thought.</h2>
+        <div className="lp-title-row">
+          <Panel className="lp-title" delay={0.05} label="Agora">
+            <h1 className="lp-wordmark">Agora</h1>
+            <p className="lp-tag">A research browser and speech-doc studio for <span className="ox-box">debaters</span> and philosophy students.</p>
+            <div className="lp-ctas">
+              <Link to="/app" className="btn primary lg">Enter the Agora <ArrowRight /></Link>
+              <a href="#research" className="btn lg">Read the comic</a>
+            </div>
+          </Panel>
+          <Panel className="lp-later" delay={0.12} label="Twenty-four centuries later">
+            <Cap>Twenty-four centuries later, the marketplace never <span className="spot">closes</span>.</Cap>
+            <div className="tab-pile" aria-hidden>
+              {['Wikipedia', 'OpenAlex', 'Open Library', 'Your file', 'Speech doc', 'Flow'].map((t, i) => (
+                <span key={t} style={{ ['--i' as string]: i }}>{t}</span>
+              ))}
+            </div>
+            <Cap className="lp-cap-sm">Forty tabs. Three documents. One timer on somebody’s phone. The evidence you needed is always in the tab you closed.</Cap>
+          </Panel>
         </div>
-        <Feature n="01" icon={Waypoints} color="var(--blue)" title="Argument Builder" lede="Construct formal arguments as connected cards — claim, premises, inference, conclusion — then attach objections, evidence, definitions and assumptions." points={['Drag to rearrange; connect any two steps', 'Analysis finds unsupported premises, gaps, ambiguities and hidden assumptions', 'Never declares an argument “correct” — it explains the reasoning']}>
-          <ArgumentDemo />
-        </Feature>
-        <Feature flip n="02" icon={Orbit} color="var(--cyan)" title="Idea Map" lede="A living graph of thinkers, concepts, texts and your own ideas. Click to expand a relationship; name your own connections." points={['Everything in PhilosophyOS is a node', 'Trace the path between any two ideas', 'Add ideas and relationships of your own']}>
-          <div className="demo demo-map"><MiniGraph id="kant" size={360} max={14} /></div>
-        </Feature>
-        <Feature n="03" icon={BrainCircuit} color="var(--green)" title="Socratic AI" lede="Not a chatbot in a new coat. Its default is to ask — surfacing assumptions, testing definitions, and offering counterexamples." points={['Six modes: Socratic, Devil’s Advocate, Tutor, Philosopher, Fallacy Detector, Debate Coach', 'A live trace of your position, assumptions and concepts', 'Runs locally, or on Claude with your own key']}>
-          <SocraticDemo />
-        </Feature>
-        <Feature flip n="04" icon={Columns3} color="var(--violet)" title="Philosopher Compare" lede="Put one question to several thinkers and see their positions side by side — with textual support kept visibly apart from interpretation." points={['Direct quotations only from named translations', 'Summaries and interpretations are always labelled', 'A “key difference” that names the real disagreement']}>
-          <CompareDemo />
-        </Feature>
-        <Feature n="05" icon={PenLine} color="var(--amber)" title="Essay Studio" lede="A distraction-free writing room with an outline built for philosophy — and an analysis rail that reads for reasoning, not grammar." points={['Thesis, premise support, counterarguments, definitions, evidence', 'Insert verified citations at the cursor', 'Focus mode for the writing that matters']}>
-          <EssayDemo />
-        </Feature>
-        <Feature flip n="06" icon={Swords} color="var(--rose)" title="Debate Network" lede="Publish a thesis. Others object, respond, and rebut. Discussion is structured as argument — and ranked by how well it’s tested, not how popular it is." points={['Argument → Objection → Response → Rebuttal', 'Check your reasoning before you publish', 'Profiles built from arguments, not followers']}>
-          <DebateDemo />
-        </Feature>
-      </div>
 
-      <section id="principle" className="principle-section">
-        <div className="eyebrow">The principle</div>
-        <blockquote className="big-quote">AI should amplify philosophical thinking, <em>not replace it.</em></blockquote>
-        <div className="helps">
-          {['Understand difficult texts', 'Identify assumptions', 'Construct stronger arguments', 'Discover objections', 'Compare perspectives', 'Connect ideas', 'Write more clearly', 'Debate more rigorously'].map((h, i) => (
-            <motion.span key={h} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}>
-              {h}
-            </motion.span>
-          ))}
+        {/* 2 — Research */}
+        <div className="lp-chapter" id="research">
+          <span className="lp-chapter-no">I.</span>
+          <h2 className="lp-chapter-title">Find it. <span>Cut it.</span></h2>
         </div>
-        <p className="principle-note">The goal is not to give students answers. The goal is a better environment for thinking.</p>
-      </section>
 
-      <section className="closing">
-        <h2>
-          Think deeper.
-          <br />
-          <span>Build better arguments.</span>
-        </h2>
-        <button className="btn primary lg" onClick={() => navigate('/app')}>
-          Enter PhilosophyOS <ArrowRight />
-        </button>
-      </section>
+        <div className="lp-grid two">
+          <Panel label="Find it: the research browser">
+            <Cap className="lp-cap-top">Search encyclopedias, <span className="spot">papers</span> and books in one browser.</Cap>
+            <div className="mock-browser">
+              <div className="mb-tabs"><span className="on"><Globe size={11} /> Civil disobedience</span><span><Globe size={11} /> Harm principle</span><span>+</span></div>
+              <div className="mb-address"><Globe size={12} /> agora:search?q=civil disobedience</div>
+              <div className="mb-results">
+                <div className="mb-group"><b>Encyclopedia</b><span>Civil disobedience</span><span>Letter from Birmingham Jail</span></div>
+                <div className="mb-group"><b>Papers</b><span>The justification of civil disobedience</span><span>Democratic legitimacy and dissent</span></div>
+                <div className="mb-group"><b>Books</b><span>On Liberty — Mill</span><span>A Theory of Justice — Rawls</span></div>
+              </div>
+            </div>
+            <Cap className="lp-cap-sm">Wikipedia, OpenAlex and Open Library, read inside the app. Any other site opens beside it, and you can still clip from it.</Cap>
+          </Panel>
 
-      <footer className="l-foot">
-        <span className="hstack"><PhiMark size={16} /> PhilosophyOS</span>
-        <span className="dim">Quotations are verbatim from the named translations; everything else is labelled as summary or interpretation.</span>
+          <Panel delay={0.1} className="lp-cut" label="Cut it: evidence with the citation attached">
+            <Cap className="lp-cap-top">Select a line. Write a tag. <span className="spot">Snip.</span></Cap>
+            <div className="cut-demo">
+              <p className="cd-source serif">
+                The object of this Essay is to assert one very simple principle… <span className="cd-sel">That the only purpose for which power can be rightfully exercised over any member of a civilised community, against his will, is to prevent harm to others.</span>
+              </p>
+              <Scissors className="cd-scissors" aria-hidden />
+              <Sfx className="sfx-snip">Snip!</Sfx>
+              <div className="cd-card">
+                <div className="cd-tag">Only harm to others justifies coercion — paternalism fails.</div>
+                <div className="cd-cite"><b>Mill 59</b> — John Stuart Mill, <em>On Liberty</em>, 1859, ch. 1</div>
+                <p className="cd-body"><u>the only purpose for which power can be <mark>rightfully exercised</mark></u> over any member of a civilised community, against his will, <u>is to <mark>prevent harm to others</mark></u>.</p>
+              </div>
+            </div>
+            <Cap className="lp-cap-sm">Author, date, title and URL are filled in for you. The card goes straight into the doc you’re cutting into.</Cap>
+          </Panel>
+        </div>
+
+        {/* 3 — Docs */}
+        <div className="lp-chapter">
+          <span className="lp-chapter-no">II.</span>
+          <h2 className="lp-chapter-title">File it. <span>Read it.</span></h2>
+        </div>
+
+        <div className="lp-grid wide-left">
+          <Panel className="lp-doc" label="Speech docs">
+            <div className="doc-mock">
+              <div className="dm-ribbon">
+                {[['Pocket', 'F4'], ['Hat', 'F5'], ['Block', 'F6'], ['Tag', 'F7'], ['Cite', 'F8'], ['Underline', 'F9'], ['Emphasis', 'F10'], ['Highlight', 'F11']].map(([l, k]) => (
+                  <span key={l}><b>{l}</b><small>{k}</small></span>
+                ))}
+              </div>
+              <div className="dm-sheet">
+                <div className="dm-h1">1AC</div>
+                <div className="dm-h2">Framework</div>
+                <div className="dm-h3">Value: Justice</div>
+                <div className="dm-h4">Justice is the measure institutions answer to — laws included.</div>
+                <p className="dm-cite"><b>Rawls 71</b> — John Rawls, <em>A Theory of Justice</em>, 1971, §1</p>
+                <p className="dm-card"><u><mark>Justice is the first virtue of social institutions</mark></u>, as truth is of systems of thought.</p>
+              </div>
+            </div>
+          </Panel>
+          <Panel delay={0.1} className="lp-doc-caps" label="How speech docs work">
+            <Cap>Pockets, hats, blocks and tags — the way debaters already <span className="spot">organize</span>.</Cap>
+            <Cap className="lp-cap-sm">Function keys work as they do in Verbatim. Read time counts only what you highlighted. Send a block to your speech in one click.</Cap>
+            <Cap className="lp-cap-sm">Copy the doc into Word or Google Docs with its formatting intact.</Cap>
+            <Link to="/app/docs" className="btn"><FileText /> Open Speech Docs</Link>
+          </Panel>
+        </div>
+
+        {/* 4 — The round */}
+        <div className="lp-chapter" id="round">
+          <span className="lp-chapter-no">III.</span>
+          <h2 className="lp-chapter-title">The round.</h2>
+        </div>
+
+        <div className="lp-grid wide-right">
+          <Panel className="lp-timer" label="Round timer">
+            <div className="tm-face">
+              <span className="tm-speech"><i>Aff</i> 1AR</span>
+              <span className="tm-digits">3:47</span>
+              <Sfx className="sfx-tick">Tick</Sfx>
+            </div>
+            <div className="tm-prep"><span className="aff">Aff prep <b>2:10</b></span><span className="neg">Neg prep <b>4:00</b></span></div>
+            <Cap className="lp-cap-sm">Speech and prep clocks for Policy, LD and PF. They keep running while you work in other apps.</Cap>
+          </Panel>
+          <Panel delay={0.1} className="lp-flow" label="Flow">
+            <div className="flow-mock">
+              {[
+                ['AC', 'aff', ['V: Justice', 'C1: Dissent keeps law answerable', 'C2: Rights precede statute']],
+                ['NC', 'neg', ['V: Order', 'Rule of law collapses', 'Turn: C1 invites vigilantism']],
+                ['1AR', 'aff', ['Extend C1 — dropped', 'No link: civil = public + nonviolent', 'Turn outweighs']],
+                ['NR', 'neg', ['Collapse to order', '', 'Vigilantism > dissent']],
+              ].map(([label, side, cells]) => (
+                <div key={label as string} className={`fm-col ${side}`}>
+                  <b>{label}</b>
+                  {(cells as string[]).map((c, i) => (
+                    <span key={i} className={c.includes('dropped') ? 'extend' : ''}>{c}</span>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <Cap className="lp-cap-sm">Flow in aff and neg ink. Mark what was dropped and what was extended. Pull your tags from a speech doc onto the flow.</Cap>
+          </Panel>
+        </div>
+
+        {/* 5 — The question */}
+        <div className="lp-chapter">
+          <span className="lp-chapter-no">IV.</span>
+          <h2 className="lp-chapter-title">The question.</h2>
+        </div>
+
+        <Panel className="lp-socratic" label="Socratic Coach">
+          <div className="soc-scene">
+            <p className="soc-you caption">You: “Civil disobedience is justified whenever a law is unjust.”</p>
+            <p className="soc-balloon">Who decides that a law is unjust — and would you accept the same test from someone who <span className="spot">disagrees</span> with you?</p>
+            <span className="soc-label mono">Socratic Coach · example exchange</span>
+          </div>
+          <Cap className="lp-cap-sm">The coach asks before it tells. It finds your hidden premises and flags jumps from facts to values, but it never tells you who won.</Cap>
+        </Panel>
+
+        {/* 6 — Enter */}
+        <Panel className="lp-enter" label="Enter the Agora">
+          <AgoraMark size={96} className="lp-enter-mark" />
+          <h2 className="lp-enter-title">Enter the<br /><span>Agora.</span></h2>
+          <ul className="lp-facts">
+            <li><Globe /> Research browser with automatic citations</li>
+            <li><FileText /> Verbatim-style speech docs</li>
+            <li><TableProperties /> Flows and timers for Policy, LD and PF</li>
+            <li><BrainCircuit /> A Socratic coach, plus a library of verified texts</li>
+          </ul>
+          <Link to="/app" className="btn lg lp-enter-btn">Open the app <ArrowRight /></Link>
+          <p className="lp-fine">Free. No account. Your docs, flows and sources stay in this browser.</p>
+        </Panel>
+      </main>
+
+      <footer className="lp-foot">
+        <span className="lp-foot-brand"><AgoraMark size={20} /> Agora</span>
+        <span>Quotations come from verified translations and are cited. Summaries and interpretations are labelled as such.</span>
       </footer>
     </div>
   )

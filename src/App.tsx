@@ -8,6 +8,11 @@ const page = <T extends string>(loader: () => Promise<Record<T, ComponentType>>,
 
 const Landing = page(() => import('./landing/Landing'), 'Landing')
 const Home = page(() => import('./features/home/Home'), 'Home')
+const Browser = page(() => import('./features/browser/Browser'), 'Browser')
+const DocsIndex = page(() => import('./features/docs/DocsPage'), 'DocsIndex')
+const DocPage = page(() => import('./features/docs/DocsPage'), 'DocPage')
+const FlowIndex = page(() => import('./features/flow/FlowPage'), 'FlowIndex')
+const FlowPage = page(() => import('./features/flow/FlowPage'), 'FlowPage')
 const Library = page(() => import('./features/library/Library'), 'Library')
 const PhilosopherProfile = page(() => import('./features/library/PhilosopherProfile'), 'PhilosopherProfile')
 const ConceptsIndex = page(() => import('./features/concepts/ConceptsPage'), 'ConceptsIndex')
@@ -43,6 +48,11 @@ export default function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/app" element={<AppShell />}>
             <Route index element={<Home />} />
+            <Route path="browser" element={<Browser />} />
+            <Route path="docs" element={<DocsIndex />} />
+            <Route path="docs/:id" element={<DocPage />} />
+            <Route path="flow" element={<FlowIndex />} />
+            <Route path="flow/:id" element={<FlowPage />} />
             <Route path="library" element={<Library />} />
             <Route path="library/:id" element={<PhilosopherProfile />} />
             <Route path="concepts" element={<ConceptsIndex />} />

@@ -17,6 +17,9 @@ const KIND_VAR: Record<string, string> = {
   essay: 'var(--k-essay)',
   note: 'var(--k-note)',
   user: 'var(--k-user)',
+  source: 'var(--k-source)',
+  doc: 'var(--k-doc)',
+  flow: 'var(--k-doc)',
 }
 export const kindColor = (k: EntityKind | 'custom') => KIND_VAR[k] ?? 'var(--k-custom)'
 
