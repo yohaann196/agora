@@ -6,7 +6,7 @@ import { download } from '../docs/docExport'
 import './workspace.css'
 
 const SOURCES = [
-  ['wikipedia', 'Wikipedia', 'Encyclopedia articles, read inside Resolved'],
+  ['wikipedia', 'Wikipedia', 'Encyclopedia articles, read inside Debate Utils'],
   ['openalex', 'OpenAlex', 'Scholarly papers and abstracts'],
   ['openlibrary', 'Open Library', 'Books and editions'],
   ['agora', 'Framework library', 'Verified public-domain philosophy passages; works offline'],
@@ -20,13 +20,13 @@ export function SettingsPage() {
   const exportData = () => {
     const s = useOS.getState()
     const data = { exportedAt: new Date().toISOString(), docs: s.docs, flows: s.flows, sources: s.sources, following: s.following }
-    download('resolved-workspace.json', JSON.stringify(data, null, 2), 'application/json')
+    download('debate-utils-workspace.json', JSON.stringify(data, null, 2), 'application/json')
     toast({ title: 'Workspace exported', tone: 'success' })
   }
 
   return (
     <div className="page settings">
-      <PageHeader eyebrow="You" title="Settings" lede="Everything you make in Resolved is saved in this browser, on this device." />
+      <PageHeader eyebrow="You" title="Settings" lede="Everything you make in Debate Utils is saved in this browser, on this device." />
 
       <section className="set-sec">
         <div className="set-label"><h3>Profile</h3><p>Used to greet you on the dashboard.</p></div>
@@ -58,7 +58,7 @@ export function SettingsPage() {
       </section>
 
       <section className="set-sec">
-        <div className="set-label"><h3>Motion</h3><p>Reduce animation across Resolved.</p></div>
+        <div className="set-label"><h3>Motion</h3><p>Reduce animation across Debate Utils.</p></div>
         <div className="set-body">
           <label className="research-toggle" style={{ maxWidth: 360 }}>
             <input type="checkbox" checked={settings.reduceMotion} onChange={(e) => updateSettings({ reduceMotion: e.target.checked })} />

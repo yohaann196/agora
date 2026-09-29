@@ -125,6 +125,15 @@ const initialData = () => ({
   following: [] as string[],
 })
 
+const STORAGE_KEY = 'debate-utils:v1'
+// Work saved under the site's earlier name moves across once, so nothing is lost in the rename.
+try {
+  const legacy = localStorage.getItem('resolved:v1')
+  if (legacy && !localStorage.getItem(STORAGE_KEY)) localStorage.setItem(STORAGE_KEY, legacy)
+} catch {
+  // Storage can be unavailable (private mode); the store falls back to defaults.
+}
+
 export const useOS = create<State>()(
   persist(
     (set, get) => ({
@@ -232,7 +241,7 @@ export const useOS = create<State>()(
       deleteFlow: (id) => set((s) => ({ flows: s.flows.filter((f) => f.id !== id) })),
     }),
     {
-      name: 'resolved:v1',
+      name: STORAGE_KEY,
       version: 1,
       storage: createJSONStorage(() => localStorage),
       partialize: (s) => ({

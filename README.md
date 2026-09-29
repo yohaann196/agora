@@ -1,15 +1,14 @@
-# Resolved
+# Debate Utils
 
-**Prep like a champion. Compete like one.**
+**All of Yohaan's debate utilities, in one place.**
 
-Resolved is a debate platform for the whole season:
+Debate Utils gathers these tools:
+- **LD rankings:** the most comprehensive Lincoln–Douglas rankings around. Six seasons (2021–22 on), with national circuit and local tournaments in one Glicko-2 ranking and a career profile for every debater. PF, Policy, Parli, BQ and Congress are coming soon.
 - **Prep tools:** evidence search, a card cutter, contention and block vaults, and flow & timer.
-- **Competition:** the world’s most comprehensive **Lincoln–Douglas rankings**: six seasons (2021–22 on), national circuit and local tournaments in one Glicko-2 pool, and a career profile for every debater. PF, Policy, Parli, BQ and Congress are coming soon.
 - **Monthly Briefs** on the current resolution.
 
-The name is the first word of every resolution. The logo is its colon.
+Live at **https://yohaann196.github.io/debate-utils/** once GitHub Pages is on (see below).
 
-**tools should amplify thinking, not replace it.** 
 ---
 
 ## Running it
@@ -50,7 +49,7 @@ npm run dev        # http://localhost:5173
 
 The dashboard brings together your vaults, the debaters you follow, your flows and the current brief. `⌘K` searches debaters, schools, briefs and your files from anywhere.
 
-Your prep work is saved in your browser (`localStorage`, key `resolved:v1`). There are no accounts yet.
+Your prep work is saved in your browser (`localStorage`, key `debate-utils:v1`; work saved under the old `resolved:v1` key is moved over automatically). There are no accounts yet.
 
 ## How the rankings work
 
@@ -85,7 +84,7 @@ The pipeline lives in `src/rankings/` and `scripts/rankings/build.ts`. It follow
 - Neither source repository publishes a license. debate-rankings says to ask Shreeram Modi; the NSD data says to email info@nsdebatecamp.com. **Ask both before relying on the data long-term.**
 - Profiles show competition data only: name, school, location, results.
 - Every profile links to a [correction/removal issue form](.github/ISSUE_TEMPLATE/profile-correction.yml). Removed profiles go in `data/removals.json` (`{"ids": [...]}`).
-- Resolved does not scrape Tabroom. Its robots.txt disallows the results pages and API, which now require a login.
+- Debate Utils does not scrape Tabroom. Its robots.txt disallows the results pages and API, which now require a login.
 
 ## Publishing on GitHub Pages
 
@@ -94,7 +93,7 @@ The pipeline lives in `src/rankings/` and `scripts/rankings/build.ts`. It follow
 1. Go to **Settings → Pages** and set **Source** to **GitHub Actions**.
 2. Merge the working branch into `main`.
 
-To match the new name, rename the repository to `resolved` (**Settings → General**). The Pages base path follows the repository name automatically. If you rename it, also update `REPO_URL` in `src/site/links.ts` so correction links point to the right place.
+The repository is `yohaann196/debate-utils`, so the site is served from `/debate-utils/`. The Pages base path follows the repository name automatically. If you rename the repository again, update `REPO_URL` in `src/site/links.ts` so correction links point to the right place.
 
 ## Architecture
 
@@ -114,7 +113,7 @@ data/uploads/               local tournament results (see its README)
 ## Content rules
 
 - Cards are only ever the source's own words. Seeded cards come from verified public-domain translations, and a test checks that.
-- Briefs are Resolved's analysis and contain no quotations. Positions attributed to authors summarise the works in each issue's reading list.
+- Briefs are Debate Utils' own analysis and contain no quotations. Positions attributed to authors summarise the works in each issue's reading list.
 - Rankings are unofficial and not affiliated with the NSDA, Tabroom or any tournament.
 
 ## Stack

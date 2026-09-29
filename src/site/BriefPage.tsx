@@ -116,7 +116,7 @@ export function BriefPage() {
   useEffect(() => {
     if (!b || b.status !== 'published') return
     pushRecent({ kind: 'brief', id: b.id, label: b.title })
-    document.title = `${b.title} · Resolved Briefs`
+    document.title = `${b.title} · Debate Utils Briefs`
     const obs = new IntersectionObserver((es) => es.forEach((e) => e.isIntersecting && setActive(e.target.id)), { rootMargin: '-20% 0px -70% 0px' })
     b.sections.forEach((s) => {
       const el = document.getElementById(s.id)
@@ -161,7 +161,7 @@ export function BriefPage() {
           ))}
           <aside className="brief-note">
             <Info size={15} />
-            <p>This brief is Resolved’s analysis. It contains no quotations. Positions attributed to authors summarise works in the reading list; cut the originals before you read them in round.</p>
+            <p>This brief is Debate Utils’ own analysis. It contains no quotations. Positions attributed to authors summarise works in the reading list; cut the originals before you read them in round.</p>
           </aside>
         </article>
       </div>

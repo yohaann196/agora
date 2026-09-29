@@ -45,14 +45,14 @@ function LiveTop() {
 }
 
 const PREP = [
-  { icon: Globe, title: 'Evidence search', body: 'Search encyclopedias, scholarly papers and books in one place, plus every card you’ve already cut. Open a source and read it without leaving Resolved.', to: '/app/evidence' },
+  { icon: Globe, title: 'Evidence search', body: 'Search encyclopedias, scholarly papers and books in one place, plus every card you’ve already cut. Open a source and read it without leaving Debate Utils.', to: '/app/evidence' },
   { icon: Scissors, title: 'Card cutter', body: 'Select a passage, write a tag, cut. Author, date, title and URL are filled in for you, so every card is cited the moment it exists.', to: '/app/evidence' },
   { icon: FileStack, title: 'Contention vault', body: 'Build cases in Pockets, Hats, Blocks and Tags with Verbatim keys, underlining and highlighting. Read time counts only what you’ll actually read.', to: '/app/vaults?type=contention' },
   { icon: Shield, title: 'Block vault', body: 'Keep frontlines and framework blocks in one searchable place, and send any block into your speech with one click.', to: '/app/vaults?type=block' },
 ]
 
 const FAQ = [
-  { q: 'Is Resolved free?', a: 'Yes, everything is free during the beta: prep tools, rankings, profiles and monthly briefs.' },
+  { q: 'Is Debate Utils free?', a: 'Yes, everything is free during the beta: prep tools, rankings, profiles and monthly briefs.' },
   { q: 'Where do the rankings come from?', a: 'Public Tabroom round results. National-circuit results come from two open datasets (Shreeram Modi’s debate-rankings, and the NSD × DebateDrills × DebateLand rankings data), refreshed every week. Local tournaments are added on top. Everything is rated with Glicko-2 in one pool, and the methodology page explains every step.' },
   { q: 'Why is my local tournament missing?', a: 'Local results are being added tournament by tournament. Circuit rounds count double a local round, so a strong local record helps, and a circuit result helps more.' },
   { q: 'I have a profile. Can I correct or remove it?', a: 'Yes. Every profile has a link to request a correction or removal, and removal requests are honoured.' },
@@ -69,7 +69,7 @@ export function Landing() {
   const top = data?.debaters.find((d) => d.rank === 1)
 
   useEffect(() => {
-    document.title = 'Resolved — Debate prep, rankings & briefs'
+    document.title = 'Debate Utils — Yohaan’s debate tools, LD rankings & briefs'
     if (pathname === '/prep') document.getElementById('prep')?.scrollIntoView({ block: 'start' })
   }, [pathname])
 
@@ -79,14 +79,14 @@ export function Landing() {
         <div className="hero-copy">
           <Link to="/rankings" className="hero-eyebrow">The world’s most comprehensive LD rankings are live <ArrowRight size={13} /></Link>
           <h1 className="hero-title">
-            Prep like a champion.<br />
-            <span>Compete like one.</span>
+            All of Yohaan’s<br />
+            <span>debate utilities.</span>
           </h1>
           <p className="hero-lede">
-            Resolved is the debate platform for the whole season. Find evidence, cut cards, build contention and block vaults, flow your rounds, and see exactly where you stand in the biggest LD rankings ever built.
+            Rankings, research and prep in one place. Find evidence, cut cards, build contention and block vaults, flow your rounds, and see exactly where you stand in the biggest LD rankings ever built.
           </p>
           <div className="hero-ctas">
-            <Link to="/app" className="btn primary lg">Open Resolved <ArrowRight /></Link>
+            <Link to="/app" className="btn primary lg">Open the tools <ArrowRight /></Link>
             <Link to="/rankings" className="btn lg">See the LD rankings</Link>
           </div>
           <p className="hero-fine"><Check size={14} /> Free during the beta · no account needed</p>

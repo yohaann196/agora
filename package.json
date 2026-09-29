@@ -1,9 +1,9 @@
 {
-  "name": "resolved",
+  "name": "debate-utils",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Resolved: debate prep tools, Glicko-2 LD rankings with debater profiles, and monthly topic briefs.",
+  "description": "Debate Utils: all of Yohaan's debate utilities. Glicko-2 LD rankings with debater profiles, prep tools and monthly topic briefs.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit -p . && vite build",

@@ -1,4 +1,4 @@
-/** Events Resolved ranks. LD is live; the rest are on the way. */
+/** Events Debate Utils ranks. LD is live; the rest are on the way. */
 export const EVENTS = [
   { key: 'ld', label: 'Lincoln–Douglas', short: 'LD', live: true },
   { key: 'pf', label: 'Public Forum', short: 'PF', live: false },

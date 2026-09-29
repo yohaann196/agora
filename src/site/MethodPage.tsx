@@ -23,7 +23,7 @@ export function MethodPage() {
 
       <article className="article">
         <h2>Where the results come from</h2>
-        <p>Round-by-round results are public on Tabroom. Resolved combines every open collection of them we know of, and refreshes them every week:</p>
+        <p>Round-by-round results are public on Tabroom. Debate Utils combines every open collection of them we know of, and refreshes them every week:</p>
         <ul>
           {(idx?.sources ?? []).map((s) => (
             <li key={s.repo}>
@@ -32,7 +32,7 @@ export function MethodPage() {
           ))}
           <li>Local tournaments, added by hand from their public results.</li>
         </ul>
-        <p>When two sources have the same tournament, we keep one copy. Resolved’s code is an independent implementation: on the current season it reproduces the debate-rankings project’s published order with a rank correlation above 0.99.</p>
+        <p>When two sources have the same tournament, we keep one copy. Debate Utils’ code is an independent implementation: on the current season it reproduces the debate-rankings project’s published order with a rank correlation above 0.99.</p>
         {idx && (
           <p>
             Altogether that’s <b>{count(idx.totals.rounds)} decided rounds</b> from <b>{idx.totals.tournaments} tournaments</b> across <b>{idx.totals.seasons} seasons</b> ({idx.seasons.at(-1)!.label} to {idx.seasons[0].label}), and <b>{count(idx.totals.debaters)} debaters</b>.

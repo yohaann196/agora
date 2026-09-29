@@ -138,7 +138,7 @@ export function NewTabView({ go }: ViewProps) {
   )
 }
 
-/** For sources Resolved can’t load: books, PDFs, articles behind paywalls. */
+/** For sources Debate Utils can’t load: books, PDFs, articles behind paywalls. */
 export function ManualCut({ initial }: { initial?: Partial<SourceDraft> }) {
   const [f, setF] = useState({
     authors: initial?.authors?.join(', ') ?? '',
@@ -461,7 +461,7 @@ export function ExternalView({ uri }: ViewProps) {
       <div className="ext-bar caption">
         <FileQuestion size={15} />
         <span>
-          Many sites don’t allow being shown inside other apps. If <strong>{host}</strong> stays blank, open it in a new tab and paste the passage below — Resolved keeps the citation.
+          Many sites don’t allow being shown inside other apps. If <strong>{host}</strong> stays blank, open it in a new tab and paste the passage below — Debate Utils keeps the citation.
         </span>
         <a className="btn sm" href={uri} target="_blank" rel="noopener noreferrer"><ExternalLink /> Open in new tab</a>
       </div>
