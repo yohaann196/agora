@@ -151,7 +151,7 @@ export function Landing() {
             <div className="compete-features">
               {[
                 [Trophy, 'Glicko-2, not guesswork', 'Every decided round is a rated game. Upsets move you more, uncertainty is measured, and circuit rounds count double a local one.'],
-                [MapPin, 'Circuit and local, one pool', 'Switch between the national circuit and every tournament, or pick a state for its own leaderboard.'],
+                [MapPin, 'One ranking for everyone', 'National circuit and local tournaments rated together in one list. Pick a state for its own leaderboard.'],
                 [History, 'Whole careers', 'Seasons back to 2021–22, with rating history, placements and every round on each profile.'],
                 [Swords, 'Head-to-head odds', 'Pick any two debaters and see the win probability.'],
               ].map(([I, t, b]) => {

@@ -2,8 +2,6 @@
 
 /** Circuit tournaments come from the national-circuit datasets; local ones are uploaded. */
 export type Level = 'circuit' | 'local'
-/** Which rankings view a file holds: debaters with a circuit tournament, or everyone. */
-export type PoolView = 'circuit' | 'all'
 
 export interface TournamentMeta {
   slug: string
@@ -34,7 +32,7 @@ export interface RankedDebater {
   name: string
   school: string
   state: string
-  /** Null when unranked in this view (fewer than the minimum rounds, or outside the main pool). */
+  /** Null when unranked (fewer than the minimum rounds, or outside the national pool). */
   rank: number | null
   /** Rank a week before the most recent results, if ranked then. */
   prevRank: number | null
@@ -77,9 +75,6 @@ export interface RankingsFile {
   /** Season slug, e.g. "2026-27", and its label, "2026–27". */
   seasonSlug: string
   season: string
-  view: PoolView
-  /** Whether the season has local tournaments (and so an all-tournaments view). */
-  hasLocal: boolean
   period: Period
   periods: Period[]
   generatedAt: string
@@ -97,7 +92,6 @@ export interface SeasonInfo {
   circuitTournaments: number
   rounds: number
   debaters: number
-  hasLocal: boolean
   periods: Period[]
 }
 

@@ -23,7 +23,7 @@ export function Dashboard() {
   const sources = useOS((s) => s.sources)
   const following = useOS((s) => s.following)
   const target = useOS((s) => s.cutTarget)
-  const rankings = useRankings({ view: 'all' })
+  const rankings = useRankings()
   const navigate = useNavigate()
   const [q, setQ] = useState('')
 

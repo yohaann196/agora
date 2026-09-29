@@ -34,7 +34,7 @@ npm run dev        # http://localhost:5173
 ### Compete
 | Page | What it does |
 | --- | --- |
-| **LD rankings** `/rankings` | Every season since 2021–22. Switch between **National circuit** and **All tournaments**, pick a state for its own leaderboard, or pick a topic period. Rows show rank and movement over the last week, score, record, aff/neg/elim splits and a rating sparkline. You can search, sort and follow debaters. A **head-to-head predictor** gives the win probability between any two debaters. |
+| **LD rankings** `/rankings` | Every season since 2021–22, in **one ranking** that covers circuit and local tournaments. Pick a state for its own leaderboard, or pick a topic period. Rows show rank and movement over the last week, score, record, aff/neg/elim splits and a rating sparkline. You can search, sort and follow debaters. A **head-to-head predictor** gives the win probability between any two debaters. |
 | **Debater profiles** `/debaters/:id` | A whole career, season by season: rank, percentile, score, record, side splits and speaks. Also a rating-over-time chart with the ±2-deviation band, each tournament (Circuit or Local) with dates, records and placement, every round with a linked opponent, best wins, the predictor, and a correction/removal link. |
 | **Schools** `/schools/:slug` | A school's ranked debaters and aggregate record. |
 | **Methodology** `/rankings/method` | How the rankings work, in plain language, plus the corrections policy. |
@@ -68,11 +68,11 @@ The pipeline lives in `src/rankings/` and `scripts/rankings/build.ts`. It follow
    - Tournaments are rated in the order they finished (source order when dates are unknown). Within a round, all matches use pre-round ratings.
    - **Circuit rounds count double a local round.** Circuit rounds are weight-1 games and local rounds weight ½. This is a weighted Glicko-2 update, so all-circuit seasons match the reference method.
 4. **Ranking score = rating − 2 × deviation.** This keeps one strong weekend from outranking a sustained record.
-5. **One pool, two views.** *National circuit* lists debaters with a circuit tournament. *All tournaments* lists everyone, and a national rank there needs 4 decided rounds. Local groups that no chain of opponents links to the main pool get no national rank, but they appear on their state leaderboard.
+5. **One ranking.** Everyone is listed together. A rank needs 4 decided rounds. Local groups that no chain of opponents links to the main pool get no national rank, but they appear on their state leaderboard.
 6. **Elims** are labelled by name, by `Elims/` folder, or by bracket size working back from the last elim round. That handles closeouts and missing finals.
 7. **Output** (generated, not committed):
    - `public/data/ld/index.json`: seasons, totals and sources.
-   - `<season>/rankings-<period>[-all].json`: the rankings files.
+   - `<season>/rankings-<period>.json`: the rankings files.
    - `debaters/<id>.json`: one career file per debater.
 
 **Validation.**

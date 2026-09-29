@@ -63,12 +63,10 @@ export function MethodPage() {
           Rankings are sorted by <b>rating − 2 × deviation</b>. A debater who went 6–0 at one tournament has a high rating but a wide deviation, while a debater who has sustained a record across several tournaments has a tighter one. Subtracting two deviations asks: what rating are we about 95% sure this debater has at least? That keeps a single hot weekend from topping the list.
         </p>
 
-        <h2>National circuit, all tournaments and states</h2>
-        <p>Every tournament is rated in one pool, so a local result and a circuit result land on the same scale. The rankings page has two views of that pool:</p>
-        <ul>
-          <li><b>National circuit</b> lists debaters with at least one circuit tournament.</li>
-          <li><b>All tournaments</b> lists everyone. A national rank there needs at least {MIN_ROUNDS} decided rounds.</li>
-        </ul>
+        <h2>One ranking for everyone</h2>
+        <p>
+          There’s a single LD ranking. Every tournament, circuit and local, is rated in one pool, so a local result and a circuit result land on the same scale. A rank needs at least {MIN_ROUNDS} decided rounds; pick a state on the rankings page for its own leaderboard.
+        </p>
         <p>
           Ratings are only comparable between debaters who are linked by a chain of opponents. If a group of local debaters has never met anyone connected to the national pool, their ratings are on their own scale. They get no national rank, but they’re ranked on their state leaderboard.
         </p>

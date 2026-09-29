@@ -14,7 +14,7 @@ import type { DebaterSeason, FieldStats, Level, RankedDebater, RoundResult, Tour
 
 /** How much one decided round counts as a Glicko-2 game: circuit rounds count double a local round. */
 export const WEIGHT: Record<Level, number> = { circuit: 1, local: 0.5 }
-/** Decided rounds needed for a rank in the all-tournaments view. */
+/** Decided rounds needed for a rank. */
 export const MIN_ROUNDS = 4
 
 export interface RankingsConfig {

@@ -1,4 +1,4 @@
-import { ArrowDownWideNarrow, Globe2, Info, MapPin, Search, Star, Trophy } from 'lucide-react'
+import { ArrowDownWideNarrow, Info, Search, Star, Trophy } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
 import { Avatar, RankChange, pct } from '../components/ui/primitives'
@@ -49,8 +49,7 @@ export function RankingsPage() {
   const [params, setParams] = useSearchParams()
   const index = useIndex()
   const idx = index.state === 'ready' ? index.data : null
-  const view = params.get('view') === 'all' ? 'all' : 'circuit'
-  const load = useRankings({ season: params.get('season'), period: params.get('period'), view })
+  const load = useRankings({ season: params.get('season'), period: params.get('period') })
   const [allTourneys, setAllTourneys] = useState(false)
   const [q, setQ] = useState('')
   const [state, setState] = useState('')
@@ -127,10 +126,6 @@ export function RankingsPage() {
                 ))}
               </select>
             </label>
-            <div className="seg" role="tablist" aria-label="Tournaments included">
-              <button role="tab" aria-selected={view === 'circuit'} onClick={() => setParam('view', null)}><Trophy size={13} /> National circuit</button>
-              <button role="tab" aria-selected={view === 'all'} onClick={() => setParam('view', 'all')}><Globe2 size={13} /> All tournaments</button>
-            </div>
             {data.periods.length > 1 && (
               <div className="seg" role="tablist" aria-label="Period">
                 {data.periods.map((p) => (
@@ -141,13 +136,6 @@ export function RankingsPage() {
               </div>
             )}
           </div>
-          {view === 'all' && !data.hasLocal && (
-            <p className="rk-note"><MapPin size={14} /> Local tournaments for the {data.season} season are being added. Until they are, this view matches the national circuit.</p>
-          )}
-          {view === 'all' && data.hasLocal && (
-            <p className="rk-note"><Globe2 size={14} /> Every tournament, rated together. Circuit rounds count double a local round. A national rank needs {MIN_ROUNDS} decided rounds and at least one opponent linked to the national pool; pick a state for local leaderboards.</p>
-          )}
-
           {!q && !state && !onlyFollowing && sort === 'score' && <Podium top={data.debaters.filter((d) => d.rank !== null).slice(0, 3)} />}
 
           <div className="rk-layout">
@@ -229,7 +217,7 @@ export function RankingsPage() {
             </section>
 
             <aside className="rk-side">
-              <HeadToHead key={`${data.seasonSlug}-${data.view}`} debaters={data.debaters} />
+              <HeadToHead key={data.seasonSlug} debaters={data.debaters} />
               <section className="card field-card">
                 <h3><Trophy size={16} /> The field, {data.period.slug === 'season' ? `${data.season} season` : data.period.label}</h3>
                 <div className="fc-split">

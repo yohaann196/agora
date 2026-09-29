@@ -9,6 +9,7 @@ import type { RankedDebater, RoundResult } from '../rankings/types'
 import { useOS } from '../store'
 import { HeadToHead } from './HeadToHead'
 import { CORRECTIONS_URL } from './links'
+import { MIN_ROUNDS } from '../rankings/pipeline'
 import { dateRange } from './RankingsPage'
 import './profile.css'
 
@@ -22,20 +23,15 @@ export function DebaterPage() {
   const file = useDebater(id)
   const d = file.state === 'ready' ? file.data : null
   const season = d?.seasons.find((s) => s.season === params.get('season')) ?? d?.seasons[0] ?? null
-  const circuitLoad = useRankings({ season: season?.season ?? null })
-  const allLoad = useRankings({ season: season?.season ?? null, view: 'all' })
+  const load = useRankings({ season: season?.season ?? null })
   const [only, setOnly] = useState('')
   const following = useOS((s) => s.following.includes(id))
   const toggleFollow = useOS((s) => s.toggleFollow)
   const pushRecent = useOS((s) => s.pushRecent)
 
-  const circuit = circuitLoad.state === 'ready' && circuitLoad.data.seasonSlug === season?.season ? circuitLoad.data : null
-  const all = allLoad.state === 'ready' && allLoad.data.seasonSlug === season?.season ? allLoad.data : null
-  const meCircuit = circuit?.debaters.find((x) => x.id === id) ?? null
-  const meAll = all?.debaters.find((x) => x.id === id) ?? null
-  const me: RankedDebater | null = meCircuit ?? meAll
-  const list = meCircuit ? circuit : all
-  const byId = useMemo(() => new Map((all?.debaters ?? []).map((x) => [x.id, x])), [all])
+  const list = load.state === 'ready' && load.data.seasonSlug === season?.season ? load.data : null
+  const me: RankedDebater | null = list?.debaters.find((x) => x.id === id) ?? null
+  const byId = useMemo(() => new Map((list?.debaters ?? []).map((x) => [x.id, x])), [list])
 
   useEffect(() => {
     if (d) {
@@ -109,11 +105,10 @@ export function DebaterPage() {
 
       <div className="pf-stats">
         <div className="pf-stat big">
-          <span className="pf-k">{meCircuit ? 'Circuit rank' : 'National rank'}</span>
+          <span className="pf-k">National rank</span>
           <span className="pf-v">{me?.rank ? `#${me.rank}` : '—'}</span>
           <span className="pf-s">
-            {topPct !== null ? `Top ${topPct}% of ${rankedCount.toLocaleString()}` : 'Unranked'}
-            {meCircuit && all?.view === 'all' && meAll?.rank ? ` · #${meAll.rank} all tournaments` : ''}
+            {topPct !== null ? `Top ${topPct}% of ${rankedCount.toLocaleString()}` : `Unranked · needs ${MIN_ROUNDS} rounds`}
           </span>
         </div>
         <div className="pf-stat">
