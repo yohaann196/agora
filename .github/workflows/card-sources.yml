@@ -1,0 +1,22 @@
+# Temporary: finds and fetches open-access sources for the evidence library (the dev sandbox
+# can't reach the open web). Removed once the cards are cut.
+name: Card sources
+
+on:
+  push:
+    branches: [claude/philosophyos-web-app-f3ynd7]
+    paths: [scripts/cards/**, .github/workflows/card-sources.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    if: ${{ hashFiles('scripts/cards/sources.json') == '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/cards/discover.mjs
