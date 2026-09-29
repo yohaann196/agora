@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router'
 import { count, useIndex } from '../rankings/data'
 import { MIN_ROUNDS } from '../rankings/pipeline'
 import { CORRECTIONS_URL } from './links'
-import './briefs.css'
+import './article.css'
 
 export function MethodPage() {
   const { hash } = useLocation()

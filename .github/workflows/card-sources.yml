@@ -11,12 +11,12 @@ permissions:
   contents: read
 
 jobs:
-  discover:
-    if: ${{ hashFiles('scripts/cards/sources.json') == '' }}
+  run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node scripts/cards/discover.mjs
+      # Discovery first; once scripts/cards/sources.json lists the picks, fetch their full text.
+      - run: if [ -f scripts/cards/sources.json ]; then node scripts/cards/fetch.mjs; else node scripts/cards/discover.mjs; fi
