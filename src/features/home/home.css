@@ -76,3 +76,12 @@
 .ap-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 10px; font-size: 10px; color: var(--text-2); border-top: 1.5px dashed var(--line-2); }
 .ap-foot svg { width: 14px; height: 14px; color: var(--ink); transition: transform var(--dur-2); }
 .app-panel:hover .ap-foot svg { transform: translateX(4px); }
+
+/* ---------- Demo notice ---------- */
+.demo-banner { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; padding: 12px 16px; background: var(--marker); border: var(--stroke-heavy) solid var(--ink); box-shadow: var(--shadow-2); }
+.demo-banner-stamp { flex: none; font-family: var(--font-display); font-stretch: 75%; font-weight: 900; text-transform: uppercase; font-size: 18px; letter-spacing: 0.12em; color: var(--oxblood); border: 2.5px solid var(--oxblood); padding: 1px 8px 0; transform: rotate(-6deg); background: var(--paper-hi); }
+.demo-banner-text { flex: 1 1 320px; min-width: 0; font-family: var(--font-letter); font-size: 14px; line-height: 1.45; color: var(--ink); }
+.demo-banner-text b { text-transform: uppercase; }
+.demo-banner-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.demo-banner-actions .btn.ghost:hover { background: rgba(23, 22, 20, 0.08); }
+.demo-banner-q { font-size: var(--fs-12); font-weight: 700; color: var(--ink); }

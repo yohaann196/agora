@@ -38,7 +38,7 @@ export function StatusBar() {
   return (
     <footer className="statusbar" aria-label="Status bar">
       <span className="sb-item">
-        <span className="sb-led" aria-hidden /> Saved locally
+        <span className="sb-led" aria-hidden /> Demo · saved in this browser
       </span>
       {target && (
         <Link to={`/app/docs/${target.id}`} className="sb-item sb-hide-sm" title="Cards you cut go here">

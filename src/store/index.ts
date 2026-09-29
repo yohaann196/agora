@@ -128,6 +128,8 @@ export interface Settings {
   showSourceBadges: boolean
   sidebarCollapsed: boolean
   research: ResearchSettings
+  /** The Desk's "you're in the demo" banner. */
+  demoBannerDismissed: boolean
 }
 
 interface OSState {
@@ -283,6 +285,7 @@ const defaultSettings: Settings = {
   showSourceBadges: true,
   sidebarCollapsed: false,
   research: { wikipedia: true, openalex: true, openlibrary: true, agora: true, contactEmail: '' },
+  demoBannerDismissed: false,
 }
 
 export function emptySheet(format: FlowFormat, title: string): FlowSheet {
