@@ -43,6 +43,7 @@ mark.ox { background: var(--oxblood); color: var(--paper-hi); padding: 0 4px; }
 .lp-tag { font-family: var(--font-letter); font-size: clamp(17px, 1.8vw, 22px); line-height: 1.4; max-width: 30ch; text-transform: uppercase; font-weight: 600; }
 .ox-box { background: var(--oxblood); color: var(--paper-hi); padding: 0 6px; }
 .lp-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+.lp-demo-note { font-size: var(--fs-12); color: var(--text-1); max-width: 52ch; padding-left: 10px; border-left: 3px solid var(--oxblood); }
 .lp-later { background: var(--ochre-wash); background-image: var(--hatch); }
 .tab-pile { position: relative; height: 236px; margin: 4px 0; }
 .tab-pile span { position: absolute; left: calc(var(--i) * 9%); top: calc(var(--i) * 34px); width: 52%; min-width: 150px; padding: 8px 12px; border: var(--stroke-heavy) solid var(--ink); background: var(--paper-hi); box-shadow: 4px 4px 0 var(--ink); font-weight: 800; font-size: 13px; transform: rotate(calc((var(--i) - 2.5) * 1.6deg)); }

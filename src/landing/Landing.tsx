@@ -206,6 +206,9 @@ const jump = (id: string) => (e: MouseEvent) => {
 export function Landing() {
   useEffect(() => {
     document.title = 'Agora — Research & Debate'
+    // The app shell locks body scroll; the comic needs the page to scroll.
+    document.body.classList.add('landing-body')
+    return () => document.body.classList.remove('landing-body')
   }, [])
 
   return (
@@ -213,13 +216,13 @@ export function Landing() {
       <header className="lp-nav">
         <nav className="lp-nav-box" aria-label="Site">
           <a href="#research" onClick={jump('research')} className="lp-nav-link">Research</a>
-          <Link to="/app" className="lp-nav-mark" aria-label="Agora — open the app">
+          <Link to="/app" className="lp-nav-mark" aria-label="Agora — try the demo">
             <AgoraMark size={46} />
             <span>Agora</span>
           </Link>
           <a href="#round" onClick={jump('round')} className="lp-nav-link">Debate</a>
         </nav>
-        <Link to="/app" className="btn primary lp-nav-cta">Enter <ArrowRight /></Link>
+        <Link to="/app" className="btn primary lp-nav-cta">Try the demo <ArrowRight /></Link>
       </header>
 
       <main className="lp-book">
@@ -238,9 +241,10 @@ export function Landing() {
             <h1 className="lp-wordmark">Agora</h1>
             <p className="lp-tag">A research browser and speech-doc studio for <span className="ox-box">debaters</span> and philosophy students.</p>
             <div className="lp-ctas">
-              <Link to="/app" className="btn primary lg">Enter the Agora <ArrowRight /></Link>
+              <Link to="/app" className="btn primary lg">Enter the demo <ArrowRight /></Link>
               <a href="#research" onClick={jump('research')} className="btn lg">Read the comic</a>
             </div>
+            <p className="lp-demo-note">The demo opens a sample workspace: example docs, flows and sources. Anything you add is saved only in this browser.</p>
           </Panel>
           <Panel className="lp-later" delay={0.12} label="Twenty-four centuries later">
             <Cap>Twenty-four centuries later, the marketplace never <span className="spot">closes</span>.</Cap>
@@ -387,8 +391,8 @@ export function Landing() {
             <li><TableProperties /> Flows and timers for Policy, LD and PF</li>
             <li><BrainCircuit /> A Socratic coach, plus a library of verified texts</li>
           </ul>
-          <Link to="/app" className="btn lg lp-enter-btn">Open the app <ArrowRight /></Link>
-          <p className="lp-fine">Free. No account. Your docs, flows and sources stay in this browser.</p>
+          <Link to="/app" className="btn lg lp-enter-btn">Open the demo <ArrowRight /></Link>
+          <p className="lp-fine">Free. No account. The demo starts with sample files, and whatever you add stays in this browser.</p>
         </Panel>
       </main>
 

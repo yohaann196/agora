@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowRight, BrainCircuit, ChevronLeft, ChevronRight, FileText, Globe, Search, TableProperties } from 'lucide-react'
+import { ArrowRight, BrainCircuit, ChevronLeft, ChevronRight, FileText, Globe, RotateCcw, Search, TableProperties, X } from 'lucide-react'
 import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { EntityLink } from '../../components/ui/EntityLink'
@@ -53,6 +53,46 @@ function SkyQuote() {
         <button aria-label="Next quotation" onClick={() => step(1)}><ChevronRight size={14} /></button>
       </div>
     </div>
+  )
+}
+
+/** Says plainly that this is a sample workspace, not someone's real account. */
+function DemoBanner() {
+  const dismissed = useOS((s) => s.settings.demoBannerDismissed)
+  const [confirming, setConfirming] = useState(false)
+  if (dismissed) return null
+  const { updateSettings, resetWorkspace, toast } = useOS.getState()
+  return (
+    <section className="demo-banner" aria-label="Demo notice">
+      <span className="demo-banner-stamp" aria-hidden>Demo</span>
+      <p className="demo-banner-text">
+        <b>You’re in the demo.</b> The docs, flows, sources and debate activity here are samples. Edit anything you like; it saves only in this browser.
+      </p>
+      <div className="demo-banner-actions">
+        {confirming ? (
+          <>
+            <span className="demo-banner-q">Reset every sample and your changes?</span>
+            <button
+              className="btn sm spot"
+              onClick={() => {
+                resetWorkspace()
+                setConfirming(false)
+                toast({ title: 'Demo reset', body: 'The sample workspace is back to how it started.', tone: 'success' })
+              }}
+            >
+              Reset
+            </button>
+            <button className="btn sm ghost" onClick={() => setConfirming(false)}>Cancel</button>
+          </>
+        ) : (
+          <>
+            <button className="btn sm" onClick={() => setConfirming(true)}><RotateCcw /> Reset demo</button>
+            <Link to="/" className="btn sm ghost">Back to the comic</Link>
+          </>
+        )}
+        <button className="btn icon sm ghost" aria-label="Hide this notice" title="Hide this notice" onClick={() => updateSettings({ demoBannerDismissed: true })}><X /></button>
+      </div>
+    </section>
   )
 }
 
@@ -136,6 +176,7 @@ export function Home() {
 
   return (
     <div className="page home">
+      <DemoBanner />
       <section className="desk-hero">
         <div className="sky">
           <svg className="sky-clouds" viewBox="0 0 600 200" preserveAspectRatio="xMaxYMax slice" aria-hidden>

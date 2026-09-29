@@ -98,6 +98,11 @@ export function AppShell() {
   const viewport = useRef<HTMLDivElement>(null)
   useGlobalShortcuts()
 
+  // Make it plain, even in the tab title, that this is the demo workspace.
+  useEffect(() => {
+    document.title = 'Agora (demo)'
+  }, [])
+
   // Top-level app key: transitions happen between apps and entities, not on hash changes.
   const key = location.pathname
   useEffect(() => {

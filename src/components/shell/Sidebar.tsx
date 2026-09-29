@@ -50,8 +50,10 @@ export function Sidebar() {
         <NavLink to="/app" className="sidebar-brand" onClick={() => setOpen(false)} aria-label="Agora — Desk">
           <AgoraMark size={34} />
           <span className="brand-text">
-            <span className="brand-word">Agora</span>
-            <span className="brand-sub">Research &amp; Debate</span>
+            <span className="brand-word">
+              Agora <span className="demo-stamp" title="Demo workspace with sample data">Demo</span>
+            </span>
+            <span className="brand-sub">Demo workspace</span>
           </span>
         </NavLink>
         <nav className="sidebar-scroll">
