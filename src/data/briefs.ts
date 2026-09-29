@@ -1,7 +1,7 @@
 /**
- * Resolved Monthly Briefs.
+ * Debate Utils Monthly Briefs.
  *
- * Everything here is Resolved's own analysis. There are no quotations; where a
+ * Everything here is Debate Utils' own analysis. There are no quotations; where a
  * position is attributed to an author, it is a summary of a published work
  * listed in the reading list, so debaters can find and cut the original.
  */
@@ -64,7 +64,7 @@ export const briefs: Brief[] = [
         id: 'numbers',
         heading: 'The numbers so far',
         blocks: [
-          { p: 'These figures come straight from the decided rounds behind the Resolved LD rankings. They update whenever new tournament results are added.' },
+          { p: 'These figures come straight from the decided rounds behind the Debate Utils LD rankings. They update whenever new tournament results are added.' },
           { data: 'field' },
           {
             callout:
@@ -241,7 +241,7 @@ export const briefs: Brief[] = [
         id: 'reading',
         heading: 'Reading list',
         blocks: [
-          { p: 'Real, published works worth reading and cutting. Search any of them in Resolved’s Evidence tab to find the source and cut cards with the citation filled in.' },
+          { p: 'Real, published works worth reading and cutting. Search any of them in the Evidence tab to find the source and cut cards with the citation filled in.' },
           {
             reading: [
               { author: 'Nick Bostrom', title: 'Astronomical Waste: The Opportunity Cost of Delayed Technological Development', detail: 'Utilitas, 2003', why: 'The core aggregative argument for expansion, and for prioritising risk reduction.', search: 'Astronomical Waste Bostrom' },

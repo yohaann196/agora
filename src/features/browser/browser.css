@@ -145,7 +145,7 @@
 .cut-actions { display: flex; align-items: center; gap: 4px; }
 .snip-sfx { position: fixed; right: 380px; top: 160px; z-index: 310; font-family: var(--font-display); font-stretch: 62%; font-weight: 900; font-size: 64px; color: var(--marker); -webkit-text-stroke: 2.5px var(--ink); text-shadow: 5px 5px 0 var(--ink); pointer-events: none; letter-spacing: 0.02em; }
 
-/* Resolved: rounded surfaces */
+/* Rounded surfaces */
 .b-tab, .b-newtab { border-radius: 10px 10px 0 0; }
 .b-address, .b-target { border-radius: 999px; }
 .rail-doc, .rail-card, .src-row, .res-item, .manual-cut, .nt-sky, .cut-pop, .wiki-body figure { border-radius: var(--r-3); }

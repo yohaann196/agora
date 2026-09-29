@@ -1,19 +1,23 @@
-/** "Resolved:" — the word every resolution starts with. The colon is the mark. */
+/** Debate Utils: all of Yohaan's debate utilities. The mark is a "du" monogram. */
 export function Logo({ size = 22, mark = false }: { size?: number; mark?: boolean }) {
-  if (mark) return <ColonMark size={size} />
+  if (mark) return <BrandMark size={size} />
   return (
-    <span className="logo" style={{ fontSize: size }} aria-label="Resolved">
-      Resolved<span className="logo-colon" aria-hidden>:</span>
+    <span className="logo" style={{ fontSize: size }} aria-label="Debate Utils">
+      <BrandMark size={Math.round(size * 1.15)} />
+      <span aria-hidden>
+        Debate<span className="logo-accent">Utils</span>
+      </span>
     </span>
   )
 }
 
-export function ColonMark({ size = 28 }: { size?: number }) {
+export function BrandMark({ size = 28 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden className="colon-mark">
+    <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden className="brand-mark">
       <rect width="32" height="32" rx="8" fill="var(--ink)" />
-      <circle cx="16" cy="10.5" r="3.6" fill="var(--accent)" />
-      <circle cx="16" cy="21.5" r="3.6" fill="#fff" />
+      <text x="16" y="22.6" textAnchor="middle" fontFamily="var(--font-display)" fontWeight="850" fontSize="19.5" letterSpacing="-0.6" fill="#fff">
+        d<tspan fill="var(--accent-on-ink, #8f98ff)">u</tspan>
+      </text>
     </svg>
   )
 }

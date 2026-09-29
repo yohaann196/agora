@@ -17,7 +17,7 @@ export function Sidebar() {
     <>
       {open && <div className="scrim" onClick={() => setOpen(false)} />}
       <aside className={`sidebar ${open ? 'open' : ''}`} aria-label="Workspace">
-        <Link to="/" className="sidebar-brand" aria-label="Resolved home">
+        <Link to="/" className="sidebar-brand" aria-label="Debate Utils home">
           <Logo size={24} />
         </Link>
         <nav className="sidebar-scroll">

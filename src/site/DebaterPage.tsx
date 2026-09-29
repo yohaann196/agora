@@ -36,7 +36,7 @@ export function DebaterPage() {
   useEffect(() => {
     if (d) {
       pushRecent({ kind: 'debater', id: d.id, label: d.name })
-      document.title = `${d.name} — LD rankings · Resolved`
+      document.title = `${d.name} — LD rankings · Debate Utils`
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [d?.id])

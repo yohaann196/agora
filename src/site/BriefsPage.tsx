@@ -32,7 +32,7 @@ export function BriefsPage() {
   return (
     <div className="wrap briefs">
       <header className="pg-head briefs-head">
-        <div className="eyebrow"><Newspaper size={13} style={{ display: 'inline', verticalAlign: -2 }} /> Resolved Monthly Briefs</div>
+        <div className="eyebrow"><Newspaper size={13} style={{ display: 'inline', verticalAlign: -2 }} /> Debate Utils Monthly Briefs</div>
         <h1 className="pg-title">Know the topic before your first round.</h1>
         <p className="pg-lede">Every month, a brief on the current LD resolution: what it actually asks, the burdens, the strongest ground on both sides, the frameworks that fit, and a reading list you can cut from. Once the season starts, each issue adds what the results say is winning.</p>
       </header>
@@ -46,7 +46,7 @@ export function BriefsPage() {
               <li key={t}><Check size={15} /> {t}</li>
             ))}
           </ul>
-          <p className="dim">Free during the beta. New issues appear here and on your Resolved dashboard.</p>
+          <p className="dim">Free during the beta. New issues appear here and on your Debate Utils dashboard.</p>
         </aside>
       </div>
 

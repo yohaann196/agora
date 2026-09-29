@@ -26,7 +26,7 @@ export function SiteShell() {
     <div className="site">
       <header className="site-nav">
         <div className="site-nav-inner">
-          <Link to="/" className="site-brand" aria-label="Resolved home">
+          <Link to="/" className="site-brand" aria-label="Debate Utils home">
             <Logo size={24} />
           </Link>
           <nav className={`site-links ${open ? 'open' : ''}`} aria-label="Main">
@@ -38,7 +38,7 @@ export function SiteShell() {
             <button className="btn ghost site-search" onClick={() => useOS.getState().setPalette(true)} aria-label="Search debaters and schools">
               <Search /> <span>Search</span> <span className="kbd">⌘K</span>
             </button>
-            <Link to="/app" className="btn primary site-cta">Open Resolved</Link>
+            <Link to="/app" className="btn primary site-cta">Open the tools</Link>
           </nav>
           <button className="btn icon ghost site-menu" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
             {open ? <X /> : <Menu />}
@@ -52,7 +52,7 @@ export function SiteShell() {
         <div className="site-foot-inner">
           <div className="sf-brand">
             <Logo size={22} />
-            <p>Prep, rankings and monthly briefs for competitive debate.</p>
+            <p>All of Yohaan’s debate utilities in one place: prep tools, LD rankings and monthly briefs.</p>
           </div>
           <div className="sf-col">
             <b>Compete</b>
@@ -74,7 +74,7 @@ export function SiteShell() {
             <a href="https://github.com/skumar-ml/debate-rankings" target="_blank" rel="noreferrer">NSD × DebateDrills × DebateLand data</a>
           </div>
         </div>
-        <p className="sf-fine">Rankings are unofficial and computed from public Tabroom results. Resolved is not affiliated with the NSDA, Tabroom or any tournament.</p>
+        <p className="sf-fine">Rankings are unofficial and computed from public Tabroom results. Debate Utils is an independent project by Yohaan and is not affiliated with the NSDA, Tabroom or any tournament.</p>
       </footer>
       <CommandPalette />
       <Toasts />

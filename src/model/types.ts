@@ -1,4 +1,4 @@
-/** Resolved data model: evidence sources, vault docs, flows, and the framework library. */
+/** Debate Utils data model: evidence sources, vault docs, flows, and the framework library. */
 
 /* ---------------------------- Framework library ---------------------------- */
 
