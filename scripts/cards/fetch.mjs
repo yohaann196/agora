@@ -62,7 +62,82 @@ async function get(url) {
   return null
 }
 
+/** Byline and date from a page's meta tags (for cite lines). */
+function pageMeta(html) {
+  const metas = [...html.matchAll(/<meta\s+[^>]*(?:name|property)="([^"]+)"[^>]*content="([^"]*)"/gi)].map((m) => [m[1].toLowerCase(), decode(m[2])])
+  const pick = (...names) => metas.filter(([k]) => names.includes(k)).map(([, v]) => v)
+  const bios = [...html.matchAll(/class="[^"]*(?:author-bio|role|job-title|author-role)[^"]*"[^>]*>([\s\S]{0,400}?)<\//gi)].map((m) => text(m[1])).filter(Boolean)
+  const names = [...html.matchAll(/class="[^"]*author-name[^"]*"[^>]*>([\s\S]{0,200}?)<\//gi)].map((m) => text(m[1])).filter(Boolean)
+  return { authors: [...new Set([...pick('citation_author', 'author', 'article:author', 'dc.creator'), ...names])].slice(0, 6), date: pick('citation_publication_date', 'article:published_time', 'dc.date', 'citation_date')[0] ?? '', bios: [...new Set(bios)].slice(0, 6) }
+}
+
+async function epmcByDoi(doi) {
+  const r = await get(`https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=${encodeURIComponent(`DOI:"${doi}"`)}&format=json&resultType=lite`)
+  const hit = r && JSON.parse(r.buf.toString()).resultList?.result?.find((x) => x.pmcid)
+  return hit?.pmcid ?? null
+}
+
+async function epmcText(pmcid) {
+  const r = await get(`https://www.ebi.ac.uk/europepmc/webservices/rest/${pmcid}/fullTextXML`)
+  if (!r) return null
+  const xml = r.buf.toString()
+  const front = xml.slice(0, Math.max(0, xml.indexOf('<body')))
+  const affs = [...front.matchAll(/<aff\b[^>]*>([\s\S]*?)<\/aff>/g)].map((m) => text(m[1])).slice(0, 6)
+  if (affs.length) console.log(`@@META ${JSON.stringify({ affiliations: affs })}`)
+  const body = xml.slice(Math.max(0, xml.indexOf('<body')))
+  const paras = [...body.matchAll(/<(p|title)\b[^>]*>([\s\S]*?)<\/\1>/g)].map((m) => (m[1] === 'title' ? `## ${text(m[2])}` : text(m[2]))).filter((p) => p.length > 1)
+  return paras.length > 5 ? paras : null
+}
+
+const usable = (paras) => paras && paras.reduce((n, p) => n + p.length, 0) > 3000
+
+/** Try every open copy of an OpenAlex work: PMC full text, then each OA location. */
+async function viaOpenAlex(src) {
+  const r = await get(`https://api.openalex.org/works/${src.oa}?mailto=noreply@example.com`)
+  if (!r) return null
+  const w = JSON.parse(r.buf.toString())
+  const doi = (w.doi ?? '').replace('https://doi.org/', '')
+  console.log(`@@META ${JSON.stringify({ doi, authors: (w.authorships ?? []).slice(0, 6).map((a) => ({ name: a.author?.display_name, inst: (a.institutions ?? []).map((i) => i.display_name).slice(0, 2) })), date: w.publication_date, venue: w.primary_location?.source?.display_name })}`)
+  const pmcid = w.ids?.pmcid?.split('/').pop() || (doi && (await epmcByDoi(doi)))
+  if (pmcid) {
+    const t = await epmcText(pmcid.startsWith('PMC') ? pmcid : `PMC${pmcid}`)
+    if (usable(t)) return t
+  }
+  const urls = [...new Set((w.locations ?? []).flatMap((l) => [l.pdf_url, l.landing_page_url]).filter(Boolean))].filter((u) => u !== src.url)
+  for (const u of urls) {
+    const arxiv = u.match(/arxiv\.org\/(?:abs|pdf)\/([\d.]+)/)
+    const t = await fromUrl(arxiv ? `https://arxiv.org/pdf/${arxiv[1]}` : u.replace('philpapers.org/archive', 'philarchive.org/archive'), src)
+    if (usable(t)) {
+      console.log(`@@META ${JSON.stringify({ via: u })}`)
+      return t
+    }
+  }
+  return null
+}
+
+async function fromUrl(url, src) {
+  const r = await get(url)
+  if (!r) return null
+  if (r.type.includes('pdf') || r.buf.subarray(0, 5).toString() === '%PDF-') return pdfParagraphs(r.buf)
+  const html = r.buf.toString()
+  const scope = src.kind === 'conv' ? /itemprop="articleBody"|class="[^"]*content-body/ : src.scope ? new RegExp(src.scope) : null
+  return htmlParagraphs(html, scope)
+}
+
 async function paragraphs(src) {
+  if (src.metaOnly) {
+    const r = await get(src.url)
+    if (r) console.log(`@@META ${JSON.stringify(pageMeta(r.buf.toString()))}`)
+    return []
+  }
+  if (src.oa) {
+    const t = await viaOpenAlex(src)
+    if (t) return t
+  }
+  if (src.url && /philpapers\.org\/archive/.test(src.url)) {
+    const t = await fromUrl(src.url.replace('philpapers.org', 'philarchive.org'), src)
+    if (usable(t)) return t
+  }
   if (src.kind === 'epmc') {
     const r = await get(`https://www.ebi.ac.uk/europepmc/webservices/rest/${src.id}/fullTextXML`)
     if (!r) return null
@@ -81,6 +156,7 @@ async function paragraphs(src) {
   if (!r) return null
   if (r.type.includes('pdf') || r.buf.subarray(0, 5).toString() === '%PDF-') return pdfParagraphs(r.buf)
   const html = r.buf.toString()
+  if (src.kind === 'conv' || src.kind === 'html') console.log(`@@META ${JSON.stringify(pageMeta(html))}`)
   const scope = src.kind === 'conv' ? /itemprop="articleBody"|class="[^"]*content-body/ : src.scope ? new RegExp(src.scope) : null
   return htmlParagraphs(html, scope)
 }

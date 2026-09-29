@@ -1,15 +1,5 @@
 [
 {
-"key": "A1-000",
-"c": "A1",
-"kind": "html",
-"url": "https://nickbostrom.com/existential/risks",
-"authors": "Nick Bostrom",
-"year": "2002",
-"title": "Existential Risks: Analyzing Human Extinction Scenarios and Related Hazards",
-"venue": "Journal of Evolution and Technology"
-},
-{
 "key": "A1-001",
 "c": "A1",
 "authors": "Andrew E. Snyder-Beattie; Toby Ord; Michael B. Bonsall",
@@ -18,7 +8,8 @@
 "venue": "Scientific Reports",
 "license": "cc-by",
 "url": "https://www.nature.com/articles/s41598-019-47540-7.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W2964505596"
 },
 {
 "key": "A1-002",
@@ -29,7 +20,8 @@
 "venue": "Global Policy",
 "license": "cc-by-nc",
 "url": "https://doi.org/10.1111/1758-5899.12786",
-"kind": "html"
+"kind": "html",
+"oa": "W3000969398"
 },
 {
 "key": "A1-003",
@@ -40,18 +32,8 @@
 "venue": "Journal of the American Philosophical Association",
 "license": "",
 "url": "https://philpapers.org/archive/GOTVAP.pdf",
-"kind": "pdf"
-},
-{
-"key": "A1-004",
-"c": "A1",
-"authors": "Luca Lo Sapio",
-"year": "2026",
-"title": "Positive Cosmic Redundancy Principle and the Moral Value of Becoming a Multiplanetary Species",
-"venue": "Journal of Ethics and Emerging Technologies",
-"license": "cc-by",
-"url": "https://jeet.ieet.org/index.php/home/article/download/205/176",
-"kind": "html"
+"kind": "pdf",
+"oa": "W2974192409"
 },
 {
 "key": "A1-005",
@@ -62,7 +44,8 @@
 "venue": "Nature Communications",
 "license": "cc-by",
 "url": "https://www.nature.com/articles/s41467-022-35561-2.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W4322739303"
 },
 {
 "key": "A1-006",
@@ -73,30 +56,8 @@
 "venue": "Nature",
 "license": "cc-by",
 "url": "https://www.nature.com/articles/s41586-023-05810-5.pdf",
-"kind": "pdf"
-},
-{
-"key": "A1-007",
-"c": "A1",
-"authors": "Carson Ezell; Alexandre Lazarian; Abraham Loeb",
-"year": "2022",
-"title": "A Lunar Backup Record of Humanity",
-"venue": "arXiv",
-"kind": "arxiv",
-"id": "2209.11155",
-"url": "https://arxiv.org/abs/2209.11155"
-},
-{
-"key": "A1-008",
-"c": "A1",
-"authors": "Kemp L, Xu C, Depledge J, Ebi KL, Gibbins G, Kohler TA, Rockstr\u00f6m J, Scheffer M,",
-"year": "2022",
-"title": "Climate Endgame: Exploring catastrophic climate change scenarios.",
-"venue": "Proceedings of the National Academy of Sciences of the United States of America",
-"license": "cc by",
-"kind": "epmc",
-"id": "PMC9407216",
-"url": "https://europepmc.org/article/PMC/PMC9407216"
+"kind": "pdf",
+"oa": "W4322757054"
 },
 {
 "key": "A1-009",
@@ -107,31 +68,8 @@
 "venue": "Science and Engineering Ethics",
 "license": "",
 "url": "https://philpapers.org/archive/JEBERE.pdf",
-"kind": "pdf"
-},
-{
-"key": "A1-010",
-"c": "A1",
-"authors": "Schubert S, Caviola L, Faber NS.",
-"year": "2019",
-"title": "The Psychology of Existential Risk: Moral Judgments about Human Extinction.",
-"venue": "Scientific reports",
-"license": "cc by",
-"kind": "epmc",
-"id": "PMC6803761",
-"url": "https://europepmc.org/article/PMC/PMC6803761"
-},
-{
-"key": "A1-011",
-"c": "A1",
-"authors": "Lopez JV, Peixoto RS, Rosado AS.",
-"year": "2019",
-"title": "Inevitable future: space colonization beyond Earth with microbes first.",
-"venue": "FEMS microbiology ecology",
-"license": "cc by-nc",
-"kind": "epmc",
-"id": "PMC6748721",
-"url": "https://europepmc.org/article/PMC/PMC6748721"
+"kind": "pdf",
+"oa": "W1979466323"
 },
 {
 "key": "A1-012",
@@ -142,7 +80,8 @@
 "venue": "Space Policy",
 "license": "cc-by",
 "url": "https://doi.org/10.1016/j.spacepol.2023.101590",
-"kind": "html"
+"kind": "html",
+"oa": "W4387783794"
 },
 {
 "key": "A1-013",
@@ -153,7 +92,8 @@
 "venue": "The Planetary Science Journal",
 "license": "cc-by",
 "url": "https://iopscience.iop.org/article/10.3847/PSJ/ac063e/pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W3193753839"
 },
 {
 "key": "A1-014",
@@ -164,37 +104,8 @@
 "venue": "Acta Astronautica",
 "license": "cc-by-nc-nd",
 "url": "https://doi.org/10.1016/j.actaastro.2023.12.049",
-"kind": "html"
-},
-{
-"key": "A1-015",
-"c": "A1",
-"authors": "Millett P, Snyder-Beattie A.",
-"year": "2017",
-"title": "Existential Risk and Cost-Effective Biosecurity.",
-"venue": "Health security",
-"license": "cc by",
-"kind": "epmc",
-"id": "PMC5576214",
-"url": "https://europepmc.org/article/PMC/PMC5576214"
-},
-{
-"key": "A1-016",
-"c": "A1",
-"kind": "wiki",
-"id": "Space_colonization",
-"title": "Space colonization",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Space_colonization"
-},
-{
-"key": "A1-017",
-"c": "A1",
-"kind": "wiki",
-"id": "Asteroid_impact_avoidance",
-"title": "Asteroid impact avoidance",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Asteroid_impact_avoidance"
+"kind": "html",
+"oa": "W4390349842"
 },
 {
 "key": "A1-018",
@@ -202,7 +113,8 @@
 "title": "NASA is crashing a spacecraft into an asteroid to test a plan that could one day save Earth from catastrophe",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/nasa-is-crashing-a-spacecraft-into-an-asteroid-to-test-a-plan-that-could-one-day-save-earth-from-catastrophe-190888"
+"url": "https://theconversation.com/nasa-is-crashing-a-spacecraft-into-an-asteroid-to-test-a-plan-that-could-one-day-save-earth-from-catastrophe-190888",
+"metaOnly": true
 },
 {
 "key": "A1-019",
@@ -210,37 +122,8 @@
 "title": "If Earth falls, will interstellar space travel be our salvation?",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/if-earth-falls-will-interstellar-space-travel-be-our-salvation-35523"
-},
-{
-"key": "A2-020",
-"c": "A2",
-"kind": "html",
-"url": "https://nickbostrom.com/papers/astronomical-waste/",
-"authors": "Nick Bostrom",
-"year": "2003",
-"title": "Astronomical Waste: The Opportunity Cost of Delayed Technological Development",
-"venue": "Utilitas"
-},
-{
-"key": "A2-021",
-"c": "A2",
-"kind": "pdf",
-"url": "https://existential-risk.com/concept.pdf",
-"authors": "Nick Bostrom",
-"year": "2013",
-"title": "Existential Risk Prevention as Global Priority",
-"venue": "Global Policy"
-},
-{
-"key": "A2-022",
-"c": "A2",
-"kind": "pdf",
-"url": "https://globalprioritiesinstitute.org/wp-content/uploads/The-Case-for-Strong-Longtermism-GPI-Working-Paper-June-2021-2-2.pdf",
-"authors": "Hilary Greaves; William MacAskill",
-"year": "2021",
-"title": "The Case for Strong Longtermism",
-"venue": "Global Priorities Institute Working Paper"
+"url": "https://theconversation.com/if-earth-falls-will-interstellar-space-travel-be-our-salvation-35523",
+"metaOnly": true
 },
 {
 "key": "A2-023",
@@ -261,7 +144,8 @@
 "venue": "Rutgers University Community Repository (Rutgers University)",
 "license": "",
 "url": "https://doi.org/10.7282/t35m649t",
-"kind": "html"
+"kind": "html",
+"oa": "W2335985798"
 },
 {
 "key": "A2-025",
@@ -272,40 +156,8 @@
 "venue": "The Monist",
 "license": "cc-by-nc",
 "url": "https://academic.oup.com/monist/article-pdf/107/2/157/56983323/onae005.pdf",
-"kind": "pdf"
-},
-{
-"key": "A2-026",
-"c": "A2",
-"authors": "Patrick Kaczmarek",
-"year": "2018",
-"title": "A fairness-based astronomical waste argument",
-"venue": "Enlighten: Theses (The University of Glasgow)",
-"license": "",
-"url": "https://theses.gla.ac.uk/8889/1/2107KaczmarekPhd.pdf",
-"kind": "pdf"
-},
-{
-"key": "A2-027",
-"c": "A2",
-"authors": "Persson I, Savulescu J.",
-"year": "2024",
-"title": "On the prospects of longtermism.",
-"venue": "Bioethics",
-"license": "cc by",
-"kind": "epmc",
-"id": "PMC11497828",
-"url": "https://europepmc.org/article/PMC/PMC11497828"
-},
-{
-"key": "A2-028",
-"c": "A2",
-"authors": "Cook, Stephen A.; Armstrong, Robert C., Jr.",
-"year": "2007",
-"title": "Why We Explore: The Value of Space Exploration for Future Generations",
-"venue": "NASA Technical Reports Server (EXTENDED_ABSTRACT)",
-"url": "https://ntrs.nasa.gov/api/citations/20070036793/downloads/20070036793.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W4392851295"
 },
 {
 "key": "A2-029",
@@ -313,7 +165,8 @@
 "title": "Longtermism \u2013 why the million&#8209;year philosophy can\u2019t be ignored",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/longtermism-why-the-million-year-philosophy-cant-be-ignored-193538"
+"url": "https://theconversation.com/longtermism-why-the-million-year-philosophy-cant-be-ignored-193538",
+"metaOnly": true
 },
 {
 "key": "A2-030",
@@ -321,7 +174,8 @@
 "title": "What do we owe future generations? And what can we do to make their world a better place?",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/what-do-we-owe-future-generations-and-what-can-we-do-to-make-their-world-a-better-place-189591"
+"url": "https://theconversation.com/what-do-we-owe-future-generations-and-what-can-we-do-to-make-their-world-a-better-place-189591",
+"metaOnly": true
 },
 {
 "key": "A2-031",
@@ -332,7 +186,8 @@
 "venue": "Futures",
 "license": "cc-by",
 "url": "https://www.sciencedirect.com/science/article/pii/S0016328721000641/pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W3158962138"
 },
 {
 "key": "A2-032",
@@ -343,34 +198,8 @@
 "venue": "The Philosophical Forum",
 "license": "",
 "url": "https://papers.ssrn.com/sol3/Delivery.cfm/SSRN_ID2183662_code1854979.pdf?abstractid=2118936&mirid=1&type=2",
-"kind": "pdf"
-},
-{
-"key": "A2-033",
-"c": "A2",
-"kind": "wiki",
-"id": "Longtermism",
-"title": "Longtermism",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Longtermism"
-},
-{
-"key": "A2-034",
-"c": "A2",
-"kind": "wiki",
-"id": "Global_catastrophic_risk",
-"title": "Global catastrophic risk",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Global_catastrophic_risk"
-},
-{
-"key": "A2-035",
-"c": "A2",
-"kind": "wiki",
-"id": "Intergenerational_equity",
-"title": "Intergenerational equity",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Intergenerational_equity"
+"kind": "pdf",
+"oa": "W2140943117"
 },
 {
 "key": "A2-036",
@@ -378,7 +207,8 @@
 "title": "Americans care more about future generations than many think \u2013 and that gap could matter for policy",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/americans-care-more-about-future-generations-than-many-think-and-that-gap-could-matter-for-policy-280315"
+"url": "https://theconversation.com/americans-care-more-about-future-generations-than-many-think-and-that-gap-could-matter-for-policy-280315",
+"metaOnly": true
 },
 {
 "key": "A3-037",
@@ -389,40 +219,8 @@
 "venue": "Acta Astronautica",
 "license": "cc-by",
 "url": "https://figshare.com/articles/thesis/The_technical_and_economic_feasibility_of_mining_the_near-earth_asteroids/27650004",
-"kind": "html"
-},
-{
-"key": "A3-038",
-"c": "A3",
-"authors": "Andreas Makoto Hein; Robert Matheson; Dan Fries",
-"year": "2019",
-"title": "A techno-economic analysis of asteroid mining",
-"venue": "Acta Astronautica",
-"license": "",
-"url": "https://arxiv.org/pdf/1810.03836",
-"kind": "pdf"
-},
-{
-"key": "A3-039",
-"c": "A3",
-"authors": "Philip T. Metzger",
-"year": "2016",
-"title": "Space development and space science together, an historic opportunity",
-"venue": "Space Policy",
-"license": "",
-"url": "https://arxiv.org/pdf/1609.00737",
-"kind": "pdf"
-},
-{
-"key": "A3-040",
-"c": "A3",
-"authors": "Ian Crawford",
-"year": "2014",
-"title": "Lunar Resources: A Review",
-"venue": "BIROn (Birkbeck, University of London)",
-"license": "",
-"url": "https://arxiv.org/pdf/1410.6865",
-"kind": "pdf"
+"kind": "html",
+"oa": "W2029104948"
 },
 {
 "key": "A3-041",
@@ -433,7 +231,8 @@
 "venue": "Proceedings of the National Academy of Sciences",
 "license": "cc-by-nc-nd",
 "url": "https://doi.org/10.1073/pnas.2221345120",
-"kind": "html"
+"kind": "html",
+"oa": "W4387665094"
 },
 {
 "key": "A3-042",
@@ -444,7 +243,8 @@
 "venue": "Heliyon",
 "license": "cc-by",
 "url": "https://doi.org/10.1016/j.heliyon.2024.e29996",
-"kind": "html"
+"kind": "html",
+"oa": "W4395071175"
 },
 {
 "key": "A3-043",
@@ -455,18 +255,8 @@
 "venue": "Joule",
 "license": "cc-by-nc-nd",
 "url": "https://www.cell.com/action/showPdf?pii=S2542435125001096",
-"kind": "pdf"
-},
-{
-"key": "A3-044",
-"c": "A3",
-"authors": "John C. Mankins",
-"year": "2012",
-"title": "SPS-ALPHA: The First Practical Solar Power Satellite via Arbitrarily Large Phased Array",
-"venue": "NASA STI Repository (National Aeronautics and Space Administration)",
-"license": "",
-"url": "https://ntrs.nasa.gov/api/citations/20190002466/downloads/20190002466.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W4410334025"
 },
 {
 "key": "A3-045",
@@ -477,7 +267,8 @@
 "venue": "Nature Communications",
 "license": "cc-by",
 "url": "https://www.nature.com/articles/s41467-023-37070-2.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W4328089227"
 },
 {
 "key": "A3-046",
@@ -488,28 +279,8 @@
 "venue": "Space Science & Technology",
 "license": "cc-by",
 "url": "https://spj.science.org/doi/pdf/10.34133/space.0037?download=true",
-"kind": "pdf"
-},
-{
-"key": "A3-047",
-"c": "A3",
-"authors": "Pittman, Robert B.; Rasky, Daniel J.",
-"year": "2017",
-"title": "DEEP SPACE INDUSTRIALIZATION: Key To Sustainable Exploration, Development and Settlement of the Solar System",
-"venue": "NASA Technical Reports Server (CONFERENCE_PAPER)",
-"url": "https://ntrs.nasa.gov/api/citations/20200000424/downloads/20200000424.pdf",
-"kind": "pdf"
-},
-{
-"key": "A3-048",
-"c": "A3",
-"authors": "Daniel D. Mazanek; Raymond G. Merrill; John Brophy",
-"year": "2015",
-"title": "Asteroid Redirect Mission concept: A bold approach for utilizing space resources",
-"venue": "Acta Astronautica",
-"license": "",
-"url": "https://ntrs.nasa.gov/api/citations/20150001246/downloads/20150001246.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W4375861854"
 },
 {
 "key": "A3-049",
@@ -517,7 +288,8 @@
 "title": "Why we should mine the moon",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/why-we-should-mine-the-moon-34285"
+"url": "https://theconversation.com/why-we-should-mine-the-moon-34285",
+"metaOnly": true
 },
 {
 "key": "A3-050",
@@ -525,7 +297,8 @@
 "title": "Mining asteroids could unlock untold wealth \u2013 here\u2019s how to get started",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/mining-asteroids-could-unlock-untold-wealth-heres-how-to-get-started-95675"
+"url": "https://theconversation.com/mining-asteroids-could-unlock-untold-wealth-heres-how-to-get-started-95675",
+"metaOnly": true
 },
 {
 "key": "A3-051",
@@ -533,7 +306,8 @@
 "title": "Buy, sell, lift&#8209;off: the global economy is going interplanetary",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/buy-sell-lift-off-the-global-economy-is-going-interplanetary-13222"
+"url": "https://theconversation.com/buy-sell-lift-off-the-global-economy-is-going-interplanetary-13222",
+"metaOnly": true
 },
 {
 "key": "A3-052",
@@ -541,25 +315,8 @@
 "title": "Space mining is not science fiction, and Canada could figure prominently",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/space-mining-is-not-science-fiction-and-canada-could-figure-prominently-155855"
-},
-{
-"key": "A3-053",
-"c": "A3",
-"kind": "wiki",
-"id": "Asteroid_mining",
-"title": "Asteroid mining",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Asteroid_mining"
-},
-{
-"key": "A3-054",
-"c": "A3",
-"kind": "wiki",
-"id": "Space-based_solar_power",
-"title": "Space-based solar power",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Space-based_solar_power"
+"url": "https://theconversation.com/space-mining-is-not-science-fiction-and-canada-could-figure-prominently-155855",
+"metaOnly": true
 },
 {
 "key": "A4-055",
@@ -570,29 +327,8 @@
 "venue": "The Journal of Economic Perspectives",
 "license": "",
 "url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.32.2.173",
-"kind": "pdf"
-},
-{
-"key": "A4-056",
-"c": "A4",
-"authors": "Ian A. Crawford",
-"year": "2016",
-"title": "The long-term scientific benefits of a space economy",
-"venue": "arXiv",
-"kind": "arxiv",
-"id": "1607.04901",
-"url": "https://arxiv.org/abs/1607.04901"
-},
-{
-"key": "A4-057",
-"c": "A4",
-"authors": "F. Fiore; M. Elvis",
-"year": "2025",
-"title": "Space science &amp; the space economy",
-"venue": "arXiv",
-"kind": "arxiv",
-"id": "2502.20922",
-"url": "https://arxiv.org/abs/2502.20922"
+"kind": "pdf",
+"oa": "W2802077611"
 },
 {
 "key": "A4-058",
@@ -603,7 +339,8 @@
 "venue": "OECD science, technology and industry policy papers",
 "license": "other-oa",
 "url": "https://www.oecd-ilibrary.org/deliver/0e78ff9f-en.pdf?itemId=%2Fcontent%2Fpaper%2F0e78ff9f-en&mimeType=pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W3185232594"
 },
 {
 "key": "A4-059",
@@ -614,7 +351,8 @@
 "venue": "Acta Astronautica",
 "license": "cc-by-nc-nd",
 "url": "https://doi.org/10.1016/j.actaastro.2024.03.064",
-"kind": "html"
+"kind": "html",
+"oa": "W4393385901"
 },
 {
 "key": "A4-060",
@@ -625,57 +363,8 @@
 "venue": "Acta Astronautica",
 "license": "cc-by",
 "url": "https://figshare.com/articles/journal_contribution/Space_and_open_innovation_potential_limitations_and_conditions_of_success/23418227",
-"kind": "html"
-},
-{
-"key": "A4-061",
-"c": "A4",
-"kind": "pdf",
-"url": "https://www.nasa.gov/wp-content/uploads/2015/01/benefits-stemming-from-space-exploration-2013-tagged.pdf",
-"authors": "International Space Exploration Coordination Group",
-"year": "2013",
-"title": "Benefits Stemming from Space Exploration",
-"venue": "ISECG report (NASA)"
-},
-{
-"key": "A4-062",
-"c": "A4",
-"authors": "Garud, Sumedha",
-"year": "2013",
-"title": "NASA Spinoff Article: Mars Technologies Spawn Durable Wind Turbines",
-"venue": "NASA Technical Reports Server (OTHER)",
-"url": "https://ntrs.nasa.gov/api/citations/20140011207/downloads/20140011207.pdf",
-"kind": "pdf"
-},
-{
-"key": "A4-063",
-"c": "A4",
-"authors": "Garud, Sumedha",
-"year": "2013",
-"title": "NASA Spinoff Article: Heat Shield Paves the Way for Commercial Space",
-"venue": "NASA Technical Reports Server (OTHER)",
-"url": "https://ntrs.nasa.gov/api/citations/20140011205/downloads/20140011205.pdf",
-"kind": "pdf"
-},
-{
-"key": "A4-064",
-"c": "A4",
-"authors": "Glaser, P. E.; Jolkovski, R. M.; Margueron, C.",
-"year": "1968",
-"title": "Space technology transfer and developing nations",
-"venue": "NASA Technical Reports Server (CONTRACTOR_REPORT)",
-"url": "https://ntrs.nasa.gov/api/citations/19680027744/downloads/19680027744.pdf",
-"kind": "pdf"
-},
-{
-"key": "A4-065",
-"c": "A4",
-"authors": "Prince, Andy; Barson, Billy",
-"year": "2012",
-"title": "Human Spaceflight Value Study: Was the Shuttle a Good Deal?",
-"venue": "NASA Technical Reports Server (PRESENTATION)",
-"url": "https://ntrs.nasa.gov/api/citations/20120014542/downloads/20120014542.pdf",
-"kind": "pdf"
+"kind": "html",
+"oa": "W398765413"
 },
 {
 "key": "A4-066",
@@ -686,16 +375,8 @@
 "venue": "Acta Astronautica",
 "license": "cc-by",
 "url": "https://www.sciencedirect.com/science/article/pii/S0094576519313451/pdf",
-"kind": "pdf"
-},
-{
-"key": "A4-067",
-"c": "A4",
-"kind": "wiki",
-"id": "NASA_spinoff_technologies",
-"title": "NASA spinoff technologies",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/NASA_spinoff_technologies"
+"kind": "pdf",
+"oa": "W2981540509"
 },
 {
 "key": "A4-068",
@@ -703,7 +384,8 @@
 "title": "The new space race: why we need a human mission to Mars",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/the-new-space-race-why-we-need-a-human-mission-to-mars-73757"
+"url": "https://theconversation.com/the-new-space-race-why-we-need-a-human-mission-to-mars-73757",
+"metaOnly": true
 },
 {
 "key": "A4-069",
@@ -711,7 +393,8 @@
 "title": "\u2018Star Trek\u2019 and NASA have intertwined legacies \u2013 the show championed diversity and inspired generations of real space scientists",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/star-trek-and-nasa-have-intertwined-legacies-the-show-championed-diversity-and-inspired-generations-of-real-space-scientists-290705"
+"url": "https://theconversation.com/star-trek-and-nasa-have-intertwined-legacies-the-show-championed-diversity-and-inspired-generations-of-real-space-scientists-290705",
+"metaOnly": true
 },
 {
 "key": "A4-070",
@@ -719,7 +402,8 @@
 "title": "Returning to the Moon can benefit commercial, military and political sectors \u2013 a space policy expert explains",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/returning-to-the-moon-can-benefit-commercial-military-and-political-sectors-a-space-policy-expert-explains-209300"
+"url": "https://theconversation.com/returning-to-the-moon-can-benefit-commercial-military-and-political-sectors-a-space-policy-expert-explains-209300",
+"metaOnly": true
 },
 {
 "key": "A4-071",
@@ -727,7 +411,8 @@
 "title": "Young Americans deserve a 21st&#8209;century Moonshot to Mars",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/young-americans-deserve-a-21st-century-moonshot-to-mars-118108"
+"url": "https://theconversation.com/young-americans-deserve-a-21st-century-moonshot-to-mars-118108",
+"metaOnly": true
 },
 {
 "key": "A4-072",
@@ -735,7 +420,8 @@
 "title": "Mining the moon for rocket fuel to get us to Mars",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/mining-the-moon-for-rocket-fuel-to-get-us-to-mars-76123"
+"url": "https://theconversation.com/mining-the-moon-for-rocket-fuel-to-get-us-to-mars-76123",
+"metaOnly": true
 },
 {
 "key": "A5-073",
@@ -746,7 +432,8 @@
 "venue": "Religions",
 "license": "cc-by",
 "url": "https://www.mdpi.com/2077-1444/11/8/418/pdf?version=1597312876",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W3048605855"
 },
 {
 "key": "A5-074",
@@ -757,7 +444,8 @@
 "venue": "Journal of Environmental Psychology",
 "license": "",
 "url": "https://doi.org/10.60644/10279",
-"kind": "html"
+"kind": "html",
+"oa": "W3037868973"
 },
 {
 "key": "A5-075",
@@ -768,51 +456,8 @@
 "venue": "",
 "license": "cc-by",
 "url": "https://psyarxiv.com/9frzj/download",
-"kind": "html"
-},
-{
-"key": "A5-076",
-"c": "A5",
-"authors": "Jacob Haqq-Misra",
-"year": "2024",
-"title": "A Model for Economic Freedom on Mars",
-"venue": "arXiv",
-"kind": "arxiv",
-"id": "2406.10380",
-"url": "https://arxiv.org/abs/2406.10380"
-},
-{
-"key": "A5-077",
-"c": "A5",
-"authors": "Jacob D. Haqq-Misra",
-"year": "2019",
-"title": "Can Deep Altruism Sustain Space Settlement?",
-"venue": "Space and society",
-"license": "",
-"url": "https://arxiv.org/pdf/1806.06132",
-"kind": "pdf"
-},
-{
-"key": "A5-078",
-"c": "A5",
-"authors": "Konrad Szocik; Bart\u0142omiej Tkacz",
-"year": "2018",
-"title": "Multi-Level Challenges in a Long-Term Human Space Program. The Case of Manned Mission to Mars",
-"venue": "Studia Humana",
-"license": "cc-by",
-"url": "https://content.sciendo.com/downloadpdf/journals/sh/7/2/article-p24.pdf",
-"kind": "pdf"
-},
-{
-"key": "A5-079",
-"c": "A5",
-"authors": "Arezoo Nezami",
-"year": "2017",
-"title": "The overview effect and counselling psychology: astronaut experiences of earth gazing",
-"venue": "City Research Online (City University London)",
-"license": "public-domain",
-"url": "https://openaccess.city.ac.uk/id/eprint/17938/1/Nezami%2C%20Annahita_Redacted.pdf",
-"kind": "pdf"
+"kind": "html",
+"oa": "W4313533967"
 },
 {
 "key": "A5-080",
@@ -820,7 +465,8 @@
 "title": "The International Space Station at 20 offers hope and a template for future cooperation",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/the-international-space-station-at-20-offers-hope-and-a-template-for-future-cooperation-149363"
+"url": "https://theconversation.com/the-international-space-station-at-20-offers-hope-and-a-template-for-future-cooperation-149363",
+"metaOnly": true
 },
 {
 "key": "A5-081",
@@ -828,7 +474,8 @@
 "title": "The UAE\u2019s Mars mission seeks to bring Hope to more places than the red planet",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/the-uaes-mars-mission-seeks-to-bring-hope-to-more-places-than-the-red-planet-142439"
+"url": "https://theconversation.com/the-uaes-mars-mission-seeks-to-bring-hope-to-more-places-than-the-red-planet-142439",
+"metaOnly": true
 },
 {
 "key": "A5-082",
@@ -836,7 +483,8 @@
 "title": "This course takes college students out of this world \u2013 and teaches them what it takes to become space pioneers",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/this-course-takes-college-students-out-of-this-world-and-teaches-them-what-it-takes-to-become-space-pioneers-193499"
+"url": "https://theconversation.com/this-course-takes-college-students-out-of-this-world-and-teaches-them-what-it-takes-to-become-space-pioneers-193499",
+"metaOnly": true
 },
 {
 "key": "A5-083",
@@ -844,7 +492,8 @@
 "title": "Renewed space rivalry between nations ignores a tradition of cooperation",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/renewed-space-rivalry-between-nations-ignores-a-tradition-of-cooperation-108810"
+"url": "https://theconversation.com/renewed-space-rivalry-between-nations-ignores-a-tradition-of-cooperation-108810",
+"metaOnly": true
 },
 {
 "key": "A5-084",
@@ -852,7 +501,8 @@
 "title": "A giant leap for humankind \u2013 future Moon missions will include diverse astronauts and more partners",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/a-giant-leap-for-humankind-future-moon-missions-will-include-diverse-astronauts-and-more-partners-117064"
+"url": "https://theconversation.com/a-giant-leap-for-humankind-future-moon-missions-will-include-diverse-astronauts-and-more-partners-117064",
+"metaOnly": true
 },
 {
 "key": "A5-085",
@@ -860,7 +510,8 @@
 "title": "Private spaceflight will survive Virgin tragedy because we choose to dream big",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/private-spaceflight-will-survive-virgin-tragedy-because-we-choose-to-dream-big-33711"
+"url": "https://theconversation.com/private-spaceflight-will-survive-virgin-tragedy-because-we-choose-to-dream-big-33711",
+"metaOnly": true
 },
 {
 "key": "A5-086",
@@ -868,7 +519,8 @@
 "title": "US participation in space has benefits at home and abroad \u2212 reaping them all will require collaboration",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/us-participation-in-space-has-benefits-at-home-and-abroad-reaping-them-all-will-require-collaboration-226278"
+"url": "https://theconversation.com/us-participation-in-space-has-benefits-at-home-and-abroad-reaping-them-all-will-require-collaboration-226278",
+"metaOnly": true
 },
 {
 "key": "A5-087",
@@ -876,34 +528,8 @@
 "title": "Ghana needs more astronomers, astrophysicists, aerospace engineers and astronauts \u2013 how to develop them",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/ghana-needs-more-astronomers-astrophysicists-aerospace-engineers-and-astronauts-how-to-develop-them-199412"
-},
-{
-"key": "A5-088",
-"c": "A5",
-"kind": "wiki",
-"id": "Overview_effect",
-"title": "Overview effect",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Overview_effect"
-},
-{
-"key": "A5-089",
-"c": "A5",
-"kind": "wiki",
-"id": "International_Space_Station",
-"title": "International Space Station",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/International_Space_Station"
-},
-{
-"key": "A5-090",
-"c": "A5",
-"kind": "wiki",
-"id": "Space_exploration",
-"title": "Space exploration",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Space_exploration"
+"url": "https://theconversation.com/ghana-needs-more-astronomers-astrophysicists-aerospace-engineers-and-astronauts-how-to-develop-them-199412",
+"metaOnly": true
 },
 {
 "key": "N1-091",
@@ -911,7 +537,8 @@
 "title": "Why Gil Scott&#8209;Heron\u2019s \u2018Whitey on the Moon\u2019 still feels relevant today",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/why-gil-scott-herons-whitey-on-the-moon-still-feels-relevant-today-164681"
+"url": "https://theconversation.com/why-gil-scott-herons-whitey-on-the-moon-still-feels-relevant-today-164681",
+"metaOnly": true
 },
 {
 "key": "N1-092",
@@ -919,7 +546,8 @@
 "title": "Space travel for billionaires is the surprise topic with bipartisan American support \u2013 but not from Gen Z",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/space-travel-for-billionaires-is-the-surprise-topic-with-bipartisan-american-support-but-not-from-gen-z-165309"
+"url": "https://theconversation.com/space-travel-for-billionaires-is-the-surprise-topic-with-bipartisan-american-support-but-not-from-gen-z-165309",
+"metaOnly": true
 },
 {
 "key": "N1-093",
@@ -927,7 +555,8 @@
 "title": "Most Americans support NASA \u2013 but don\u2019t think it should prioritize sending people to space",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/most-americans-support-nasa-but-dont-think-it-should-prioritize-sending-people-to-space-210218"
+"url": "https://theconversation.com/most-americans-support-nasa-but-dont-think-it-should-prioritize-sending-people-to-space-210218",
+"metaOnly": true
 },
 {
 "key": "N1-094",
@@ -935,7 +564,8 @@
 "title": "Should Elon Musk try to solve the problem of world hunger with $6 billion? 5 questions answered",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/should-elon-musk-try-to-solve-the-problem-of-world-hunger-with-6-billion-5-questions-answered-171187"
+"url": "https://theconversation.com/should-elon-musk-try-to-solve-the-problem-of-world-hunger-with-6-billion-5-questions-answered-171187",
+"metaOnly": true
 },
 {
 "key": "N1-095",
@@ -943,7 +573,8 @@
 "title": "\u2018Effective altruism\u2019 has caught on with billionaire donors \u2013 but is the world\u2019s most headline&#8209;making one on board?",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/effective-altruism-has-caught-on-with-billionaire-donors-but-is-the-worlds-most-headline-making-one-on-board-199471"
+"url": "https://theconversation.com/effective-altruism-has-caught-on-with-billionaire-donors-but-is-the-worlds-most-headline-making-one-on-board-199471",
+"metaOnly": true
 },
 {
 "key": "N1-096",
@@ -951,7 +582,8 @@
 "title": "Elon Musk\u2019s Starship may be more moral catastrophe than bold step in space exploration",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/elon-musks-starship-may-be-more-moral-catastrophe-than-bold-step-in-space-exploration-124450"
+"url": "https://theconversation.com/elon-musks-starship-may-be-more-moral-catastrophe-than-bold-step-in-space-exploration-124450",
+"metaOnly": true
 },
 {
 "key": "N1-097",
@@ -959,7 +591,8 @@
 "title": "Dear Elon Musk: Your dazzling Mars plan overlooks some big nontechnical hurdles",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/dear-elon-musk-your-dazzling-mars-plan-overlooks-some-big-nontechnical-hurdles-84948"
+"url": "https://theconversation.com/dear-elon-musk-your-dazzling-mars-plan-overlooks-some-big-nontechnical-hurdles-84948",
+"metaOnly": true
 },
 {
 "key": "N1-098",
@@ -967,7 +600,8 @@
 "title": "Private planes, mansions and superyachts: What gives billionaires like Musk and Abramovich such a massive carbon footprint",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/private-planes-mansions-and-superyachts-what-gives-billionaires-like-musk-and-abramovich-such-a-massive-carbon-footprint-152514"
+"url": "https://theconversation.com/private-planes-mansions-and-superyachts-what-gives-billionaires-like-musk-and-abramovich-such-a-massive-carbon-footprint-152514",
+"metaOnly": true
 },
 {
 "key": "N1-099",
@@ -975,7 +609,8 @@
 "title": "\u2018Starwashing\u2019: How space companies use the greenwashing playbook while engaging in environmentally damaging practices",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/starwashing-how-space-companies-use-the-greenwashing-playbook-while-engaging-in-environmentally-damaging-practices-285904"
+"url": "https://theconversation.com/starwashing-how-space-companies-use-the-greenwashing-playbook-while-engaging-in-environmentally-damaging-practices-285904",
+"metaOnly": true
 },
 {
 "key": "N1-100",
@@ -983,7 +618,8 @@
 "title": "Virgin Galactic\u2019s use of the \u2018Overview Effect\u2019 to promote space tourism is a terrible irony",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/virgin-galactics-use-of-the-overview-effect-to-promote-space-tourism-is-a-terrible-irony-206868"
+"url": "https://theconversation.com/virgin-galactics-use-of-the-overview-effect-to-promote-space-tourism-is-a-terrible-irony-206868",
+"metaOnly": true
 },
 {
 "key": "N1-101",
@@ -991,7 +627,8 @@
 "title": "Space tourism\u2019s growth blurs the line between scientific and symbolic achievement \u2013 a tourism scholar explains how",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/space-tourisms-growth-blurs-the-line-between-scientific-and-symbolic-achievement-a-tourism-scholar-explains-how-255284"
+"url": "https://theconversation.com/space-tourisms-growth-blurs-the-line-between-scientific-and-symbolic-achievement-a-tourism-scholar-explains-how-255284",
+"metaOnly": true
 },
 {
 "key": "N1-102",
@@ -1002,7 +639,8 @@
 "venue": "Tourism Recreation Research",
 "license": "",
 "url": "https://research.wur.nl/en/publications/why-space-tourism-will-not-be-part-of-sustainable-tourism",
-"kind": "html"
+"kind": "html",
+"oa": "W2888140375"
 },
 {
 "key": "N1-103",
@@ -1013,7 +651,8 @@
 "venue": "Journal of Tourism Futures",
 "license": "cc-by",
 "url": "https://www.emerald.com/insight/content/doi/10.1108/JTF-06-2020-151/full/pdf?title=space-tourism-the-elusive-dream",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W3044792269"
 },
 {
 "key": "N1-104",
@@ -1024,45 +663,8 @@
 "venue": "Science as Culture",
 "license": "cc-by-nc",
 "url": "https://www.tandfonline.com/doi/pdf/10.1080/09505431.2024.2393096?needAccess=true",
-"kind": "pdf"
-},
-{
-"key": "N1-105",
-"c": "N1",
-"kind": "wiki",
-"id": "Whitey_on_the_Moon",
-"title": "Whitey on the Moon",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Whitey_on_the_Moon"
-},
-{
-"key": "N1-106",
-"c": "N1",
-"kind": "wiki",
-"id": "Space_tourism",
-"title": "Space tourism",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Space_tourism"
-},
-{
-"key": "N1-107",
-"c": "N1",
-"kind": "wiki",
-"id": "Billionaire_space_race",
-"title": "Billionaire space race",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Billionaire_space_race"
-},
-{
-"key": "N2-108",
-"c": "N2",
-"authors": "Rossana Deplano",
-"year": "2021",
-"title": "THE ARTEMIS ACCORDS: EVOLUTION OR REVOLUTION IN INTERNATIONAL SPACE LAW?",
-"venue": "International and Comparative Law Quarterly",
-"license": "cc-by",
-"url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/DC08E6D42F7D5A971067E6A1BA442DF1/S0020589321000142a.pdf/div-class-title-the-artemis-accords-evolution-or-revolution-in-international-space-law-div.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W4401746714"
 },
 {
 "key": "N2-109",
@@ -1073,7 +675,8 @@
 "venue": "Space Policy",
 "license": "cc-by",
 "url": "https://www.sciencedirect.com/science/article/pii/S0265964622000479/pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W4307965000"
 },
 {
 "key": "N2-110",
@@ -1084,18 +687,8 @@
 "venue": "Global Studies Quarterly",
 "license": "cc-by-nc-nd",
 "url": "https://academic.oup.com/isagsq/article-pdf/3/4/ksad067/54353478/ksad067.pdf",
-"kind": "pdf"
-},
-{
-"key": "N2-111",
-"c": "N2",
-"authors": "ALINA UTRATA",
-"year": "2023",
-"title": "Engineering Territory: Space and Colonies in Silicon Valley",
-"venue": "American Political Science Review",
-"license": "cc-by",
-"url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5D6EA4D306E8F3E0465F4A05C89454D6/S0003055423001156a.pdf/div-class-title-engineering-territory-space-and-colonies-in-silicon-valley-div.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W4389610921"
 },
 {
 "key": "N2-112",
@@ -1106,62 +699,8 @@
 "venue": "Humanities and Social Sciences Communications",
 "license": "cc-by",
 "url": "https://www.nature.com/articles/s41599-019-0218-9.pdf",
-"kind": "pdf"
-},
-{
-"key": "N2-113",
-"c": "N2",
-"authors": "M. Elvis; Alanna Krolikowski; Tony Milligan",
-"year": "2020",
-"title": "Concentrated lunar resources: imminent implications for governance and justice",
-"venue": "Philosophical Transactions of the Royal Society A Mathematical Physical and Engineering Sciences",
-"license": "",
-"url": "https://arxiv.org/pdf/2103.09045",
-"kind": "pdf"
-},
-{
-"key": "N2-114",
-"c": "N2",
-"authors": "Martin E. Elvis; Tony Milligan; Alanna Krolikowski",
-"year": "2016",
-"title": "The peaks of eternal light: A near-term property issue on the moon",
-"venue": "Space Policy",
-"license": "",
-"url": "https://arxiv.org/pdf/1608.01989",
-"kind": "pdf"
-},
-{
-"key": "N2-115",
-"c": "N2",
-"authors": "Hilding Neilson; E. E. \u0106irkovi\u0107",
-"year": "2021",
-"title": "Indigenous rights, peoples, and space exploration: A response to the Canadian Space Agency (CSA) Consulting Canadians on a framework for future space exploration activities",
-"venue": "arXiv",
-"kind": "arxiv",
-"id": "2104.07118",
-"url": "https://arxiv.org/abs/2104.07118"
-},
-{
-"key": "N2-116",
-"c": "N2",
-"authors": "Monica Vidaurri; Alia Wofford; Jonathan Brande",
-"year": "2019",
-"title": "Absolute Prioritization of Planetary Protection, Safety, and Avoiding Imperialism in All Future Science Missions: A Policy Perspective",
-"venue": "arXiv",
-"kind": "arxiv",
-"id": "1907.05834",
-"url": "https://arxiv.org/abs/1907.05834"
-},
-{
-"key": "N2-117",
-"c": "N2",
-"authors": "Luk\u00e1\u0161 Likav\u010dan",
-"year": "2025",
-"title": "Is the Solar System a Wilderness or a Construction Site? Conservationist and Constructivist Paradigms in Planetary Protection",
-"venue": "arXiv",
-"kind": "arxiv",
-"id": "2508.20145",
-"url": "https://arxiv.org/abs/2508.20145"
+"kind": "pdf",
+"oa": "W2914099332"
 },
 {
 "key": "N2-118",
@@ -1172,7 +711,8 @@
 "venue": "International Journal of the Commons",
 "license": "cc-by",
 "url": "https://storage.googleapis.com/jnl-up-j-ijc-files/journals/1/articles/1272/65607c5bb8aba.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W4388973277"
 },
 {
 "key": "N2-119",
@@ -1183,17 +723,8 @@
 "venue": "Earth System Governance",
 "license": "cc-by",
 "url": "https://doi.org/10.1016/j.esg.2023.100173",
-"kind": "html"
-},
-{
-"key": "N2-120",
-"c": "N2",
 "kind": "html",
-"url": "https://www.unoosa.org/oosa/en/ourwork/spacelaw/treaties/outerspacetreaty.html",
-"authors": "United Nations Office for Outer Space Affairs",
-"year": "1967",
-"title": "Treaty on Principles Governing the Activities of States in the Exploration and Use of Outer Space, including the Moon and Other Celestial Bodies",
-"venue": "United Nations"
+"oa": "W4360602945"
 },
 {
 "key": "N2-121",
@@ -1201,7 +732,8 @@
 "title": "Wealthy nations are carving up space and its riches \u2013 and leaving other countries behind",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/wealthy-nations-are-carving-up-space-and-its-riches-and-leaving-other-countries-behind-182820"
+"url": "https://theconversation.com/wealthy-nations-are-carving-up-space-and-its-riches-and-leaving-other-countries-behind-182820",
+"metaOnly": true
 },
 {
 "key": "N2-122",
@@ -1209,7 +741,8 @@
 "title": "First contact with aliens could end in colonization and genocide if we don\u2019t learn from history",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/first-contact-with-aliens-could-end-in-colonization-and-genocide-if-we-dont-learn-from-history-207793"
+"url": "https://theconversation.com/first-contact-with-aliens-could-end-in-colonization-and-genocide-if-we-dont-learn-from-history-207793",
+"metaOnly": true
 },
 {
 "key": "N2-123",
@@ -1217,7 +750,8 @@
 "title": "Who owns the moon? A space lawyer answers",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/who-owns-the-moon-a-space-lawyer-answers-99974"
+"url": "https://theconversation.com/who-owns-the-moon-a-space-lawyer-answers-99974",
+"metaOnly": true
 },
 {
 "key": "N2-124",
@@ -1225,7 +759,8 @@
 "title": "Property and sovereignty in space \u2212 as countries and companies take to the stars, they could run into disputes",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/property-and-sovereignty-in-space-as-countries-and-companies-take-to-the-stars-they-could-run-into-disputes-245334"
+"url": "https://theconversation.com/property-and-sovereignty-in-space-as-countries-and-companies-take-to-the-stars-they-could-run-into-disputes-245334",
+"metaOnly": true
 },
 {
 "key": "N2-125",
@@ -1233,7 +768,8 @@
 "title": "\u2018Democratizing space\u2019 is more than just adding new players \u2013 it comes with questions around sustainability and sovereignty",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/democratizing-space-is-more-than-just-adding-new-players-it-comes-with-questions-around-sustainability-and-sovereignty-257306"
+"url": "https://theconversation.com/democratizing-space-is-more-than-just-adding-new-players-it-comes-with-questions-around-sustainability-and-sovereignty-257306",
+"metaOnly": true
 },
 {
 "key": "N2-126",
@@ -1241,16 +777,8 @@
 "title": "US seeks to change the rules for mining the Moon",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/us-seeks-to-change-the-rules-for-mining-the-moon-136665"
-},
-{
-"key": "N2-127",
-"c": "N2",
-"kind": "wiki",
-"id": "Space_law",
-"title": "Space law",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Space_law"
+"url": "https://theconversation.com/us-seeks-to-change-the-rules-for-mining-the-moon-136665",
+"metaOnly": true
 },
 {
 "key": "N3-128",
@@ -1261,7 +789,8 @@
 "venue": "Life",
 "license": "cc-by",
 "url": "https://www.mdpi.com/2075-1729/4/3/491/pdf?version=1411025153",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W2017290871"
 },
 {
 "key": "N3-129",
@@ -1272,18 +801,8 @@
 "venue": "npj Microgravity",
 "license": "cc-by",
 "url": "https://www.nature.com/articles/s41526-020-00124-6.pdf",
-"kind": "pdf"
-},
-{
-"key": "N3-130",
-"c": "N3",
-"authors": "Francis A. Cucinotta; Myung\u2010Hee Y. Kim; Lori J. Chappell",
-"year": "2013",
-"title": "How Safe Is Safe Enough? Radiation Risk for a Human Mission to Mars",
-"venue": "PLoS ONE",
-"license": "public-domain",
-"url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0074988&type=printable",
-"kind": "html"
+"kind": "pdf",
+"oa": "W3094638247"
 },
 {
 "key": "N3-131",
@@ -1294,7 +813,8 @@
 "venue": "Science Advances",
 "license": "cc-by-nc",
 "url": "https://www.science.org/doi/pdf/10.1126/sciadv.1400256?download=true",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W2121493243"
 },
 {
 "key": "N3-132",
@@ -1305,7 +825,8 @@
 "venue": "Scientific Reports",
 "license": "cc-by",
 "url": "https://www.nature.com/articles/srep29901.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W2480872114"
 },
 {
 "key": "N3-133",
@@ -1316,7 +837,8 @@
 "venue": "Proceedings of the National Academy of Sciences",
 "license": "",
 "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3574912",
-"kind": "html"
+"kind": "html",
+"oa": "W2125864295"
 },
 {
 "key": "N3-134",
@@ -1327,7 +849,8 @@
 "venue": "npj Microgravity",
 "license": "cc-by-nc-nd",
 "url": "https://www.nature.com/articles/npjmgrav201513.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W2594591188"
 },
 {
 "key": "N3-135",
@@ -1338,7 +861,8 @@
 "venue": "npj Microgravity",
 "license": "cc-by",
 "url": "https://www.nature.com/articles/s41526-017-0015-y.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W2605076090"
 },
 {
 "key": "N3-136",
@@ -1349,7 +873,8 @@
 "venue": "Journal of Neurology",
 "license": "cc-by",
 "url": "https://link.springer.com/content/pdf/10.1007/s00415-017-8427-x.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W2594046448"
 },
 {
 "key": "N3-137",
@@ -1360,31 +885,8 @@
 "venue": "Cells",
 "license": "cc-by",
 "url": "https://www.mdpi.com/2073-4409/12/1/40/pdf?version=1671846779",
-"kind": "pdf"
-},
-{
-"key": "N3-138",
-"c": "N3",
-"authors": "Gimunov\u00e1 M, Paludo AC, Bernacikov\u00e1 M, Bienertova-Vasku J.",
-"year": "2024",
-"title": "The effect of space travel on human reproductive health: a systematic review.",
-"venue": "NPJ microgravity",
-"license": "cc by",
-"kind": "epmc",
-"id": "PMC10796912",
-"url": "https://europepmc.org/article/PMC/PMC10796912"
-},
-{
-"key": "N3-139",
-"c": "N3",
-"authors": "Cole VM, Savulescu J, Illanes SE, Batiz F, Benny PAT, Huang Z, Carter SWD, Chool",
-"year": "2025",
-"title": "A biological and ethical assessment of whether humans could or should reproduce in space.",
-"venue": "NPJ microgravity",
-"license": "cc by-nc-nd",
-"kind": "epmc",
-"id": "PMC12623868",
-"url": "https://europepmc.org/article/PMC/PMC12623868"
+"kind": "pdf",
+"oa": "W4312100054"
 },
 {
 "key": "N3-140",
@@ -1395,7 +897,8 @@
 "venue": "Acta Astronautica",
 "license": "cc-by-nc-nd",
 "url": "https://www.sciencedirect.com/science/article/pii/S0094576515004294/pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W2194529169"
 },
 {
 "key": "N3-141",
@@ -1406,19 +909,8 @@
 "venue": "Scientific Reports",
 "license": "cc-by",
 "url": "https://www.nature.com/articles/srep34774.pdf",
-"kind": "pdf"
-},
-{
-"key": "N3-142",
-"c": "N3",
-"authors": "Marshall-Goebel K, Laurie SS, Alferova IV, Arbeille P, Au\u00f1\u00f3n-Chancellor SM, Eber",
-"year": "2019",
-"title": "Assessment of Jugular Venous Blood Flow Stasis and Thrombosis During Spaceflight.",
-"venue": "JAMA network open",
-"license": "cc by",
-"kind": "epmc",
-"id": "PMC6902784",
-"url": "https://europepmc.org/article/PMC/PMC6902784"
+"kind": "pdf",
+"oa": "W2529882214"
 },
 {
 "key": "N3-143",
@@ -1426,7 +918,8 @@
 "title": "Spending time in space can harm the human body \u2212 but scientists are working to mitigate these risks before sending people to Mars",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/spending-time-in-space-can-harm-the-human-body-but-scientists-are-working-to-mitigate-these-risks-before-sending-people-to-mars-210761"
+"url": "https://theconversation.com/spending-time-in-space-can-harm-the-human-body-but-scientists-are-working-to-mitigate-these-risks-before-sending-people-to-mars-210761",
+"metaOnly": true
 },
 {
 "key": "N3-144",
@@ -1434,7 +927,8 @@
 "title": "Astronauts\u2019 brains are subject to long&#8209;lasting damage due to low dose space radiation",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/astronauts-brains-are-subject-to-long-lasting-damage-due-to-low-dose-space-radiation-121407"
+"url": "https://theconversation.com/astronauts-brains-are-subject-to-long-lasting-damage-due-to-low-dose-space-radiation-121407",
+"metaOnly": true
 },
 {
 "key": "N3-145",
@@ -1442,7 +936,8 @@
 "title": "Mission to Mars: how space exploration pushes the human body to its limits",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/mission-to-mars-how-space-exploration-pushes-the-human-body-to-its-limits-267837"
+"url": "https://theconversation.com/mission-to-mars-how-space-exploration-pushes-the-human-body-to-its-limits-267837",
+"metaOnly": true
 },
 {
 "key": "N3-146",
@@ -1450,16 +945,8 @@
 "title": "How much radiation damage do astronauts really suffer in space?",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/how-much-radiation-damage-do-astronauts-really-suffer-in-space-60475"
-},
-{
-"key": "N3-147",
-"c": "N3",
-"kind": "wiki",
-"id": "Effect_of_spaceflight_on_the_human_body",
-"title": "Effect of spaceflight on the human body",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Effect_of_spaceflight_on_the_human_body"
+"url": "https://theconversation.com/how-much-radiation-damage-do-astronauts-really-suffer-in-space-60475",
+"metaOnly": true
 },
 {
 "key": "N4-148",
@@ -1470,7 +957,8 @@
 "venue": "Astrobiology",
 "license": "cc-by",
 "url": "https://doi.org/10.1089/ast.2012.0891",
-"kind": "html"
+"kind": "html",
+"oa": "W1983621280"
 },
 {
 "key": "N4-149",
@@ -1481,18 +969,8 @@
 "venue": "Astrobiology",
 "license": "",
 "url": "https://www.liebertpub.com/doi/pdf/10.1089/ast.2017.1703",
-"kind": "pdf"
-},
-{
-"key": "N4-150",
-"c": "N4",
-"authors": "Keiko J. Nomura; Sim\u00f3n A. Rella; Haily Merritt",
-"year": "2024",
-"title": "Tipping Points of Space Debris in Low Earth Orbit",
-"venue": "International Journal of the Commons",
-"license": "cc-by",
-"url": "https://storage.googleapis.com/jnl-up-j-ijc-files/journals/1/articles/1275/659fdaa0d5f05.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W2753717929"
 },
 {
 "key": "N4-151",
@@ -1503,7 +981,8 @@
 "venue": "Earth s Future",
 "license": "cc-by",
 "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2021EF002612",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W4286767762"
 },
 {
 "key": "N4-152",
@@ -1514,18 +993,8 @@
 "venue": "Earth s Future",
 "license": "cc-by-nc-nd",
 "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/2013EF000160",
-"kind": "pdf"
-},
-{
-"key": "N4-153",
-"c": "N4",
-"authors": "Lo\u00efs Miraux; Andrew Ross Wilson; Guillermo J. Dominguez Calabuig",
-"year": "2022",
-"title": "Environmental sustainability of future proposed space activities",
-"venue": "Acta Astronautica",
-"license": "",
-"url": "https://strathprints.strath.ac.uk/82154/1/Miraux_etal_AA_2022_Environmental_sustainability_of_future_proposed_space_activities.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W1581057087"
 },
 {
 "key": "N4-154",
@@ -1536,7 +1005,8 @@
 "venue": "Earth s Future",
 "license": "cc-by-nc-nd",
 "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/2016EF000399",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W2554934325"
 },
 {
 "key": "N4-155",
@@ -1547,18 +1017,8 @@
 "venue": "Ecological Economics",
 "license": "cc-by-nc-nd",
 "url": "https://doi.org/10.1016/j.ecolecon.2023.107831",
-"kind": "html"
-},
-{
-"key": "N4-156",
-"c": "N4",
-"authors": "Abid Murtaza; Syed Jahanzeb Hussain Pirzada; Tongge Xu",
-"year": "2020",
-"title": "Orbital Debris Threat for Space Sustainability and Way Forward (Review Article)",
-"venue": "IEEE Access",
-"license": "cc-by",
-"url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09028136.pdf",
-"kind": "pdf"
+"kind": "html",
+"oa": "W4361266375"
 },
 {
 "key": "N4-157",
@@ -1569,19 +1029,8 @@
 "venue": "Space Policy",
 "license": "cc-by",
 "url": "https://www.sciencedirect.com/science/article/pii/S0265964621000205/pdf",
-"kind": "pdf"
-},
-{
-"key": "N4-158",
-"c": "N4",
-"authors": "Brener DJ, Cockell CS.",
-"year": "2025",
-"title": "Rethinking planetary protection: an island biogeographical analysis.",
-"venue": "Journal of the Royal Society, Interface",
-"license": "cc by",
-"kind": "epmc",
-"id": "PMC12187411",
-"url": "https://europepmc.org/article/PMC/PMC12187411"
+"kind": "pdf",
+"oa": "W3163178182"
 },
 {
 "key": "N4-159",
@@ -1589,7 +1038,8 @@
 "title": "Colonizing Mars means contaminating Mars \u2013 and never knowing for sure if it had its own native life",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/colonizing-mars-means-contaminating-mars-and-never-knowing-for-sure-if-it-had-its-own-native-life-103053"
+"url": "https://theconversation.com/colonizing-mars-means-contaminating-mars-and-never-knowing-for-sure-if-it-had-its-own-native-life-103053",
+"metaOnly": true
 },
 {
 "key": "N4-160",
@@ -1597,7 +1047,8 @@
 "title": "Mars: contamination, planetary protection and the search for life",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/mars-contamination-planetary-protection-and-the-search-for-life-48363"
+"url": "https://theconversation.com/mars-contamination-planetary-protection-and-the-search-for-life-48363",
+"metaOnly": true
 },
 {
 "key": "N4-161",
@@ -1605,7 +1056,8 @@
 "title": "Mars is littered with 15,694 pounds of human trash from 50 years of robotic exploration",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/mars-is-littered-with-15-694-pounds-of-human-trash-from-50-years-of-robotic-exploration-188881"
+"url": "https://theconversation.com/mars-is-littered-with-15-694-pounds-of-human-trash-from-50-years-of-robotic-exploration-188881",
+"metaOnly": true
 },
 {
 "key": "N4-162",
@@ -1613,7 +1065,8 @@
 "title": "Can the Moon be a person? As lunar mining looms, a change of perspective could protect Earth\u2019s ancient companion",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/can-the-moon-be-a-person-as-lunar-mining-looms-a-change-of-perspective-could-protect-earths-ancient-companion-144848"
+"url": "https://theconversation.com/can-the-moon-be-a-person-as-lunar-mining-looms-a-change-of-perspective-could-protect-earths-ancient-companion-144848",
+"metaOnly": true
 },
 {
 "key": "N4-163",
@@ -1621,7 +1074,8 @@
 "title": "Do no harm to life on Mars? Ethical limits of the \u2018Prime Directive\u2019",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/do-no-harm-to-life-on-mars-ethical-limits-of-the-prime-directive-57712"
+"url": "https://theconversation.com/do-no-harm-to-life-on-mars-ethical-limits-of-the-prime-directive-57712",
+"metaOnly": true
 },
 {
 "key": "N4-164",
@@ -1629,7 +1083,8 @@
 "title": "Lunar gold rush is about to start \u2013 and we could exhaust the solar system in fewer than 500 years",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/lunar-gold-rush-is-about-to-start-and-we-could-exhaust-the-solar-system-in-fewer-than-500-years-117450"
+"url": "https://theconversation.com/lunar-gold-rush-is-about-to-start-and-we-could-exhaust-the-solar-system-in-fewer-than-500-years-117450",
+"metaOnly": true
 },
 {
 "key": "N4-165",
@@ -1637,7 +1092,8 @@
 "title": "Space junk in Earth orbit and on the Moon will increase with future missions \u2212 but nobody\u2019s in charge of cleaning it up",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/space-junk-in-earth-orbit-and-on-the-moon-will-increase-with-future-missions-but-nobodys-in-charge-of-cleaning-it-up-212421"
+"url": "https://theconversation.com/space-junk-in-earth-orbit-and-on-the-moon-will-increase-with-future-missions-but-nobodys-in-charge-of-cleaning-it-up-212421",
+"metaOnly": true
 },
 {
 "key": "N4-166",
@@ -1645,36 +1101,8 @@
 "title": "Spacefarers may contaminate other worlds \u2013 but scientists have plans to keep the cosmos clean",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/spacefarers-may-contaminate-other-worlds-but-scientists-have-plans-to-keep-the-cosmos-clean-249135"
-},
-{
-"key": "N4-167",
-"c": "N4",
-"kind": "wiki",
-"id": "Kessler_syndrome",
-"title": "Kessler syndrome",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Kessler_syndrome"
-},
-{
-"key": "N4-168",
-"c": "N4",
-"kind": "wiki",
-"id": "Planetary_protection",
-"title": "Planetary protection",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Planetary_protection"
-},
-{
-"key": "N5-169",
-"c": "N5",
-"authors": "Michael L. Byers; Aaron C. Boley",
-"year": "2023",
-"title": "Who Owns Outer Space?",
-"venue": "Cambridge University Press eBooks",
-"license": "other-oa",
-"url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/960CCB0464744F845B09434D932699EC/9781108497831AR.pdf/Who_Owns_Outer_Space_.pdf?event-type=FTLA",
-"kind": "pdf"
+"url": "https://theconversation.com/spacefarers-may-contaminate-other-worlds-but-scientists-have-plans-to-keep-the-cosmos-clean-249135",
+"metaOnly": true
 },
 {
 "key": "N5-170",
@@ -1685,7 +1113,8 @@
 "venue": "Astropolitics",
 "license": "cc-by",
 "url": "https://figshare.com/articles/journal_contribution/Cascading_Crises_Orbital_Debris_and_the_Widening_of_Space_Security/10224446",
-"kind": "html"
+"kind": "html",
+"oa": "W1999840527"
 },
 {
 "key": "N5-171",
@@ -1696,40 +1125,8 @@
 "venue": "Astropolitics",
 "license": "cc-by",
 "url": "https://www.tandfonline.com/doi/pdf/10.1080/14777622.2023.2277253?needAccess=true",
-"kind": "pdf"
-},
-{
-"key": "N5-172",
-"c": "N5",
-"authors": "Adam Bower; Jeffrey S. Lantis",
-"year": "2023",
-"title": "Contesting the heavens: US antipreneurship and the regulation of space weapons",
-"venue": "European Journal of International Security",
-"license": "cc-by",
-"url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/A9C92460A2807DBC4BBE9C8D941E73F8/S2057563723000020a.pdf/div-class-title-contesting-the-heavens-us-antipreneurship-and-the-regulation-of-space-weapons-div.pdf",
-"kind": "pdf"
-},
-{
-"key": "N5-173",
-"c": "N5",
-"authors": "John Barentine; Aparna Venkatesan",
-"year": "2026",
-"title": "The Outer Space Treaty Won't Save Us From Ourselves",
-"venue": "arXiv",
-"kind": "arxiv",
-"id": "2605.01019",
-"url": "https://arxiv.org/abs/2605.01019"
-},
-{
-"key": "N5-174",
-"c": "N5",
-"authors": "Sarah Thiele; Aaron C. Boley",
-"year": "2021",
-"title": "Investigating the risks of debris-generating ASAT tests in the presence of megaconstellations",
-"venue": "arXiv",
-"kind": "arxiv",
-"id": "2111.12196",
-"url": "https://arxiv.org/abs/2111.12196"
+"kind": "pdf",
+"oa": "W4388500328"
 },
 {
 "key": "N5-175",
@@ -1740,29 +1137,8 @@
 "venue": "Princeton University Press eBooks",
 "license": "cc-by-sa",
 "url": "https://digital.library.unt.edu/ark:/67531/metadc39565/",
-"kind": "html"
-},
-{
-"key": "N5-176",
-"c": "N5",
-"authors": "Pawe\u0142 Bernat",
-"year": "2019",
-"title": "The Inevitability of Militarization of Outer Space",
-"venue": "Safety & Defense",
-"license": "cc-by",
-"url": "https://sd-magazine.eu/index.php/sd/article/download/43/30",
-"kind": "html"
-},
-{
-"key": "N5-177",
-"c": "N5",
-"authors": "An\u00e9l Ferreira-Snyman",
-"year": "2015",
-"title": "Selected Legal Challenges Relating to the Military use of Outer Space, with Specific Reference to Article IV of the Outer Space Treaty",
-"venue": "Potchefstroom Electronic Law Journal/Potchefstroomse Elektroniese Regsblad",
-"license": "cc-by",
-"url": "https://www.ajol.info/index.php/pelj/article/download/127040/116558",
-"kind": "html"
+"kind": "html",
+"oa": "W121634959"
 },
 {
 "key": "N5-178",
@@ -1773,7 +1149,8 @@
 "venue": "Futures",
 "license": "cc-by-nc-nd",
 "url": "https://doi.org/10.1016/j.futures.2020.102638",
-"kind": "html"
+"kind": "html",
+"oa": "W3110726514"
 },
 {
 "key": "N5-179",
@@ -1784,7 +1161,8 @@
 "venue": "PhilPapers (PhilPapers Foundation)",
 "license": "",
 "url": "https://philpapers.org/archive/SOTSAA.pdf",
-"kind": "pdf"
+"kind": "pdf",
+"oa": "W2782391699"
 },
 {
 "key": "N5-180",
@@ -1795,7 +1173,8 @@
 "venue": "Acta Astronautica",
 "license": "cc-by",
 "url": "https://doi.org/10.1016/j.actaastro.2023.02.043",
-"kind": "html"
+"kind": "html",
+"oa": "W4322724353"
 },
 {
 "key": "N5-181",
@@ -1803,7 +1182,8 @@
 "title": "Is Russia looking to put nukes in space? Doing so would undermine global stability and ignite an anti&#8209;satellite arms race",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/is-russia-looking-to-put-nukes-in-space-doing-so-would-undermine-global-stability-and-ignite-an-anti-satellite-arms-race-223702"
+"url": "https://theconversation.com/is-russia-looking-to-put-nukes-in-space-doing-so-would-undermine-global-stability-and-ignite-an-anti-satellite-arms-race-223702",
+"metaOnly": true
 },
 {
 "key": "N5-182",
@@ -1811,7 +1191,8 @@
 "title": "The US says it has launched \u2018space control weapons\u2019. It plays into the hands of its enemies",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/the-us-says-it-has-launched-space-control-weapons-it-plays-into-the-hands-of-its-enemies-292110"
+"url": "https://theconversation.com/the-us-says-it-has-launched-space-control-weapons-it-plays-into-the-hands-of-its-enemies-292110",
+"metaOnly": true
 },
 {
 "key": "N5-183",
@@ -1819,7 +1200,8 @@
 "title": "Space law hasn\u2019t been changed since 1967 \u2013 but the UN aims to update laws and keep space peaceful",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/space-law-hasnt-been-changed-since-1967-but-the-un-aims-to-update-laws-and-keep-space-peaceful-171351"
+"url": "https://theconversation.com/space-law-hasnt-been-changed-since-1967-but-the-un-aims-to-update-laws-and-keep-space-peaceful-171351",
+"metaOnly": true
 },
 {
 "key": "N5-184",
@@ -1827,7 +1209,8 @@
 "title": "Why space debris cleanup might be a national security threat",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/why-space-debris-cleanup-might-be-a-national-security-threat-105816"
+"url": "https://theconversation.com/why-space-debris-cleanup-might-be-a-national-security-threat-105816",
+"metaOnly": true
 },
 {
 "key": "N5-185",
@@ -1835,7 +1218,8 @@
 "title": "Will China\u2019s moon landing launch a new space race?",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/will-chinas-moon-landing-launch-a-new-space-race-109359"
+"url": "https://theconversation.com/will-chinas-moon-landing-launch-a-new-space-race-109359",
+"metaOnly": true
 },
 {
 "key": "N5-186",
@@ -1843,7 +1227,8 @@
 "title": "Indian Moon probe\u2019s failure won\u2019t stop an Asian space race that threatens regional security",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/indian-moon-probes-failure-wont-stop-an-asian-space-race-that-threatens-regional-security-123144"
+"url": "https://theconversation.com/indian-moon-probes-failure-wont-stop-an-asian-space-race-that-threatens-regional-security-123144",
+"metaOnly": true
 },
 {
 "key": "N5-187",
@@ -1851,24 +1236,7 @@
 "title": "Russian anti&#8209;satellite weapon test: What happened and what are the risks?",
 "venue": "The Conversation",
 "kind": "conv",
-"url": "https://theconversation.com/russian-anti-satellite-weapon-test-what-happened-and-what-are-the-risks-172016"
-},
-{
-"key": "N5-188",
-"c": "N5",
-"kind": "wiki",
-"id": "Militarisation_of_space",
-"title": "Militarisation of space",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Militarisation_of_space"
-},
-{
-"key": "N5-189",
-"c": "N5",
-"kind": "wiki",
-"id": "Anti-satellite_weapon",
-"title": "Anti-satellite weapon",
-"venue": "Wikipedia",
-"url": "https://en.wikipedia.org/wiki/Anti-satellite_weapon"
+"url": "https://theconversation.com/russian-anti-satellite-weapon-test-what-happened-and-what-are-the-risks-172016",
+"metaOnly": true
 }
 ]
