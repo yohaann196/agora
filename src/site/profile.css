@@ -73,3 +73,17 @@
 .pf-fix svg { margin-top: 2px; color: var(--text-3); }
 .pf-fix a { color: var(--accent); font-weight: 650; }
 
+
+/* ---------- Career seasons + notes ---------- */
+.pf-seasons { display: flex; gap: 8px; overflow-x: auto; margin-bottom: 16px; padding-bottom: 2px; }
+.pf-seasons button { flex: none; display: grid; gap: 1px; text-align: left; padding: 8px 14px; border-radius: var(--r-3); border: 1px solid var(--line-1); background: var(--paper-hi); color: var(--text-2); font-size: var(--fs-11); }
+.pf-seasons button b { font-size: var(--fs-14); color: var(--ink); }
+.pf-seasons button:hover { border-color: var(--line-3); }
+.pf-seasons button[aria-selected='true'] { background: var(--ink); border-color: var(--ink); color: rgba(255, 255, 255, 0.7); }
+.pf-seasons button[aria-selected='true'] b { color: #fff; }
+.pf-note { display: flex; gap: 8px; align-items: flex-start; margin: -8px 0 18px; padding: 12px 14px; border-radius: var(--r-3); background: var(--accent-wash); color: var(--ink-2); font-size: var(--fs-13); }
+.pf-note svg { flex: none; margin-top: 2px; color: var(--accent); }
+.pt-when { font-size: var(--fs-11); margin-top: -4px; }
+.pf-h2-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+.pf-h2-row .pf-h2 { margin: 0; }
+.pf-h2-row .select { width: auto; max-width: 100%; }

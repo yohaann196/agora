@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { DebaterFile, RankingsFile } from './types'
+import type { DebaterFile, LdIndex, PoolView, RankingsFile } from './types'
 
 const base = () => `${import.meta.env.BASE_URL}data/ld/`
 const cache = new Map<string, Promise<unknown>>()
@@ -34,7 +34,27 @@ function useJSON<T>(path: string | null): Loaded<T> {
   return s.path === path ? s.value : { state: 'loading' }
 }
 
-export const useRankings = (period = 'season') => useJSON<RankingsFile>(`rankings-${period}.json`)
+/** Which seasons exist, the current one, and dataset totals. */
+export const useIndex = () => useJSON<LdIndex>('index.json')
+
+export interface RankingsQuery {
+  /** Season slug; the current season when omitted. */
+  season?: string | null
+  period?: string | null
+  view?: PoolView
+}
+
+/** A season's rankings. Falls back to the circuit view for seasons without local tournaments. */
+export function useRankings(q: RankingsQuery = {}): Loaded<RankingsFile> {
+  const index = useIndex()
+  const idx = index.state === 'ready' ? index.data : null
+  const season = idx ? (idx.seasons.find((s) => s.slug === q.season) ?? idx.seasons.find((s) => s.slug === idx.current) ?? idx.seasons[0]) : null
+  const period = season?.periods.some((p) => p.slug === q.period) ? q.period! : 'season'
+  const all = q.view === 'all' && season?.hasLocal
+  const file = useJSON<RankingsFile>(season ? `${season.slug}/rankings-${period}${all ? '-all' : ''}.json` : null)
+  return index.state === 'error' ? { state: 'error' } : file
+}
+
 export const useDebater = (id: string | undefined) => useJSON<DebaterFile>(id ? `debaters/${encodeURIComponent(id)}.json` : null)
 
 export const schoolSlug = (school: string) =>
@@ -43,3 +63,9 @@ export const schoolSlug = (school: string) =>
     .replace(/&/g, ' and ')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
+
+/** "68,770" style counts; rounds down to "68K+" style when `short`. */
+export function count(n: number, short = false) {
+  if (!short || n < 10000) return n.toLocaleString()
+  return `${Math.floor(n / 1000).toLocaleString()}K+`
+}

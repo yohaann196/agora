@@ -27,7 +27,7 @@ function match(hay: string, q: string) {
 }
 
 export function useSearch(q: string, limit = 12): Hit[] {
-  const rankings = useRankings()
+  const rankings = useRankings({ view: 'all' })
   const docs = useOS((s) => s.docs)
   const flows = useOS((s) => s.flows)
   const debaters = rankings.state === 'ready' ? rankings.data.debaters : null
@@ -38,7 +38,7 @@ export function useSearch(q: string, limit = 12): Hit[] {
     const schools = new Map<string, { name: string; state: string; n: number }>()
     for (const d of debaters ?? []) {
       const m = match(d.name, t) || match(d.school, t) * 0.5
-      if (m) hits.push({ kind: 'debater', id: d.id, label: d.name, sub: `#${d.rank} · ${d.school}`, to: `/debaters/${d.id}`, score: m + (500 - Math.min(d.rank, 500)) / 1000 })
+      if (m) hits.push({ kind: 'debater', id: d.id, label: d.name, sub: `${d.rank ? `#${d.rank} · ` : ''}${d.school}`, to: `/debaters/${d.id}`, score: m + (500 - Math.min(d.rank ?? 500, 500)) / 1000 })
       const s = schools.get(d.school) ?? { name: d.school, state: d.state, n: 0 }
       s.n++
       schools.set(d.school, s)

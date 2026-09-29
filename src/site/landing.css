@@ -116,3 +116,8 @@
 .faq summary::after { content: '+'; font-size: 22px; line-height: 1; color: var(--text-3); }
 .faq details[open] summary::after { content: '–'; }
 .faq details p { padding: 0 0 16px; color: var(--text-1); line-height: 1.6; max-width: 70ch; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 6px; }
+a.hero-eyebrow:hover { background: var(--accent); color: #fff; }
+.compete-events { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin: -8px 0 28px; }
+.compete-events .event-tabs { margin: 0; }
+.compete-events > span { color: rgba(255, 255, 255, 0.6); font-size: var(--fs-13); }

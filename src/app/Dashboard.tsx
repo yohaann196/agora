@@ -23,7 +23,7 @@ export function Dashboard() {
   const sources = useOS((s) => s.sources)
   const following = useOS((s) => s.following)
   const target = useOS((s) => s.cutTarget)
-  const rankings = useRankings()
+  const rankings = useRankings({ view: 'all' })
   const navigate = useNavigate()
   const [q, setQ] = useState('')
 
@@ -98,7 +98,7 @@ export function Dashboard() {
               {followed.map((d) => (
                 <li key={d.id}>
                   <Link to={`/debaters/${d.id}`}>
-                    <span className="df-rank num">#{d.rank}</span>
+                    <span className="df-rank num">{d.rank ? `#${d.rank}` : '—'}</span>
                     <Avatar name={d.name} size={28} />
                     <span className="dl-who">
                       <b className="truncate">{d.name}</b>
@@ -120,7 +120,7 @@ export function Dashboard() {
           {data && (
             <div className="df-top">
               <span className="eyebrow">National top 3</span>
-              {data.debaters.slice(0, 3).map((d) => (
+              {data.debaters.filter((d) => d.rank !== null).slice(0, 3).map((d) => (
                 <Link key={d.id} to={`/debaters/${d.id}`}>
                   <b>{d.rank}</b> {d.name} <span className="dim">· {d.school}</span>
                 </Link>

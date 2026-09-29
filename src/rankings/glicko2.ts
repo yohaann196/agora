@@ -17,6 +17,8 @@ export interface Game {
   opponent: Rating
   /** 1 win, 0 loss, 0.5 draw. */
   score: number
+  /** How much the game counts (default 1). A weight of w scales its information, like w copies of it in one period. */
+  weight?: number
 }
 
 export const START: Rating = { r: 1500, rd: 350, vol: 0.06 }
@@ -39,15 +41,15 @@ export function update(player: Rating, games: Game[], tau = TAU): Rating {
     return { r: player.r, rd: phiStar * SCALE, vol: sigma }
   }
 
-  const opp = games.map((gm) => ({ mu: (gm.opponent.r - 1500) / SCALE, phi: gm.opponent.rd / SCALE, s: gm.score }))
+  const opp = games.map((gm) => ({ mu: (gm.opponent.r - 1500) / SCALE, phi: gm.opponent.rd / SCALE, s: gm.score, w: gm.weight ?? 1 }))
 
   let vInv = 0
   let sum = 0
   for (const o of opp) {
     const gj = g(o.phi)
     const e = expected(mu, o.mu, o.phi)
-    vInv += gj * gj * e * (1 - e)
-    sum += gj * (o.s - e)
+    vInv += o.w * gj * gj * e * (1 - e)
+    sum += o.w * gj * (o.s - e)
   }
   const v = 1 / vInv
   const delta = v * sum

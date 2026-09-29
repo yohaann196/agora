@@ -1,12 +1,13 @@
-name: Deploy to GitHub Pages
+name: Sync rankings and deploy
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Rebuild daily so new tournament results reach the rankings.
+  # Every Monday, after the weekend's tournaments: pull the latest results from the
+  # source datasets, rebuild the rankings and redeploy.
   schedule:
-    - cron: '17 9 * * *'
+    - cron: '17 9 * * 1'
 
 permissions:
   contents: read
@@ -27,8 +28,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      # Refresh the LD rankings from the public results dataset; keep the committed data if that fails.
-      - run: npm run rankings || (git checkout -- public/data && echo "::warning::Rankings refresh failed; deploying the committed data")
+      # Clones shreerammodi/debate-rankings and skumar-ml/debate-rankings, merges them with
+      # data/uploads, and writes public/data/ld. If a source can't be reached the job fails
+      # and the last good deployment stays live.
+      - run: npm run rankings
       - run: npx tsc --noEmit -p .
       - run: npx vitest run
       # Pages has no SPA fallback, so the app uses hash routes (/#/app/...).
