@@ -1,16 +1,16 @@
-import { Compass } from 'lucide-react'
 import { Link } from 'react-router'
 
-export function NotFound() {
+export function NotFound({ what = 'page' }: { what?: string }) {
   return (
     <div className="page" style={{ display: 'grid', placeItems: 'center', minHeight: '60vh' }}>
       <div style={{ textAlign: 'center', display: 'grid', gap: 14, justifyItems: 'center', maxWidth: 440 }}>
-        <Compass size={28} style={{ color: 'var(--text-3)' }} />
-        <p className="quote" style={{ fontSize: 26 }}>This path leads nowhere — yet.</p>
-        <p className="dim">The page you were looking for isn’t on the knowledge graph. Perhaps it was an idea you haven’t had.</p>
+        <div className="display" style={{ fontSize: 72 }}>
+          404<span className="spot">:</span>
+        </div>
+        <p className="muted">We couldn’t find that {what}. It may have been renamed or removed.</p>
         <div className="hstack">
-          <Link to="/app" className="btn primary">Return home</Link>
-          <button className="btn" onClick={() => document.getElementById('global-search')?.focus()}>Search</button>
+          <Link to="/" className="btn primary">Home</Link>
+          <Link to="/rankings" className="btn">Rankings</Link>
         </div>
       </div>
     </div>

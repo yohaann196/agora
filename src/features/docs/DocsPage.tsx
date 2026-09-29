@@ -5,9 +5,9 @@ import StarterKit from '@tiptap/starter-kit'
 import { motion } from 'framer-motion'
 import { ClipboardCopy, Download, FileText, Globe, Plus, Redo2, Search, Send, Timer, Trash2, Undo2 } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router'
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router'
 import { PageHeader, timeAgo } from '../../components/ui/primitives'
-import type { Doc, DocJSON, DocType } from '../../model/types'
+import type { Doc, DocJSON, DocType, Side } from '../../model/types'
 import { LEVEL_NAME, cards, docStats, formatSeconds, outline, plainText } from '../../research/docModel'
 import { READ_WPM } from '../../research/formats'
 import { useOS } from '../../store'
@@ -16,35 +16,61 @@ import { copyRich, docToHtml, download } from './docExport'
 import { Emphasis, HIGHLIGHT, Roles, VerbatimKeys, clearFormatting, condense, setRole } from './editorExtensions'
 import './docs.css'
 
-const TYPE_LABEL: Record<DocType, string> = { speech: 'Speech doc', file: 'Research file', research: 'Notes' }
+const TYPE_LABEL: Record<DocType, string> = { contention: 'Contention', block: 'Block', speech: 'Speech doc', file: 'Research file', research: 'Notes' }
+const VAULTS: { type: DocType | 'all'; label: string; lede: string }[] = [
+  { type: 'contention', label: 'Contention vault', lede: 'Your cases for each topic and side: framework, contentions and the cards that prove them.' },
+  { type: 'block', label: 'Block vault', lede: 'Frontlines, answers and framework blocks you can send into any speech.' },
+  { type: 'all', label: 'All docs', lede: 'Every contention, block, speech doc and research file.' },
+]
 
 export function DocsIndex() {
-  const docs = useOS((s) => s.docs)
+  const all = useOS((s) => s.docs)
   const target = useOS((s) => s.cutTarget)
   const navigate = useNavigate()
-  const create = (t: DocType) => navigate(`/app/docs/${useOS.getState().createDoc(t)}`)
+  const [params, setParams] = useSearchParams()
+  const [side, setSide] = useState<'all' | 'aff' | 'neg'>('all')
+  const type = (params.get('type') ?? 'contention') as DocType | 'all'
+  const vault = VAULTS.find((v) => v.type === type) ?? VAULTS[2]
+  const docs = all.filter((d) => (type === 'all' || d.type === type) && (side === 'all' || d.side === side || d.side === 'both'))
+  const create = (t: DocType) => navigate(`/app/vaults/${useOS.getState().createDoc(t, undefined, side !== 'all' ? { side } : undefined)}`)
   return (
     <div className="page">
       <PageHeader
-        eyebrow="Debate · speech docs & files"
-        title="Speech Docs"
-        lede="Your files, organized the way debaters build them: Pockets, Hats, Blocks and Tags. Cut cards in the Research Browser and they land here with the citation attached."
+        eyebrow="Prep · vaults"
+        title={vault.label}
+        lede={vault.lede}
         actions={
           <>
-            <button className="btn" onClick={() => create('file')}><Plus /> Research file</button>
-            <button className="btn primary" onClick={() => create('speech')}><Plus /> Speech doc</button>
+            {type !== 'block' && <button className="btn" onClick={() => create('block')}><Plus /> Block</button>}
+            <button className="btn" onClick={() => create('speech')}><Plus /> Speech doc</button>
+            <button className="btn primary" onClick={() => create(type === 'block' ? 'block' : 'contention')}><Plus /> {type === 'block' ? 'New block' : 'New contention'}</button>
           </>
         }
       />
+      <div className="vault-bar">
+        <div className="seg" role="tablist" aria-label="Vault">
+          {VAULTS.map((v) => (
+            <button key={v.type} role="tab" aria-selected={type === v.type} onClick={() => setParams({ type: v.type }, { replace: true })}>
+              {v.label.replace(' vault', 's').replace('Contentions', 'Contentions')}
+            </button>
+          ))}
+        </div>
+        <div className="seg" role="radiogroup" aria-label="Side">
+          {(['all', 'aff', 'neg'] as const).map((sd) => (
+            <button key={sd} role="radio" aria-checked={side === sd} onClick={() => setSide(sd)}>{sd === 'all' ? 'Both sides' : sd === 'aff' ? 'Aff' : 'Neg'}</button>
+          ))}
+        </div>
+      </div>
       <div className="doc-grid">
         {docs.map((d, i) => {
           const st = docStats(d.content)
-          const tags = cards(d.content).slice(0, 3)
+          const tags = cards(d.content).filter((c) => c.tag).slice(0, 3)
           return (
             <motion.div key={d.id} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.03 }} style={{ display: 'grid' }}>
-              <Link to={`/app/docs/${d.id}`} className={`doc-card ${d.type}`}>
+              <Link to={`/app/vaults/${d.id}`} className={`doc-card ${d.type}`}>
                 <div className="dc-top">
                   <span className="dc-type">{TYPE_LABEL[d.type]}</span>
+                  {d.side && d.side !== 'both' && <span className={`tag ${d.side}`}>{d.side === 'aff' ? 'Aff' : 'Neg'}</span>}
                   {d.id === target && <span className="dc-target">Cutting into</span>}
                 </div>
                 <h3 className="dc-title">{d.title}</h3>
@@ -64,6 +90,7 @@ export function DocsIndex() {
             </motion.div>
           )
         })}
+        {!docs.length && <div className="empty">Nothing here yet. Create one, or cut cards from Evidence.</div>}
       </div>
     </div>
   )
@@ -235,10 +262,17 @@ function DocEditor({ doc }: { doc: Doc }) {
       <aside className="doc-nav" aria-label="Navigation pane">
         <input className="doc-title-input" value={doc.title} onChange={(e) => updateDoc(doc.id, { title: e.target.value })} aria-label="Document title" />
         <div className="hstack" style={{ gap: 6, flexWrap: 'wrap' }}>
-          <select className="select" style={{ width: 'auto', fontSize: 'var(--fs-11)', padding: '3px 24px 3px 8px' }} value={doc.type} onChange={(e) => updateDoc(doc.id, { type: e.target.value as DocType })} aria-label="Document type">
+          <select className="select doc-mini-select" value={doc.type} onChange={(e) => updateDoc(doc.id, { type: e.target.value as DocType })} aria-label="Vault">
+            <option value="contention">Contention</option>
+            <option value="block">Block</option>
             <option value="speech">Speech doc</option>
             <option value="file">Research file</option>
             <option value="research">Notes</option>
+          </select>
+          <select className="select doc-mini-select" value={doc.side ?? 'both'} onChange={(e) => updateDoc(doc.id, { side: e.target.value as Side })} aria-label="Side">
+            <option value="aff">Aff</option>
+            <option value="neg">Neg</option>
+            <option value="both">Both sides</option>
           </select>
           {target === doc.id ? (
             <span className="dc-target">Cutting into</span>
@@ -257,12 +291,12 @@ function DocEditor({ doc }: { doc: Doc }) {
           {!items.length && <p className="dim letter" style={{ fontSize: 'var(--fs-11)' }}>Headings you add appear here.</p>}
         </nav>
         <div className="doc-nav-foot">
-          <Link to="/app/browser" className="btn sm"><Globe /> Research</Link>
+          <Link to="/app/evidence" className="btn sm"><Globe /> Evidence</Link>
           <button
             className="btn ghost sm danger"
             onClick={() => {
               deleteDoc(doc.id)
-              navigate('/app/docs')
+              navigate(`/app/vaults?type=${doc.type === 'block' ? 'block' : 'contention'}`)
             }}
           >
             <Trash2 /> Delete
@@ -351,7 +385,7 @@ export function DocPage() {
   const doc = useOS((s) => s.docs.find((d) => d.id === id))
   const pushRecent = useOS((s) => s.pushRecent)
   useEffect(() => {
-    if (doc) pushRecent({ kind: 'doc', id: doc.id })
+    if (doc) pushRecent({ kind: 'doc', id: doc.id, label: doc.title })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
   if (!doc) return <NotFound />

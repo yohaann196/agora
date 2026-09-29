@@ -1,0 +1,81 @@
+import { Menu, Search, X } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Link, NavLink, Outlet, useLocation } from 'react-router'
+import { CommandPalette, useGlobalPaletteKeys } from '../components/shell/CommandPalette'
+import { Toasts } from '../components/shell/Overlays'
+import { Logo } from '../components/ui/Brand'
+import { useOS } from '../store'
+import './site.css'
+
+const NAV = [
+  { to: '/rankings', label: 'Rankings' },
+  { to: '/briefs', label: 'Briefs' },
+  { to: '/prep', label: 'Prep tools' },
+]
+
+export function SiteShell() {
+  const [open, setOpen] = useState(false)
+  const { pathname, hash } = useLocation()
+  useGlobalPaletteKeys()
+  // New page, new scroll position; pages that jump to a section handle their own.
+  useEffect(() => {
+    setOpen(false)
+    if (pathname !== '/prep' && !hash) window.scrollTo({ top: 0 })
+  }, [pathname, hash])
+  return (
+    <div className="site">
+      <header className="site-nav">
+        <div className="site-nav-inner">
+          <Link to="/" className="site-brand" aria-label="Resolved home">
+            <Logo size={24} />
+          </Link>
+          <nav className={`site-links ${open ? 'open' : ''}`} aria-label="Main">
+            {NAV.map((n) => (
+              <NavLink key={n.to} to={n.to} className={({ isActive }) => `site-link ${isActive ? 'on' : ''}`}>
+                {n.label}
+              </NavLink>
+            ))}
+            <button className="btn ghost site-search" onClick={() => useOS.getState().setPalette(true)} aria-label="Search debaters and schools">
+              <Search /> <span>Search</span> <span className="kbd">⌘K</span>
+            </button>
+            <Link to="/app" className="btn primary site-cta">Open Resolved</Link>
+          </nav>
+          <button className="btn icon ghost site-menu" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+            {open ? <X /> : <Menu />}
+          </button>
+        </div>
+      </header>
+      <main className="site-main">
+        <Outlet />
+      </main>
+      <footer className="site-foot">
+        <div className="site-foot-inner">
+          <div className="sf-brand">
+            <Logo size={22} />
+            <p>Prep, rankings and monthly briefs for competitive debate.</p>
+          </div>
+          <div className="sf-col">
+            <b>Compete</b>
+            <Link to="/rankings">LD rankings</Link>
+            <Link to="/rankings/method">How rankings work</Link>
+            <Link to="/briefs">Monthly briefs</Link>
+          </div>
+          <div className="sf-col">
+            <b>Prep</b>
+            <Link to="/app/evidence">Evidence search</Link>
+            <Link to="/app/vaults">Contention &amp; block vaults</Link>
+            <Link to="/app/flow">Flow &amp; timer</Link>
+          </div>
+          <div className="sf-col">
+            <b>Data</b>
+            <Link to="/rankings/method#corrections">Corrections &amp; removal</Link>
+            <a href="https://github.com/shreerammodi/debate-rankings" target="_blank" rel="noreferrer">Results dataset</a>
+          </div>
+        </div>
+        <p className="sf-fine">Rankings are unofficial and computed from public Tabroom results. Resolved is not affiliated with the NSDA, Tabroom or any tournament.</p>
+      </footer>
+      <CommandPalette />
+      <Toasts />
+    </div>
+  )
+}

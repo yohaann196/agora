@@ -1,0 +1,35 @@
+name: Profile correction or removal
+description: Fix a result on a debater profile, merge duplicate profiles, or ask for a profile to be removed.
+title: "Profile: "
+labels: ["rankings", "profile"]
+body:
+  - type: dropdown
+    id: request
+    attributes:
+      label: What do you need?
+      options:
+        - Remove my profile
+        - Correct a result
+        - Merge duplicate profiles (e.g. after a school change)
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: profile
+    attributes:
+      label: Profile link
+      description: Copy the address of the profile page.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Which tournament and round, and what's wrong? Please don't include contact details you don't want public; issues are visible to everyone.
+  - type: checkboxes
+    id: self
+    attributes:
+      label: Confirmation
+      options:
+        - label: This is my own profile, or I'm a coach or parent acting for the debater.
+          required: true

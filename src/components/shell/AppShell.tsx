@@ -4,46 +4,26 @@ import { useLocation, useNavigate, useOutlet } from 'react-router'
 import { APPS } from '../../lib/apps'
 import { isTyping } from '../../lib/hooks'
 import { useOS } from '../../store'
-import { CommandPalette } from './CommandPalette'
-import { QuickLaunch, ShortcutSheet, Toasts } from './Overlays'
+import { CommandPalette, useGlobalPaletteKeys } from './CommandPalette'
+import { ShortcutSheet, Toasts } from './Overlays'
 import { Sidebar } from './Sidebar'
 import { StatusBar } from './StatusBar'
 import { TopBar } from './TopBar'
-import { WindowLayer } from './WindowLayer'
 
-function useGlobalShortcuts() {
+function useWorkspaceKeys() {
   const navigate = useNavigate()
-  const chord = useRef<number>(0)
+  const chord = useRef(0)
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const s = useOS.getState()
-      const mod = e.metaKey || e.ctrlKey
-      if (mod && e.key.toLowerCase() === 'k') {
-        e.preventDefault()
-        s.setPalette(!s.paletteOpen)
-        return
-      }
-      if (mod && e.key.toLowerCase() === 'j') {
-        e.preventDefault()
-        s.setQuickLaunch(!s.quickLaunchOpen)
-        return
-      }
-      if (mod && e.key === '/') {
-        e.preventDefault()
-        s.setShortcuts(!s.shortcutsOpen)
-        return
-      }
       if (e.key === 'Escape') {
-        if (s.paletteOpen || s.quickLaunchOpen || s.shortcutsOpen) {
+        if (s.paletteOpen || s.shortcutsOpen) {
           s.setPalette(false)
-          s.setQuickLaunch(false)
           s.setShortcuts(false)
         }
         return
       }
-      if (isTyping(e) || mod || e.altKey) return
-      if (s.paletteOpen || s.quickLaunchOpen) return
-
+      if (isTyping(e) || e.metaKey || e.ctrlKey || e.altKey || s.paletteOpen) return
       const now = Date.now()
       if (now - chord.current < 900) {
         chord.current = 0
@@ -54,35 +34,15 @@ function useGlobalShortcuts() {
         }
         return
       }
-      if (e.key === 'g') {
-        chord.current = now
-        return
-      }
-      if (e.key === '/') {
+      if (e.key === 'g') chord.current = now
+      else if (e.key === '/') {
         e.preventDefault()
-        document.getElementById('global-search')?.focus()
-      } else if (e.key === '?') {
-        s.setShortcuts(true)
-      } else if (e.key === 'n') {
-        e.preventDefault()
-        const id = s.createNote({ title: 'Scratch note' })
-        s.openWindow('note', { kind: 'note', id })
-      }
+        s.setPalette(true)
+      } else if (e.key === '?') s.setShortcuts(true)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [navigate])
-}
-
-function useAppearance() {
-  const { accent, density, reduceMotion } = useOS((s) => s.settings)
-  useEffect(() => {
-    const el = document.documentElement
-    el.dataset.accent = accent
-    el.dataset.density = density
-    el.dataset.reduceMotion = String(reduceMotion)
-  }, [accent, density, reduceMotion])
-  return reduceMotion
 }
 
 /** Keeps the outgoing route's element on screen while it animates out. */
@@ -94,21 +54,22 @@ function FrozenOutlet({ outlet }: { outlet: ReactNode }) {
 export function AppShell() {
   const location = useLocation()
   const outlet = useOutlet()
-  const reduceMotion = useAppearance()
+  const reduceMotion = useOS((s) => s.settings.reduceMotion)
   const viewport = useRef<HTMLDivElement>(null)
-  useGlobalShortcuts()
+  useWorkspaceKeys()
+  useGlobalPaletteKeys()
 
-  // Make it plain, even in the tab title, that this is the demo workspace.
+  // The workspace scrolls inside its panes, not the page.
   useEffect(() => {
-    document.title = 'Agora (demo)'
+    document.body.classList.add('app-body')
+    return () => document.body.classList.remove('app-body')
   }, [])
 
-  // Top-level app key: transitions happen between apps and entities, not on hash changes.
   const key = location.pathname
   useEffect(() => {
-    if (!location.hash) viewport.current?.scrollTo({ top: 0 })
+    viewport.current?.scrollTo({ top: 0 })
     useOS.getState().setMobileNav(false)
-  }, [key, location.hash])
+  }, [key])
 
   return (
     <MotionConfig reducedMotion={reduceMotion ? 'always' : 'user'}>
@@ -118,14 +79,7 @@ export function AppShell() {
           <TopBar />
           <main className="viewport" ref={viewport} id="main">
             <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={key}
-                className="route"
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -4 }}
-                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              >
+              <motion.div key={key} className="route" initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}>
                 <Suspense fallback={<div className="route-loading" aria-label="Loading" />}>
                   <FrozenOutlet outlet={outlet} />
                 </Suspense>
@@ -134,9 +88,7 @@ export function AppShell() {
           </main>
         </div>
         <StatusBar />
-        <WindowLayer />
         <CommandPalette />
-        <QuickLaunch />
         <ShortcutSheet />
         <Toasts />
       </div>

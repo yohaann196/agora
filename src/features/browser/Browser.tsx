@@ -72,7 +72,7 @@ export function Browser() {
   const addressRef = useRef<HTMLInputElement>(null)
   const highlightSource = params.get('source')
 
-  // Deep links: /app/browser?q=… or ?open=wiki:Title open in a fresh tab.
+  // Deep links: /app/evidence?q=… or ?open=wiki:Title open in a fresh tab.
   useEffect(() => {
     const q = params.get('q')
     const open = params.get('open')
@@ -219,7 +219,7 @@ export function Browser() {
                 <>
                   <div className="rail-doc">
                     <span className="eyebrow">Cutting into</span>
-                    <Link to={`/app/docs/${targetDoc.id}`} className="rail-doc-title">{targetDoc.title}</Link>
+                    <Link to={`/app/vaults/${targetDoc.id}`} className="rail-doc-title">{targetDoc.title}</Link>
                     <span className="dim mono" style={{ fontSize: 10.5 }}>{targetCards.length} cards</span>
                   </div>
                   {targetCards.map((c) => (
