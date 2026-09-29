@@ -1,0 +1,21 @@
+# Temporary: probes Tabroom's public pages so the importer can be written against real responses.
+name: Tabroom probe
+
+on:
+  push:
+    branches: [claude/philosophyos-web-app-f3ynd7]
+    paths: [scripts/tabroom/probe.ts, .github/workflows/tabroom-probe.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npx --yes tsx scripts/tabroom/probe.ts
