@@ -133,10 +133,17 @@ export const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
 
-/** Identity: institution + name, or name alone for debaters who compete for several schools. */
+/** A school name without the suffixes Tabroom entries vary on ("Cupertino Independent", "Danville Area", "Gunn HS"). */
+export const schoolKey = (institution: string) =>
+  slugify(institution)
+    .split('-')
+    .filter((w) => w && !['independent', 'unaffiliated', 'hs', 'high', 'school', 'area'].includes(w))
+    .join('-')
+
+/** Identity: school + name, or name alone for debaters who compete for several schools. */
 export function identityKey(institution: string, name: string, multiTeam: string[]) {
   const n = normalizeName(name)
-  return multiTeam.includes(n) ? n : `${institution}|${n}`
+  return multiTeam.includes(n) ? n : `${schoolKey(institution) || institution}|${n}`
 }
 
 export const titleFromSlug = (slug: string) =>

@@ -24,6 +24,7 @@ npm run dev        # http://localhost:5173
 | `npm run dev`       | Vite dev server                                           |
 | `npm run build`     | Typecheck (strict) + production build to `dist/`          |
 | `npm run rankings`  | Pull the source datasets and rebuild `public/data/ld/` (run once before `npm run dev`) |
+| `npm run import:results -- <folder>` | Convert a folder of Tabroom round-result exports into `data/uploads/` (varsity divisions only) |
 | `npm test`          | Vitest: Glicko-2, the rankings pipeline, citations, docs, sanitizer |
 | `npm run lint`      | ESLint                                                    |
 | `npm run typecheck` | `tsc --noEmit`                                            |
@@ -58,9 +59,9 @@ The pipeline lives in `src/rankings/` and `scripts/rankings/build.ts`. It follow
 1. **Data.** Public Tabroom round results (an entries file plus one CSV per round), merged season by season from three sources:
    - [shreerammodi/debate-rankings](https://github.com/shreerammodi/debate-rankings): current-season national circuit (`tournaments/hsld/` and `config/hsld-config.json`).
    - [skumar-ml/debate-rankings](https://github.com/skumar-ml/debate-rankings) (NSD × DebateDrills × DebateLand): national circuit from 2021–22 on, in `<season>/LD/<Tournament>/{Prelims,Elims}`. Tournament order comes from that repo's `LDRankings.py`, and current-season dates come from its TOC bid calendar.
-   - [`data/uploads/`](data/uploads/README.md): local tournaments added by hand.
+   - [`data/uploads/`](data/uploads/README.md): tournaments added from Tabroom exports (24 local varsity tournaments for 2026–27 so far, e.g. Stephen Stewart, Jordan, Seven Lakes, MDTA). These are imported with `npm run import:results`.
 
-   A tournament that appears in more than one source is kept once.
+   A tournament that appears in more than one source is kept once, using whichever copy has more decided rounds.
 2. **Identity.** A debater is school + name (normalized), or name alone for debaters listed as competing for multiple schools. Byes, "advances" rows and split decisions without a majority are skipped.
 3. **Glicko-2** ([Glickman 2012](http://www.glicko.net/glicko/glicko2.pdf)), written from scratch in `src/rankings/glicko2.ts`:
    - Starting values: 1500 / 350 / 0.06, τ = 0.5. Each season is rated on its own.

@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit -p .",
     "lint": "eslint .",
     "test": "vitest run",
-    "rankings": "tsx scripts/rankings/build.ts"
+    "rankings": "tsx scripts/rankings/build.ts",
+    "import:results": "tsx scripts/rankings/import-export.ts"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.3.0",

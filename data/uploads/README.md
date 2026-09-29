@@ -1,5 +1,21 @@
 # Uploaded tournaments
 
+**Fastest path:** put the Tabroom round-result export folder (one folder per tournament, each with `tournament_info.txt`, `entries.csv` and one CSV per round) somewhere local, then run:
+
+```
+npm run import:results -- "<export folder>" --season 2026-27
+```
+
+The command does four things:
+- It keeps only varsity divisions: Varsity, Open, Champ or TOC, plus any division at a TOC-bid (national circuit) tournament.
+- It drops closeouts, pairing-only rounds and split panels.
+- It writes each tournament into the layout below.
+- It prints what it imported and what it skipped.
+
+After that, run `npm run rankings`.
+
+The rest of this file describes the layout, if you'd rather add a tournament by hand.
+
 Local tournaments (and any circuit tournament the source datasets are missing) go here. Every folder is rated in the same Glicko-2 pool as the national circuit on the next build.
 
 ```
@@ -25,7 +41,7 @@ data/uploads/<season>/<tournament-slug>/
 }
 ```
 
-`level` is `local` (the default) or `circuit`. Circuit rounds count double a local round. `tabroomId` is optional.
+`level` is `circuit` or `local`. If you leave it out, a tournament on the TOC bid calendar counts as `circuit` and anything else as `local`. Circuit rounds count double a local round. `tabroomId` is optional.
 
 ## Entries
 
@@ -54,4 +70,4 @@ There are two ways to lay out the round files:
 
 Only include the varsity/open LD division. Byes, split decisions and "advances" rows are skipped automatically.
 
-If an upload has the same name as a tournament in a source dataset, the upload replaces it.
+If an upload is the same tournament as one in a source dataset, whichever copy has more decided rounds is kept.

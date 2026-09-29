@@ -51,7 +51,10 @@ describe('Tabroom CSV parsing', () => {
 
   it('normalizes names and merges multi-school debaters', () => {
     expect(normalizeName('jane  de la cruz')).toBe('Jane De La Cruz')
-    expect(identityKey('Harker', 'Ann Lee', [])).toBe('Harker|Ann Lee')
+    expect(identityKey('Harker', 'Ann Lee', [])).toBe('harker|Ann Lee')
+    expect(identityKey('Cupertino Independent', 'Ann Lee', [])).toBe(identityKey('Cupertino', 'Ann Lee', []))
+    expect(identityKey('Danville Area', 'Ann Lee', [])).toBe(identityKey('Danville', 'Ann Lee', []))
+    expect(identityKey('Colorado Academy', 'Ann Lee', [])).not.toBe(identityKey('Colorado', 'Ann Lee', []))
     expect(identityKey('Harker', 'Ann Lee', ['Ann Lee'])).toBe('Ann Lee')
   })
 })
