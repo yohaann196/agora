@@ -255,7 +255,7 @@ export function TextExplorer() {
             ))}
             {!filtered.length && (
               <div className="empty">
-                No passages match. The corpus is deliberately small and verified — PhilosophyOS won’t invent a quotation to fill the gap.
+                No passages match. The corpus is deliberately small and verified — Agora won’t invent a quotation to fill the gap.
               </div>
             )}
           </div>

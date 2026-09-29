@@ -1,7 +1,7 @@
 import { ArrowDown, ArrowUp, Download, Eye, EyeOff, Keyboard, KeyRound, RotateCcw } from 'lucide-react'
 import { useState } from 'react'
 import { PageHeader } from '../../components/ui/primitives'
-import { appForCard } from '../../lib/apps'
+import { ACCENT_INK, ACCENT_NAME, appForCard } from '../../lib/apps'
 import { useOS, type Accent } from '../../store'
 import './workspace.css'
 
@@ -23,11 +23,11 @@ export function SettingsPage() {
 
   const exportData = () => {
     const s = useOS.getState()
-    const data = { arguments: s.arguments, essays: s.essays, notes: s.notes, debates: s.debates, reading: s.reading, saved: s.saved, ideaNodes: s.ideaNodes, ideaEdges: s.ideaEdges }
+    const data = { docs: s.docs, flows: s.flows, sources: s.sources, arguments: s.arguments, essays: s.essays, notes: s.notes, debates: s.debates, reading: s.reading, saved: s.saved, ideaNodes: s.ideaNodes, ideaEdges: s.ideaEdges }
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
     const a = document.createElement('a')
     a.href = URL.createObjectURL(blob)
-    a.download = 'philosophyos-workspace.json'
+    a.download = 'agora-workspace.json'
     a.click()
     URL.revokeObjectURL(a.href)
     toast({ title: 'Workspace exported', tone: 'success' })
@@ -38,7 +38,7 @@ export function SettingsPage() {
       <PageHeader eyebrow="Workspace · Settings" title="Settings" lede="Make the workspace yours. Everything is stored locally in this browser." />
 
       <section className="set-sec">
-        <div className="set-label"><h3>Profile</h3><p>How PhilosophyOS greets you.</p></div>
+        <div className="set-label"><h3>Profile</h3><p>How Agora greets you.</p></div>
         <div className="set-body">
           <div className="field" style={{ maxWidth: 320 }}>
             <label htmlFor="name">Display name</label>
@@ -48,13 +48,37 @@ export function SettingsPage() {
       </section>
 
       <section className="set-sec">
-        <div className="set-label"><h3>Appearance</h3><p>Accent, density and motion.</p></div>
+        <div className="set-label"><h3>Research sources</h3><p>Where the Research Browser searches. Each is a free, open API called straight from your browser.</p></div>
+        <div className="set-body">
+          <div className="research-toggles">
+            {([
+              ['wikipedia', 'Wikipedia', 'Encyclopedia articles, read in the app'],
+              ['openalex', 'OpenAlex', 'Scholarly papers and abstracts'],
+              ['openlibrary', 'Open Library', 'Books and editions'],
+              ['agora', 'Agora library', 'Verified public-domain passages, works offline'],
+            ] as const).map(([k, label, hint]) => (
+              <label key={k} className="research-toggle">
+                <input type="checkbox" checked={settings.research[k]} onChange={(e) => updateSettings({ research: { ...settings.research, [k]: e.target.checked } })} />
+                <span><b>{label}</b><small>{hint}</small></span>
+              </label>
+            ))}
+          </div>
+          <div className="field" style={{ maxWidth: 360 }}>
+            <label htmlFor="contact">Contact email for OpenAlex (optional)</label>
+            <input id="contact" className="input" type="email" placeholder="you@school.edu" value={settings.research.contactEmail} onChange={(e) => updateSettings({ research: { ...settings.research, contactEmail: e.target.value.trim() } })} />
+            <span className="dim" style={{ fontSize: 'var(--fs-11)' }}>OpenAlex gives faster, more reliable responses to requests that include an email. It is sent only to OpenAlex.</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="set-sec">
+        <div className="set-label"><h3>Appearance</h3><p>Spot ink, density and motion.</p></div>
         <div className="set-body">
           <div className="field">
-            <label>Accent</label>
-            <div className="swatches" role="radiogroup" aria-label="Accent colour">
+            <label>Spot ink · {ACCENT_NAME[settings.accent]}</label>
+            <div className="swatches" role="radiogroup" aria-label="Spot ink colour">
               {ACCENTS.map((a) => (
-                <button key={a} role="radio" aria-checked={settings.accent === a} aria-label={a} className={`swatch ${settings.accent === a ? 'on' : ''}`} style={{ ['--sw' as string]: `var(--${a})` }} onClick={() => updateSettings({ accent: a })} />
+                <button key={a} role="radio" aria-checked={settings.accent === a} aria-label={ACCENT_NAME[a]} title={ACCENT_NAME[a]} className={`swatch ${settings.accent === a ? 'on' : ''}`} style={{ ['--sw' as string]: ACCENT_INK[a] }} onClick={() => updateSettings({ accent: a })} />
               ))}
             </div>
           </div>
@@ -105,11 +129,11 @@ export function SettingsPage() {
           <div className="engine-options">
             <button className={`engine-opt ${settings.aiProvider === 'local' ? 'on' : ''}`} onClick={() => updateSettings({ aiProvider: 'local' })} aria-pressed={settings.aiProvider === 'local'}>
               <span className="t0">Local reasoning engine</span>
-              <span className="dim">Runs entirely in your browser. Rule-based analysis grounded in the PhilosophyOS knowledge base. No network, no account.</span>
+              <span className="dim">Runs entirely in your browser. Rule-based analysis grounded in the Agora knowledge base. No network, no account.</span>
             </button>
             <button className={`engine-opt ${settings.aiProvider === 'anthropic' ? 'on' : ''}`} onClick={() => updateSettings({ aiProvider: 'anthropic' })} aria-pressed={settings.aiProvider === 'anthropic'}>
               <span className="t0">Claude</span>
-              <span className="dim">Socratic AI calls Claude directly from your browser using your own API key. Falls back to the local engine on any error.</span>
+              <span className="dim">Socratic Coach calls Claude directly from your browser using your own API key. Falls back to the local engine on any error.</span>
             </button>
           </div>
           {settings.aiProvider === 'anthropic' && (
@@ -122,12 +146,12 @@ export function SettingsPage() {
               <p className="dim" style={{ fontSize: 'var(--fs-11)', lineHeight: 1.5 }}>Stored only in this browser’s local storage and sent only to api.anthropic.com. Anyone with access to this browser profile can read it — use a key you can revoke.</p>
             </div>
           )}
-          <p className="principle-line">Whatever the engine, PhilosophyOS is built on one principle: <em>AI should amplify philosophical thinking, not replace it.</em></p>
+          <p className="principle-line">Whatever the engine, Agora is built on one principle: <em>AI should amplify philosophical thinking, not replace it.</em></p>
         </div>
       </section>
 
       <section className="set-sec">
-        <div className="set-label"><h3>Keyboard</h3><p>PhilosophyOS is fully keyboard-driven.</p></div>
+        <div className="set-label"><h3>Keyboard</h3><p>Agora is fully keyboard-driven.</p></div>
         <div className="set-body">
           <button className="btn" style={{ justifySelf: 'start' }} onClick={() => setShortcuts(true)}><Keyboard /> View shortcuts <span className="kbd">?</span></button>
         </div>

@@ -1,5 +1,5 @@
 /**
- * PhilosophyOS data model.
+ * Agora data model.
  *
  * Every entity has a globally unique `id` and a `kind`, so any entity can be
  * addressed, linked, saved, searched, and placed on the knowledge graph.

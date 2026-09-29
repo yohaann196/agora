@@ -1,6 +1,6 @@
 import { motion, useReducedMotion, useScroll, useTransform, type Variants } from 'framer-motion'
 import { ArrowRight, BrainCircuit, FileText, Globe, Scissors, TableProperties } from 'lucide-react'
-import { useEffect, type ReactNode } from 'react'
+import { useEffect, type MouseEvent, type ReactNode } from 'react'
 import { Link } from 'react-router'
 import { AgoraMark } from '../components/ui/AgoraMark'
 import './landing.css'
@@ -59,7 +59,6 @@ function Cloud({ d }: { d: string }) {
   return (
     <g>
       <path d={d} fill="#f8f7f3" stroke="#171614" strokeWidth="3.5" strokeLinejoin="round" />
-      <path d={d} fill="url(#hatch-fine)" opacity="0.28" transform="translate(6 10)" style={{ clipPath: 'inset(55% 0 0 0)' }} />
     </g>
   )
 }
@@ -198,6 +197,12 @@ function Cap({ children, className = '' }: { children: ReactNode; className?: st
 
 /* ------------------------------------------------------------------ */
 
+/** In-page jumps; plain #hash links would be read as routes under the hash router used on GitHub Pages. */
+const jump = (id: string) => (e: MouseEvent) => {
+  e.preventDefault()
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
+
 export function Landing() {
   useEffect(() => {
     document.title = 'Agora — Research & Debate'
@@ -207,12 +212,12 @@ export function Landing() {
     <div className="landing">
       <header className="lp-nav">
         <nav className="lp-nav-box" aria-label="Site">
-          <a href="#research" className="lp-nav-link">Research</a>
+          <a href="#research" onClick={jump('research')} className="lp-nav-link">Research</a>
           <Link to="/app" className="lp-nav-mark" aria-label="Agora — open the app">
             <AgoraMark size={46} />
             <span>Agora</span>
           </Link>
-          <a href="#round" className="lp-nav-link">Debate</a>
+          <a href="#round" onClick={jump('round')} className="lp-nav-link">Debate</a>
         </nav>
         <Link to="/app" className="btn primary lp-nav-cta">Enter <ArrowRight /></Link>
       </header>
@@ -234,7 +239,7 @@ export function Landing() {
             <p className="lp-tag">A research browser and speech-doc studio for <span className="ox-box">debaters</span> and philosophy students.</p>
             <div className="lp-ctas">
               <Link to="/app" className="btn primary lg">Enter the Agora <ArrowRight /></Link>
-              <a href="#research" className="btn lg">Read the comic</a>
+              <a href="#research" onClick={jump('research')} className="btn lg">Read the comic</a>
             </div>
           </Panel>
           <Panel className="lp-later" delay={0.12} label="Twenty-four centuries later">
@@ -275,8 +280,10 @@ export function Landing() {
               <p className="cd-source serif">
                 The object of this Essay is to assert one very simple principle… <span className="cd-sel">That the only purpose for which power can be rightfully exercised over any member of a civilised community, against his will, is to prevent harm to others.</span>
               </p>
-              <Scissors className="cd-scissors" aria-hidden />
-              <Sfx className="sfx-snip">Snip!</Sfx>
+              <div className="cd-snipline" aria-hidden>
+                <Scissors className="cd-scissors" />
+                <Sfx className="sfx-snip">Snip!</Sfx>
+              </div>
               <div className="cd-card">
                 <div className="cd-tag">Only harm to others justifies coercion — paternalism fails.</div>
                 <div className="cd-cite"><b>Mill 59</b> — John Stuart Mill, <em>On Liberty</em>, 1859, ch. 1</div>
@@ -346,7 +353,7 @@ export function Landing() {
                 <div key={label as string} className={`fm-col ${side}`}>
                   <b>{label}</b>
                   {(cells as string[]).map((c, i) => (
-                    <span key={i} className={c.includes('dropped') ? 'extend' : ''}>{c}</span>
+                    <span key={i} className={c.includes('dropped') ? 'extend' : label === 'NR' && !c ? 'dropped' : ''}>{c}</span>
                   ))}
                 </div>
               ))}

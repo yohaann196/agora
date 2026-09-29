@@ -87,7 +87,7 @@ export function GlobalSearch() {
           }}
           onFocus={() => setOpen(true)}
           onKeyDown={nav.onKeyDown}
-          placeholder="Search your evidence, thinkers, arguments…"
+          placeholder="Search your desk…"
           aria-label="Global search"
           role="combobox"
           aria-expanded={open && !!q}

@@ -108,7 +108,12 @@ export function Browser() {
     [navigateTab, openTab],
   )
 
-  const setTitle = useCallback((t: string) => active && setTabTitle(active.id, t), [active, setTabTitle])
+  // Stable across tab updates, so views can call it from effects without looping.
+  const setTitle = useCallback((t: string) => {
+    const { activeTab, tabs: all } = useOS.getState()
+    const cur = all.find((x) => x.id === activeTab)
+    if (cur && cur.title !== t) setTabTitle(cur.id, t)
+  }, [setTabTitle])
 
   const back = () => {
     if (!active) return

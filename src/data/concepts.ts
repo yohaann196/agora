@@ -128,7 +128,7 @@ const seeds: Seed[] = [
   // ——— Knowledge & mind ———
   ['socratic-method', 'Socratic Method', 'Logic',
     'Cooperative inquiry through question and answer (elenchus) that tests a proposed definition by drawing out its implications until contradictions appear.',
-    'Its aim is not to win but to expose false confidence — the model for PhilosophyOS’s Socratic AI.',
+    'Its aim is not to win but to expose false confidence — the model for Agora’s Socratic Coach.',
     ['examined-life', 'socratic-ignorance', 'virtue', 'knowledge'],
     ['socratic', 'elenchus', 'question', 'questioning', 'definition']],
   ['socratic-ignorance', 'Socratic Ignorance', 'Epistemology',
@@ -188,7 +188,7 @@ const seeds: Seed[] = [
     ['cause', 'causes', 'causation', 'causal', 'because of', 'effect']],
   ['is-ought', 'Is–Ought Gap', 'Ethics',
     'Hume’s observation that one cannot validly derive a conclusion about what ought to be solely from premises about what is.',
-    'Any argument moving from facts to norms needs at least one normative premise — PhilosophyOS flags such jumps.',
+    'Any argument moving from facts to norms needs at least one normative premise — Agora flags such jumps.',
     ['natural-law', 'induction', 'duty'],
     ['ought', 'should', 'is ought', 'fact', 'value', 'normative']],
 

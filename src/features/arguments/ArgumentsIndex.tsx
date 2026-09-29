@@ -23,7 +23,7 @@ export function ArgumentsIndex() {
       <PageHeader
         eyebrow="Arguments · construct · analyze · challenge"
         title="Arguments"
-        lede="Build formal arguments as connected cards. Attach objections, evidence and definitions — then ask PhilosophyOS where the reasoning needs work."
+        lede="Build formal arguments as connected cards. Attach objections, evidence and definitions — then ask Agora where the reasoning needs work."
         actions={
           <button className="btn primary" onClick={create}>
             <Plus /> New argument

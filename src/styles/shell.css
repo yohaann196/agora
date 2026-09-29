@@ -70,6 +70,7 @@
   border: 1.5px solid transparent;
   transition: color var(--dur-1), background var(--dur-1), border-color var(--dur-1);
   white-space: nowrap;
+  isolation: isolate;
 }
 .nav-item svg { width: 16px; height: 16px; flex: none; stroke-width: 2.1; }
 .nav-item:hover { color: var(--ink); background: var(--paper-lo); border-color: var(--ink); }
@@ -84,7 +85,7 @@
   box-shadow: 3px 3px 0 var(--nav-accent, var(--oxblood));
   z-index: -1;
 }
-.nav-item > * { position: relative; }
+.nav-item > :not(.nav-active-bg) { position: relative; }
 .nav-divider { display: none; }
 
 .sidebar-foot {

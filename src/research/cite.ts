@@ -18,13 +18,21 @@ export function shortCite(s: Source): string {
   const yy = y ? (y.length === 4 && Number(y) >= 1900 ? y.slice(2) : y) : 'n.d.'
   const who =
     s.authors.length === 0
-      ? s.container ?? s.title.split(/\s+/).slice(0, 3).join(' ')
+      ? s.container?.split(',')[0] ?? s.title.split(/\s+/).slice(0, 3).join(' ')
       : s.authors.length === 1
         ? lastName(s.authors[0])
         : s.authors.length === 2
           ? `${lastName(s.authors[0])} and ${lastName(s.authors[1])}`
           : `${lastName(s.authors[0])} et al.`
   return `${who} ${yy}`
+}
+
+/** "2026-05-01" → "1 May 2026"; anything else is kept as written. */
+export function dateLabel(date: string) {
+  const m = date.match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/)
+  if (!m) return date
+  const month = MONTHS[Number(m[2]) - 1]
+  return m[3] ? `${Number(m[3])} ${month} ${m[1]}` : `${month} ${m[1]}`
 }
 
 function accessedLabel(ts: number) {
@@ -39,7 +47,7 @@ export function fullCite(s: Source): string {
   else if (s.qualifications) parts.push(s.qualifications)
   parts.push(`“${s.title}”`)
   if (s.container) parts.push(s.container)
-  if (s.date) parts.push(s.date)
+  if (s.date) parts.push(dateLabel(s.date))
   if (s.page) parts.push(`p. ${s.page}`)
   if (s.doi) parts.push(`doi:${s.doi.replace(/^https?:\/\/doi\.org\//, '')}`)
   if (s.url) parts.push(s.url)
@@ -52,7 +60,7 @@ export function mla(s: Source): string {
   const authors =
     a.length === 0 ? '' : a.length === 1 ? invert(a[0]) + '. ' : a.length === 2 ? `${invert(a[0])}, and ${a[1]}. ` : `${invert(a[0])}, et al. `
   const container = s.container ? ` ${s.container},` : ''
-  const date = s.date ? ` ${s.date},` : ''
+  const date = s.date ? ` ${dateLabel(s.date)},` : ''
   const loc = s.doi ? ` https://doi.org/${s.doi.replace(/^https?:\/\/doi\.org\//, '')}.` : s.url ? ` ${s.url}.` : ''
   const accessed = s.url ? ` Accessed ${accessedLabel(s.accessed)}.` : ''
   return `${authors}“${s.title}.”${container}${date}${loc}${accessed}`.replace(/,\./g, '.').replace(/\s+/g, ' ').trim()

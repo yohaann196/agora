@@ -102,17 +102,19 @@ function PaletteInner() {
     const cmds = t ? commands.filter((c) => (c.label + ' ' + (c.keywords ?? '') + ' ' + c.section).toLowerCase().includes(t)) : commands
     const out: Cmd[] = []
     if (t) {
-      out.push(
+      const ask: Cmd[] = [
         { id: 'web', section: 'Ask', label: `Research “${q.trim()}” in the browser`, icon: icon(Globe, 'var(--k-source)'), run: () => go(`/app/browser?q=${encodeURIComponent(q.trim())}`) },
         { id: 'ask', section: 'Ask', label: `Ask the Socratic Coach: “${q.trim()}”`, icon: icon(BrainCircuit, 'var(--oxblood)'), run: () => go(`/app/socratic?q=${encodeURIComponent(q.trim())}`) },
-      )
+      ]
       for (const h of search(g, q, undefined, 8)) {
         out.push({
           id: `e-${h.node.id}`, section: 'On your desk', label: h.node.label, hint: KIND_LABEL[h.node.kind], icon: <KindIcon kind={h.node.kind} />,
           run: () => { s.pushRecent({ kind: h.node.kind, id: h.node.id }); go(routeFor(h.node)) },
         })
       }
-      out.push({ id: 'search-texts', section: 'Ask', label: `Search verified passages for “${q.trim()}”`, icon: icon(Search, 'var(--ochre-ink)'), run: () => go(`/app/explorer?q=${encodeURIComponent(q.trim())}`) })
+      ask.push({ id: 'search-texts', section: 'Ask', label: `Search verified passages for “${q.trim()}”`, icon: icon(Search, 'var(--ochre-ink)'), run: () => go(`/app/explorer?q=${encodeURIComponent(q.trim())}`) })
+      // Exact command matches first, then things on your desk, then open-ended asks.
+      return [...cmds, ...out, ...ask].slice(0, 60)
     } else {
       for (const r of s.recents.slice(0, 5)) {
         const n = g.nodes.get(r.id)

@@ -210,7 +210,7 @@ export function Home() {
                   <KindIcon kind="source" />
                   <span className="src-line">
                     <b>{shortCite(s)}</b>
-                    <span className="truncate dim">{s.title}</span>
+                    <span className="truncate dim">{s.title}{s.page ? `, ${s.page}` : ''}</span>
                   </span>
                 </Link>
               </li>

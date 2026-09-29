@@ -7,7 +7,7 @@
   margin-bottom: 18px;
   border: 1px solid var(--line-1);
   border-radius: var(--r-3);
-  background: linear-gradient(180deg, var(--bg-1), rgba(8, 11, 18, 0.4));
+  background: var(--paper-hi);
   overflow: hidden;
 }
 .tl-axis { position: absolute; left: 10px; right: 10px; bottom: 0; height: 18px; border-top: 1px solid var(--line-0); }
@@ -70,7 +70,7 @@
 .shelf-row + .shelf-row { border-top: 1px solid var(--line-0); }
 .shelf-row:hover { background: var(--bg-2); }
 .shelf-row .spine { align-self: stretch; background: var(--c); opacity: 0.5; }
-.shelf-row:hover .spine { opacity: 1; box-shadow: 0 0 12px var(--c); }
+.shelf-row:hover .spine { opacity: 1; box-shadow: none; }
 .shelf-title { font-size: 17px; color: var(--text-0); }
 .shelf-year { font-size: 10.5px; }
 @media (max-width: 900px) { .shelf-row { grid-template-columns: 4px 1fr auto; } .shelf-row > :nth-child(n + 4) { display: none; } }

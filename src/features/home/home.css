@@ -12,7 +12,7 @@
 
 .sky-quote { position: relative; z-index: 1; max-width: 620px; display: flex; gap: 10px; align-items: flex-end; }
 .sq-fig { margin: 0; flex: 1; min-width: 0; background: var(--paper-hi); color: var(--ink); border: var(--stroke-heavy) solid var(--ink); padding: 12px 16px; box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5); }
-.sq-text { font-family: var(--font-engraved); font-size: clamp(16px, 1.5vw, 19px); line-height: 1.35; }
+.sq-text { margin: 0; font-family: var(--font-engraved); font-size: clamp(16px, 1.5vw, 19px); line-height: 1.35; }
 .sq-cap { margin-top: 8px; font-size: var(--fs-11); color: var(--text-1); display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; }
 .sq-cap .mono { font-size: 10px; color: var(--text-2); }
 .sq-controls { display: grid; gap: 4px; }

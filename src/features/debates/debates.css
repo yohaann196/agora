@@ -12,7 +12,7 @@
 .mini-dot.comment { --c: var(--text-3); }
 .move-pill.argument { --c: var(--violet); }
 
-.publish { padding: 16px; display: grid; gap: 10px; margin-bottom: 20px; border-color: rgba(255, 138, 154, 0.25); }
+.publish { padding: 16px; display: grid; gap: 10px; margin-bottom: 20px; border-color: var(--ink); }
 .thesis-input { width: 100%; background: none; border: 0; border-bottom: 1px solid var(--line-2); outline: none; padding: 6px 0 10px; font-family: var(--font-serif); font-size: 24px; color: var(--text-0); }
 .thesis-input::placeholder { color: var(--text-3); font-style: italic; }
 .principles ul { display: grid; gap: 8px; }

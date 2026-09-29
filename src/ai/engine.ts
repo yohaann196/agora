@@ -4,7 +4,7 @@ import { philosopherById } from '../data/philosophers'
 
 /**
  * The AI layer. Two providers share one interface:
- *  - `local`: the PhilosophyOS reasoning engine (rule-based, runs in the browser, no network)
+ *  - `local`: the Agora reasoning engine (rule-based, runs in the browser, no network)
  *  - `anthropic`: Claude, called from the browser with a key the user supplies in Settings
  *
  * The local engine is always available and is the fallback on any provider error.
@@ -62,7 +62,7 @@ async function streamFromClaude(opts: AskOptions): Promise<string> {
   const client = new Anthropic({ apiKey: opts.settings.apiKey.trim(), dangerouslyAllowBrowser: true })
   const philosopher = philosopherById[opts.philosopher]
   const system = [
-    'You are the reasoning layer of PhilosophyOS, a workspace for philosophy and debate students.',
+    'You are the reasoning layer of Agora, a workspace for philosophy and debate students.',
     'Core principle: amplify the student’s thinking; never replace it. Do not simply hand over answers or write their work for them.',
     'Never fabricate quotations. When quoting, give the work and location; otherwise clearly say you are summarising or interpreting.',
     'Use short paragraphs, **bold** for key terms, and "- " bullets when helpful. Keep replies under 220 words.',

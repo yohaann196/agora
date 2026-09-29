@@ -118,6 +118,35 @@ const SHORTCUTS: { group: string; items: [string[], string][] }[] = [
       [['⌘', 'Enter'], 'Send / run analysis'],
     ],
   },
+  {
+    group: 'Research Browser',
+    items: [
+      [['⌘', 'T'], 'New tab'],
+      [['⌘', 'L'], 'Focus the address bar'],
+      [['⌘', '⇧', 'W'], 'Close tab'],
+      [['Select'], 'Select text to cut a card'],
+    ],
+  },
+  {
+    group: 'Speech Docs',
+    items: [
+      [['F4', 'F5', 'F6', 'F7'], 'Pocket · Hat · Block · Tag'],
+      [['F8'], 'Cite'],
+      [['F9'], 'Underline'],
+      [['F10'], 'Emphasis'],
+      [['F11'], 'Highlight'],
+      [['F12'], 'Clear formatting'],
+    ],
+  },
+  {
+    group: 'Flow',
+    items: [
+      [['Enter'], 'Next row'],
+      [['Tab'], 'Next speech'],
+      [['⌥', '↑↓←→'], 'Move between cells'],
+      [['⌥', '1', '2', '3'], 'Dropped · extend · key'],
+    ],
+  },
 ]
 
 export function ShortcutSheet() {

@@ -68,7 +68,7 @@ export function ArgAnalysisPanel({
       <div className="analysis-note">
         <Scale size={14} />
         <p>
-          PhilosophyOS doesn’t declare arguments correct or incorrect. It shows where the reasoning needs work — <strong>you decide</strong> what to do about it.
+          Agora doesn’t declare arguments correct or incorrect. It shows where the reasoning needs work — <strong>you decide</strong> what to do about it.
         </p>
       </div>
       <div className="analysis-overview">

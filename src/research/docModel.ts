@@ -43,8 +43,9 @@ export function emptyDoc(kind: 'speech' | 'file' | 'research' = 'speech'): DocJS
 
 export function appendNodes(doc: DocJSON, nodes: DocJSON[]): DocJSON {
   const content = [...(doc.content ?? [])]
-  // Drop a trailing empty paragraph so appended cards don't leave gaps.
-  while (content.length && content[content.length - 1].type === 'paragraph' && !(content[content.length - 1].content ?? []).length) content.pop()
+  // Drop the empty starter block (a blank tag, cite and card) so appended cards don't leave gaps.
+  const blank = (n: DocJSON) => (n.type === 'paragraph' || (n.type === 'heading' && Number(n.attrs?.level) === 4)) && !plainText(n).trim()
+  while (content.length && blank(content[content.length - 1])) content.pop()
   return { ...doc, content: [...content, ...nodes] }
 }
 
@@ -98,7 +99,10 @@ export function cards(doc: DocJSON): CardInfo[] {
         highlighted += textWithMark(nodes[j], 'highlight') + ' '
       }
     }
-    out.push({ index: i, tag: plainText(n), cite, body: body.trim(), highlighted: highlighted.trim() })
+    const tag = plainText(n)
+    // An untouched starter block isn't a card yet.
+    if (!tag.trim() && !cite.trim() && !body.trim()) return
+    out.push({ index: i, tag, cite, body: body.trim(), highlighted: highlighted.trim() })
   })
   return out
 }

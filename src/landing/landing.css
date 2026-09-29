@@ -23,15 +23,16 @@
 mark.ox { background: var(--oxblood); color: var(--paper-hi); padding: 0 4px; }
 
 /* Hero panel */
-.lp-hero { padding: 0; min-height: clamp(420px, 62vw, 640px); background: var(--ink); box-shadow: 10px 10px 0 var(--oxblood); }
+.lp-hero { padding: 0; min-height: clamp(420px, 50vw, 580px); background: var(--ink); box-shadow: 10px 10px 0 var(--oxblood); }
 .athens { position: absolute; inset: 0; width: 100%; height: 100%; }
 .lp-cap-tl { position: absolute; top: clamp(12px, 2vw, 24px); left: clamp(12px, 2vw, 24px); max-width: min(420px, 70%); }
-.lp-quote { position: absolute; right: clamp(12px, 2vw, 24px); bottom: clamp(12px, 2vw, 24px); max-width: min(440px, 78%); margin: 0; padding: 14px 18px; font-size: clamp(13px, 1.2vw, 15px); box-shadow: 5px 5px 0 var(--oxblood); }
-.lp-quote blockquote { font-family: var(--font-letter); font-weight: 650; text-transform: uppercase; line-height: 1.5; }
+.lp-quote { position: absolute; left: clamp(12px, 2vw, 24px); bottom: clamp(12px, 2vw, 24px); max-width: min(440px, 78%); margin: 0; padding: 14px 18px; font-size: clamp(13px, 1.2vw, 15px); box-shadow: 5px 5px 0 var(--oxblood); }
+.lp-quote blockquote { margin: 0; font-family: var(--font-letter); font-weight: 650; text-transform: uppercase; line-height: 1.5; }
 .lp-quote figcaption { margin-top: 8px; font-family: var(--font-ui); text-transform: none; font-size: 11px; color: var(--text-1); }
 @media (max-width: 640px) {
   .lp-hero { display: grid; align-content: space-between; gap: 12px; padding: 12px; min-height: 560px; }
   .lp-cap-tl, .lp-quote { position: relative; inset: auto; max-width: none; }
+  .athens { width: auto; right: auto; left: 50%; aspect-ratio: 1200 / 620; transform: translateX(-66%); }
 }
 
 /* Title + "later" */
@@ -43,12 +44,12 @@ mark.ox { background: var(--oxblood); color: var(--paper-hi); padding: 0 4px; }
 .ox-box { background: var(--oxblood); color: var(--paper-hi); padding: 0 6px; }
 .lp-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
 .lp-later { background: var(--ochre-wash); background-image: var(--hatch); }
-.tab-pile { position: relative; height: 190px; margin: 4px 0; }
-.tab-pile span { position: absolute; left: calc(var(--i) * 9%); top: calc(var(--i) * 24px); width: 52%; min-width: 150px; padding: 8px 12px; border: var(--stroke-heavy) solid var(--ink); background: var(--paper-hi); box-shadow: 4px 4px 0 var(--ink); font-weight: 800; font-size: 13px; transform: rotate(calc((var(--i) - 2.5) * 1.6deg)); }
+.tab-pile { position: relative; height: 236px; margin: 4px 0; }
+.tab-pile span { position: absolute; left: calc(var(--i) * 9%); top: calc(var(--i) * 34px); width: 52%; min-width: 150px; padding: 8px 12px; border: var(--stroke-heavy) solid var(--ink); background: var(--paper-hi); box-shadow: 4px 4px 0 var(--ink); font-weight: 800; font-size: 13px; transform: rotate(calc((var(--i) - 2.5) * 1.6deg)); }
 .tab-pile span::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 8px; background: var(--oxblood); border: 1.5px solid var(--ink); vertical-align: 0; }
 
 /* Chapter headings */
-.lp-chapter { display: flex; align-items: baseline; gap: 14px; padding-top: 26px; border-bottom: 4px solid var(--ink); }
+.lp-chapter { scroll-margin-top: 120px; display: flex; align-items: baseline; gap: 14px; padding-top: 26px; border-bottom: 4px solid var(--ink); }
 .lp-chapter-no { font-family: var(--font-engraved); font-size: clamp(28px, 3vw, 40px); color: var(--oxblood); }
 .lp-chapter-title { font-family: var(--font-display); font-stretch: 62%; font-weight: 900; text-transform: uppercase; font-size: clamp(46px, 7vw, 96px); line-height: 0.86; }
 .lp-chapter-title span { color: var(--oxblood); }
@@ -72,12 +73,14 @@ mark.ox { background: var(--oxblood); color: var(--paper-hi); padding: 0 4px; }
 .mb-group span { border: 1.5px solid var(--ink); background: var(--paper-hi); padding: 5px 7px; font-weight: 650; line-height: 1.3; }
 
 /* Cut demo */
-.cut-demo { position: relative; display: grid; gap: 16px; }
+.cut-demo { position: relative; display: grid; gap: 0; }
 .cd-source { font-size: 16px; line-height: 1.6; padding: 12px 14px; border: 1.5px solid var(--ink); background: var(--paper); }
 .cd-sel { background: color-mix(in srgb, var(--slate) 22%, transparent); outline: 2px dashed var(--ink); outline-offset: 2px; }
-.cd-scissors { position: absolute; right: 18px; top: 44%; width: 30px; height: 30px; transform: rotate(90deg); color: var(--ink); }
+.cd-snipline { position: relative; height: 48px; }
+.cd-snipline::before { content: ''; position: absolute; left: -6px; right: -6px; top: 50%; border-top: 2.5px dashed var(--ink); }
+.cd-scissors { position: absolute; left: 10px; top: 9px; width: 28px; height: 28px; color: var(--ink); background: var(--paper-hi); padding: 2px; }
 .sfx { position: absolute; z-index: 3; display: grid; place-items: center; font-family: var(--font-display); font-stretch: 62%; font-weight: 900; text-transform: uppercase; color: var(--ink); line-height: 1; pointer-events: none; }
-.sfx-snip { right: 4px; top: 30%; width: 124px; height: 96px; font-size: 34px; background: var(--marker); clip-path: polygon(50% 0, 60% 20%, 84% 8%, 78% 32%, 100% 40%, 82% 55%, 96% 78%, 70% 74%, 64% 100%, 50% 80%, 34% 98%, 30% 74%, 4% 82%, 16% 58%, 0 42%, 20% 32%, 12% 8%, 38% 20%); }
+.sfx-snip { right: 6px; top: -22px; width: 118px; height: 90px; font-size: 32px; background: var(--marker); clip-path: polygon(50% 0, 60% 20%, 84% 8%, 78% 32%, 100% 40%, 82% 55%, 96% 78%, 70% 74%, 64% 100%, 50% 80%, 34% 98%, 30% 74%, 4% 82%, 16% 58%, 0 42%, 20% 32%, 12% 8%, 38% 20%); }
 .cd-card { border: var(--stroke-heavy) solid var(--ink); background: #fbfaf7; padding: 12px 14px; box-shadow: 5px 5px 0 var(--oxblood); display: grid; gap: 4px; font-family: 'Calibri', 'Carlito', var(--font-ui); }
 .cd-tag { font-weight: 800; font-size: 15px; }
 .cd-cite { font-size: 11px; }
@@ -121,17 +124,20 @@ mark.ox { background: var(--oxblood); color: var(--paper-hi); padding: 0 4px; }
 .tm-prep span.neg { border-left: 8px solid var(--oxblood-wash); }
 .tm-prep b { font-family: var(--font-display); font-stretch: 65%; font-size: 30px; letter-spacing: 0; }
 .lp-timer .lp-cap-sm { box-shadow: 3px 3px 0 var(--oxblood); }
-.flow-mock { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: var(--stroke-heavy) solid var(--ink); background: #fbfaf7; overflow-x: auto; }
+.flow-mock { display: grid; grid-template-columns: repeat(4, minmax(118px, 1fr)); border: var(--stroke-heavy) solid var(--ink); background: #fbfaf7; overflow-x: auto; }
 .fm-col { display: grid; align-content: start; border-right: 1.5px solid var(--ink); min-width: 110px; }
 .fm-col:last-child { border-right: 0; }
 .fm-col b { padding: 6px 9px; color: var(--paper-hi); font-family: var(--font-display); font-stretch: 78%; font-weight: 900; text-transform: uppercase; font-size: 15px; border-bottom: var(--stroke-heavy) solid var(--ink); }
 .fm-col.aff b { background: var(--aff); }
 .fm-col.neg b { background: var(--neg); }
-.fm-col span { min-height: 44px; padding: 6px 9px; font-family: var(--font-letter); font-size: 12.5px; line-height: 1.3; border-bottom: 1px dashed rgba(23, 22, 20, 0.25); }
+.fm-col span { position: relative; min-height: 64px; padding: 6px 9px; font-family: var(--font-letter); font-size: 12.5px; line-height: 1.3; border-bottom: 1px dashed rgba(23, 22, 20, 0.25); }
 .fm-col.aff span { color: var(--aff); }
 .fm-col.neg span { color: var(--neg); }
 .fm-col span.extend { background: var(--ochre-wash); font-weight: 700; }
 .fm-col span.extend::before { content: '→ '; color: var(--ink); }
+.fm-col span.dropped { background: repeating-linear-gradient(-45deg, transparent 0 7px, rgba(142, 31, 26, 0.1) 7px 8.5px); }
+.fm-col span.dropped::after { content: 'Dropped'; position: absolute; right: 8px; top: 18px; font-family: var(--font-display); font-stretch: 75%; font-weight: 900; text-transform: uppercase; font-size: 12px; letter-spacing: 0.08em; color: var(--oxblood); border: 2px solid var(--oxblood); padding: 1px 6px; transform: rotate(-8deg); background: #fbfaf7; }
+.lp-flow { align-content: space-between; }
 
 /* Socratic */
 .lp-socratic { background: var(--paper-lo); background-image: var(--hatch); }

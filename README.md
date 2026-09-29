@@ -1,10 +1,12 @@
-# Phil OS
+# Agora
 
-**An operating system for thinking.**
+**Research & debate, in one place.**
 
-PhilOS (or philosophyOS) is a workspace for philosophy and debate students. You can read primary texts, build formal arguments, compare how philosophers answer the same question, write essays, and argue with other people. Every thinker, concept, text and argument in it is a node on one knowledge graph.
+Agora is a web app for debaters and philosophy students. It combines a research browser that cuts evidence with the citation attached, Verbatim-style speech docs, flows and round timers for Policy, Lincoln–Douglas and Public Forum, and a library of verified philosophical texts. There is also a Socratic coach that asks questions instead of handing out answers.
 
-It rests on one principle: **AI should amplify philosophical thinking, not replace it.** The AI layer asks questions, surfaces assumptions and explains its reasoning. It never declares an argument "correct", and it never invents a quotation.
+It is named after the Athenian agora, the marketplace where arguments happened. The design is ink on paper, like a comic book: heavy panel borders, lettered caption boxes, and one spot color per page.
+
+It rests on one principle: **tools should amplify thinking, not replace it.** Agora never invents a quotation. Evidence you cut is the source's own words, and summaries and interpretations are always labelled.
 
 ---
 
@@ -12,7 +14,7 @@ It rests on one principle: **AI should amplify philosophical thinking, not repla
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173  (landing page at /, the OS at /app)
+npm run dev        # http://localhost:5173  (comic landing page at /, the app at /app)
 ```
 
 | Script              | What it does                                   |
@@ -22,65 +24,78 @@ npm run dev        # http://localhost:5173  (landing page at /, the OS at /app)
 | `npm run preview`   | Serve the production build                     |
 | `npm run typecheck` | `tsc --noEmit`                                 |
 | `npm run lint`      | ESLint (typescript-eslint + react-hooks)       |
-| `npm test`          | Vitest: knowledge-base integrity, graph, reasoning engine |
+| `npm test`          | Vitest: citations, doc model, sanitizer, timer, corpus integrity, reasoning engine |
 
-The app uses client-side routing. If you deploy `dist/` to a static host, configure it to serve `index.html` for unknown paths (SPA fallback).
+## Publishing on GitHub Pages
 
-## What's inside
+`.github/workflows/deploy.yml` typechecks, tests, builds and deploys the site every time `main` changes. You can also run it by hand from the Actions tab. To turn it on:
+
+1. On GitHub, open **Settings → Pages** and set **Source** to **GitHub Actions**.
+2. Merge this branch into `main`, or run the **Deploy to GitHub Pages** workflow by hand.
+
+The site will be at `https://<user>.github.io/<repo>/`; for this repo that is **https://yohaann196.github.io/philOS/**. Pages has no fallback for single-page apps, so the Pages build uses hash routes such as `/#/app/docs`. Any other static host works too: build with `VITE_HASH_ROUTER=1` and set `--base` to the path you serve from.
+
+## The apps
+
+### Research
 
 | App | What it does |
 | --- | --- |
-| **Home** | Command center: rotating verified quotation, app cards (reorderable in Settings), recent ideas and texts, debate activity, question of the day. |
-| **Library** | 14 philosophers across five eras, with a timeline, cards and a shelf of 37 works. Each profile has a biography, works, passages, arguments, lineage (influences, influenced, critiques), related thinkers and a neighborhood graph. |
-| **Concepts** | A glossary of 63 concepts with nuance notes, key thinkers, passages, dependent arguments and a **Trace a connection** path-finder that works across the whole graph. |
-| **Arguments** | The Argument Builder is a pannable, zoomable canvas of connected cards (Claim, Premises, Inference, Conclusion). You can attach objections, counterarguments, rebuttals, evidence, definitions and assumptions, drag cards to rearrange them, drag a port to connect them, auto-tidy the layout, and switch to a standard-form view. **Analyze Argument** reports unsupported premises, logical gaps, ambiguities, hidden assumptions, objections, counterarguments and relevant traditions. |
-| **Philosopher Compare** | Side-by-side positions on one question. Each position separates textual support, summary and interpretation, and ends in a *Key difference* with a comparison table. For questions outside the curated set, it generates a sketch that is clearly labelled as interpretation. |
-| **Essay Studio** | Outline, a distraction-free serif editor, focus mode and citation insertion. An analysis rail covers thesis clarity, premise support, counterarguments, definitions, logical consistency, evidence and philosophical context. It does not check grammar. |
-| **Socratic AI** | Six modes: Socratic, Devil's Advocate, Tutor, Philosopher, Fallacy Detector and Debate Coach. Conversations read as a dialogue transcript, with a live *thinking trace* of your position, surfaced assumptions and concepts touched. You can turn a dialogue into an argument or a note. |
-| **Idea Map** | A force-directed graph. Click a node to expand its relationships. You can drag and pin nodes, recenter on any idea, add your own ideas and name your own relationships. |
-| **Schools** | 14 traditions on a timeline, each with core commitments and the open question it can't settle. |
-| **Text Explorer** | Search by phrase, concept, philosopher, work or school. Every result is badged **Direct quotation**, **Summary** or **AI interpretation**, and can show its context. |
-| **Debate Network** | Published theses with threads structured as Argument → Objection → Response → Rebuttal, sorted by how developed or contested a thread is (there are no likes). A "check my reasoning" step runs before you publish. Profiles are built from arguments. |
-| **Workspace** | Notes with `[[entity-id]]` links into the graph, a reading list with progress, saved items, and settings. |
+| **Research Browser** | A browser with tabs, back/forward, an address bar and a research trail. It searches **Wikipedia**, **OpenAlex** (scholarly papers) and **Open Library** (books), plus Agora's own verified library. Wikipedia articles open inside the app as sanitized reading pages. Select any passage, write a tag, and **Cut**: the card goes into the doc you're cutting into, with author, qualifications, title, date, URL and access date filled in. Sites that allow embedding open in a sandboxed frame. Everything else opens in a new tab, and **Cut from print or PDF** builds a card from text you paste. A research rail shows your cards, sources (copy them as a card cite, MLA or APA) and trail. |
+| **Library** | 14 philosophers across five eras, with profiles, lineage, works and a neighborhood graph. |
+| **Text Explorer** | Verified passages, searchable by phrase, concept, thinker or school. Each result is badged **Direct quotation**, **Summary** or **Interpretation**. |
+| **Concepts · Idea Map · Schools** | A glossary wired into a knowledge graph, a force-directed map of how ideas connect, and 14 traditions on a timeline. |
 
-### Operating-system details
+### Debate
 
-- **Command palette** `⌘K`: navigate, open any entity, create things, switch Socratic modes, change the accent color, or ask a question
-- **Quick launch** `⌘J`, **shortcut sheet** `?`, **go-to chords** `G` then a letter (e.g. `G A` for Arguments), `/` to focus search, `N` for a new note window
-- **Floating windows**: `⌥`-click any entity link to preview it in a draggable window. Notes and Socratic AI also pop out into windows, and minimized windows dock in the status bar.
-- **Global search** with scopes, **hover cards** on every entity link, **notifications**, **recents**, a **status bar**, and animated page transitions
-- **Customizable workspace**: accent color, density, reduced motion, and the order and visibility of Home cards
-- Everything persists locally (zustand + `localStorage`). You can export your workspace as JSON.
+| App | What it does |
+| --- | --- |
+| **Speech Docs** | A document editor with debate conventions: **Pocket / Hat / Block / Tag** headings, cite lines, card text, underline, emphasis and highlight. It uses Verbatim function keys (`F4`–`F12`, or `⌘⌥1`–`6` and `⌘⇧E/H/X`). A navigation pane jumps through the outline. Read time counts only highlighted words, and the words-per-minute rate is adjustable. **Send block** moves the card or block at your cursor into your speech. **Find a card** searches every doc. **Copy for Word / Docs** keeps the formatting when you paste, and you can also download the doc as `.html`. |
+| **Flow & Timer** | Flows with a column per speech in aff and neg ink. `Enter` starts a new row and `Tab` moves to the next speech. You can mark arguments **dropped**, **extended** or **key**, add sheets for each position, and use *Flow a doc…* to pull a speech doc's blocks and tags into a column. Export a sheet as CSV. The round timer covers speeches and both prep clocks for Policy, LD and PF (NSDA defaults, every time editable). It keeps running while you use other apps, shows in the status bar, and beeps at zero. |
+| **Argument Builder** | A canvas for claim → premises → inference → conclusion, with objections, rebuttals, evidence and definitions. **Analyze** reports unsupported premises, gaps, ambiguities and hidden assumptions. It never gives a verdict. |
+| **Socratic Coach** | Six modes: Socratic, Devil's Advocate, Tutor, Philosopher, Fallacy Detector and Debate Coach. The conversation reads like a comic: your turns in caption boxes, the coach's in speech balloons. A trace tracks your position and the assumptions surfaced. |
+| **Compare · Debate Network** | Thinkers side by side on one question, and threaded theses with objections and rebuttals. |
+
+### Write and workspace
+
+**Essay Studio** gives argument-aware feedback, and **Notes** link into the graph. There is also a reading list and a saved-items list. **Settings** covers your profile, research sources (switch each API on or off, and add an optional contact email for OpenAlex), spot ink, density, motion, Desk layout, the reasoning engine and data export.
+
+Across the app you also get:
+- the command palette `⌘K`
+- quick launch `⌘J`
+- go-to chords such as `G B` (Browser), `G D` (Docs) and `G F` (Flow)
+- floating windows and notifications
+
+Everything is saved in your browser (zustand + `localStorage`, key `agora:v1`). No account is needed.
 
 ## Architecture
 
 ```
 src/
-  model/        types.ts (the data model), graph.ts (unified knowledge graph, search, path-finding)
-  data/         philosophers, concepts, schools, texts + passages, arguments, compare, social seed data
-  store/        zustand store (persisted), useKnowledgeGraph() = static corpus + your own work
-  ai/           the reasoning engine, one module per task (see below)
-  components/   shell (sidebar, top bar, palette, windows, status bar) and UI primitives
-  features/     one folder per app, each with its own CSS
-  landing/      the marketing page, which embeds live app components
+  research/     cite.ts (short cite, card cite, MLA, APA), docModel.ts (Verbatim doc model),
+                providers.ts (Wikipedia / OpenAlex / Open Library clients + HTML sanitizer), formats.ts
+  features/
+    browser/    the Research Browser, readers, and the cut layer
+    docs/       the TipTap speech-doc editor, Verbatim keys and extensions, rich export
+    flow/       flows and the shared round-timer store
+    …           the other apps, each with its own CSS
+  model/        types and the unified knowledge graph (sources, docs and flows are nodes too)
+  store/        the persisted zustand store
+  ai/           the local reasoning engine (optional Claude provider with your own key)
+  landing/      the scrolling-comic landing page (hand-drawn SVG ink illustration)
+  styles/       paper and ink design tokens, global and shell styles
 ```
 
-**Data model.** Every entity (Philosopher, School, Concept, Text, Passage, Argument with its nodes and links, Debate with its moves, Essay, Note, User) has a globally unique `id` and a `kind`. `model/graph.ts` builds typed relationships from the corpus: *wrote*, *develops*, *influenced*, *critiques*, *belongs to*, *anticipates*, *related to*, *centres on*, *discusses*, *excerpt of*. It then layers your arguments, debates, essays and notes on top (*concerns*, *argued by*, *references*). That graph is what makes everything linkable: entity links, hover cards, the Idea Map, neighborhood graphs, path tracing and search.
+**Network.** All research calls go straight from the browser to public, CORS-enabled APIs: `en.wikipedia.org` (action API and REST v1), `api.openalex.org` and `openlibrary.org`. There is no Agora server. Wikipedia HTML is sanitized before it is shown: scripts, frames, event handlers, inline styles, non-Wikimedia images and reference sections are all removed.
 
-**Reasoning engine.** `ai/` is a local, deterministic engine grounded in the knowledge base:
-
-- `analyzeArgument.ts` detects unsupported and normative premises, conclusion terms that no premise introduces, is→ought jumps, circularity, scope shifts, loaded and ambiguous terms, quantifiers and hidden-assumption patterns. It also builds objections and counterarguments from rival traditions.
-- `socratic.ts` implements the six modes. Socratic mode cycles through strategies: defining terms, counterexamples, surfacing assumptions, tracing implications, and pressing from a philosopher's perspective.
-- `essay.ts`, `fallacies.ts` and `interpret.ts` handle essay signals, fallacy patterns, passage interpretation and comparison sketches.
-- `engine.ts` streams replies and can optionally call **Claude** (via `@anthropic-ai/sdk`, from the browser) when you add your own API key in *Settings → Reasoning engine*. It falls back to the local engine on any error.
+> **Testing note.** The development sandbox that built this release could not reach these APIs. So the browser flows were tested end to end with recorded fixture responses (search → open article → select → cut → card in doc), and the sanitizer and parsers have unit tests. If an API changes shape or is down, the browser shows an error with a retry button, and the Agora library and **Cut from print or PDF** keep working offline.
 
 ## Content integrity
 
-- **Quotations are verbatim** from the named translation (e.g. Abbott's *Groundwork*, Jowett's *Republic*, Kaufmann's Nietzsche) and are kept short.
-- Where exact wording couldn't be guaranteed, the passage is stored as a **summary** and labelled as one.
-- Interpretive claims, including every Philosopher-mode reply and every generated comparison column, are labelled **interpretation**.
-- The test suite checks that every reference in the corpus resolves, that every passage belongs to its text's author, and that no comparison labels a summary as a quotation.
+- Seeded evidence cards use only **verbatim** quotations from the verified corpus, and a test enforces this.
+- Quotations name their translation (for example Abbott's *Groundwork* or Hicks's Diogenes Laërtius). When exact wording can't be guaranteed, the text is stored as a labelled **summary**.
+- Interpretive output, including Philosopher-mode replies and generated comparison columns, is labelled **interpretation**.
 
 ## Stack
 
-Vite · React 19 · TypeScript (strict) · React Router · zustand · framer-motion · d3-force · lucide-react · self-hosted Inter, Newsreader and JetBrains Mono · Vitest · ESLint
+Vite · React 19 · TypeScript (strict) · React Router · zustand · TipTap 3 · framer-motion · d3-force · lucide-react · self-hosted Archivo, Shantell Sans, IM Fell English, Newsreader and JetBrains Mono · Vitest · ESLint · Playwright (e2e, local)
