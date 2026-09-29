@@ -11,12 +11,41 @@ permissions:
   contents: read
 
 jobs:
-  run:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      mode: ${{ steps.mode.outputs.mode }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: mode
+        run: if [ -f scripts/cards/sources.json ]; then echo "mode=fetch" >> "$GITHUB_OUTPUT"; else echo "mode=discover" >> "$GITHUB_OUTPUT"; fi
+
+  discover:
+    needs: plan
+    if: needs.plan.outputs.mode == 'discover'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      # Discovery first; once scripts/cards/sources.json lists the picks, fetch their full text.
-      - run: if [ -f scripts/cards/sources.json ]; then node scripts/cards/fetch.mjs; else node scripts/cards/discover.mjs; fi
+      - run: node scripts/cards/discover.mjs
+
+  fetch:
+    needs: plan
+    if: needs.plan.outputs.mode == 'fetch'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        chunk: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: which pdftotext || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)
+      - run: node scripts/cards/fetch.mjs
+        env:
+          CHUNKS: 10
+          CHUNK: ${{ matrix.chunk }}
