@@ -169,3 +169,9 @@
 .arg-legend { max-width: calc(100% - 330px); opacity: 0.85; }
 @media (max-width: 1700px) { .legend-hint { display: none; } }
 @media (max-width: 1280px) { .arg-legend { display: none; } }
+@media (max-width: 720px) {
+  .arg-title-wrap { flex-basis: 100%; }
+  .arg-title { font-size: 18px; }
+  .canvas-float.tl { max-width: calc(100% - 28px); overflow-x: auto; }
+  .canvas-float .seg button { padding: 0 8px; }
+}

@@ -68,7 +68,7 @@ const seeds: Seed[] = [
     'The view that the rightness of actions depends only on their consequences — typically, on how much overall good they produce.',
     'Utilitarianism is the best-known form; critics object that it permits sacrificing individuals for aggregate gains.',
     ['greatest-happiness', 'happiness', 'deontology', 'double-effect'],
-    ['consequence', 'consequences', 'outcome', 'outcomes', 'maximize', 'maximise', 'greater good', 'results']],
+    ['consequence', 'consequences', 'outcome', 'outcomes', 'maximize', 'maximise', 'greater good', 'results', 'utilitarian', 'consequentialist']],
   ['categorical-imperative', 'Categorical Imperative', 'Ethics',
     'Kant’s supreme principle of morality: an unconditional command of reason, binding regardless of one’s desires, formulated as universal law and as respect for humanity as an end in itself.',
     'Contrast hypothetical imperatives (“if you want X, do Y”), which bind only those who have the relevant desire.',

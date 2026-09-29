@@ -1,5 +1,5 @@
 import { AnimatePresence, MotionConfig, motion } from 'framer-motion'
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { Suspense, useEffect, useRef, useState, type ReactNode } from 'react'
 import { useLocation, useNavigate, useOutlet } from 'react-router'
 import { APPS } from '../../lib/apps'
 import { isTyping } from '../../lib/hooks'
@@ -121,7 +121,9 @@ export function AppShell() {
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
               >
-                <FrozenOutlet outlet={outlet} />
+                <Suspense fallback={<div className="route-loading" aria-label="Loading" />}>
+                  <FrozenOutlet outlet={outlet} />
+                </Suspense>
               </motion.div>
             </AnimatePresence>
           </main>

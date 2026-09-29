@@ -408,3 +408,15 @@
 .stat { display: grid; gap: 2px; }
 .stat-v { font-family: var(--font-serif); font-size: 22px; color: var(--text-0); line-height: 1.1; }
 .stat-l { font-size: var(--fs-11); color: var(--text-3); }
+
+.route-loading { height: 2px; margin: 0; background: linear-gradient(90deg, transparent, rgb(var(--accent-rgb)), transparent); background-size: 40% 100%; background-repeat: no-repeat; animation: route-load 0.9s ease-in-out infinite; }
+@keyframes route-load { from { background-position: -40% 0; } to { background-position: 140% 0; } }
+
+@media (max-width: 720px) {
+  .shell { grid-template-columns: minmax(0, 1fr); }
+  .main { grid-column: 1; grid-row: 1; }
+  .statusbar { grid-column: 1; }
+  .search { min-width: 0; }
+  .topbar { padding: 0 12px 0 8px; gap: 8px; }
+  .search-box .kbd { display: none; }
+}

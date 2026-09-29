@@ -187,6 +187,9 @@ a.tag:hover, button.tag:hover { color: var(--text-0); background: color-mix(in s
 
 .seg {
   display: inline-flex;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
   padding: 2px;
   gap: 2px;
   background: var(--bg-1);

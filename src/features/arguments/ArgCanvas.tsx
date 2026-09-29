@@ -196,6 +196,8 @@ export function ArgCanvas(p: Props) {
   const [connect, setConnect] = useState<{ from: string; x: number; y: number } | null>(null)
   const viewRef = useRef(p.view)
   viewRef.current = p.view
+  const readOnlyRef = useRef(p.readOnly)
+  readOnlyRef.current = p.readOnly
 
   const toCanvas = (clientX: number, clientY: number) => {
     const r = wrap.current!.getBoundingClientRect()
@@ -208,6 +210,8 @@ export function ArgCanvas(p: Props) {
     const el = wrap.current
     if (!el) return
     const onWheel = (e: WheelEvent) => {
+      // Read-only canvases (e.g. embedded previews) let the page scroll unless zooming.
+      if (readOnlyRef.current && !(e.ctrlKey || e.metaKey)) return
       e.preventDefault()
       const v = viewRef.current
       if (e.ctrlKey || e.metaKey) {

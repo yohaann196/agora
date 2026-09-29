@@ -301,10 +301,13 @@ export const useOS = create<OSState>()(
         }
         const offset = (get().windows.length % 5) * 28
         const vw = typeof window !== 'undefined' ? window.innerWidth : 1400
+        const vh = typeof window !== 'undefined' ? window.innerHeight : 900
+        // Open low on the right, clear of page headers and primary actions.
+        const y = Math.max(96, vh - 560) + offset
         set((s) => ({
           windows: [
             ...s.windows,
-            { id: uid('w'), type, refId: ref?.id, refKind: ref?.kind, x: Math.max(16, vw - 460 - offset - 40), y: 90 + offset, z, minimized: false },
+            { id: uid('w'), type, refId: ref?.id, refKind: ref?.kind, x: Math.max(16, vw - 460 - offset - 24), y, z, minimized: false },
           ],
         }))
       },

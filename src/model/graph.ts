@@ -223,6 +223,8 @@ export function search(g: KnowledgeGraph, query: string, kinds?: EntityKind[], l
     else if (label.startsWith(q)) score += 60
     else if (label.includes(q)) score += 40
     else if (node.search.includes(q)) score += 18
+    // Whole-word hits in the label ("rawls" in "John Rawls") outrank prefix hits in longer titles.
+    if (label.split(/[\s-]+/).includes(q)) score += node.kind === 'philosopher' || node.kind === 'concept' || node.kind === 'school' ? 55 : 30
     let allTerms = true
     for (const t of terms) {
       if (label.includes(t)) score += 8

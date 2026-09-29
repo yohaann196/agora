@@ -204,7 +204,7 @@ function devil(input: string): string {
   const permissive = /\b(sometimes|can be|justified|permissible|acceptable|okay|ok|fine)\b/.test(t)
   const restrictive = /\b(never|always wrong|wrong|impermissible|must not|should not|shouldn't)\b/.test(t)
 
-  let objection = ''
+  let objection: string
   let refs = ''
   if (concepts.includes('lying')) {
     if (permissive && !restrictive) {
@@ -302,8 +302,14 @@ function fallacyMode(input: string): string {
 
 function coach(input: string): string {
   const ss = sentences(input)
-  const claim = ss[0] ?? input
-  const warrant = ss.find((s) => /\b(because|since|given that|as a result of)\b/i.test(s))
+  let claim = ss[0] ?? input
+  let warrant = ss.find((s) => /\b(because|since|given that|as a result of)\b/i.test(s))
+  // "X because Y" in one sentence: the claim is X, the warrant is Y.
+  const split = warrant?.match(/^(.*?)\s*,?\s*\b(because|since|given that)\b\s*(.+)$/i)
+  if (split && warrant === claim && split[1].trim()) {
+    claim = split[1].trim()
+    warrant = split[3].trim()
+  }
   const impact = ss.find((s) => /\b(leads? to|results? in|harm|benefit|matters|deaths?|lives|welfare|rights|outweigh|impact)\b/i.test(s))
   const util = /\b(consequence|outcome|welfare|lives|maximi|net benefit|utility|harm)\b/i.test(input)
   const deont = /\b(rights?|duty|dignity|consent|autonomy|categorical|obligation)\b/i.test(input)

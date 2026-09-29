@@ -1,0 +1,55 @@
+.debate-card { gap: 10px; padding: 16px 18px; }
+.debate-thesis { font-family: var(--font-serif); font-weight: 400; font-size: 22px; line-height: 1.25; letter-spacing: -0.01em; }
+.debate-structure { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: var(--fs-11); color: var(--text-1); padding-top: 10px; border-top: 1px solid var(--line-0); }
+.debate-structure span { display: inline-flex; align-items: center; gap: 5px; }
+
+.mini-dot { --c: var(--text-2); display: inline-block; width: 7px; height: 7px; border-radius: 2px; background: var(--c); flex: none; }
+.mini-dot.objection { --c: var(--rose); }
+.mini-dot.counter { --c: var(--orange); }
+.mini-dot.response { --c: var(--blue); }
+.mini-dot.rebuttal { --c: var(--green); }
+.mini-dot.support { --c: var(--cyan); }
+.mini-dot.comment { --c: var(--text-3); }
+.move-pill.argument { --c: var(--violet); }
+
+.publish { padding: 16px; display: grid; gap: 10px; margin-bottom: 20px; border-color: rgba(255, 138, 154, 0.25); }
+.thesis-input { width: 100%; background: none; border: 0; border-bottom: 1px solid var(--line-2); outline: none; padding: 6px 0 10px; font-family: var(--font-serif); font-size: 24px; color: var(--text-0); }
+.thesis-input::placeholder { color: var(--text-3); font-style: italic; }
+.principles ul { display: grid; gap: 8px; }
+.principles li { font-size: var(--fs-12); color: var(--text-1); line-height: 1.5; padding-left: 14px; position: relative; }
+.principles li::before { content: ''; position: absolute; left: 2px; top: 0.66em; width: 5px; height: 1px; background: var(--rose); }
+
+.thread-hero { display: grid; gap: 14px; padding: 8px 0 22px; border-bottom: 1px solid var(--line-1); margin-bottom: 16px; }
+.thread-thesis { font-family: var(--font-serif); font-weight: 400; font-size: clamp(28px, 3vw, 40px); letter-spacing: -0.02em; line-height: 1.12; }
+.thread-framing { font-family: var(--font-serif); font-size: 18px; line-height: 1.55; color: var(--text-1); max-width: 70ch; }
+.flow-legend { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.flow-legend > span { display: inline-flex; align-items: center; gap: 8px; }
+
+.thread { display: grid; gap: 12px; }
+.move { display: grid; gap: 10px; }
+.move-card { padding: 12px 14px; border-radius: var(--r-3); border: 1px solid var(--line-1); background: var(--bg-1); display: grid; gap: 8px; }
+.move.objection > .move-card { border-left: 2px solid var(--rose); }
+.move.counter > .move-card { border-left: 2px solid var(--orange); }
+.move.response > .move-card { border-left: 2px solid var(--blue); }
+.move.rebuttal > .move-card { border-left: 2px solid var(--green); }
+.move.support > .move-card { border-left: 2px solid var(--cyan); }
+.move-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.move-head .move-pill { margin-top: 0; }
+.move-body { font-family: var(--font-serif); font-size: 17px; line-height: 1.55; color: var(--text-0); }
+.move-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.move-children { position: relative; display: grid; gap: 10px; padding-left: 26px; }
+.move-children::before { content: ''; position: absolute; left: 11px; top: -4px; bottom: 16px; width: 1px; background: linear-gradient(180deg, var(--line-3), var(--line-1)); }
+.move-children > .move > .move-card { position: relative; }
+.move-children > .move > .move-card::before { content: ''; position: absolute; left: -15px; top: 20px; width: 14px; height: 1px; background: var(--line-3); }
+
+.composer-box { display: grid; gap: 10px; margin-top: 4px; }
+.fallacy-check { padding: 10px 12px; border-radius: var(--r-2); background: rgba(242, 210, 122, 0.06); border: 1px solid rgba(242, 210, 122, 0.2); display: grid; gap: 6px; }
+.fallacy-check p { font-size: var(--fs-12); color: var(--text-1); line-height: 1.5; }
+.fallacy-check strong { color: var(--amber); font-weight: 500; }
+
+.thread-stats { display: grid; gap: 8px; }
+.thread-stats > div { display: grid; grid-template-columns: 14px 1fr auto; gap: 8px; align-items: center; font-size: var(--fs-12); color: var(--text-2); }
+.profile-stats { display: flex; gap: 22px; }
+.profile-stats > div { display: grid; gap: 2px; text-align: right; }
+.profile-stats .serif { font-size: 28px; line-height: 1; }
+.profile-stats span:last-child { font-size: var(--fs-11); color: var(--text-3); }

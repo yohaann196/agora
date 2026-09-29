@@ -2,7 +2,7 @@
 
 .two-col { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 20px; align-items: start; }
 .two-col > aside { display: grid; gap: 14px; position: sticky; top: 18px; }
-@media (max-width: 1100px) { .two-col { grid-template-columns: 1fr; } .two-col > aside { position: static; } }
+@media (max-width: 1100px) { .two-col { grid-template-columns: minmax(0, 1fr); } .two-col > aside { position: static; } }
 
 .section { display: grid; gap: 12px; }
 .section + .section { margin-top: 28px; }
@@ -62,3 +62,26 @@ a.card:hover, button.card:hover, .card.hoverable:hover { border-color: var(--lin
 .kv { display: grid; grid-template-columns: 110px 1fr; gap: 8px 12px; font-size: var(--fs-12); }
 .kv dt { color: var(--text-3); }
 .kv dd { margin: 0; color: var(--text-1); }
+
+.move-pill {
+  --c: var(--text-2);
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--c);
+  border: 1px solid color-mix(in srgb, var(--c) 30%, transparent);
+  background: color-mix(in srgb, var(--c) 8%, transparent);
+  margin-top: 2px;
+  min-width: 72px;
+  text-align: center;
+}
+.move-pill.objection { --c: var(--rose); }
+.move-pill.counter { --c: var(--orange); }
+.move-pill.response { --c: var(--blue); }
+.move-pill.rebuttal { --c: var(--green); }
+.move-pill.support { --c: var(--cyan); }
+.move-pill.comment { --c: var(--text-2); }

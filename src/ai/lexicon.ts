@@ -56,9 +56,11 @@ export function detectConcepts(text: string, limit = 8): string[] {
   for (const c of concepts) {
     let score = 0
     for (const k of [c.name.toLowerCase(), ...c.keywords]) {
-      const needle = ' ' + k.toLowerCase() + ' '
-      const needlePlural = ' ' + k.toLowerCase() + 's '
-      if (t.includes(needle) || t.includes(needlePlural)) score += k.includes(' ') ? 3 : 1.4
+      const kw = k.toLowerCase()
+      const exact = t.includes(' ' + kw + ' ') || t.includes(' ' + kw + 's ')
+      // Single long keywords also match as word prefixes: "utilitarian" → "utilitarianism".
+      const prefix = !exact && !kw.includes(' ') && kw.length >= 6 && t.includes(' ' + kw)
+      if (exact || prefix) score += kw.includes(' ') ? 3 : exact ? 1.4 : 1
     }
     if (score > 0) scored.push([c.id, score])
   }
@@ -83,7 +85,7 @@ const PHILOSOPHER_ALIASES: Record<string, string[]> = {
 }
 
 export function detectPhilosophers(text: string): string[] {
-  const t = ' ' + text.toLowerCase().replace(/[^a-z\s]/g, ' ') + ' '
+  const t = ' ' + text.toLowerCase().replace(/[^a-z]+/g, ' ') + ' '
   return philosophers.filter((p) => (PHILOSOPHER_ALIASES[p.id] ?? []).some((a) => t.includes(' ' + a))).map((p) => p.id)
 }
 

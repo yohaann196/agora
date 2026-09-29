@@ -50,14 +50,15 @@ export function RichText({ text, className = '' }: { text: string; className?: s
   )
 }
 
-const TOKEN = /(\[\[[a-z0-9-]+\]\]|\*\*[^*]+\*\*|\*[^*\s][^*]*\*)/g
+const TOKEN_SRC = /(\[\[[a-z0-9-]+\]\]|\*\*[^*]+\*\*|\*[^*\s][^*]*\*)/.source
 
 export function inline(s: string): ReactNode[] {
   const out: ReactNode[] = []
   let last = 0
   let m: RegExpExecArray | null
   let k = 0
-  TOKEN.lastIndex = 0
+  // A fresh regex per call: inline() recurses, and a shared global regex would reset its position.
+  const TOKEN = new RegExp(TOKEN_SRC, 'g')
   while ((m = TOKEN.exec(s))) {
     if (m.index > last) out.push(s.slice(last, m.index))
     const t = m[0]
