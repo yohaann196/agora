@@ -1,12 +1,13 @@
-# Agora
+# Resolved
 
-**Research & debate, in one place.**
+**Prep like a champion. Compete like one.**
 
-Agora is a web app for debaters and philosophy students. It combines a research browser that cuts evidence with the citation attached, Verbatim-style speech docs, flows and round timers for Policy, Lincoln–Douglas and Public Forum, and a library of verified philosophical texts. There is also a Socratic coach that asks questions instead of handing out answers.
+Resolved is a debate platform for the whole season:
+- **Prep tools:** evidence search, a card cutter, contention and block vaults, and flow & timer.
+- **Competition:** national **Lincoln–Douglas rankings**, with a profile for every ranked debater.
+- **Monthly Briefs** on the current resolution.
 
-It is named after the Athenian agora, the marketplace where arguments happened. The design is ink on paper, like a comic book: heavy panel borders, lettered caption boxes, and one spot color per page.
-
-It rests on one principle: **tools should amplify thinking, not replace it.** Agora never invents a quotation. Evidence you cut is the source's own words, and summaries and interpretations are always labelled.
+The name is the first word of every resolution. The logo is its colon.
 
 ---
 
@@ -14,88 +15,90 @@ It rests on one principle: **tools should amplify thinking, not replace it.** Ag
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173  (comic landing page at /, the app at /app)
+npm run dev        # http://localhost:5173
 ```
 
-| Script              | What it does                                   |
-| ------------------- | ---------------------------------------------- |
-| `npm run dev`       | Vite dev server                                |
-| `npm run build`     | Typecheck (strict) + production build to `dist/` |
-| `npm run preview`   | Serve the production build                     |
-| `npm run typecheck` | `tsc --noEmit`                                 |
-| `npm run lint`      | ESLint (typescript-eslint + react-hooks)       |
-| `npm test`          | Vitest: citations, doc model, sanitizer, timer, corpus integrity, reasoning engine |
+| Script              | What it does                                              |
+| ------------------- | --------------------------------------------------------- |
+| `npm run dev`       | Vite dev server                                           |
+| `npm run build`     | Typecheck (strict) + production build to `dist/`          |
+| `npm run rankings`  | Rebuild the LD rankings data in `public/data/ld/`         |
+| `npm test`          | Vitest: Glicko-2, the rankings pipeline, citations, docs, sanitizer |
+| `npm run lint`      | ESLint                                                    |
+| `npm run typecheck` | `tsc --noEmit`                                            |
+
+## What's in it
+
+### Compete
+| Page | What it does |
+| --- | --- |
+| **LD rankings** `/rankings` | Every debater with a decided round at a tracked national-circuit tournament. Rows show rank and movement since the last tournament, score, record, aff/neg/elim splits and a rating sparkline. You can search, filter by state, sort, follow debaters, and switch between topic periods. A **head-to-head predictor** gives the win probability between any two debaters. |
+| **Debater profiles** `/debaters/:id` | Rank, percentile, score, record, side splits and speaks. Also a rating-over-time chart with the ±2-deviation band, each tournament with records and placement (Champion, Finalist…), every round with a linked opponent, best wins, the predictor, and a correction/removal link. |
+| **Schools** `/schools/:slug` | A school's ranked debaters and aggregate record. |
+| **Methodology** `/rankings/method` | How the rankings work, in plain language, plus the corrections policy. |
+| **Monthly Briefs** `/briefs` | One issue a month on the current LD topic: burdens, key terms, aff/neg ground with answers, frameworks, and a reading list of real sources that links straight into the card cutter. Mid-topic issues add "what's winning" from real round data. |
+
+### Prep (`/app`)
+| Tool | What it does |
+| --- | --- |
+| **Evidence** | A research browser with tabs. It searches **Wikipedia**, **OpenAlex** (papers), **Open Library** (books) and a verified public-domain **framework library**. Wikipedia pages open inside the app, sanitized. |
+| **Card cutter** | Select a passage and write a tag. The card goes into the doc you're cutting into, with author, qualifications, title, date, URL and access date filled in. **Cut from print or PDF** covers everything else. |
+| **Contention vault / Block vault** | TipTap docs with Verbatim conventions: Pocket/Hat/Block/Tag, F4–F12, underline, emphasis, highlight. Also read time from highlighted words, send-block-to-speech, search across all your cards, and copy to Word or Google Docs. Docs are tagged by side and topic. |
+| **Flow & Timer** | Flows for LD, PF and Policy in aff and neg ink, with dropped/extend/key marks, sheets and CSV export. Speech and prep clocks keep running in the status bar. |
+
+The dashboard brings together your vaults, the debaters you follow, your flows and the current brief. `⌘K` searches debaters, schools, briefs and your files from anywhere.
+
+Your prep work is saved in your browser (`localStorage`, key `resolved:v1`). There are no accounts yet.
+
+## How the rankings work
+
+The pipeline lives in `src/rankings/` and `scripts/rankings/build.ts`, and follows the method of the open [debate-rankings](https://github.com/shreerammodi/debate-rankings) project:
+
+1. **Data.** Tabroom round results (entries plus one CSV per round) for the current season, read from that project's `tournaments/hsld/` folder and its `config/hsld-config.json`, which sets tournament order, majors, multi-school debaters and topic boundaries.
+2. **Identity.** A debater is school + name (normalized), or name alone for debaters listed as competing for multiple schools. Byes, "advances" rows and split decisions without a majority are skipped.
+3. **Glicko-2** ([Glickman 2012](http://www.glicko.net/glicko/glicko2.pdf)), written from scratch in `src/rankings/glicko2.ts`:
+   - Starting values: 1500 / 350 / 0.06, τ = 0.5.
+   - Every decided round is a game. Within a round, all matches use pre-round ratings.
+   - **Majors count twice.**
+4. **Ranking score = rating − 2 × deviation.** This keeps one strong weekend from outranking a sustained record.
+5. **Elims** are labelled by bracket size, working back from the last elim round. That places closeouts correctly, and still works when a tournament's final wasn't posted.
+6. **Output.** `public/data/ld/rankings-<period>.json` holds the full season plus each topic period. `public/data/ld/debaters/<id>.json` holds one file per profile.
+
+**Validation.** The test suite reproduces Glickman's worked example (1464.06 / 151.52 / 0.05999). On the current data, this implementation matches the reference project's published order with a Spearman correlation of 0.9999 and an identical top 50.
+
+**Freshness.** The Pages workflow runs `npm run rankings` on every deploy and once a day. If the fetch fails, it keeps the committed JSON.
+
+**Data use.** Results come from public Tabroom postings, collected by the debate-rankings project. That repository doesn't publish a license, so **ask its author (Shreeram Modi) before relying on the data long-term**. Profiles show competition data only: name, school, location, results. Every profile links to a [correction/removal issue form](.github/ISSUE_TEMPLATE/profile-correction.yml).
 
 ## Publishing on GitHub Pages
 
-`.github/workflows/deploy.yml` typechecks, tests, builds and deploys the site every time `main` changes. You can also run it by hand from the Actions tab. To turn it on:
+`.github/workflows/deploy.yml` runs on every push to `main`, daily, and on demand. Each run refreshes the rankings, typechecks, tests, builds with hash routes (`/#/rankings`), and deploys. To turn it on:
 
-1. On GitHub, open **Settings → Pages** and set **Source** to **GitHub Actions**.
-2. Merge this branch into `main`, or run the **Deploy to GitHub Pages** workflow by hand.
+1. Go to **Settings → Pages** and set **Source** to **GitHub Actions**.
+2. Merge the working branch into `main`.
 
-The site will be at `https://<user>.github.io/<repo>/`; for this repo that is **https://yohaann196.github.io/philOS/**. Pages has no fallback for single-page apps, so the Pages build uses hash routes such as `/#/app/docs`. Any other static host works too: build with `VITE_HASH_ROUTER=1` and set `--base` to the path you serve from.
-
-## The apps
-
-### Research
-
-| App | What it does |
-| --- | --- |
-| **Research Browser** | A browser with tabs, back/forward, an address bar and a research trail. It searches **Wikipedia**, **OpenAlex** (scholarly papers) and **Open Library** (books), plus Agora's own verified library. Wikipedia articles open inside the app as sanitized reading pages. Select any passage, write a tag, and **Cut**: the card goes into the doc you're cutting into, with author, qualifications, title, date, URL and access date filled in. Sites that allow embedding open in a sandboxed frame. Everything else opens in a new tab, and **Cut from print or PDF** builds a card from text you paste. A research rail shows your cards, sources (copy them as a card cite, MLA or APA) and trail. |
-| **Library** | 14 philosophers across five eras, with profiles, lineage, works and a neighborhood graph. |
-| **Text Explorer** | Verified passages, searchable by phrase, concept, thinker or school. Each result is badged **Direct quotation**, **Summary** or **Interpretation**. |
-| **Concepts · Idea Map · Schools** | A glossary wired into a knowledge graph, a force-directed map of how ideas connect, and 14 traditions on a timeline. |
-
-### Debate
-
-| App | What it does |
-| --- | --- |
-| **Speech Docs** | A document editor with debate conventions: **Pocket / Hat / Block / Tag** headings, cite lines, card text, underline, emphasis and highlight. It uses Verbatim function keys (`F4`–`F12`, or `⌘⌥1`–`6` and `⌘⇧E/H/X`). A navigation pane jumps through the outline. Read time counts only highlighted words, and the words-per-minute rate is adjustable. **Send block** moves the card or block at your cursor into your speech. **Find a card** searches every doc. **Copy for Word / Docs** keeps the formatting when you paste, and you can also download the doc as `.html`. |
-| **Flow & Timer** | Flows with a column per speech in aff and neg ink. `Enter` starts a new row and `Tab` moves to the next speech. You can mark arguments **dropped**, **extended** or **key**, add sheets for each position, and use *Flow a doc…* to pull a speech doc's blocks and tags into a column. Export a sheet as CSV. The round timer covers speeches and both prep clocks for Policy, LD and PF (NSDA defaults, every time editable). It keeps running while you use other apps, shows in the status bar, and beeps at zero. |
-| **Argument Builder** | A canvas for claim → premises → inference → conclusion, with objections, rebuttals, evidence and definitions. **Analyze** reports unsupported premises, gaps, ambiguities and hidden assumptions. It never gives a verdict. |
-| **Socratic Coach** | Six modes: Socratic, Devil's Advocate, Tutor, Philosopher, Fallacy Detector and Debate Coach. The conversation reads like a comic: your turns in caption boxes, the coach's in speech balloons. A trace tracks your position and the assumptions surfaced. |
-| **Compare · Debate Network** | Thinkers side by side on one question, and threaded theses with objections and rebuttals. |
-
-### Write and workspace
-
-**Essay Studio** gives argument-aware feedback, and **Notes** link into the graph. There is also a reading list and a saved-items list. **Settings** covers your profile, research sources (switch each API on or off, and add an optional contact email for OpenAlex), spot ink, density, motion, Desk layout, the reasoning engine and data export.
-
-Across the app you also get:
-- the command palette `⌘K`
-- quick launch `⌘J`
-- go-to chords such as `G B` (Browser), `G D` (Docs) and `G F` (Flow)
-- floating windows and notifications
-
-Everything is saved in your browser (zustand + `localStorage`, key `agora:v1`). No account is needed.
+To match the new name, rename the repository to `resolved` (**Settings → General**). The Pages base path follows the repository name automatically. If you rename it, also update `REPO_URL` in `src/site/links.ts` so correction links point to the right place.
 
 ## Architecture
 
 ```
 src/
-  research/     cite.ts (short cite, card cite, MLA, APA), docModel.ts (Verbatim doc model),
-                providers.ts (Wikipedia / OpenAlex / Open Library clients + HTML sanitizer), formats.ts
-  features/
-    browser/    the Research Browser, readers, and the cut layer
-    docs/       the TipTap speech-doc editor, Verbatim keys and extensions, rich export
-    flow/       flows and the shared round-timer store
-    …           the other apps, each with its own CSS
-  model/        types and the unified knowledge graph (sources, docs and flows are nodes too)
-  store/        the persisted zustand store
-  ai/           the local reasoning engine (optional Claude provider with your own key)
-  landing/      the scrolling-comic landing page (hand-drawn SVG ink illustration)
-  styles/       paper and ink design tokens, global and shell styles
+  site/        public site: landing, rankings, profiles, schools, methodology, briefs (+ SiteShell)
+  app/         workspace dashboard
+  features/    browser (evidence + cutter), docs (vaults), flow (flow + timer), workspace (settings)
+  rankings/    glicko2.ts, pipeline.ts, csv.ts, types.ts, data.ts (fetch hooks)
+  research/    citations, doc model, evidence providers, debate formats
+  data/        briefs, seed vault docs, framework library (verified public-domain passages)
+  components/  workspace shell, command palette, charts, primitives
+scripts/rankings/build.ts   builds public/data/ld from the results dataset
 ```
 
-**Network.** All research calls go straight from the browser to public, CORS-enabled APIs: `en.wikipedia.org` (action API and REST v1), `api.openalex.org` and `openlibrary.org`. There is no Agora server. Wikipedia HTML is sanitized before it is shown: scripts, frames, event handlers, inline styles, non-Wikimedia images and reference sections are all removed.
+## Content rules
 
-> **Testing note.** The development sandbox that built this release could not reach these APIs. So the browser flows were tested end to end with recorded fixture responses (search → open article → select → cut → card in doc), and the sanitizer and parsers have unit tests. If an API changes shape or is down, the browser shows an error with a retry button, and the Agora library and **Cut from print or PDF** keep working offline.
-
-## Content integrity
-
-- Seeded evidence cards use only **verbatim** quotations from the verified corpus, and a test enforces this.
-- Quotations name their translation (for example Abbott's *Groundwork* or Hicks's Diogenes Laërtius). When exact wording can't be guaranteed, the text is stored as a labelled **summary**.
-- Interpretive output, including Philosopher-mode replies and generated comparison columns, is labelled **interpretation**.
+- Cards are only ever the source's own words. Seeded cards come from verified public-domain translations, and a test checks that.
+- Briefs are Resolved's analysis and contain no quotations. Positions attributed to authors summarise the works in each issue's reading list.
+- Rankings are unofficial and not affiliated with the NSDA, Tabroom or any tournament.
 
 ## Stack
 
-Vite · React 19 · TypeScript (strict) · React Router · zustand · TipTap 3 · framer-motion · d3-force · lucide-react · self-hosted Archivo, Shantell Sans, IM Fell English, Newsreader and JetBrains Mono · Vitest · ESLint · Playwright (e2e, local)
+Vite · React 19 · TypeScript (strict) · React Router · zustand · TipTap 3 · framer-motion · lucide-react · self-hosted Archivo, Newsreader and JetBrains Mono · Vitest · ESLint · tsx

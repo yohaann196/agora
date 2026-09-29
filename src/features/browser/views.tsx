@@ -1,7 +1,7 @@
 import { AlertTriangle, BookOpen, ExternalLink, FileQuestion, Globe, Library, Loader2, Newspaper, Scissors, ScrollText } from 'lucide-react'
 import { useEffect, useState, type MouseEvent, type ReactNode } from 'react'
 import { SourceBadge } from '../../components/ui/primitives'
-import { philosopherById } from '../../data/philosophers'
+import { authors } from '../../data/authors'
 import { passages, textById } from '../../data/texts'
 import { shortCite } from '../../research/cite'
 import { cardNodes } from '../../research/docModel'
@@ -84,7 +84,7 @@ function Failure({ message, retry, children }: { message: string; retry?: () => 
 
 /* ------------------------------ new tab ------------------------------ */
 
-const PICKS = ['Civil disobedience', 'Veil of ignorance', 'Deterrence theory', 'Universal basic income', 'Moral luck', 'Nuclear proliferation', 'Harm principle', 'Just war theory']
+const PICKS = ['Space colonization', 'Existential risk', 'Outer Space Treaty', 'Planetary protection', 'Non-identity problem', 'Longtermism', 'Categorical imperative', 'Harm principle']
 
 export function NewTabView({ go }: ViewProps) {
   const [q, setQ] = useState('')
@@ -102,7 +102,7 @@ export function NewTabView({ go }: ViewProps) {
             if (q.trim()) go(`agora:search?q=${encodeURIComponent(q.trim())}`)
           }}
         >
-          <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search encyclopedias, papers, books and the Agora library — or paste a URL or DOI" aria-label="Search" />
+          <input autoFocus value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search encyclopedias, papers, books and the framework library, or paste a URL or DOI" aria-label="Search" />
           <button className="btn primary lg">Search</button>
         </form>
         <div className="chips nt-picks">
@@ -138,7 +138,7 @@ export function NewTabView({ go }: ViewProps) {
   )
 }
 
-/** For sources Agora can’t load: books, PDFs, articles behind paywalls. */
+/** For sources Resolved can’t load: books, PDFs, articles behind paywalls. */
 export function ManualCut({ initial }: { initial?: Partial<SourceDraft> }) {
   const [f, setF] = useState({
     authors: initial?.authors?.join(', ') ?? '',
@@ -206,7 +206,7 @@ export function ManualCut({ initial }: { initial?: Partial<SourceDraft> }) {
 /* ------------------------------ search ------------------------------ */
 
 const GROUPS: { kind: SearchResult['kind']; label: string; icon: typeof Globe; src: string }[] = [
-  { kind: 'agora', label: 'Agora library', icon: Library, src: 'agora' },
+  { kind: 'agora', label: 'Framework library', icon: Library, src: 'agora' },
   { kind: 'wiki', label: 'Encyclopedia', icon: Globe, src: 'wiki' },
   { kind: 'paper', label: 'Scholarly papers', icon: Newspaper, src: 'papers' },
   { kind: 'book', label: 'Books', icon: BookOpen, src: 'books' },
@@ -296,7 +296,7 @@ export function WikiView({ uri, go, setTitle }: ViewProps) {
   if (load.state === 'error')
     return (
       <Failure message={load.message} retry={retry}>
-        <p className="dim">You can still search the Agora library, which works offline.</p>
+        <p className="dim">You can still search the framework library, which works offline.</p>
       </Failure>
     )
   const a = load.data
@@ -417,12 +417,12 @@ export function AgoraTextView({ uri, setTitle }: ViewProps) {
   useEffect(() => {
     if (w) setTitle(w.title)
   }, [w, setTitle])
-  if (!w) return <Failure message="That text isn’t in the Agora library." />
-  const a = philosopherById[w.author]
+  if (!w) return <Failure message="That text isn’t in the framework library." />
+  const a = authors[w.author]
   const ps = passages.filter((p) => p.textId === id)
   return (
     <article className="reader">
-      <ReaderHead kicker={<>Agora library · {w.form}</>} title={w.title} meta={<><span>{a.name}</span><span className="mono">{w.year}</span></>} />
+      <ReaderHead kicker={<>Framework library · {w.form}</>} title={w.title} meta={<><span>{a.name}</span><span className="mono">{w.year}</span></>} />
       <p className="reader-p serif" style={{ marginBottom: 20 }}>{w.summary}</p>
       <CutLayer
         sourceFor={(el) => {
@@ -444,7 +444,7 @@ export function AgoraTextView({ uri, setTitle }: ViewProps) {
           {!ps.length && <p className="dim">No verified passages from this work yet.</p>}
         </div>
       </CutLayer>
-      <p className="reader-caution letter" style={{ marginTop: 18 }}>Only cut from passages marked Direct quotation. Summaries are Agora’s words, not the author’s.</p>
+      <p className="reader-caution letter" style={{ marginTop: 18 }}>Only cut from passages marked Direct quotation. Summaries are our words, not the author’s.</p>
     </article>
   )
 }
@@ -461,7 +461,7 @@ export function ExternalView({ uri }: ViewProps) {
       <div className="ext-bar caption">
         <FileQuestion size={15} />
         <span>
-          Many sites don’t allow being shown inside other apps. If <strong>{host}</strong> stays blank, open it in a new tab and paste the passage below — Agora keeps the citation.
+          Many sites don’t allow being shown inside other apps. If <strong>{host}</strong> stays blank, open it in a new tab and paste the passage below — Resolved keeps the citation.
         </span>
         <a className="btn sm" href={uri} target="_blank" rel="noopener noreferrer"><ExternalLink /> Open in new tab</a>
       </div>

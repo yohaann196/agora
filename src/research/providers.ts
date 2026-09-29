@@ -5,9 +5,9 @@
  *  - Wikipedia     https://en.wikipedia.org/w/api.php  and  /api/rest_v1
  *  - OpenAlex      https://api.openalex.org            (scholarly works)
  *  - Open Library  https://openlibrary.org             (books)
- *  - Agora corpus  built in, works offline
+ *  - framework library  built in, works offline
  */
-import { philosopherById } from '../data/philosophers'
+import { authors } from '../data/authors'
 import { passages, textById, texts } from '../data/texts'
 import type { Source } from '../model/types'
 
@@ -256,14 +256,14 @@ export function bookSource(id: string, work: OLWork, doc?: OLDoc): Omit<Source, 
   }
 }
 
-/* ------------------------------ Agora corpus ------------------------------ */
+/* ------------------------------ framework library ------------------------------ */
 
 export function agoraSearch(q: string): SearchResult[] {
   const t = q.trim().toLowerCase()
   if (!t) return []
   const out: SearchResult[] = []
   for (const w of texts) {
-    const author = philosopherById[w.author]
+    const author = authors[w.author]
     const hay = `${w.title} ${author.name} ${w.summary} ${w.concepts.join(' ')}`.toLowerCase()
     if (!hay.includes(t) && !t.split(/\s+/).every((x) => hay.includes(x))) continue
     const n = passages.filter((p) => p.textId === w.id && p.source === 'quotation').length
@@ -273,14 +273,14 @@ export function agoraSearch(q: string): SearchResult[] {
     if (p.source !== 'quotation' || !`${p.body} ${p.context}`.toLowerCase().includes(t)) continue
     const w = textById[p.textId]
     if (out.some((r) => r.uri === `agora:text/${w.id}`)) continue
-    out.push({ kind: 'agora', uri: `agora:text/${w.id}`, title: w.title, subtitle: `${philosopherById[p.author].name} · ${p.locator}`, snippet: `“${p.body}”` })
+    out.push({ kind: 'agora', uri: `agora:text/${w.id}`, title: w.title, subtitle: `${authors[p.author].name} · ${p.locator}`, snippet: `“${p.body}”` })
   }
   return out.slice(0, 8)
 }
 
 export function agoraSource(textId: string, locator?: string): Omit<Source, 'id' | 'kind' | 'accessed'> {
   const w = textById[textId]
-  const a = philosopherById[w.author]
+  const a = authors[w.author]
   const p = passages.find((x) => x.textId === textId && x.locator === locator)
   return {
     provider: 'agora',
@@ -313,7 +313,7 @@ export function describeUri(uri: string): string {
   if (uri === 'agora:new') return 'New tab'
   if (uri.startsWith('agora:search')) return `Search: ${new URLSearchParams(uri.split('?')[1]).get('q') ?? ''}`
   if (uri.startsWith('wiki:')) return uri.slice(5).replace(/_/g, ' ')
-  if (uri.startsWith('agora:text/')) return textById[uri.slice(11)]?.title ?? 'Agora text'
+  if (uri.startsWith('agora:text/')) return textById[uri.slice(11)]?.title ?? 'Library text'
   if (uri.startsWith('paper:')) return 'Paper'
   if (uri.startsWith('book:')) return 'Book'
   try {

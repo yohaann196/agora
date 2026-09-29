@@ -1,48 +1,5 @@
-import {
-  BookOpen,
-  Bookmark,
-  BookmarkCheck,
-  FileText,
-  Globe,
-  Landmark,
-  TableProperties,
-  NotebookPen,
-  Orbit,
-  PenLine,
-  Quote,
-  ScrollText,
-  Sparkles,
-  Swords,
-  User,
-  Waypoints,
-  type LucideIcon,
-} from 'lucide-react'
+import { ArrowDown, ArrowUp, Minus, Quote, ScrollText, type LucideIcon } from 'lucide-react'
 import type { ReactNode } from 'react'
-import { philosopherById } from '../../data/philosophers'
-import type { EntityKind, EntityRef, SourceType } from '../../model/types'
-import { useOS } from '../../store'
-
-export const KIND_ICON: Record<EntityKind | 'custom', LucideIcon> = {
-  philosopher: User,
-  concept: Orbit,
-  school: Landmark,
-  text: BookOpen,
-  passage: Quote,
-  argument: Waypoints,
-  debate: Swords,
-  essay: PenLine,
-  note: NotebookPen,
-  user: User,
-  custom: Sparkles,
-  source: Globe,
-  doc: FileText,
-  flow: TableProperties,
-}
-
-export function KindIcon({ kind, size = 14 }: { kind: EntityKind | 'custom'; size?: number }) {
-  const I = KIND_ICON[kind] ?? FileText
-  return <I width={size} height={size} className={`k-${kind}`} style={{ color: 'var(--tag)' }} aria-hidden />
-}
 
 export function PageHeader({
   eyebrow,
@@ -70,86 +27,20 @@ export function PageHeader({
   )
 }
 
-const SOURCE_LABEL: Record<SourceType, string> = {
-  quotation: 'Direct quotation',
-  summary: 'Summary',
-  interpretation: 'AI interpretation',
-}
-const SOURCE_ICON: Record<SourceType, LucideIcon> = {
-  quotation: Quote,
-  summary: ScrollText,
-  interpretation: Sparkles,
+type SourceType = 'quotation' | 'summary'
+const SOURCE: Record<SourceType, { label: string; hint: string; icon: LucideIcon }> = {
+  quotation: { label: 'Direct quotation', hint: 'Verbatim from the named translation.', icon: Quote },
+  summary: { label: 'Summary', hint: 'A summary of what the text says, not verbatim.', icon: ScrollText },
 }
 
 export function SourceBadge({ type, label }: { type: SourceType; label?: string }) {
-  const I = SOURCE_ICON[type]
+  const s = SOURCE[type]
   return (
-    <span className={`src ${type}`} title={SOURCE_HINT[type]}>
-      <I aria-hidden />
-      {label ?? SOURCE_LABEL[type]}
+    <span className={`src ${type}`} title={s.hint}>
+      <s.icon aria-hidden />
+      {label ?? s.label}
     </span>
   )
-}
-const SOURCE_HINT: Record<SourceType, string> = {
-  quotation: 'Verbatim from the named translation.',
-  summary: 'A summary of what the text says — not verbatim.',
-  interpretation: 'A reconstruction or reading that goes beyond the text.',
-}
-
-export function SaveButton({ refItem, size = 'sm', label }: { refItem: EntityRef; size?: 'sm' | 'md'; label?: boolean }) {
-  const saved = useOS((s) => s.saved.some((r) => r.id === refItem.id))
-  const toggle = useOS((s) => s.toggleSaved)
-  const I = saved ? BookmarkCheck : Bookmark
-  return (
-    <button
-      className={`btn ${label ? '' : 'icon'} ${size === 'sm' ? 'sm' : ''} ${saved ? '' : 'ghost'}`}
-      aria-pressed={saved}
-      aria-label={saved ? 'Remove from saved' : 'Save'}
-      title={saved ? 'Saved' : 'Save to workspace'}
-      onClick={(e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        toggle(refItem)
-      }}
-      style={saved ? { color: 'var(--amber)' } : undefined}
-    >
-      <I />
-      {label && (saved ? 'Saved' : 'Save')}
-    </button>
-  )
-}
-
-const ERA_HUE: Record<string, string> = {
-  Ancient: 'var(--amber)',
-  Medieval: 'var(--orange)',
-  'Early Modern': 'var(--cyan)',
-  Modern: 'var(--violet)',
-  Contemporary: 'var(--blue)',
-}
-
-/** A typographic portrait: monogram in a hairline medallion, tinted by era. */
-export function Monogram({ id, size = 44 }: { id: string; size?: number }) {
-  const p = philosopherById[id]
-  if (!p) return null
-  const hue = ERA_HUE[p.era]
-  return (
-    <span
-      className="monogram"
-      aria-hidden
-      style={{
-        width: size,
-        height: size,
-        ['--hue' as string]: hue,
-        fontSize: size * (p.monogram.length > 1 ? 0.36 : 0.46),
-      }}
-    >
-      {p.monogram}
-    </span>
-  )
-}
-
-export function eraColor(era: string) {
-  return ERA_HUE[era] ?? 'var(--text-2)'
 }
 
 export function timeAgo(ts: number) {
@@ -164,12 +55,34 @@ export function timeAgo(ts: number) {
   return new Date(ts).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
 }
 
-export function Stat({ label, value }: { label: string; value: ReactNode }) {
+/** Movement since the previous tournament: ▲3, ▼2, new, or no change. */
+export function RankChange({ rank, prev }: { rank: number; prev: number | null }) {
+  if (prev === null) return <span className="rk-change new" title="Newly ranked">New</span>
+  const d = prev - rank
+  if (d === 0) return <span className="rk-change same" aria-label="No change"><Minus size={11} /></span>
+  const Up = d > 0
   return (
-    <div className="stat">
-      <div className="stat-v">{value}</div>
-      <div className="stat-l">{label}</div>
-    </div>
+    <span className={`rk-change ${Up ? 'up' : 'down'}`} aria-label={`${Up ? 'Up' : 'Down'} ${Math.abs(d)} since the last tournament`}>
+      {Up ? <ArrowUp size={11} /> : <ArrowDown size={11} />}
+      {Math.abs(d)}
+    </span>
   )
 }
 
+export const pct = (v: number | null) => (v === null ? '—' : `${Math.round(v)}%`)
+
+export function initials(name: string) {
+  const parts = name.split(/\s+/).filter(Boolean)
+  return ((parts[0]?.[0] ?? '') + (parts.length > 1 ? parts[parts.length - 1][0] : '')).toUpperCase()
+}
+
+/** A lettered avatar tinted from the name, so profiles are recognisable without photos. */
+export function Avatar({ name, size = 40 }: { name: string; size?: number }) {
+  let h = 0
+  for (const c of name) h = (h * 31 + c.charCodeAt(0)) % 360
+  return (
+    <span className="avatar" aria-hidden style={{ width: size, height: size, fontSize: size * 0.38, ['--h' as string]: h }}>
+      {initials(name)}
+    </span>
+  )
+}

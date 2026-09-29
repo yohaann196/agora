@@ -1,9 +1,9 @@
 {
-  "name": "agora",
+  "name": "resolved",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Agora — a research browser, speech-doc studio and round timer for debaters and philosophy students.",
+  "description": "Resolved: debate prep tools, Glicko-2 LD rankings with debater profiles, and monthly topic briefs.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit -p . && vite build",
@@ -14,12 +14,9 @@
     "rankings": "tsx scripts/rankings/build.ts"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.129.0",
     "@fontsource-variable/archivo": "^5.3.0",
     "@fontsource-variable/inter": "^5.3.0",
     "@fontsource-variable/newsreader": "^5.3.0",
-    "@fontsource-variable/shantell-sans": "^5.3.0",
-    "@fontsource/im-fell-english": "^5.3.0",
     "@fontsource/jetbrains-mono": "^5.3.0",
     "@tiptap/extension-highlight": "^3.31.3",
     "@tiptap/extension-placeholder": "^3.31.3",
@@ -27,7 +24,6 @@
     "@tiptap/pm": "^3.31.3",
     "@tiptap/react": "^3.31.3",
     "@tiptap/starter-kit": "^3.31.3",
-    "d3-force": "^3.0.0",
     "framer-motion": "^13.4.4",
     "lucide-react": "^1.48.0",
     "react": "^19.3.0",
@@ -37,7 +33,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@types/d3-force": "^3.0.10",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.1",

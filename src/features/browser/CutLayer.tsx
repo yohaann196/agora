@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { ClipboardCopy, NotebookPen, Scissors } from 'lucide-react'
+import { ClipboardCopy, Scissors } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import type { Source } from '../../model/types'
@@ -24,7 +24,7 @@ export function CutLayer({ children, sourceFor, className = '' }: Props) {
   const [snip, setSnip] = useState(0)
   const docs = useOS((s) => s.docs)
   const target = useOS((s) => s.cutTarget)
-  const { setCutTarget, addSource, appendToDoc, toast, createNote } = useOS.getState()
+  const { setCutTarget, addSource, appendToDoc, toast } = useOS.getState()
 
   const onUp = useCallback(() => {
     setTimeout(() => {
@@ -82,12 +82,7 @@ export function CutLayer({ children, sourceFor, className = '' }: Props) {
     }
   }
 
-  const toNote = () => {
-    if (!sel || !previewSource) return
-    createNote({ title: tag || `Quote — ${shortCite(previewSource)}`, body: `“${sel.text}”\n\n${shortCite(previewSource)} — ${fullCite(previewSource)}` })
-    toast({ title: 'Saved to Notes', tone: 'success' })
-    setSel(null)
-  }
+
 
   const W = 380
   const pos = sel
@@ -139,7 +134,6 @@ export function CutLayer({ children, sourceFor, className = '' }: Props) {
               </div>
               <div className="cut-actions">
                 <button className="btn ghost sm" onClick={copy} title="Copy with citation"><ClipboardCopy /> Copy</button>
-                <button className="btn ghost sm" onClick={toNote}><NotebookPen /> Note</button>
                 <span className="spacer" />
                 <button className="btn primary sm" onClick={cut} disabled={!tag.trim() || !targetDoc}>
                   <Scissors /> Cut <span className="kbd">↵</span>

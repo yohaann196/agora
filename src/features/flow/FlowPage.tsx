@@ -378,7 +378,7 @@ export function FlowPage() {
   const flow = useOS((s) => s.flows.find((f) => f.id === id))
   const pushRecent = useOS((s) => s.pushRecent)
   useEffect(() => {
-    if (flow) pushRecent({ kind: 'flow', id: flow.id })
+    if (flow) pushRecent({ kind: 'flow', id: flow.id, label: flow.title })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
   if (!flow) return <NotFound />

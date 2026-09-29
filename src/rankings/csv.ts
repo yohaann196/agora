@@ -36,7 +36,7 @@ export function parseCsv(text: string): string[][] {
 
 /** Rows as objects keyed by header; header whitespace (Tabroom pads with tabs) collapses to single spaces. */
 export function parseTable(text: string): { headers: string[]; rows: Record<string, string>[] } {
-  const [head = [], ...body] = parseCsv(text.replace(/^﻿/, ''))
+  const [head = [], ...body] = parseCsv(text.replace(/^\uFEFF/, ''))
   const headers = head.map((h) => h.replace(/\s+/g, ' ').trim())
   return { headers, rows: body.map((r) => Object.fromEntries(headers.map((h, i) => [h, (r[i] ?? '').trim()]))) }
 }

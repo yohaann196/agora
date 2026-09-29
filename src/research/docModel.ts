@@ -36,9 +36,11 @@ export function cardNodes(tag: string, source: Source, body: Segment[] | string)
   return [heading(4, tag), citeParagraph(source), para(segments(segs), 'card')]
 }
 
-export function emptyDoc(kind: 'speech' | 'file' | 'research' = 'speech'): DocJSON {
+const STARTER: Record<string, string> = { contention: 'Contention', block: 'Block', speech: 'Speech', file: 'New file' }
+
+export function emptyDoc(kind: 'contention' | 'block' | 'speech' | 'file' | 'research' = 'speech'): DocJSON {
   if (kind === 'research') return { type: 'doc', content: [heading(1, 'Research notes'), para([])] }
-  return { type: 'doc', content: [heading(1, kind === 'speech' ? 'Speech' : 'New file'), heading(4, ''), para([], 'cite'), para([], 'card')] }
+  return { type: 'doc', content: [heading(1, STARTER[kind]), heading(4, ''), para([], 'cite'), para([], 'card')] }
 }
 
 export function appendNodes(doc: DocJSON, nodes: DocJSON[]): DocJSON {
