@@ -352,7 +352,6 @@ function main() {
 
   for (const s of seasons) {
     const label = seasonLabel(s.slug)
-    const hasLocal = s.tournaments.some((t) => t.level === 'local')
     const periods: Period[] = [{ slug: 'season', label: 'Full season' }]
     if (s.dated) for (const p of PERIODS) if (s.tournaments.some((t) => t.start && periodOfDate(t.start) === p.slug)) periods.push({ ...p })
     mkdirSync(join(OUT, s.slug), { recursive: true })
@@ -366,13 +365,21 @@ function main() {
       const pool = mainPool(result.debaters)
       if (period.slug === 'season') full = { result, pool }
       const inPool = (d: DebaterState) => pool.has(d.id)
-      const base = { event: 'hsld' as const, eventLabel: 'Lincoln–Douglas', seasonSlug: s.slug, season: label, hasLocal, period, periods, generatedAt: new Date().toISOString(), updatedAt, tournaments: result.tournaments, field: result.field }
-      const circuit: RankingsFile = { ...base, view: 'circuit', debaters: rankList(result, { include: (d) => d.levels.has('circuit'), rankable: inPool, pool }) }
-      writeFileSync(join(OUT, s.slug, `rankings-${period.slug}.json`), JSON.stringify(circuit))
-      if (hasLocal) {
-        const all: RankingsFile = { ...base, view: 'all', debaters: rankList(result, { rankable: (d) => inPool(d) && d.rounds.length >= MIN_ROUNDS, pool }) }
-        writeFileSync(join(OUT, s.slug, `rankings-${period.slug}-all.json`), JSON.stringify(all))
+      // One ranking for everyone: a rank needs the minimum rounds and a link to the national pool.
+      const file: RankingsFile = {
+        event: 'hsld',
+        eventLabel: 'Lincoln–Douglas',
+        seasonSlug: s.slug,
+        season: label,
+        period,
+        periods,
+        generatedAt: new Date().toISOString(),
+        updatedAt,
+        tournaments: result.tournaments,
+        field: result.field,
+        debaters: rankList(result, { rankable: (d) => inPool(d) && d.rounds.length >= MIN_ROUNDS, pool }),
       }
+      writeFileSync(join(OUT, s.slug, `rankings-${period.slug}.json`), JSON.stringify(file))
     }
 
     const { result, pool } = full!
@@ -393,7 +400,6 @@ function main() {
       circuitTournaments: result.tournaments.filter((t) => t.level === 'circuit').length,
       rounds: result.field.rounds,
       debaters: result.debaters.length,
-      hasLocal,
       periods,
     })
     console.log(`LD ${label}: ${result.tournaments.length} tournaments (${result.tournaments.filter((t) => t.level === 'local').length} local), ${result.debaters.length} debaters, ${result.field.rounds} rounds${s.dated ? '' : ' (source order)'}`)

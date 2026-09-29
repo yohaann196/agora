@@ -10,7 +10,7 @@ import './rankings.css'
 
 export function SchoolPage() {
   const { slug = '' } = useParams()
-  const load = useRankings({ view: 'all' })
+  const load = useRankings()
   const data = load.state === 'ready' ? load.data : null
   const members = useMemo(() => (data ? data.debaters.filter((d) => schoolSlug(d.school) === slug) : []), [data, slug])
 

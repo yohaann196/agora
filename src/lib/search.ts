@@ -27,7 +27,7 @@ function match(hay: string, q: string) {
 }
 
 export function useSearch(q: string, limit = 12): Hit[] {
-  const rankings = useRankings({ view: 'all' })
+  const rankings = useRankings()
   const docs = useOS((s) => s.docs)
   const flows = useOS((s) => s.flows)
   const debaters = rankings.state === 'ready' ? rankings.data.debaters : null
