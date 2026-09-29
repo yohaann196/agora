@@ -9,6 +9,7 @@ Resolved is a debate platform for the whole season:
 
 The name is the first word of every resolution. The logo is its colon.
 
+**tools should amplify thinking, not replace it.** 
 ---
 
 ## Running it
