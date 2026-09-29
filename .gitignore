@@ -5,3 +5,4 @@ dist
 .vite
 coverage
 dist-preview
+.cache/
