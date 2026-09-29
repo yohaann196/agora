@@ -1,0 +1,119 @@
+:root {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg-0: #05070c;
+  --bg-1: #080b12;
+  --bg-2: #0c1019;
+  --bg-3: #111622;
+  --bg-4: #161c2a;
+  --glass: rgba(14, 18, 28, 0.72);
+  --glass-strong: rgba(12, 16, 25, 0.9);
+
+  /* Lines */
+  --line-0: rgba(148, 163, 200, 0.06);
+  --line-1: rgba(148, 163, 200, 0.1);
+  --line-2: rgba(148, 163, 200, 0.16);
+  --line-3: rgba(148, 163, 200, 0.26);
+
+  /* Text */
+  --text-0: #eef1f8;
+  --text-1: #b7bfd0;
+  --text-2: #7c869b;
+  --text-3: #535c70;
+  --text-4: #3a4152;
+
+  /* Accents */
+  --blue: #7aa7ff;
+  --violet: #a992ff;
+  --cyan: #62dbe6;
+  --green: #72e0a6;
+  --orange: #ffb370;
+  --rose: #ff8a9a;
+  --amber: #f2d27a;
+
+  --accent: var(--blue);
+  --accent-rgb: 122, 167, 255;
+
+  /* Entity colors — one per kind, used consistently everywhere */
+  --k-philosopher: var(--violet);
+  --k-concept: var(--cyan);
+  --k-school: var(--green);
+  --k-text: var(--orange);
+  --k-passage: var(--orange);
+  --k-argument: var(--blue);
+  --k-debate: var(--rose);
+  --k-essay: var(--amber);
+  --k-note: #9aa6bd;
+  --k-user: #9aa6bd;
+  --k-custom: #c7cfdf;
+
+  /* Argument node colors */
+  --n-claim: var(--blue);
+  --n-premise: var(--cyan);
+  --n-inference: var(--violet);
+  --n-conclusion: var(--green);
+  --n-objection: var(--rose);
+  --n-counter: var(--orange);
+  --n-rebuttal: #8fe3c4;
+  --n-evidence: var(--amber);
+  --n-definition: #9fc3ff;
+  --n-assumption: #c3b5ff;
+
+  /* Type */
+  --font-ui: 'Inter Variable', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Newsreader Variable', 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --fs-10: 10.5px;
+  --fs-11: 11.5px;
+  --fs-12: 12.5px;
+  --fs-13: 13.5px;
+  --fs-14: 14.5px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-22: 22px;
+  --fs-28: 28px;
+  --fs-36: 36px;
+  --fs-48: 48px;
+
+  /* Radii — deliberately small */
+  --r-1: 3px;
+  --r-2: 5px;
+  --r-3: 7px;
+  --r-4: 10px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 120ms;
+  --dur-2: 220ms;
+  --dur-3: 420ms;
+
+  --shadow-1: 0 1px 0 rgba(255, 255, 255, 0.02) inset, 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 8px 24px -8px rgba(0, 0, 0, 0.6);
+  --shadow-3: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 24px 64px -16px rgba(0, 0, 0, 0.8), 0 0 0 1px var(--line-1);
+
+  --sidebar-w: 236px;
+  --topbar-h: 52px;
+  --statusbar-h: 26px;
+  --gutter: 28px;
+}
+
+[data-accent='violet'] { --accent: var(--violet); --accent-rgb: 169, 146, 255; }
+[data-accent='cyan'] { --accent: var(--cyan); --accent-rgb: 98, 219, 230; }
+[data-accent='green'] { --accent: var(--green); --accent-rgb: 114, 224, 166; }
+[data-accent='orange'] { --accent: var(--orange); --accent-rgb: 255, 179, 112; }
+
+[data-density='compact'] {
+  --gutter: 20px;
+  --fs-13: 12.75px;
+  --fs-14: 13.5px;
+}
+
+@media (max-width: 1100px) {
+  :root { --sidebar-w: 60px; --gutter: 22px; }
+}
+@media (max-width: 720px) {
+  :root { --sidebar-w: 0px; --gutter: 16px; }
+}
