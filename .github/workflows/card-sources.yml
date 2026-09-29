@@ -31,9 +31,20 @@ jobs:
           node-version: 22
       - run: node scripts/cards/discover.mjs
 
-  fetch:
+  meta:
     needs: plan
     if: needs.plan.outputs.mode == 'fetch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/cards/meta.mjs
+
+  fetch:
+    needs: plan
+    if: false
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
