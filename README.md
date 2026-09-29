@@ -2,12 +2,9 @@
 
 **Research & debate, in one place.**
 
-Agora is a web app for debaters and philosophy students. It combines a research browser that cuts evidence with the citation attached, Verbatim-style speech docs, flows and round timers for Policy, Lincoln–Douglas and Public Forum, and a library of verified philosophical texts. There is also a Socratic coach that asks questions instead of handing out answers.
+Agora is a web app for debaters and philosophy students. It combines a **research browser** that cuts evidence with the citation attached, Verbatim-style speech docs, flows and round timers for Policy, Lincoln–Douglas and Public Forum, and a library of verified philosophical texts. There is also a Socratic coach that asks questions instead of handing out answers.
 
-It is named after the Athenian agora, the marketplace where arguments happened. The design is ink on paper, like a comic book: heavy panel borders, lettered caption boxes, and one spot color per page.
-
-It rests on one principle: **tools should amplify thinking, not replace it.** Agora never invents a quotation. Evidence you cut is the source's own words, and summaries and interpretations are always labelled.
-
+**tools should amplify thinking, not replace it.** 
 ---
 
 ## Running it
