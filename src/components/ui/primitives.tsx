@@ -56,13 +56,14 @@ export function timeAgo(ts: number) {
 }
 
 /** Movement since the previous tournament: ▲3, ▼2, new, or no change. */
-export function RankChange({ rank, prev }: { rank: number; prev: number | null }) {
+export function RankChange({ rank, prev }: { rank: number | null; prev: number | null }) {
+  if (rank === null) return null
   if (prev === null) return <span className="rk-change new" title="Newly ranked">New</span>
   const d = prev - rank
   if (d === 0) return <span className="rk-change same" aria-label="No change"><Minus size={11} /></span>
   const Up = d > 0
   return (
-    <span className={`rk-change ${Up ? 'up' : 'down'}`} aria-label={`${Up ? 'Up' : 'Down'} ${Math.abs(d)} since the last tournament`}>
+    <span className={`rk-change ${Up ? 'up' : 'down'}`} aria-label={`${Up ? 'Up' : 'Down'} ${Math.abs(d)} since last week`}>
       {Up ? <ArrowUp size={11} /> : <ArrowDown size={11} />}
       {Math.abs(d)}
     </span>

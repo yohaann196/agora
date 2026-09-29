@@ -68,3 +68,16 @@
 .fc-tourneys { display: grid; gap: 2px; border-top: 1px solid var(--line-1); padding-top: 10px; }
 .fc-tourneys li { display: flex; align-items: center; gap: 8px; font-size: var(--fs-12); padding: 4px 0; }
 .fc-tourneys li > span:first-child { flex: 1; color: var(--ink); font-weight: 600; }
+
+/* ---------- Season / view bar ---------- */
+.rk-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+.rk-bar .seg > button { display: inline-flex; align-items: center; gap: 5px; }
+.rk-season .select { width: auto; height: 36px; border-radius: 999px; font-weight: 650; }
+.rk-note { display: flex; gap: 8px; align-items: flex-start; margin: 0 0 16px; padding: 10px 14px; border-radius: var(--r-3); background: var(--accent-wash); color: var(--ink-2); font-size: var(--fs-12); max-width: 820px; }
+.rk-note svg { flex: none; margin-top: 1px; color: var(--accent); }
+.c-rank { display: grid; line-height: 1; }
+.c-natl { font-family: var(--font-ui); font-size: 10px; font-weight: 650; color: var(--text-3); }
+.fc-tourneys .fc-th { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); }
+.fc-tourneys .fc-th > span:first-child { color: var(--text-3); font-weight: 700; }
+.fc-tourneys small { font-weight: 500; }
+.field-card > .btn { justify-self: start; }

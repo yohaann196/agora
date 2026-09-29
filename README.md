@@ -4,7 +4,7 @@
 
 Resolved is a debate platform for the whole season:
 - **Prep tools:** evidence search, a card cutter, contention and block vaults, and flow & timer.
-- **Competition:** national **Lincoln–Douglas rankings**, with a profile for every ranked debater.
+- **Competition:** the world’s most comprehensive **Lincoln–Douglas rankings**: six seasons (2021–22 on), national circuit and local tournaments in one Glicko-2 pool, and a career profile for every debater. PF, Policy, Parli, BQ and Congress are coming soon.
 - **Monthly Briefs** on the current resolution.
 
 The name is the first word of every resolution. The logo is its colon.
@@ -23,7 +23,7 @@ npm run dev        # http://localhost:5173
 | ------------------- | --------------------------------------------------------- |
 | `npm run dev`       | Vite dev server                                           |
 | `npm run build`     | Typecheck (strict) + production build to `dist/`          |
-| `npm run rankings`  | Rebuild the LD rankings data in `public/data/ld/`         |
+| `npm run rankings`  | Pull the source datasets and rebuild `public/data/ld/` (run once before `npm run dev`) |
 | `npm test`          | Vitest: Glicko-2, the rankings pipeline, citations, docs, sanitizer |
 | `npm run lint`      | ESLint                                                    |
 | `npm run typecheck` | `tsc --noEmit`                                            |
@@ -33,8 +33,8 @@ npm run dev        # http://localhost:5173
 ### Compete
 | Page | What it does |
 | --- | --- |
-| **LD rankings** `/rankings` | Every debater with a decided round at a tracked national-circuit tournament. Rows show rank and movement since the last tournament, score, record, aff/neg/elim splits and a rating sparkline. You can search, filter by state, sort, follow debaters, and switch between topic periods. A **head-to-head predictor** gives the win probability between any two debaters. |
-| **Debater profiles** `/debaters/:id` | Rank, percentile, score, record, side splits and speaks. Also a rating-over-time chart with the ±2-deviation band, each tournament with records and placement (Champion, Finalist…), every round with a linked opponent, best wins, the predictor, and a correction/removal link. |
+| **LD rankings** `/rankings` | Every season since 2021–22. Switch between **National circuit** and **All tournaments**, pick a state for its own leaderboard, or pick a topic period. Rows show rank and movement over the last week, score, record, aff/neg/elim splits and a rating sparkline. You can search, sort and follow debaters. A **head-to-head predictor** gives the win probability between any two debaters. |
+| **Debater profiles** `/debaters/:id` | A whole career, season by season: rank, percentile, score, record, side splits and speaks. Also a rating-over-time chart with the ±2-deviation band, each tournament (Circuit or Local) with dates, records and placement, every round with a linked opponent, best wins, the predictor, and a correction/removal link. |
 | **Schools** `/schools/:slug` | A school's ranked debaters and aggregate record. |
 | **Methodology** `/rankings/method` | How the rankings work, in plain language, plus the corrections policy. |
 | **Monthly Briefs** `/briefs` | One issue a month on the current LD topic: burdens, key terms, aff/neg ground with answers, frameworks, and a reading list of real sources that links straight into the card cutter. Mid-topic issues add "what's winning" from real round data. |
@@ -53,27 +53,42 @@ Your prep work is saved in your browser (`localStorage`, key `resolved:v1`). The
 
 ## How the rankings work
 
-The pipeline lives in `src/rankings/` and `scripts/rankings/build.ts`, and follows the method of the open [debate-rankings](https://github.com/shreerammodi/debate-rankings) project:
+The pipeline lives in `src/rankings/` and `scripts/rankings/build.ts`. It follows the method of the open [debate-rankings](https://github.com/shreerammodi/debate-rankings) project, extended to more data.
 
-1. **Data.** Tabroom round results (entries plus one CSV per round) for the current season, read from that project's `tournaments/hsld/` folder and its `config/hsld-config.json`, which sets tournament order, majors, multi-school debaters and topic boundaries.
+1. **Data.** Public Tabroom round results (an entries file plus one CSV per round), merged season by season from three sources:
+   - [shreerammodi/debate-rankings](https://github.com/shreerammodi/debate-rankings): current-season national circuit (`tournaments/hsld/` and `config/hsld-config.json`).
+   - [skumar-ml/debate-rankings](https://github.com/skumar-ml/debate-rankings) (NSD × DebateDrills × DebateLand): national circuit from 2021–22 on, in `<season>/LD/<Tournament>/{Prelims,Elims}`. Tournament order comes from that repo's `LDRankings.py`, and current-season dates come from its TOC bid calendar.
+   - [`data/uploads/`](data/uploads/README.md): local tournaments added by hand.
+
+   A tournament that appears in more than one source is kept once.
 2. **Identity.** A debater is school + name (normalized), or name alone for debaters listed as competing for multiple schools. Byes, "advances" rows and split decisions without a majority are skipped.
 3. **Glicko-2** ([Glickman 2012](http://www.glicko.net/glicko/glicko2.pdf)), written from scratch in `src/rankings/glicko2.ts`:
-   - Starting values: 1500 / 350 / 0.06, τ = 0.5.
-   - Every decided round is a game. Within a round, all matches use pre-round ratings.
-   - **Majors count twice.**
+   - Starting values: 1500 / 350 / 0.06, τ = 0.5. Each season is rated on its own.
+   - Tournaments are rated in the order they finished (source order when dates are unknown). Within a round, all matches use pre-round ratings.
+   - **Circuit rounds count double a local round.** Circuit rounds are weight-1 games and local rounds weight ½. This is a weighted Glicko-2 update, so all-circuit seasons match the reference method.
 4. **Ranking score = rating − 2 × deviation.** This keeps one strong weekend from outranking a sustained record.
-5. **Elims** are labelled by bracket size, working back from the last elim round. That places closeouts correctly, and still works when a tournament's final wasn't posted.
-6. **Output.** `public/data/ld/rankings-<period>.json` holds the full season plus each topic period. `public/data/ld/debaters/<id>.json` holds one file per profile.
+5. **One pool, two views.** *National circuit* lists debaters with a circuit tournament. *All tournaments* lists everyone, and a national rank there needs 4 decided rounds. Local groups that no chain of opponents links to the main pool get no national rank, but they appear on their state leaderboard.
+6. **Elims** are labelled by name, by `Elims/` folder, or by bracket size working back from the last elim round. That handles closeouts and missing finals.
+7. **Output** (generated, not committed):
+   - `public/data/ld/index.json`: seasons, totals and sources.
+   - `<season>/rankings-<period>[-all].json`: the rankings files.
+   - `debaters/<id>.json`: one career file per debater.
 
-**Validation.** The test suite reproduces Glickman's worked example (1464.06 / 151.52 / 0.05999). On the current data, this implementation matches the reference project's published order with a Spearman correlation of 0.9999 and an identical top 50.
+**Validation.**
+- The test suite reproduces Glickman's worked example.
+- On the 2026–27 data, the circuit ranking matches debate-rankings' published order with a Spearman correlation of 0.9975.
 
-**Freshness.** The Pages workflow runs `npm run rankings` on every deploy and once a day. If the fetch fails, it keeps the committed JSON.
+**Freshness.** `.github/workflows/deploy.yml` runs every Monday (09:17 UTC), on every push to `main`, and on demand. It pulls both source repositories, rebuilds the rankings and redeploys. If a source can't be reached the job fails, and the last good deployment stays live.
 
-**Data use.** Results come from public Tabroom postings, collected by the debate-rankings project. That repository doesn't publish a license, so **ask its author (Shreeram Modi) before relying on the data long-term**. Profiles show competition data only: name, school, location, results. Every profile links to a [correction/removal issue form](.github/ISSUE_TEMPLATE/profile-correction.yml).
+**Data use.**
+- Neither source repository publishes a license. debate-rankings says to ask Shreeram Modi; the NSD data says to email info@nsdebatecamp.com. **Ask both before relying on the data long-term.**
+- Profiles show competition data only: name, school, location, results.
+- Every profile links to a [correction/removal issue form](.github/ISSUE_TEMPLATE/profile-correction.yml). Removed profiles go in `data/removals.json` (`{"ids": [...]}`).
+- Resolved does not scrape Tabroom. Its robots.txt disallows the results pages and API, which now require a login.
 
 ## Publishing on GitHub Pages
 
-`.github/workflows/deploy.yml` runs on every push to `main`, daily, and on demand. Each run refreshes the rankings, typechecks, tests, builds with hash routes (`/#/rankings`), and deploys. To turn it on:
+`.github/workflows/deploy.yml` runs on every push to `main`, every Monday, and on demand. Each run pulls the source datasets, rebuilds the rankings, typechecks, tests, builds with hash routes (`/#/rankings`), and deploys. To turn it on:
 
 1. Go to **Settings → Pages** and set **Source** to **GitHub Actions**.
 2. Merge the working branch into `main`.
@@ -91,7 +106,8 @@ src/
   research/    citations, doc model, evidence providers, debate formats
   data/        briefs, seed vault docs, framework library (verified public-domain passages)
   components/  workspace shell, command palette, charts, primitives
-scripts/rankings/build.ts   builds public/data/ld from the results dataset
+scripts/rankings/build.ts   builds public/data/ld from the source datasets + data/uploads
+data/uploads/               local tournament results (see its README)
 ```
 
 ## Content rules

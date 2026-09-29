@@ -10,7 +10,7 @@ import './rankings.css'
 
 export function SchoolPage() {
   const { slug = '' } = useParams()
-  const load = useRankings()
+  const load = useRankings({ view: 'all' })
   const data = load.state === 'ready' ? load.data : null
   const members = useMemo(() => (data ? data.debaters.filter((d) => schoolSlug(d.school) === slug) : []), [data, slug])
 
@@ -22,7 +22,7 @@ export function SchoolPage() {
   const losses = members.reduce((n, d) => n + d.losses, 0)
   const elimW = members.reduce((n, d) => n + d.elimWins, 0)
   const elimL = members.reduce((n, d) => n + d.elimLosses, 0)
-  const topCount = members.filter((d) => d.rank <= 50).length
+  const topCount = members.filter((d) => d.rank !== null && d.rank <= 50).length
 
   return (
     <div className="wrap profile">

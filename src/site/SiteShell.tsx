@@ -69,7 +69,9 @@ export function SiteShell() {
           <div className="sf-col">
             <b>Data</b>
             <Link to="/rankings/method#corrections">Corrections &amp; removal</Link>
-            <a href="https://github.com/shreerammodi/debate-rankings" target="_blank" rel="noreferrer">Results dataset</a>
+            <Link to="/rankings/method">Data sources &amp; method</Link>
+            <a href="https://github.com/shreerammodi/debate-rankings" target="_blank" rel="noreferrer">debate-rankings (Modi)</a>
+            <a href="https://github.com/skumar-ml/debate-rankings" target="_blank" rel="noreferrer">NSD × DebateDrills × DebateLand data</a>
           </div>
         </div>
         <p className="sf-fine">Rankings are unofficial and computed from public Tabroom results. Resolved is not affiliated with the NSDA, Tabroom or any tournament.</p>

@@ -1,12 +1,13 @@
-import { ArrowRight, BookMarked, Check, FileStack, Globe, LineChart, Newspaper, Scissors, Shield, Swords, TableProperties, Timer, Trophy, UserRound } from 'lucide-react'
+import { ArrowRight, BookMarked, Check, FileStack, Globe, History, MapPin, Newspaper, Scissors, Shield, Swords, TableProperties, Timer, Trophy } from 'lucide-react'
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router'
 import { Sparkline } from '../components/ui/charts'
 import { Avatar, RankChange } from '../components/ui/primitives'
 import { RESOLUTION } from '../data/debateSeeds'
 import { currentBrief } from '../data/briefs'
-import { useRankings } from '../rankings/data'
+import { count, useIndex, useRankings } from '../rankings/data'
 import { BriefCover } from './BriefsPage'
+import { EventTabs } from './EventTabs'
 import { updatedLabel } from './RankingsPage'
 import './landing.css'
 
@@ -20,7 +21,7 @@ function LiveTop() {
         <span className="dim">{data ? `Updated ${updatedLabel(data)}` : 'Loading…'}</span>
       </div>
       <ol className="lc-list">
-        {(data?.debaters.slice(0, 5) ?? Array.from({ length: 5 }, () => null)).map((d, i) =>
+        {(data?.debaters.filter((d) => d.rank !== null).slice(0, 5) ?? Array.from({ length: 5 }, () => null)).map((d, i) =>
           d ? (
             <li key={d.id}>
               <span className="lc-rank">{d.rank}</span>
@@ -52,17 +53,20 @@ const PREP = [
 
 const FAQ = [
   { q: 'Is Resolved free?', a: 'Yes, everything is free during the beta: prep tools, rankings, profiles and monthly briefs.' },
-  { q: 'Where do the rankings come from?', a: 'Public Tabroom round results from national-circuit tournaments, rated with Glicko-2. The methodology page explains every step, and the data source is open.' },
+  { q: 'Where do the rankings come from?', a: 'Public Tabroom round results. National-circuit results come from two open datasets (Shreeram Modi’s debate-rankings, and the NSD × DebateDrills × DebateLand rankings data), refreshed every week. Local tournaments are added on top. Everything is rated with Glicko-2 in one pool, and the methodology page explains every step.' },
+  { q: 'Why is my local tournament missing?', a: 'Local results are being added tournament by tournament. Circuit rounds count double a local round, so a strong local record helps, and a circuit result helps more.' },
   { q: 'I have a profile. Can I correct or remove it?', a: 'Yes. Every profile has a link to request a correction or removal, and removal requests are honoured.' },
-  { q: 'Does it work for PF and Policy?', a: 'The prep tools, flows and timers work for LD, PF and Policy. Rankings and briefs start with LD; more events are on the way.' },
+  { q: 'What about PF, Policy, Parli, BQ and Congress?', a: 'Rankings for Public Forum, Policy, Parliamentary, Big Questions and Congress are coming soon. The prep tools, flows and timers already work for LD, PF and Policy.' },
   { q: 'Where is my work stored?', a: 'In your browser, on your device. There’s no account yet, and nothing you cut or write is uploaded.' },
 ]
 
 export function Landing() {
   const { pathname } = useLocation()
   const load = useRankings()
+  const index = useIndex()
   const data = load.state === 'ready' ? load.data : null
-  const top = data?.debaters[0]
+  const idx = index.state === 'ready' ? index.data : null
+  const top = data?.debaters.find((d) => d.rank === 1)
 
   useEffect(() => {
     document.title = 'Resolved — Debate prep, rankings & briefs'
@@ -73,13 +77,13 @@ export function Landing() {
     <div className="landing">
       <section className="hero wrap">
         <div className="hero-copy">
-          <span className="hero-eyebrow">For Lincoln–Douglas, Public Forum &amp; Policy</span>
+          <Link to="/rankings" className="hero-eyebrow">The world’s most comprehensive LD rankings are live <ArrowRight size={13} /></Link>
           <h1 className="hero-title">
             Prep like a champion.<br />
             <span>Compete like one.</span>
           </h1>
           <p className="hero-lede">
-            Resolved is the debate platform for the whole season. Find evidence, cut cards, build contention and block vaults, flow your rounds, and see exactly where you stand in the national LD rankings.
+            Resolved is the debate platform for the whole season. Find evidence, cut cards, build contention and block vaults, flow your rounds, and see exactly where you stand in the biggest LD rankings ever built.
           </p>
           <div className="hero-ctas">
             <Link to="/app" className="btn primary lg">Open Resolved <ArrowRight /></Link>
@@ -129,21 +133,27 @@ export function Landing() {
         <div className="wrap section">
           <div className="sec-head">
             <span className="sec-kicker light">Compete</span>
-            <h2 className="sec-title light">Know where you stand.</h2>
-            <p className="sec-lede light">National LD rankings from real round results, updated as the season goes, with a profile for every ranked debater.</p>
+            <h2 className="sec-title light">The world’s most comprehensive LD rankings.</h2>
+            <p className="sec-lede light">
+              The largest LD results dataset anywhere, and the most careful ratings: {idx ? `${count(idx.totals.rounds)} rounds from ${idx.totals.tournaments} tournaments across ${idx.totals.seasons} seasons` : 'every round we can find'}, national circuit and local, rated in one Glicko-2 pool and refreshed every week. Every debater gets a profile with their whole career.
+            </p>
+          </div>
+          <div className="compete-events">
+            <EventTabs dark />
+            <span>Lincoln–Douglas is live. Public Forum, Policy, Parli, Big Questions and Congress are coming soon.</span>
           </div>
           <div className="compete-grid">
             <div className="stat-tiles">
-              <div><b>{data ? data.debaters.length : '—'}</b><span>ranked debaters</span></div>
-              <div><b>{data ? data.field.rounds.toLocaleString() : '—'}</b><span>rounds rated</span></div>
-              <div><b>{data ? data.tournaments.length : '—'}</b><span>tournaments this season</span></div>
+              <div><b>{idx ? count(idx.totals.rounds, true) : '—'}</b><span>rounds rated</span></div>
+              <div><b>{idx ? idx.totals.tournaments : '—'}</b><span>tournaments since {idx ? idx.seasons.at(-1)!.label.slice(0, 4) : '—'}</span></div>
+              <div><b>{idx ? count(idx.totals.debaters, true) : '—'}</b><span>debater profiles</span></div>
             </div>
             <div className="compete-features">
               {[
-                [Trophy, 'Glicko-2 rankings', 'Every decided round is a rated game. Upsets move you more, and majors count double.'],
-                [UserRound, 'A profile for every debater', 'Rating history, tournament placements, round-by-round results and best wins.'],
-                [Swords, 'Head-to-head odds', 'Pick any two ranked debaters and see the win probability.'],
-                [LineChart, 'Topic-period rankings', 'See who’s best on each topic, as well as across the season.'],
+                [Trophy, 'Glicko-2, not guesswork', 'Every decided round is a rated game. Upsets move you more, uncertainty is measured, and circuit rounds count double a local one.'],
+                [MapPin, 'Circuit and local, one pool', 'Switch between the national circuit and every tournament, or pick a state for its own leaderboard.'],
+                [History, 'Whole careers', 'Seasons back to 2021–22, with rating history, placements and every round on each profile.'],
+                [Swords, 'Head-to-head odds', 'Pick any two debaters and see the win probability.'],
               ].map(([I, t, b]) => {
                 const Icon = I as typeof Trophy
                 return (
@@ -162,7 +172,7 @@ export function Landing() {
                 <div className="pt-head">
                   <Avatar name={top.name} size={52} />
                   <div>
-                    <span className="eyebrow">#{top.rank} in LD</span>
+                    <span className="eyebrow">#1 in LD · {data?.season}</span>
                     <b>{top.name}</b>
                     <span>{top.school}</span>
                   </div>

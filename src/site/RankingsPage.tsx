@@ -1,11 +1,13 @@
-import { ArrowDownWideNarrow, Info, Search, Star, Trophy } from 'lucide-react'
+import { ArrowDownWideNarrow, Globe2, Info, MapPin, Search, Star, Trophy } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router'
 import { Avatar, RankChange, pct } from '../components/ui/primitives'
 import { Sparkline } from '../components/ui/charts'
-import { schoolSlug, useRankings } from '../rankings/data'
-import type { RankedDebater, RankingsFile } from '../rankings/types'
+import { count, schoolSlug, useIndex, useRankings } from '../rankings/data'
+import type { RankedDebater, RankingsFile, TournamentMeta } from '../rankings/types'
 import { useOS } from '../store'
+import { MIN_ROUNDS } from '../rankings/pipeline'
+import { EventTabs } from './EventTabs'
 import { HeadToHead } from './HeadToHead'
 import './rankings.css'
 
@@ -20,7 +22,10 @@ const SORTS: { key: SortKey; label: string }[] = [
 ]
 const PAGE = 50
 
-export const updatedLabel = (f: RankingsFile) => new Date(f.source.committedAt).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })
+export const updatedLabel = (f: RankingsFile) => new Date(f.updatedAt).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })
+
+const shortDate = (iso: string) => (iso ? new Date(`${iso}T12:00:00Z`).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) : '')
+export const dateRange = (t: Pick<TournamentMeta, 'start' | 'end'>) => (!t.start ? '' : t.end && t.end !== t.start ? `${shortDate(t.start)}–${shortDate(t.end)}` : shortDate(t.start))
 
 function Podium({ top }: { top: RankedDebater[] }) {
   return (
@@ -42,8 +47,11 @@ function Podium({ top }: { top: RankedDebater[] }) {
 
 export function RankingsPage() {
   const [params, setParams] = useSearchParams()
-  const period = params.get('period') ?? 'season'
-  const load = useRankings(period)
+  const index = useIndex()
+  const idx = index.state === 'ready' ? index.data : null
+  const view = params.get('view') === 'all' ? 'all' : 'circuit'
+  const load = useRankings({ season: params.get('season'), period: params.get('period'), view })
+  const [allTourneys, setAllTourneys] = useState(false)
   const [q, setQ] = useState('')
   const [state, setState] = useState('')
   const [onlyFollowing, setOnlyFollowing] = useState(false)
@@ -53,32 +61,54 @@ export function RankingsPage() {
   const toggleFollow = useOS((s) => s.toggleFollow)
 
   const data = load.state === 'ready' ? load.data : null
+  const period = data?.period.slug ?? 'season'
+  const current = !!idx && data?.seasonSlug === idx.current
+  const setParam = (key: string, value: string | null) => {
+    const next = new URLSearchParams(params)
+    if (value) next.set(key, value)
+    else next.delete(key)
+    if (key === 'season') next.delete('period')
+    setParams(next, { replace: true })
+    setLimit(PAGE)
+  }
   const states = useMemo(() => (data ? [...new Set(data.debaters.map((d) => d.state).filter(Boolean))].sort() : []), [data])
+  // Within a state, everyone with enough rounds gets a local rank, even outside the national pool.
+  const stateRank = useMemo(() => {
+    const m = new Map<string, number>()
+    if (!data || !state) return m
+    data.debaters.filter((d) => d.state === state && (d.rank !== null || d.wins + d.losses >= MIN_ROUNDS)).sort((a, b) => b.score - a.score).forEach((d, i) => m.set(d.id, i + 1))
+    return m
+  }, [data, state])
   const rows = useMemo(() => {
     if (!data) return []
     const t = q.trim().toLowerCase()
     const list = data.debaters.filter(
       (d) => (!t || `${d.name} ${d.school}`.toLowerCase().includes(t)) && (!state || d.state === state) && (!onlyFollowing || following.includes(d.id)),
     )
+    if (state && sort === 'score') return [...list].sort((a, b) => (stateRank.get(a.id) ?? 1e9) - (stateRank.get(b.id) ?? 1e9) || b.score - a.score)
     if (sort === 'score') return list
-    return [...list].sort((a, b) => ((b[sort] ?? -1) as number) - ((a[sort] ?? -1) as number) || a.rank - b.rank)
-  }, [data, q, state, onlyFollowing, following, sort])
+    return [...list].sort((a, b) => ((b[sort] ?? -1) as number) - ((a[sort] ?? -1) as number) || (a.rank ?? 1e9) - (b.rank ?? 1e9))
+  }, [data, q, state, onlyFollowing, following, sort, stateRank])
+  const ranked = data ? data.debaters.filter((d) => d.rank !== null).length : 0
+  const tourneys = data ? [...data.tournaments].reverse() : []
 
   return (
     <div className="wrap rankings">
       <header className="pg-head">
-        <div className="eyebrow">Lincoln–Douglas · {data?.season ?? '2026–27'} season · unofficial</div>
-        <h1 className="pg-title">LD Rankings</h1>
+        <EventTabs />
+        <div className="eyebrow">Lincoln–Douglas · {data?.season ?? ''} season · unofficial</div>
+        <h1 className="pg-title">The world’s most complete LD rankings</h1>
         <p className="pg-lede">
-          Every varsity LD debater with a decided round at a tracked national-circuit tournament, rated with Glicko-2 and ranked by rating minus two deviations.{' '}
+          Every varsity LD round we can find, national circuit and local, rated with Glicko-2 in one pool.{' '}
+          {idx && <>That’s <b>{count(idx.totals.rounds)}</b> rounds from <b>{idx.totals.tournaments}</b> tournaments over <b>{idx.totals.seasons}</b> seasons, behind <b>{count(idx.totals.debaters)}</b> debater profiles. </>}
           <Link to="/rankings/method" className="inline-link">How it works <Info size={13} /></Link>
         </p>
         {data && (
           <div className="rk-meta">
-            <span><b>{data.debaters.length}</b> debaters</span>
+            <span><b>{ranked.toLocaleString()}</b> ranked debaters</span>
             <span><b>{data.tournaments.length}</b> tournaments</span>
             <span><b>{data.field.rounds.toLocaleString()}</b> rounds</span>
-            <span>Updated {updatedLabel(data)}</span>
+            <span>{current ? `Updated ${updatedLabel(data)}` : 'Final season rankings'}</span>
           </div>
         )}
       </header>
@@ -88,17 +118,37 @@ export function RankingsPage() {
 
       {data && (
         <>
-          {data.periods.length > 1 && (
-            <div className="seg rk-periods" role="tablist" aria-label="Period">
-              {data.periods.map((p) => (
-                <button key={p.slug} role="tab" aria-selected={period === p.slug} onClick={() => setParams(p.slug === 'season' ? {} : { period: p.slug }, { replace: true })}>
-                  {p.label}
-                </button>
-              ))}
+          <div className="rk-bar">
+            <label className="rk-season">
+              <span className="sr-only">Season</span>
+              <select className="select" value={data.seasonSlug} onChange={(e) => setParam('season', e.target.value === idx?.current ? null : e.target.value)} aria-label="Season">
+                {idx?.seasons.map((s) => (
+                  <option key={s.slug} value={s.slug}>{s.label} season{s.slug === idx.current ? ' (current)' : ''}</option>
+                ))}
+              </select>
+            </label>
+            <div className="seg" role="tablist" aria-label="Tournaments included">
+              <button role="tab" aria-selected={view === 'circuit'} onClick={() => setParam('view', null)}><Trophy size={13} /> National circuit</button>
+              <button role="tab" aria-selected={view === 'all'} onClick={() => setParam('view', 'all')}><Globe2 size={13} /> All tournaments</button>
             </div>
+            {data.periods.length > 1 && (
+              <div className="seg" role="tablist" aria-label="Period">
+                {data.periods.map((p) => (
+                  <button key={p.slug} role="tab" aria-selected={period === p.slug} onClick={() => setParam('period', p.slug === 'season' ? null : p.slug)}>
+                    {p.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+          {view === 'all' && !data.hasLocal && (
+            <p className="rk-note"><MapPin size={14} /> Local tournaments for the {data.season} season are being added. Until they are, this view matches the national circuit.</p>
+          )}
+          {view === 'all' && data.hasLocal && (
+            <p className="rk-note"><Globe2 size={14} /> Every tournament, rated together. Circuit rounds count double a local round. A national rank needs {MIN_ROUNDS} decided rounds and at least one opponent linked to the national pool; pick a state for local leaderboards.</p>
           )}
 
-          {!q && !state && !onlyFollowing && sort === 'score' && <Podium top={data.debaters.slice(0, 3)} />}
+          {!q && !state && !onlyFollowing && sort === 'score' && <Podium top={data.debaters.filter((d) => d.rank !== null).slice(0, 3)} />}
 
           <div className="rk-layout">
             <section className="rk-main">
@@ -108,7 +158,7 @@ export function RankingsPage() {
                   <input value={q} onChange={(e) => { setQ(e.target.value); setLimit(PAGE) }} placeholder="Search a debater or school" aria-label="Search debaters" />
                 </label>
                 <select className="select rk-state" value={state} onChange={(e) => { setState(e.target.value); setLimit(PAGE) }} aria-label="Filter by state">
-                  <option value="">All states</option>
+                  <option value="">Nationwide</option>
                   {states.map((s) => (
                     <option key={s} value={s}>{s}</option>
                   ))}
@@ -128,7 +178,7 @@ export function RankingsPage() {
 
               <div className="rk-table" role="table" aria-label="LD rankings">
                 <div className="rk-row rk-headrow" role="row">
-                  <span role="columnheader">#</span>
+                  <span role="columnheader">{state ? state : '#'}</span>
                   <span role="columnheader" className="c-change">±</span>
                   <span role="columnheader">Debater</span>
                   <span role="columnheader" className="c-num">Score</span>
@@ -143,8 +193,11 @@ export function RankingsPage() {
                   const on = following.includes(d.id)
                   return (
                     <div key={d.id} className="rk-row" role="row">
-                      <span className="c-rank num" role="cell">{d.rank}</span>
-                      <span className="c-change" role="cell"><RankChange rank={d.rank} prev={d.prevRank} /></span>
+                      <span className="c-rank num" role="cell">
+                        {state ? (stateRank.get(d.id) ?? '—') : (d.rank ?? '—')}
+                        {state && d.rank !== null && <small className="c-natl">#{d.rank}</small>}
+                      </span>
+                      <span className="c-change" role="cell">{d.rank !== null && <RankChange rank={d.rank} prev={d.prevRank} />}</span>
                       <span className="c-who" role="cell">
                         <Avatar name={d.name} size={30} />
                         <span className="c-who-text">
@@ -176,9 +229,9 @@ export function RankingsPage() {
             </section>
 
             <aside className="rk-side">
-              <HeadToHead debaters={data.debaters} />
+              <HeadToHead key={`${data.seasonSlug}-${data.view}`} debaters={data.debaters} />
               <section className="card field-card">
-                <h3><Trophy size={16} /> The field this {data.period.slug === 'season' ? 'season' : 'topic'}</h3>
+                <h3><Trophy size={16} /> The field, {data.period.slug === 'season' ? `${data.season} season` : data.period.label}</h3>
                 <div className="fc-split">
                   <div>
                     <span className="eyebrow">All rounds</span>
@@ -192,14 +245,21 @@ export function RankingsPage() {
                   </div>
                 </div>
                 <ul className="fc-tourneys">
-                  {data.tournaments.map((t) => (
+                  <li className="fc-th"><span>Tournament</span><span>Entries</span></li>
+                  {(allTourneys ? tourneys : tourneys.slice(0, 10)).map((t) => (
                     <li key={t.slug}>
-                      <span>{t.name}</span>
-                      {t.major && <span className="tag gold">Major ×2</span>}
+                      <span>
+                        {t.name}
+                        {t.start && <small className="dim"> · {dateRange(t)}</small>}
+                      </span>
+                      <span className={`tag ${t.level === 'circuit' ? 'gold' : ''}`}>{t.level === 'circuit' ? 'Circuit' : 'Local'}</span>
                       <span className="dim num">{t.entries}</span>
                     </li>
                   ))}
                 </ul>
+                {tourneys.length > 10 && (
+                  <button className="btn sm ghost" onClick={() => setAllTourneys((v) => !v)}>{allTourneys ? 'Show fewer' : `Show all ${tourneys.length} tournaments`}</button>
+                )}
               </section>
             </aside>
           </div>
