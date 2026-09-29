@@ -43,18 +43,21 @@
 .sec-lede { font-size: var(--fs-16); line-height: 1.55; color: var(--text-2); max-width: 62ch; }
 .sec-lede.light { color: rgba(255, 255, 255, 0.72); }
 
-.prep-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-@media (max-width: 1100px) { .prep-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { .prep-grid { grid-template-columns: minmax(0, 1fr); } }
-.prep-card { display: grid; gap: 10px; align-content: start; padding: 22px; border-radius: var(--r-4); background: var(--paper-hi); border: 1px solid var(--line-1); transition: transform var(--dur-2) var(--ease-out), box-shadow var(--dur-2); }
-.prep-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-2); }
-.pc-icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--accent-wash); color: var(--accent); margin-bottom: 6px; }
-.pc-icon svg { width: 22px; height: 22px; }
-.prep-card h3 { font-size: var(--fs-18); font-weight: 800; color: var(--ink); }
-.prep-card p { color: var(--text-2); line-height: 1.55; }
-.pc-go { display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; font-weight: 700; font-size: var(--fs-12); color: var(--ink); }
-.prep-card:hover .pc-go { color: var(--accent); }
-
+.vault-card { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-radius: var(--r-4); background: var(--paper-hi); border: 1px solid var(--line-1); overflow: hidden; transition: box-shadow var(--dur-2), transform var(--dur-2) var(--ease-out); }
+.vault-card:hover { box-shadow: var(--shadow-2); transform: translateY(-2px); }
+@media (max-width: 860px) { .vault-card { grid-template-columns: minmax(0, 1fr); } }
+.vc-side { padding: 22px 24px 60px; display: grid; gap: 12px; align-content: start; }
+.vc-side.neg { border-left: 1px solid var(--line-1); }
+@media (max-width: 860px) { .vc-side { padding-bottom: 18px; } .vc-side.neg { border-left: 0; border-top: 1px solid var(--line-1); padding-bottom: 60px; } }
+.vc-label { justify-self: start; font-size: var(--fs-11); font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; background: var(--aff); padding: 3px 10px; border-radius: 999px; }
+.vc-side.neg .vc-label { background: var(--neg); }
+.vc-side ol { display: grid; gap: 2px; counter-reset: c; }
+.vc-side li { counter-increment: c; display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; column-gap: 8px; padding: 9px 0; border-top: 1px solid var(--line-0); color: var(--text-2); font-size: var(--fs-13); line-height: 1.45; }
+.vc-side li::before { content: counter(c); grid-row: span 2; font-family: var(--font-display); font-stretch: 75%; font-weight: 850; font-size: 20px; color: var(--ink); line-height: 1.1; }
+.vc-side li b { color: var(--ink); font-size: var(--fs-14); }
+.vc-side li span { grid-column: 2; }
+.vc-side li em { grid-column: 3; grid-row: 1 / span 2; align-self: center; font-style: normal; font-weight: 800; color: var(--text-2); font-size: var(--fs-12); }
+.vc-go { position: absolute; left: 24px; bottom: 20px; display: inline-flex; align-items: center; gap: 6px; font-weight: 750; color: var(--accent); }
 .flow-band { margin-top: 14px; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 24px; align-items: center; padding: 22px 26px; border-radius: var(--r-4); background: var(--paper-lo); }
 @media (max-width: 800px) { .flow-band { grid-template-columns: minmax(0, 1fr); } }
 .flow-band h3 { display: flex; align-items: center; gap: 8px; font-size: var(--fs-18); font-weight: 800; color: var(--ink); margin-bottom: 4px; }
@@ -94,14 +97,6 @@
 .compete-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
 .light-ghost { color: #fff !important; }
 .light-ghost:hover { background: rgba(255, 255, 255, 0.1) !important; }
-
-/* ---------- Briefs band ---------- */
-.briefs-band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: 40px; align-items: center; }
-@media (max-width: 980px) { .briefs-band { grid-template-columns: minmax(0, 1fr); } }
-.bb-copy { display: grid; gap: 16px; }
-.bb-list { display: grid; gap: 8px; }
-.bb-list li { display: flex; gap: 10px; align-items: center; font-weight: 600; color: var(--ink); }
-.bb-list svg { color: var(--accent); }
 
 /* ---------- Pricing + FAQ ---------- */
 .pricing { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto; gap: 30px; align-items: center; padding: 34px; border-radius: 22px; }

@@ -3,7 +3,7 @@ import Placeholder from '@tiptap/extension-placeholder'
 import { EditorContent, useEditor, useEditorState, type Editor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import { motion } from 'framer-motion'
-import { ClipboardCopy, Download, FileText, Globe, Plus, Redo2, Search, Send, Timer, Trash2, Undo2 } from 'lucide-react'
+import { ClipboardCopy, Download, FileText, Library, Plus, Redo2, Search, Send, Timer, Trash2, Undo2 } from 'lucide-react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router'
 import { PageHeader, timeAgo } from '../../components/ui/primitives'
@@ -23,7 +23,8 @@ const VAULTS: { type: DocType | 'all'; label: string; lede: string }[] = [
   { type: 'all', label: 'All docs', lede: 'Every contention, block, speech doc and research file.' },
 ]
 
-export function DocsIndex() {
+/** Your contentions, blocks and speech docs. `embedded` drops the page header (the prep vault has its own). */
+export function DocsIndex({ embedded = false }: { embedded?: boolean }) {
   const all = useOS((s) => s.docs)
   const target = useOS((s) => s.cutTarget)
   const navigate = useNavigate()
@@ -33,24 +34,20 @@ export function DocsIndex() {
   const vault = VAULTS.find((v) => v.type === type) ?? VAULTS[2]
   const docs = all.filter((d) => (type === 'all' || d.type === type) && (side === 'all' || d.side === side || d.side === 'both'))
   const create = (t: DocType) => navigate(`/app/vaults/${useOS.getState().createDoc(t, undefined, side !== 'all' ? { side } : undefined)}`)
+  const actions = (
+    <>
+      {type !== 'block' && <button className="btn" onClick={() => create('block')}><Plus /> Block</button>}
+      <button className="btn" onClick={() => create('speech')}><Plus /> Speech doc</button>
+      <button className="btn primary" onClick={() => create(type === 'block' ? 'block' : 'contention')}><Plus /> {type === 'block' ? 'New block' : 'New contention'}</button>
+    </>
+  )
   return (
-    <div className="page">
-      <PageHeader
-        eyebrow="Prep · vaults"
-        title={vault.label}
-        lede={vault.lede}
-        actions={
-          <>
-            {type !== 'block' && <button className="btn" onClick={() => create('block')}><Plus /> Block</button>}
-            <button className="btn" onClick={() => create('speech')}><Plus /> Speech doc</button>
-            <button className="btn primary" onClick={() => create(type === 'block' ? 'block' : 'contention')}><Plus /> {type === 'block' ? 'New block' : 'New contention'}</button>
-          </>
-        }
-      />
+    <div className={embedded ? 'docs-embedded' : 'page'}>
+      {!embedded && <PageHeader eyebrow="Prep vault" title={vault.label} lede={vault.lede} actions={actions} />}
       <div className="vault-bar">
         <div className="seg" role="tablist" aria-label="Vault">
           {VAULTS.map((v) => (
-            <button key={v.type} role="tab" aria-selected={type === v.type} onClick={() => setParams({ type: v.type }, { replace: true })}>
+            <button key={v.type} role="tab" aria-selected={type === v.type} onClick={() => setParams(embedded ? { tab: 'files', type: v.type } : { type: v.type }, { replace: true })}>
               {v.label.replace(' vault', 's').replace('Contentions', 'Contentions')}
             </button>
           ))}
@@ -60,6 +57,7 @@ export function DocsIndex() {
             <button key={sd} role="radio" aria-checked={side === sd} onClick={() => setSide(sd)}>{sd === 'all' ? 'Both sides' : sd === 'aff' ? 'Aff' : 'Neg'}</button>
           ))}
         </div>
+        {embedded && <div className="vault-actions">{actions}</div>}
       </div>
       <div className="doc-grid">
         {docs.map((d, i) => {
@@ -90,7 +88,7 @@ export function DocsIndex() {
             </motion.div>
           )
         })}
-        {!docs.length && <div className="empty">Nothing here yet. Create one, or cut cards from Evidence.</div>}
+        {!docs.length && <div className="empty">Nothing here yet. Create one, or send cards from the card library.</div>}
       </div>
     </div>
   )
@@ -118,7 +116,7 @@ function blockAtCursor(editor: Editor): DocJSON[] {
   return nodes.slice(start, end)
 }
 
-function Ribbon({ editor }: { editor: Editor }) {
+export function Ribbon({ editor }: { editor: Editor }) {
   const s = useEditorState({
     editor,
     selector: ({ editor: e }) => ({
@@ -167,17 +165,12 @@ function Ribbon({ editor }: { editor: Editor }) {
   )
 }
 
-function DocEditor({ doc }: { doc: Doc }) {
-  const { updateDoc, deleteDoc, appendToDoc, createDoc, toast, setCutTarget } = useOS.getState()
-  const docs = useOS((s) => s.docs)
-  const target = useOS((s) => s.cutTarget)
-  const navigate = useNavigate()
+/** A TipTap editor with Verbatim formatting, saved to the store as you type and kept in sync with it. */
+export function useVerbatimEditor(doc: Doc, emptyHint = 'Type, or send cards from the prep vault') {
+  const updateDoc = useOS.getState().updateDoc
   const lastSaved = useRef(JSON.stringify(doc.content))
   const timer = useRef<number | undefined>(undefined)
   const [json, setJson] = useState<DocJSON>(doc.content)
-  const [sendTo, setSendTo] = useState(() => docs.find((d) => d.id !== doc.id && d.type === 'speech')?.id ?? '')
-  const [q, setQ] = useState('')
-  const [wpm, setWpm] = useState(READ_WPM)
 
   const editor = useEditor({
     extensions: [
@@ -187,7 +180,7 @@ function DocEditor({ doc }: { doc: Doc }) {
       Roles,
       VerbatimKeys,
       Placeholder.configure({
-        placeholder: ({ node }) => (node.type.name === 'heading' ? `${LEVEL_NAME[node.attrs.level as number]}…` : node.attrs.role === 'cite' ? 'Author YY — qualifications, title, publication, date, URL' : node.attrs.role === 'card' ? 'Card text — paste it exactly as written' : 'Type, or cut cards in the Research Browser'),
+        placeholder: ({ node }) => (node.type.name === 'heading' ? `${LEVEL_NAME[node.attrs.level as number]}…` : node.attrs.role === 'cite' ? 'Author YY — qualifications, title, publication, date, URL' : node.attrs.role === 'card' ? 'Card text — paste it exactly as written' : emptyHint),
       }),
     ],
     content: doc.content,
@@ -202,7 +195,7 @@ function DocEditor({ doc }: { doc: Doc }) {
     },
   })
 
-  // Cards cut in the browser (or sent from another doc) arrive through the store.
+  // Cards sent from the library or another doc arrive through the store.
   useEffect(() => {
     const str = JSON.stringify(doc.content)
     if (editor && str !== lastSaved.current) {
@@ -213,6 +206,18 @@ function DocEditor({ doc }: { doc: Doc }) {
   }, [doc.content, editor])
 
   useEffect(() => () => window.clearTimeout(timer.current), [])
+  return { editor, json }
+}
+
+function DocEditor({ doc }: { doc: Doc }) {
+  const { updateDoc, deleteDoc, appendToDoc, createDoc, toast, setCutTarget } = useOS.getState()
+  const docs = useOS((s) => s.docs)
+  const target = useOS((s) => s.cutTarget)
+  const navigate = useNavigate()
+  const { editor, json } = useVerbatimEditor(doc)
+  const [sendTo, setSendTo] = useState(() => docs.find((d) => d.id !== doc.id && d.type === 'speech')?.id ?? '')
+  const [q, setQ] = useState('')
+  const [wpm, setWpm] = useState(READ_WPM)
 
   const items = useMemo(() => outline(json), [json])
   const stats = useMemo(() => docStats(json), [json])
@@ -291,12 +296,12 @@ function DocEditor({ doc }: { doc: Doc }) {
           {!items.length && <p className="dim letter" style={{ fontSize: 'var(--fs-11)' }}>Headings you add appear here.</p>}
         </nav>
         <div className="doc-nav-foot">
-          <Link to="/app/evidence" className="btn sm"><Globe /> Evidence</Link>
+          <Link to="/app/vault" className="btn sm"><Library /> Card library</Link>
           <button
             className="btn ghost sm danger"
             onClick={() => {
               deleteDoc(doc.id)
-              navigate(`/app/vaults?type=${doc.type === 'block' ? 'block' : 'contention'}`)
+              navigate(`/app/vault?tab=files&type=${doc.type === 'block' ? 'block' : 'contention'}`)
             }}
           >
             <Trash2 /> Delete

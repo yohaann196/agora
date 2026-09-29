@@ -8,7 +8,7 @@ const GROUPS: AppDef['group'][] = ['prep', 'compete', 'you']
 
 export function Sidebar() {
   const location = useLocation()
-  const active = appForPath(location.pathname, location.search)
+  const active = appForPath(location.pathname)
   const open = useOS((s) => s.mobileNavOpen)
   const setOpen = useOS((s) => s.setMobileNav)
   const recents = useOS((s) => s.recents)
@@ -43,7 +43,7 @@ export function Sidebar() {
                 <Link
                   key={r.kind + r.id}
                   className="recent-link"
-                  to={r.kind === 'debater' ? `/debaters/${r.id}` : r.kind === 'brief' ? `/briefs/${r.id}` : r.kind === 'flow' ? `/app/flow/${r.id}` : r.kind === 'school' ? `/schools/${r.id}` : `/app/vaults/${r.id}`}
+                  to={r.kind === 'debater' ? `/debaters/${r.id}` : r.kind === 'flow' ? `/app/flow/${r.id}` : r.kind === 'school' ? `/schools/${r.id}` : `/app/vaults/${r.id}`}
                   onClick={() => setOpen(false)}
                 >
                   <span className={`rk-dot ${r.kind}`} aria-hidden />

@@ -111,3 +111,4 @@
 .rb-group { border-radius: var(--r-2); overflow: hidden; }
 .doc-sheet { border-radius: var(--r-2); }
 .verbatim h1 { border-radius: var(--r-2); box-shadow: none; }
+.vault-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-left: auto; }

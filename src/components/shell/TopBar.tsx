@@ -5,7 +5,7 @@ import { useOS } from '../../store'
 
 export function TopBar() {
   const location = useLocation()
-  const app = appForPath(location.pathname, location.search)
+  const app = appForPath(location.pathname)
   const docTitle = useOS((s) => (location.pathname.startsWith('/app/vaults/') ? s.docs.find((d) => d.id === location.pathname.split('/')[3])?.title : undefined))
   const flowTitle = useOS((s) => (location.pathname.startsWith('/app/flow/') ? s.flows.find((f) => f.id === location.pathname.split('/')[3])?.title : undefined))
   const { setMobileNav, setPalette, setShortcuts } = useOS.getState()
@@ -25,14 +25,13 @@ export function TopBar() {
           </>
         )}
       </div>
-      <button className="search-trigger" onClick={() => setPalette(true)} aria-label="Search debaters, briefs and your vaults">
+      <button className="search-trigger" onClick={() => setPalette(true)} aria-label="Search debaters and your prep">
         <Search aria-hidden />
-        <span className="st-text">Search debaters, briefs, your vaults…</span>
+        <span className="st-text">Search debaters, schools, your prep…</span>
         <span className="kbd">⌘K</span>
       </button>
       <div className="topbar-right">
         <Link to="/rankings" className="btn ghost sm tb-hide-sm">Rankings</Link>
-        <Link to="/briefs" className="btn ghost sm tb-hide-sm">Briefs</Link>
         <button className="btn icon ghost sm" aria-label="Keyboard shortcuts" onClick={() => setShortcuts(true)}>
           <Keyboard />
         </button>

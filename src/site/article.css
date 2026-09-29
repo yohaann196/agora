@@ -1,0 +1,9 @@
+/* ---------- Article ---------- */
+.article-wrap { max-width: 860px; }
+.article { font-family: var(--font-serif); font-size: 18px; line-height: 1.65; color: var(--text-1); min-width: 0; }
+.article h2 { font-family: var(--font-display); font-stretch: 75%; font-weight: 850; font-size: 30px; line-height: 1.05; color: var(--ink); margin: 34px 0 12px; letter-spacing: -0.01em; }
+.article h2:first-child { margin-top: 0; }
+.article p { margin: 0 0 14px; }
+.article ul { list-style: disc; padding-left: 1.2em; margin: 0 0 14px; display: grid; gap: 6px; }
+.article a:not(.btn) { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.article b { color: var(--ink); }

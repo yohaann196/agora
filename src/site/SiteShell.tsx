@@ -9,7 +9,6 @@ import './site.css'
 
 const NAV = [
   { to: '/rankings', label: 'Rankings' },
-  { to: '/briefs', label: 'Briefs' },
   { to: '/prep', label: 'Prep tools' },
 ]
 
@@ -52,18 +51,17 @@ export function SiteShell() {
         <div className="site-foot-inner">
           <div className="sf-brand">
             <Logo size={22} />
-            <p>All of Yohaan’s debate utilities in one place: prep tools, LD rankings and monthly briefs.</p>
+            <p>All of Yohaan’s debate utilities in one place: LD rankings, a prep vault of cut cards, and flow &amp; timer.</p>
           </div>
           <div className="sf-col">
             <b>Compete</b>
             <Link to="/rankings">LD rankings</Link>
             <Link to="/rankings/method">How rankings work</Link>
-            <Link to="/briefs">Monthly briefs</Link>
           </div>
           <div className="sf-col">
             <b>Prep</b>
-            <Link to="/app/evidence">Evidence search</Link>
-            <Link to="/app/vaults">Contention &amp; block vaults</Link>
+            <Link to="/app/vault">Prep vault</Link>
+            <Link to="/app/vault?tab=files">Your cases &amp; blocks</Link>
             <Link to="/app/flow">Flow &amp; timer</Link>
           </div>
           <div className="sf-col">
