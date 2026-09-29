@@ -1,5 +1,5 @@
 import { lazy, Suspense, type ComponentType } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router'
 import { AppShell } from './components/shell/AppShell'
 
 // Each app is its own chunk, so the shell boots fast and apps load on demand.
@@ -32,9 +32,12 @@ const SavedPage = page(() => import('./features/workspace/SavedPage'), 'SavedPag
 const SettingsPage = page(() => import('./features/workspace/SettingsPage'), 'SettingsPage')
 const NotFound = page(() => import('./features/workspace/NotFound'), 'NotFound')
 
+// Static hosts without an SPA fallback (e.g. a hosted preview) use hash routing.
+const Router = import.meta.env.VITE_HASH_ROUTER ? HashRouter : BrowserRouter
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -68,6 +71,6 @@ export default function App() {
           <Route path="*" element={<Landing />} />
         </Routes>
       </Suspense>
-    </BrowserRouter>
+    </Router>
   )
 }
