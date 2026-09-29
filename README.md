@@ -1,8 +1,8 @@
-# PhilosophyOS
+# Phil OS
 
 **An operating system for thinking.**
 
-PhilosophyOS is a workspace for philosophy and debate students. You can read primary texts, build formal arguments, compare how philosophers answer the same question, write essays, and argue with other people. Every thinker, concept, text and argument in it is a node on one knowledge graph.
+PhilOS (or philosophyOS) is a workspace for philosophy and debate students. You can read primary texts, build formal arguments, compare how philosophers answer the same question, write essays, and argue with other people. Every thinker, concept, text and argument in it is a node on one knowledge graph.
 
 It rests on one principle: **AI should amplify philosophical thinking, not replace it.** The AI layer asks questions, surfaces assumptions and explains its reasoning. It never declares an argument "correct", and it never invents a quotation.
 
