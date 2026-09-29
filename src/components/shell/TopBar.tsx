@@ -4,6 +4,7 @@ import {
   BookOpen,
   BrainCircuit,
   ChevronRight,
+  Globe,
   Keyboard,
   LogOut,
   Menu,
@@ -25,10 +26,10 @@ import { KindIcon, timeAgo } from '../ui/primitives'
 
 const SCOPES: { id: string; label: string; kinds?: EntityKind[] }[] = [
   { id: 'all', label: 'All' },
-  { id: 'philosophers', label: 'Philosophers', kinds: ['philosopher'] },
-  { id: 'concepts', label: 'Concepts', kinds: ['concept', 'school'] },
+  { id: 'evidence', label: 'Evidence', kinds: ['doc', 'source', 'passage'] },
+  { id: 'thinkers', label: 'Thinkers', kinds: ['philosopher', 'school'] },
+  { id: 'concepts', label: 'Concepts', kinds: ['concept'] },
   { id: 'arguments', label: 'Arguments', kinds: ['argument', 'debate'] },
-  { id: 'texts', label: 'Texts', kinds: ['text', 'passage'] },
 ]
 
 const pop = {
@@ -56,14 +57,22 @@ export function GlobalSearch() {
   }, [hits])
   const flat = groups.flatMap(([, ns]) => ns)
 
-  const go = (n: GraphNode) => {
-    pushRecent({ kind: n.kind, id: n.id })
-    navigate(routeFor(n))
+  const close = () => {
     setOpen(false)
     setQ('')
     ;(document.activeElement as HTMLElement | null)?.blur()
   }
-  const nav = useListNav(flat.length, (i) => flat[i] && go(flat[i]), [q, scope])
+  const go = (n: GraphNode) => {
+    pushRecent({ kind: n.kind, id: n.id })
+    navigate(routeFor(n))
+    close()
+  }
+  // The last row always offers to take the query to the open web.
+  const webSearch = () => {
+    navigate(`/app/browser?q=${encodeURIComponent(q.trim())}`)
+    close()
+  }
+  const nav = useListNav(flat.length + 1, (i) => (i < flat.length ? go(flat[i]) : webSearch()), [q, scope])
 
   return (
     <div className="search" ref={wrap}>
@@ -78,7 +87,7 @@ export function GlobalSearch() {
           }}
           onFocus={() => setOpen(true)}
           onKeyDown={nav.onKeyDown}
-          placeholder="Search the knowledge graph…"
+          placeholder="Search your desk…"
           aria-label="Global search"
           role="combobox"
           aria-expanded={open && !!q}
@@ -99,7 +108,7 @@ export function GlobalSearch() {
       <AnimatePresence>
         {open && q.trim() && (
           <motion.div {...pop} className="search-results glass" id="search-results" role="listbox">
-            {flat.length === 0 && <div className="dim" style={{ padding: 14 }}>No matches for “{q}”. Try a thinker, a concept, or a phrase.</div>}
+            {flat.length === 0 && <div className="dim letter" style={{ padding: '12px 14px 4px' }}>Nothing on your desk matches “{q}”.</div>}
             {groups.map(([kind, nodes]) => (
               <div className="search-group" key={kind}>
                 <div className="eyebrow">{KIND_LABEL[kind]}s</div>
@@ -119,6 +128,16 @@ export function GlobalSearch() {
                 })}
               </div>
             ))}
+            <div className="search-group">
+              <button className="result-row k-source" role="option" aria-selected={nav.index === flat.length} onMouseEnter={() => nav.setIndex(flat.length)} onClick={webSearch}>
+                <Globe />
+                <span className="r-text">
+                  <span className="r-label">Research “{q.trim()}” on the web</span>
+                  <span className="r-sub">Wikipedia, OpenAlex papers, Open Library books</span>
+                </span>
+                <span className="r-kind">Browser</span>
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -127,7 +146,7 @@ export function GlobalSearch() {
 }
 
 const NOTIF_ICON: Record<OSNotification['tone'], typeof Bell> = { debate: Swords, reading: BookOpen, system: Sparkles, ai: BrainCircuit }
-const NOTIF_COLOR: Record<OSNotification['tone'], string> = { debate: 'var(--rose)', reading: 'var(--orange)', system: 'var(--blue)', ai: 'var(--green)' }
+const NOTIF_COLOR: Record<OSNotification['tone'], string> = { debate: 'var(--oxblood)', reading: 'var(--ochre-ink)', system: 'var(--slate)', ai: 'var(--verdigris)' }
 
 function Notifications() {
   const [open, setOpen] = useState(false)
@@ -208,7 +227,7 @@ function ProfileMenu() {
               <span className="avatar lg">{name.charAt(0).toUpperCase()}</span>
               <div style={{ minWidth: 0 }}>
                 <div className="t0" style={{ fontWeight: 500 }}>{name}</div>
-                <div className="dim" style={{ fontSize: 'var(--fs-11)' }}>@{name.toLowerCase()} · Debate · Philosophy</div>
+                <div className="dim" style={{ fontSize: 'var(--fs-11)' }}>@{name.toLowerCase()} · LD · Policy · PF</div>
               </div>
             </div>
             <div className="menu-list">

@@ -69,7 +69,7 @@ export const compareQuestions: CompareQuestion[] = [
           'One may, however, keep silent or conceal the truth without lying.',
         ],
         support: [
-          { source: 'interpretation', text: 'Augustine develops this in De Mendacio (On Lying) and Contra Mendacium, texts not yet in the PhilosophyOS corpus — treat this column as a summary of scholarly consensus rather than a sourced quotation.' },
+          { source: 'interpretation', text: 'Augustine develops this in De Mendacio (On Lying) and Contra Mendacium, texts not yet in the Agora corpus — treat this column as a summary of scholarly consensus rather than a sourced quotation.' },
         ],
         concepts: ['lying', 'duty'],
       },

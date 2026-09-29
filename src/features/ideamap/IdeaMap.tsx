@@ -318,7 +318,7 @@ export function IdeaMap() {
                 >
                   <motion.g initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ type: 'spring', stiffness: 260, damping: 20 }}>
                     {(sel || isCenter) && <circle r={r + 7} fill="none" stroke={col} strokeOpacity={sel ? 0.7 : 0.3} strokeWidth={1} />}
-                    <circle r={r} fill={`color-mix(in srgb, ${col} ${isCenter ? 26 : 16}%, var(--bg-1))`} stroke={col} strokeWidth={isCenter ? 1.6 : 1.1} style={{ filter: sel || isCenter ? `drop-shadow(0 0 10px ${col})` : undefined }} />
+                    <circle r={r} fill={`color-mix(in srgb, ${col} ${isCenter ? 26 : 16}%, var(--bg-1))`} stroke={col} strokeWidth={isCenter ? 1.6 : 1.1} style={{ filter: sel || isCenter ? 'drop-shadow(3px 3px 0 #171614)' : undefined }} />
                     {!exp && n.kind !== 'custom' && n.degree < 3 && <circle r={2.2} cx={r * 0.7} cy={-r * 0.7} fill={col} />}
                     {n.pinned && <circle r={2.4} cx={-r * 0.7} cy={-r * 0.7} fill="var(--text-1)" />}
                     {isCenter ? (

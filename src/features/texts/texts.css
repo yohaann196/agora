@@ -11,7 +11,7 @@
   margin-bottom: 12px;
   transition: border-color var(--dur-1), box-shadow var(--dur-1);
 }
-.explorer-search:focus-within { border-color: rgba(255, 179, 112, 0.45); box-shadow: 0 0 0 4px rgba(255, 179, 112, 0.06); }
+.explorer-search:focus-within { border-color: var(--ink); box-shadow: 3px 3px 0 var(--oxblood); }
 .explorer-search > svg { width: 18px; height: 18px; color: var(--orange); flex: none; }
 .explorer-search input { flex: 1; min-width: 0; background: none; border: 0; outline: none; font-family: var(--font-serif); font-size: 20px; color: var(--text-0); }
 .explorer-search input::placeholder { color: var(--text-3); font-style: italic; }
@@ -50,6 +50,6 @@ mark.hl { background: rgba(255, 179, 112, 0.22); color: var(--text-0); border-ra
 .toc { display: grid; padding: 6px; }
 .toc li { display: grid; grid-template-columns: 24px 1fr; gap: 8px; padding: 7px 8px; font-size: var(--fs-12); color: var(--text-1); border-radius: 4px; }
 .toc li .mono { font-size: 10px; padding-top: 2px; }
-.target-wrap .passage-card { box-shadow: 0 0 0 1px rgba(255, 179, 112, 0.5), 0 0 40px -10px rgba(255, 179, 112, 0.4); }
+.target-wrap .passage-card { box-shadow: 0 0 0 3px var(--marker), 5px 5px 0 var(--ink); }
 
 .range { width: 100%; accent-color: var(--orange); }

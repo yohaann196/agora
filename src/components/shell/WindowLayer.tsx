@@ -37,7 +37,7 @@ function FloatingWindow({ w, focused }: { w: OSWindow; focused: boolean }) {
   let Icon = NotebookPen
   if (w.type === 'note') title = note?.title ?? 'Note'
   if (w.type === 'socratic') {
-    title = 'Socratic AI'
+    title = 'Socratic Coach'
     Icon = BrainCircuit
   }
   if (w.type === 'entity') title = g.nodes.get(w.refId ?? '')?.label ?? 'Preview'
@@ -131,7 +131,7 @@ function SocraticWindow() {
         {last.length === 0 && <p className="dim">{MODE_META[mode].blurb}</p>}
         {last.map((m) => (
           <div key={m.id} style={{ fontSize: 'var(--fs-12)' }}>
-            <div className="eyebrow" style={{ marginBottom: 4 }}>{m.role === 'user' ? 'You' : 'Socratic AI'}</div>
+            <div className="eyebrow" style={{ marginBottom: 4 }}>{m.role === 'user' ? 'You' : 'Socratic Coach'}</div>
             {m.role === 'user' ? <p className="t0">{m.text}</p> : <RichText text={m.text || '…'} className={m.pending ? 'caret' : ''} />}
           </div>
         ))}

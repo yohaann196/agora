@@ -200,7 +200,7 @@ export function ArgumentBuilder() {
         <div className="arg-tools">
           <SaveButton refItem={{ kind: 'argument', id: arg.id }} />
           <button className="btn primary" onClick={runAnalysis}>
-            <ScanSearch /> Analyze Argument <span className="kbd" style={{ background: 'rgba(0,0,0,0.15)', borderColor: 'rgba(0,0,0,0.2)', color: '#0a1428' }}>⌘↵</span>
+            <ScanSearch /> Analyze Argument <span className="kbd">⌘↵</span>
           </button>
         </div>
       </div>

@@ -17,6 +17,9 @@ const KIND_VAR: Record<string, string> = {
   essay: 'var(--k-essay)',
   note: 'var(--k-note)',
   user: 'var(--k-user)',
+  source: 'var(--k-source)',
+  doc: 'var(--k-doc)',
+  flow: 'var(--k-doc)',
 }
 export const kindColor = (k: EntityKind | 'custom') => KIND_VAR[k] ?? 'var(--k-custom)'
 
@@ -90,7 +93,7 @@ export function MiniGraph({ id, size = 300, max = 16, exclude = ['passage'] }: {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.25 + 0.02 * i }}
-              style={{ filter: on ? `drop-shadow(0 0 6px ${kindColor(n.node.kind)})` : undefined }}
+              style={{ filter: on ? 'drop-shadow(2px 2px 0 #171614)' : undefined }}
             />
             <text x={x + dx} y={y + dy} textAnchor={anchor} fontSize="10" fill={on ? 'var(--text-0)' : 'var(--text-2)'} style={{ fontFamily: 'var(--font-ui)' }}>
               {n.node.label.length > 16 ? n.node.label.slice(0, 15) + '…' : n.node.label}

@@ -17,7 +17,7 @@ export function SavedPage() {
   const list = saved.filter((s) => filter === 'all' || s.kind === filter)
   return (
     <div className="page">
-      <PageHeader eyebrow="Workspace · Saved" title="Saved" lede="Everything you’ve bookmarked across PhilosophyOS — thinkers, passages, arguments, debates." />
+      <PageHeader eyebrow="Workspace · Saved" title="Saved" lede="Everything you’ve bookmarked across Agora — thinkers, passages, arguments, debates." />
       <div className="filterbar">
         <div className="seg" role="tablist">
           <button role="tab" aria-selected={filter === 'all'} onClick={() => setFilter('all')}>All <span className="dim mono" style={{ marginLeft: 6, fontSize: 10 }}>{saved.length}</span></button>

@@ -125,7 +125,7 @@ export function SocraticPage() {
   }
 
   const saveNote = () => {
-    const body = chat.map((m) => `${m.role === 'user' ? 'Me' : `Socratic AI (${MODE_META[m.mode].label})`}: ${m.text}`).join('\n\n') + (trace.concepts.length ? `\n\nLinks: ${trace.concepts.map((c) => `[[${c}]]`).join(' ')}` : '')
+    const body = chat.map((m) => `${m.role === 'user' ? 'Me' : `Socratic Coach (${MODE_META[m.mode].label})`}: ${m.text}`).join('\n\n') + (trace.concepts.length ? `\n\nLinks: ${trace.concepts.map((c) => `[[${c}]]`).join(' ')}` : '')
     const id = createNote({ title: `Dialogue: ${(trace.first ?? 'untitled').slice(0, 48)}`, body })
     toast({ title: 'Dialogue saved to Notes', tone: 'success' })
     navigate(`/app/notes/${id}`)
@@ -138,7 +138,7 @@ export function SocraticPage() {
         <div className="soc-brand">
           <BrainCircuit size={16} style={{ color: 'var(--green)' }} />
           <div>
-            <div className="t0" style={{ fontWeight: 500 }}>Socratic AI</div>
+            <div className="t0" style={{ fontWeight: 500 }}>Socratic Coach</div>
             <div className="dim" style={{ fontSize: 'var(--fs-11)' }}>Asks before it tells.</div>
           </div>
         </div>

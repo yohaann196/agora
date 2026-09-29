@@ -4,7 +4,7 @@
   border: 1px solid var(--line-2); background: var(--bg-1);
   transition: border-color var(--dur-1), box-shadow var(--dur-1);
 }
-.cmp-ask:focus-within { border-color: rgba(169, 146, 255, 0.45); box-shadow: 0 0 0 4px rgba(169, 146, 255, 0.06); }
+.cmp-ask:focus-within { border-color: var(--ink); box-shadow: 3px 3px 0 var(--oxblood); }
 .cmp-ask > svg { width: 18px; height: 18px; color: var(--violet); flex: none; }
 .cmp-ask input { flex: 1; min-width: 0; background: none; border: 0; outline: none; font-family: var(--font-serif); font-size: 20px; color: var(--text-0); }
 .cmp-ask input::placeholder { color: var(--text-3); font-style: italic; }
@@ -43,7 +43,7 @@
 .sup-text { font-size: var(--fs-11); line-height: 1.55; color: var(--text-1); }
 .sup.interpretation .sup-text { font-style: italic; }
 
-.key-diff { margin-top: 18px; padding: 22px 24px; border-radius: var(--r-3); border: 1px solid rgba(169, 146, 255, 0.22); background: radial-gradient(700px 200px at 0% 0%, rgba(169, 146, 255, 0.08), transparent 70%), var(--bg-1); }
+.key-diff { margin-top: 18px; padding: 22px 24px; border-radius: var(--r-3); border: var(--stroke-heavy) solid var(--ink); background: var(--ochre-wash); box-shadow: var(--shadow-2); }
 .key-diff > p { font-family: var(--font-serif); font-size: 20px; line-height: 1.5; color: var(--text-0); margin-top: 8px; max-width: 90ch; font-weight: 300; }
 .axes { margin-top: 18px; display: grid; border: 1px solid var(--line-1); border-radius: var(--r-2); overflow: auto; }
 .axes-row { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(130px, 1fr); grid-template-columns: 180px; font-size: var(--fs-12); min-width: 600px; }
