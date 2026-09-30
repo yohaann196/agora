@@ -1,13 +1,12 @@
 # Debate Utils
 
-**All of Yohaan's debate utilities, in one place.**
+**All of my (Yohaan's) debate utilities, in one place.**
+stats + debate = utils aaaah
 
 Debate Utils gathers these tools:
 - **LD rankings:** the most comprehensive Lincoln–Douglas rankings around. Six seasons (2021–22 on), with national circuit and local tournaments in one Glicko-2 ranking and a career profile for every debater. PF, Policy, Parli, BQ and Congress are coming soon.
 - **Prep tools:** evidence search, a card cutter, contention and block vaults, and flow & timer.
-- **Monthly Briefs** on the current resolution.
-
-Live at **https://yohaann196.github.io/debate-utils/** once GitHub Pages is on (see below).
+- over 500 peices of ev/cards
 
 ---
 
