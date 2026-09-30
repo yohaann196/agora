@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { CornerDownLeft, FileStack, FileText, Globe, Keyboard, Newspaper, School, Search, Shield, TableProperties, Timer, Trophy, UserRound, type LucideIcon } from 'lucide-react'
+import { CornerDownLeft, FileStack, FileText, Globe, Keyboard, School, Search, Shield, TableProperties, Timer, Trophy, UserRound, type LucideIcon } from 'lucide-react'
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router'
 import { APPS } from '../../lib/apps'
@@ -18,10 +18,10 @@ interface Cmd {
   run: () => void
 }
 
-const HIT_ICON: Record<HitKind, LucideIcon> = { debater: UserRound, school: School, brief: Newspaper, doc: FileText, flow: TableProperties }
-const HIT_SECTION: Record<HitKind, string> = { debater: 'Debaters', school: 'Schools', brief: 'Briefs', doc: 'Your vaults', flow: 'Your flows' }
+const HIT_ICON: Record<HitKind, LucideIcon> = { debater: UserRound, school: School, doc: FileText, flow: TableProperties }
+const HIT_SECTION: Record<HitKind, string> = { debater: 'Debaters', school: 'Schools', doc: 'Your files', flow: 'Your flows' }
 
-/** ⌘K anywhere: search debaters, schools, briefs and your files, or run a command. */
+/** ⌘K anywhere: search debaters, schools and your files, or run a command. */
 export function useGlobalPaletteKeys() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -62,7 +62,6 @@ function PaletteInner() {
       { id: 'new-flow-cx', section: 'Create', label: 'New Policy flow', icon: TableProperties, keywords: 'round cx', run: () => go(`/app/flow/${s.createFlow('policy')}`) },
       { id: 'timer', section: 'Round', label: 'Open the round timer', icon: Timer, keywords: 'prep speech clock', run: () => go('/app/flow') },
       { id: 'rankings', section: 'Compete', label: 'LD rankings', icon: Trophy, run: () => go('/rankings') },
-      { id: 'briefs', section: 'Compete', label: 'Monthly briefs', icon: Newspaper, run: () => go('/briefs') },
       { id: 'shortcuts', section: 'Help', label: 'Keyboard shortcuts', hint: <span className="kbd">?</span>, icon: Keyboard, run: () => s.setShortcuts(true) },
       ...APPS.map((a) => ({ id: `go-${a.id}`, section: 'Go to', label: a.label, hint: <span className="kbd">G {a.chord.toUpperCase()}</span>, icon: a.icon, keywords: a.description, run: () => go(a.path) })),
     ],
@@ -98,7 +97,7 @@ function PaletteInner() {
               if (e.key === 'Escape') close()
               nav.onKeyDown(e)
             }}
-            placeholder="Search debaters, schools, briefs, your vaults…"
+            placeholder="Search debaters, schools, your prep…"
             aria-label="Search and commands"
             aria-activedescendant={results[nav.index] ? `cmd-${results[nav.index].id}` : undefined}
           />

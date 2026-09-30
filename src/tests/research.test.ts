@@ -6,7 +6,6 @@ import type { Source } from '../model/types'
 import { apa, dateLabel, fullCite, mla, shortCite, sourceKey } from '../research/cite'
 import { appendNodes, cardNodes, cards, docStats, emptyDoc, outline, plainText } from '../research/docModel'
 import { FORMATS, sideFor } from '../research/formats'
-import { describeUri, parseInput, rebuildAbstract } from '../research/providers'
 import { emptySheet } from '../store'
 
 const src = (patch: Partial<Source>): Source => ({ id: 's', kind: 'source', provider: 'manual', title: 'A Title', authors: [], accessed: Date.UTC(2026, 8, 29, 12), ...patch })
@@ -92,27 +91,6 @@ describe('seeded evidence is real', () => {
       })
     }
   }
-})
-
-describe('research browser input', () => {
-  it('routes URLs, wiki links, DOIs and searches', () => {
-    expect(parseInput('https://example.org/a')).toBe('https://example.org/a')
-    expect(parseInput('example.org')).toBe('https://example.org')
-    expect(parseInput('https://en.wikipedia.org/wiki/Civil_disobedience')).toBe('wiki:Civil_disobedience')
-    expect(parseInput('wiki:Harm principle')).toMatch(/^wiki:Harm/)
-    expect(parseInput('civil disobedience')).toBe('agora:search?q=civil%20disobedience')
-    expect(parseInput('10.1086/291014')).toMatch(/^agora:search\?q=10\.1086/)
-  })
-
-  it('names pages for tabs', () => {
-    expect(describeUri('wiki:Civil_disobedience')).toBe('Civil disobedience')
-    expect(describeUri('agora:new')).toBe('New tab')
-  })
-
-  it('rebuilds OpenAlex abstracts from the inverted index', () => {
-    expect(rebuildAbstract({ world: [1], Hello: [0], again: [3], 'the': [2] })).toBe('Hello world the again')
-    expect(rebuildAbstract(null)).toBe('')
-  })
 })
 
 describe('flows and the round timer', () => {

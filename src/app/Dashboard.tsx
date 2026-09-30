@@ -1,9 +1,9 @@
-import { ArrowRight, FileStack, Globe, Newspaper, Search, Shield, Star, TableProperties, Trophy } from 'lucide-react'
+import { ArrowRight, FileStack, Library, Search, Shield, Star, TableProperties, Trophy } from 'lucide-react'
 import { useMemo, useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { Sparkline } from '../components/ui/charts'
 import { Avatar, RankChange, timeAgo } from '../components/ui/primitives'
-import { currentBrief } from '../data/briefs'
+import { TOTAL_CARDS } from '../data/cards'
 import { RESOLUTION } from '../data/debateSeeds'
 import { cards, docStats, formatSeconds } from '../research/docModel'
 import { FORMATS } from '../research/formats'
@@ -20,7 +20,6 @@ export function Dashboard() {
   const name = useOS((s) => s.settings.name)
   const docs = useOS((s) => s.docs)
   const flows = useOS((s) => s.flows)
-  const sources = useOS((s) => s.sources)
   const following = useOS((s) => s.following)
   const target = useOS((s) => s.cutTarget)
   const rankings = useRankings()
@@ -36,7 +35,7 @@ export function Dashboard() {
 
   const research = (e: FormEvent) => {
     e.preventDefault()
-    navigate(q.trim() ? `/app/evidence?q=${encodeURIComponent(q.trim())}` : '/app/evidence')
+    navigate(q.trim() ? `/app/vault?q=${encodeURIComponent(q.trim())}` : '/app/vault')
   }
 
   return (
@@ -48,27 +47,27 @@ export function Dashboard() {
         </div>
         <form className="dash-search" onSubmit={research}>
           <Search size={17} aria-hidden />
-          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Find evidence: a topic, author or DOI" aria-label="Find evidence" />
+          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search cards: a tag, author or argument" aria-label="Search the card library" />
           <button className="btn primary sm" type="submit">Search</button>
         </form>
       </header>
 
-      <Link to={`/briefs/${currentBrief.id}`} className="dash-topic">
+      <Link to="/app/vault" className="dash-topic">
         <span className="dt-label">LD · Sep–Oct</span>
         <span className="dt-res">{RESOLUTION}</span>
-        <span className="dt-cta"><Newspaper size={15} /> {currentBrief.month} brief <ArrowRight size={14} /></span>
+        <span className="dt-cta"><Library size={15} /> Prep vault <ArrowRight size={14} /></span>
       </Link>
 
       <div className="dash-grid">
         <section className="panel dash-prep">
           <div className="panel-head">
             <h3>Your prep</h3>
-            <span className="dim">{totalCards} cards · {sources.length} sources</span>
+            <span className="dim">{totalCards} cards in your files</span>
           </div>
           <div className="dp-tiles">
-            <Link to="/app/evidence" className="dp-tile"><Globe /><b>{sources.length}</b><span>Sources cut</span></Link>
-            <Link to="/app/vaults?type=contention" className="dp-tile"><FileStack /><b>{contentions.length}</b><span>Contentions</span></Link>
-            <Link to="/app/vaults?type=block" className="dp-tile"><Shield /><b>{blocks.length}</b><span>Blocks</span></Link>
+            <Link to="/app/vault" className="dp-tile"><Library /><b>{TOTAL_CARDS}</b><span>Library cards</span></Link>
+            <Link to="/app/vault?tab=files&type=contention" className="dp-tile"><FileStack /><b>{contentions.length}</b><span>Contentions</span></Link>
+            <Link to="/app/vault?tab=files&type=block" className="dp-tile"><Shield /><b>{blocks.length}</b><span>Blocks</span></Link>
             <Link to="/app/flow" className="dp-tile"><TableProperties /><b>{flows.length}</b><span>Flows</span></Link>
           </div>
           <ul className="dash-list">

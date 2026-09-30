@@ -1,0 +1,3507 @@
+[
+{
+"id": "N3-01",
+"contention": "N3",
+"tag": "Radiation is the number-one risk to astronauts beyond low Earth orbit",
+"short": "Chancellor 14",
+"cite": "Jeffery Chancellor, Graham Scott and Jeffrey Sutton, National Space Biomedical Research Institute and Baylor College of Medicine, “Space Radiation: The Number One Risk to Astronaut Health beyond Low Earth Orbit,” Life, 2014",
+"url": "https://www.mdpi.com/2075-1729/4/3/491/pdf?version=1411025153",
+"body": [
+[
+"The National Aeronautics and Space Administration (NASA) has identified "
+],
+[
+"four primary biomedical risks",
+[
+"u",
+"h"
+]
+],
+[
+" that may pose ",
+[
+"u"
+]
+],
+[
+"significant health concerns",
+[
+"u",
+"h"
+]
+],
+[
+" for astronaut crews exposed to the interplanetary radiation environment during exploration missions",
+[
+"u"
+]
+],
+[
+". These four space radiation risks are "
+],
+[
+"carcinogenesis, degenerative tissue effects, CNS decrements and acute radiation syndrome",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-02",
+"contention": "N3",
+"tag": "Beyond Earth orbit, unpredictable solar storms can cause a sudden radiation surge inside the spacecraft",
+"short": "Chancellor 14",
+"cite": "Jeffery Chancellor, Graham Scott and Jeffrey Sutton, National Space Biomedical Research Institute and Baylor College of Medicine, “Space Radiation: The Number One Risk to Astronaut Health beyond Low Earth Orbit,” Life, 2014",
+"url": "https://www.mdpi.com/2075-1729/4/3/491/pdf?version=1411025153",
+"body": [
+[
+"For missions outside of LEO, "
+],
+[
+"galactic cosmic radiation (GCR) will contribute a ",
+[
+"u"
+]
+],
+[
+"significant portion of the radiation dose",
+[
+"u",
+"h"
+]
+],
+[
+" accumulated by astronaut crew members. GCR ions originate from outside our solar system and contain mostly "
+],
+[
+"highly energetic protons and alpha particles, with a small component of high charge and energy (HZE) nuclei moving at ",
+[
+"u"
+]
+],
+[
+"relativistic speeds",
+[
+"u",
+"h"
+]
+],
+[
+" and energies. In addition to GCR, "
+],
+[
+"unpredictable and intermittent solar particle events",
+[
+"u",
+"h"
+]
+],
+[
+" (SPEs) can produce large plasma clouds",
+[
+"u"
+]
+],
+[
+" containing highly energetic protons and some heavy ions that may cause "
+],
+[
+"a ",
+[
+"u"
+]
+],
+[
+"rapid surge of radiation",
+[
+"u",
+"h"
+]
+],
+[
+" both outside and ",
+[
+"u"
+]
+],
+[
+"within a spacecraft",
+[
+"u",
+"h"
+]
+],
+[
+" (Figure 1)"
+]
+]
+},
+{
+"id": "N3-03",
+"contention": "N3",
+"tag": "Space radiation suppresses immunity — harmless microbes become dangerous",
+"short": "Chancellor 14",
+"cite": "Jeffery Chancellor, Graham Scott and Jeffrey Sutton, National Space Biomedical Research Institute and Baylor College of Medicine, “Space Radiation: The Number One Risk to Astronaut Health beyond Low Earth Orbit,” Life, 2014",
+"url": "https://www.mdpi.com/2075-1729/4/3/491/pdf?version=1411025153",
+"body": [
+[
+"In the mini-pig, it was demonstrated that "
+],
+[
+"high doses of SPE-like radiation resulted in adverse effects to the skin, as well as to ",
+[
+"u"
+]
+],
+[
+"deeper organs and tissues",
+[
+"u",
+"h"
+]
+],
+[
+" (e.g., decrease in circulating blood cells, ",
+[
+"u"
+]
+],
+[
+"lung damage and impaired heart function",
+[
+"u",
+"h"
+]
+],
+[
+")",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Immune system suppression",
+[
+"u",
+"h"
+]
+],
+[
+" occurred at doses ",
+[
+"u"
+]
+],
+[
+"as low as 1.0 Gy",
+[
+"u",
+"h"
+]
+],
+[
+". In a mouse model, T-cells did not become activated following exposure to low doses of SPE-like proton radiation, and "
+],
+[
+"the animals were ",
+[
+"u"
+]
+],
+[
+"susceptible",
+[
+"u",
+"h"
+]
+],
+[
+" to a non-toxic bacterial challenge of organisms",
+[
+"u"
+]
+],
+[
+" (Pseudomonas aeruginosa, Klebsiella pneumoniae) "
+],
+[
+"that are relatively ",
+[
+"u"
+]
+],
+[
+"innocuous and ubiquitous on Earth",
+[
+"u",
+"h"
+]
+],
+[
+" and have been detected aboard the ISS",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-04",
+"contention": "N3",
+"tag": "NASA: spaceflight is dangerous — radiation, altered gravity, isolation and a hostile environment far from home",
+"short": "Patel 20",
+"cite": "Zarana Patel, Tyson Brunstetter, William Tarver et al., NASA Human Research Program and Johnson Space Center, “Red risks for a journey to the red planet: The highest priority human health risks for a mission to Mars,” npj Microgravity, 2020",
+"url": "https://www.nature.com/articles/s41526-020-00124-6.pdf",
+"body": [
+[
+"Spaceflight is a ",
+[
+"u"
+]
+],
+[
+"dangerous and demanding",
+[
+"u",
+"h"
+]
+],
+[
+" endeavor with unique hazards and technical challenges",
+[
+"u"
+]
+],
+[
+". Ensuring the overall safety of the crew—their physical and mental health and well-being—are vital for mission success. These are large challenges that are "
+],
+[
+"further amplified",
+[
+"u",
+"h"
+]
+],
+[
+" as exploration campaigns extend to greater distances into our solar system and for longer durations",
+[
+"u"
+]
+],
+[
+". The major health hazards of spaceflight include "
+],
+[
+"higher levels of ",
+[
+"u"
+]
+],
+[
+"damaging radiation, altered gravity fields",
+[
+"u",
+"h"
+]
+],
+[
+", long periods of ",
+[
+"u"
+]
+],
+[
+"isolation and confinement",
+[
+"u",
+"h"
+]
+],
+[
+", a closed and potentially ",
+[
+"u"
+]
+],
+[
+"hostile living environment",
+[
+"u",
+"h"
+]
+],
+[
+", and the stress associated with being a ",
+[
+"u"
+]
+],
+[
+"long distance from mother Earth",
+[
+"u",
+"h"
+]
+],
+[
+". Each of these threats is associated with its own set of physiological and performance risks to the crew (Fig. 1a) that must be adequately characterized and sufficiently mitigated."
+]
+]
+},
+{
+"id": "N3-05",
+"contention": "N3",
+"tag": "Cancer from space radiation is a NASA \"red\" risk — high likelihood, high impact",
+"short": "Patel 20",
+"cite": "Zarana Patel, Tyson Brunstetter, William Tarver et al., NASA Human Research Program and Johnson Space Center, “Red risks for a journey to the red planet: The highest priority human health risks for a mission to Mars,” npj Microgravity, 2020",
+"url": "https://www.nature.com/articles/s41526-020-00124-6.pdf",
+"body": [
+[
+"The risk of radiation carcinogenesis is considered a ",
+[
+"u"
+]
+],
+[
+"“red” risk",
+[
+"u",
+"h"
+]
+],
+[
+" for exploration-class missions due to both the ",
+[
+"u"
+]
+],
+[
+"high likelihood of occurrence",
+[
+"u",
+"h"
+]
+],
+[
+", as well as the ",
+[
+"u"
+]
+],
+[
+"high potential for detrimental impact",
+[
+"u",
+"h"
+]
+],
+[
+" on both quality of life and ",
+[
+"u"
+]
+],
+[
+"disease-free survival",
+[
+"u",
+"h"
+]
+],
+[
+" post flight",
+[
+"u"
+]
+],
+[
+". The major cancers of concern are epithelial in origin (particularly "
+],
+[
+"cancers of the ",
+[
+"u"
+]
+],
+[
+"lung, breast, stomach, colon, and bladder",
+[
+"u",
+"h"
+]
+],
+[
+"), as well as ",
+[
+"u"
+]
+],
+[
+"leukemias",
+[
+"u",
+"h"
+]
+]
+]
+},
+{
+"id": "N3-06",
+"contention": "N3",
+"tag": "Heart disease from Mars radiation could raise the risk of death by 40% beyond cancer",
+"short": "Patel 20",
+"cite": "Zarana Patel, Tyson Brunstetter, William Tarver et al., NASA Human Research Program and Johnson Space Center, “Red risks for a journey to the red planet: The highest priority human health risks for a mission to Mars,” npj Microgravity, 2020",
+"url": "https://www.nature.com/articles/s41526-020-00124-6.pdf",
+"body": [
+[
+"A large number of degenerative tissue (non-cancer) adverse health outcomes are associated with terrestrial radiation exposure, including ",
+[
+"u"
+]
+],
+[
+"cardiovascular and cerebrovascular diseases, cataracts",
+[
+"u",
+"h"
+]
+],
+[
+", digestive and endocrine disorders, ",
+[
+"u"
+]
+],
+[
+"immune system decrements",
+[
+"u",
+"h"
+]
+],
+[
+", and respiratory dysfunction",
+[
+"u"
+]
+],
+[
+" (https://humanresearchroadmap.nasa.gov/Evidence/other/Degen.pdf). For cardiovascular disease (CVD), a majority of the evidence comes from radiotherapy cohorts receiving high-dose mediastinal exposures that are associated with "
+],
+[
+"an increased risk for ",
+[
+"u"
+]
+],
+[
+"heart attack and stroke",
+[
+"u",
+"h"
+]
+],
+[
+". Recent evidence shows risk at lower doses (<0.5 Gy), with an estimated latency of 10 years or more. "
+],
+[
+"For a Mars mission, preliminary estimates suggest that circulatory disease risk may ",
+[
+"u"
+]
+],
+[
+"increase the risk of exposure induced death by ~40%",
+[
+"u",
+"h"
+]
+],
+[
+" compared to cancer alone",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-07",
+"contention": "N3",
+"tag": "Radiation's red risks: cancer, heart disease and cognitive decline — with major knowledge gaps",
+"short": "Patel 20",
+"cite": "Zarana Patel, Tyson Brunstetter, William Tarver et al., NASA Human Research Program and Johnson Space Center, “Red risks for a journey to the red planet: The highest priority human health risks for a mission to Mars,” npj Microgravity, 2020",
+"url": "https://www.nature.com/articles/s41526-020-00124-6.pdf",
+"body": [
+[
+"To summarize, "
+],
+[
+"the health risks posed by the ",
+[
+"u"
+]
+],
+[
+"omnipresent exposure",
+[
+"u",
+"h"
+]
+],
+[
+" to space radiation are ",
+[
+"u"
+]
+],
+[
+"significant",
+[
+"u",
+"h"
+]
+],
+[
+" and include the “red” risks of ",
+[
+"u"
+]
+],
+[
+"cancer, cardiovascular diseases, and cognitive and behavioral decrements",
+[
+"u",
+"h"
+]
+],
+[
+". While research on the late health risk of cancer is currently delayed, research on the in-flight effects of radiation on the cardiovascular system and CNS within the context of the space exposome are considered the highest priority and are the focus of investigations. "
+],
+[
+"Major knowledge gaps",
+[
+"u",
+"h"
+]
+],
+[
+" include the effects of radiation quality, dose-rate, and translation from animal models to human systems",
+[
+"u"
+]
+],
+[
+" and evaluation of the requirement for medical countermeasure approaches to reduce the risk."
+]
+]
+},
+{
+"id": "N3-08",
+"contention": "N3",
+"tag": "A Mars mission could exceed NASA's radiation death limit — up to a 10% fatal risk",
+"short": "Cucinotta 13",
+"cite": "Francis Cucinotta, University of Nevada Las Vegas and former NASA Space Radiation Program chief scientist; Myung-Hee Kim, Lori Chappell and Janice Huff, NASA Johnson Space Center, “How Safe Is Safe Enough? Radiation Risk for a Human Mission to Mars,” PLoS ONE, 2013",
+"url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0074988&type=printable",
+"body": [
+[
+"GCR exposure rate ",
+[
+"u"
+]
+],
+[
+"increases about three times",
+[
+"u",
+"h"
+]
+],
+[
+" as spacecraft venture out of Earth orbit into deep space where ",
+[
+"u"
+]
+],
+[
+"protection of the Earth’s magnetosphere",
+[
+"u",
+"h"
+]
+],
+[
+" and solid body ",
+[
+"u"
+]
+],
+[
+"are lost",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"NASA’s radiation standard limits astronaut exposures to a ",
+[
+"u"
+]
+],
+[
+"3% risk of exposure induced death",
+[
+"u",
+"h"
+]
+],
+[
+" (REID) at the upper 95% confidence interval (CI) of the risk estimate. Fatal cancer risk has been considered the dominant risk for GCR, however recent epidemiological analysis of radiation risks for circulatory diseases allow for predictions of REID for circulatory diseases to be included with cancer risk predictions for space missions. Using NASA’s models of risks and uncertainties, we predicted that "
+],
+[
+"central estimates for radiation induced mortality and morbidity ",
+[
+"u"
+]
+],
+[
+"could exceed 5% and 10%",
+[
+"u",
+"h"
+]
+],
+[
+" with upper 95% CI ",
+[
+"u"
+]
+],
+[
+"near 10% and 20%",
+[
+"u",
+"h"
+]
+],
+[
+", respectively for a Mars mission",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Additional risks to the central nervous system (CNS)",
+[
+"u"
+]
+],
+[
+" and qualitative differences in the biological effects of GCR compared to terrestrial radiation "
+],
+[
+"may ",
+[
+"u"
+]
+],
+[
+"significantly increase these estimates",
+[
+"u",
+"h"
+]
+],
+[
+", and will require new knowledge to evaluate."
+]
+]
+},
+{
+"id": "N3-09",
+"contention": "N3",
+"tag": "Mars crews face up to three years of cosmic ray exposure",
+"short": "Cucinotta 13",
+"cite": "Francis Cucinotta, University of Nevada Las Vegas and former NASA Space Radiation Program chief scientist; Myung-Hee Kim, Lori Chappell and Janice Huff, NASA Johnson Space Center, “How Safe Is Safe Enough? Radiation Risk for a Human Mission to Mars,” PLoS ONE, 2013",
+"url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0074988&type=printable",
+"body": [
+[
+"Astronauts on a mission to Mars would be exposed for ",
+[
+"u"
+]
+],
+[
+"up to 3 years",
+[
+"u",
+"h"
+]
+],
+[
+" to ",
+[
+"u"
+]
+],
+[
+"galactic cosmic rays",
+[
+"u",
+"h"
+]
+],
+[
+" (GCR)",
+[
+"u"
+]
+],
+[
+" — made up of highenergy protons and high charge (Z) and energy (E) (HZE) nuclei."
+]
+]
+},
+{
+"id": "N3-10",
+"contention": "N3",
+"tag": "Adding circulatory disease raises predicted radiation deaths by about 40%",
+"short": "Cucinotta 13",
+"cite": "Francis Cucinotta, University of Nevada Las Vegas and former NASA Space Radiation Program chief scientist; Myung-Hee Kim, Lori Chappell and Janice Huff, NASA Johnson Space Center, “How Safe Is Safe Enough? Radiation Risk for a Human Mission to Mars,” PLoS ONE, 2013",
+"url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0074988&type=printable",
+"body": [
+[
+"Discussion In this paper "
+],
+[
+"we made predictions of ",
+[
+"u"
+]
+],
+[
+"cancer and circulatory disease risks",
+[
+"u",
+"h"
+]
+],
+[
+" for space exploration missions to Mars",
+[
+"u"
+]
+],
+[
+" near solar minimum using NASA’s recent model developments, and results from a recent epidemiological analysis of circulatory disease risks from human exposures to low LET radiation. "
+],
+[
+"The combined risk was shown to ",
+[
+"u"
+]
+],
+[
+"increase %REID by about 40%",
+[
+"u",
+"h"
+]
+],
+[
+" from predictions of cancer risk alone",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-11",
+"contention": "N3",
+"tag": "Brain damage from radiation may be the hardest spaceflight risk to manage — it could doom the mission",
+"short": "Parihar 15",
+"cite": "Vipan Parihar, Barrett Allen, Katherine Tran, Charles Limoli et al., Department of Radiation Oncology, University of California, Irvine, “What happens to your brain on the way to Mars,” Science Advances, 2015",
+"url": "https://www.science.org/doi/pdf/10.1126/sciadv.1400256?download=true",
+"body": [
+[
+"Although space radiobiology research has uncovered a wealth of potentially problematic health risks associated with charged particle exposure, "
+],
+[
+"none may prove more difficult to manage",
+[
+"u",
+"h"
+]
+],
+[
+" than those related to the ",
+[
+"u"
+]
+],
+[
+"functional decrements found in the brain",
+[
+"u",
+"h"
+]
+],
+[
+" that may occur during a space mission, ",
+[
+"u"
+]
+],
+[
+"endangering its success",
+[
+"u",
+"h"
+]
+],
+[
+" (7–10). Clinicians have known for decades that "
+],
+[
+"patients subjected to cranial radiotherapy for the control of brain malignancies develop ",
+[
+"u"
+]
+],
+[
+"severe and progressive cognitive deficits that never resolve",
+[
+"u",
+"h"
+]
+],
+[
+" (11, 12)."
+]
+]
+},
+{
+"id": "N3-12",
+"contention": "N3",
+"tag": "Low-dose cosmic particles cause persistent impairments in memory",
+"short": "Parihar 15",
+"cite": "Vipan Parihar, Barrett Allen, Katherine Tran, Charles Limoli et al., Department of Radiation Oncology, University of California, Irvine, “What happens to your brain on the way to Mars,” Science Advances, 2015",
+"url": "https://www.science.org/doi/pdf/10.1126/sciadv.1400256?download=true",
+"body": [
+[
+"Our data ",
+[
+"u"
+]
+],
+[
+"clearly demonstrate",
+[
+"u",
+"h"
+]
+],
+[
+" that ",
+[
+"u"
+]
+],
+[
+"low-dose",
+[
+"u",
+"h"
+]
+],
+[
+" HZE particle exposure leads to ",
+[
+"u"
+]
+],
+[
+"persistent impairments",
+[
+"u",
+"h"
+]
+],
+[
+" in behavioral performance",
+[
+"u"
+]
+],
+[
+" as manifested by the inability to discriminate novelty of object or location. Although we cannot simulate exactly the complex and prolonged charged particle irradiation pattern encountered in space, the present data do demonstrate that "
+],
+[
+"there is some likelihood of developing certain ",
+[
+"u"
+]
+],
+[
+"radiation-induced cognitive deficits",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-13",
+"contention": "N3",
+"tag": "Astronauts' executive function — critical in emergencies — is what radiation degrades",
+"short": "Parihar 15",
+"cite": "Vipan Parihar, Barrett Allen, Katherine Tran, Charles Limoli et al., Department of Radiation Oncology, University of California, Irvine, “What happens to your brain on the way to Mars,” Science Advances, 2015",
+"url": "https://www.science.org/doi/pdf/10.1126/sciadv.1400256?download=true",
+"body": [
+[
+"Past work by others and us has shown that "
+],
+[
+"relatively low doses",
+[
+"u",
+"h"
+]
+],
+[
+" of charged particles can elicit various ",
+[
+"u"
+]
+],
+[
+"cognitive decrements",
+[
+"u",
+"h"
+]
+],
+[
+" in the brain ranging from defects in ",
+[
+"u"
+]
+],
+[
+"executive function",
+[
+"u",
+"h"
+]
+],
+[
+" to spatial learning and memory",
+[
+"u"
+]
+],
+[
+" (8–10). For astronauts, "
+],
+[
+"the need to optimize their performance in response to ",
+[
+"u"
+]
+],
+[
+"unanticipated situations",
+[
+"u",
+"h"
+]
+],
+[
+" (that is, executive function) will be ",
+[
+"u"
+]
+],
+[
+"critical",
+[
+"u",
+"h"
+]
+],
+[
+" and will depend on the operation of more basic cognitive processes. Cognitive tasks that interrogate specific regions of the brain have identified "
+],
+[
+"wide-ranging radiation-induced deficits",
+[
+"u",
+"h"
+]
+],
+[
+" mapping to both defined and more global regions that include the frontal and temporal lobes containing the mPFC and hippocampus, respectively (8–10, 13)."
+]
+]
+},
+{
+"id": "N3-14",
+"contention": "N3",
+"tag": "Apollo astronauts — the only humans in deep space — died of heart disease at four to five times the rate",
+"short": "Delp 16",
+"cite": "Michael Delp, Florida State University; Jacqueline Charvat, NASA Johnson Space Center; Charles Limoli, University of California, Irvine; et al., “Apollo Lunar Astronauts Show Higher Cardiovascular Disease Mortality: Possible Deep Space Radiation Effects on the Vascular Endothelium,” Scientific Reports, 2016",
+"url": "https://www.nature.com/articles/srep29901.pdf",
+"body": [
+[
+"However, when looking at the subgroup analysis "
+],
+[
+"the number of deaths due to CVD in ",
+[
+"u"
+]
+],
+[
+"Apollo lunar astronauts",
+[
+"u",
+"h"
+]
+],
+[
+" was ",
+[
+"u"
+]
+],
+[
+"almost five times greater",
+[
+"u",
+"h"
+]
+],
+[
+" than that in the non-flight astronauts",
+[
+"u"
+]
+],
+[
+" (Fig. 1) and "
+],
+[
+"four times higher",
+[
+"u",
+"h"
+]
+],
+[
+" than in LEO astronauts",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-15",
+"contention": "N3",
+"tag": "Only the Apollo crews left Earth's magnetic field — the rest of spaceflight has been sheltered",
+"short": "Delp 16",
+"cite": "Michael Delp, Florida State University; Jacqueline Charvat, NASA Johnson Space Center; Charles Limoli, University of California, Irvine; et al., “Apollo Lunar Astronauts Show Higher Cardiovascular Disease Mortality: Possible Deep Space Radiation Effects on the Vascular Endothelium,” Scientific Reports, 2016",
+"url": "https://www.nature.com/articles/srep29901.pdf",
+"body": [
+[
+"Despite the potential to be more biologically damaging, "
+],
+[
+"the long-term effect of space radiation on cardiovascular health has ",
+[
+"u"
+]
+],
+[
+"received little attention",
+[
+"u",
+"h"
+]
+],
+[
+"161718. Therefore, the primary purpose of the present study was to determine whether mortality rates due to cardiovascular disease (CVD) and other causes of death differ in (1) non-flight astronauts who never flew orbital missions in space, (2) astronauts who flew only in low Earth orbit (LEO), and (3) "
+],
+[
+"Apollo lunar astronauts, the ",
+[
+"u"
+]
+],
+[
+"only humans to have traveled outside of the Earth’s geomagnetic field",
+[
+"u",
+"h"
+]
+],
+[
+" and into deep space",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-16",
+"contention": "N3",
+"tag": "Even short deep-space trips may harm the heart",
+"short": "Delp 16",
+"cite": "Michael Delp, Florida State University; Jacqueline Charvat, NASA Johnson Space Center; Charles Limoli, University of California, Irvine; et al., “Apollo Lunar Astronauts Show Higher Cardiovascular Disease Mortality: Possible Deep Space Radiation Effects on the Vascular Endothelium,” Scientific Reports, 2016",
+"url": "https://www.nature.com/articles/srep29901.pdf",
+"body": [
+[
+"Although results from the present study provide new evidence that "
+],
+[
+"even short-term spaceflight",
+[
+"u",
+"h"
+]
+],
+[
+" beyond the Earth’s protective magnetosphere may have ",
+[
+"u"
+]
+],
+[
+"adverse effects on CVD mortality",
+[
+"u",
+"h"
+]
+],
+[
+", there are limitations to consider. First, the sample size for cause-specific deaths among lunar astronauts is small. Therefore, caution must be used in drawing definitive conclusions regarding specific health risks. Second, although "
+],
+[
+"deep space radiation seems a likely cause",
+[
+"u",
+"h"
+]
+],
+[
+" underlying the higher proportional mortality rate due to CVD in Apollo astronauts",
+[
+"u"
+]
+],
+[
+", it remains unknown what specific factor(s) in the space environment is responsible."
+]
+]
+},
+{
+"id": "N3-17",
+"contention": "N3",
+"tag": "The 520-day Mars simulation: crews grew sedentary, slept more and lost light exposure",
+"short": "Basner 13",
+"cite": "Mathias Basner and David Dinges, Perelman School of Medicine, University of Pennsylvania; et al., “Mars 520-d mission simulation reveals protracted crew hypokinesis and alterations of sleep duration and timing,” Proceedings of the National Academy of Sciences, 2013",
+"url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3574912",
+"body": [
+[
+"we used "
+],
+[
+"a ",
+[
+"u"
+]
+],
+[
+"high-fidelity ground simulation of a Mars mission",
+[
+"u",
+"h"
+]
+],
+[
+" to objectively track sleep–wake dynamics in a multinational crew of six "
+],
+[
+"during ",
+[
+"u"
+]
+],
+[
+"520 d of confined isolation",
+[
+"u",
+"h"
+]
+],
+[
+". Measurements included continuous recordings of wrist actigraphy and light exposure (4.396 million min) and weekly computer-based neurobehavioral assessments (n = 888) to identify changes in the crew's activity levels, sleep quantity and quality, sleep–wake periodicity, vigilance performance, and workload throughout the record-long 17 mo of mission confinement. Actigraphy revealed that "
+],
+[
+"crew sedentariness increased",
+[
+"u",
+"h"
+]
+],
+[
+" across the mission as evident in decreased waking movement (i.e., ",
+[
+"u"
+]
+],
+[
+"hypokinesis",
+[
+"u",
+"h"
+]
+],
+[
+") and increased sleep and rest times",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Light exposure decreased",
+[
+"u",
+"h"
+]
+],
+[
+" during the mission",
+[
+"u"
+]
+],
+[
+". The majority of crewmembers also experienced one or more disturbances of sleep quality, vigilance deficits, or altered sleep–wake periodicity and timing, suggesting inadequate circadian entrainment. The results point to the need to identify markers of differential vulnerability to hypokinesis and sleep–wake changes during the prolonged isolation of exploration spaceflight and the need to ensure maintenance of circadian entrainment, sleep quantity and quality, and optimal activity levels during exploration missions. Therefore, successful adaptation to such missions will require crew to transit in spacecraft and live in surface habitats that instantiate aspects of Earth's geophysical signals (appropriately timed light exposure, food intake, exercise) required for temporal organization and maintenance of human behavior."
+]
+]
+},
+{
+"id": "N3-18",
+"contention": "N3",
+"tag": "Interplanetary missions require confinement far longer than any human has endured",
+"short": "Basner 13",
+"cite": "Mathias Basner and David Dinges, Perelman School of Medicine, University of Pennsylvania; et al., “Mars 520-d mission simulation reveals protracted crew hypokinesis and alterations of sleep duration and timing,” Proceedings of the National Academy of Sciences, 2013",
+"url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3574912",
+"body": [
+[
+"The success of human interplanetary spaceflight",
+[
+"u"
+]
+],
+[
+", which is anticipated to be in this century, "
+],
+[
+"will depend on the ability of spacefarers to ",
+[
+"u"
+]
+],
+[
+"remain confined and isolated from Earth much longer than previous missions",
+[
+"u",
+"h"
+]
+],
+[
+" or simulations",
+[
+"u"
+]
+],
+[
+", while maintaining the intensity and timing of behavioral activity necessary to accomplish the mission and mitigate the effects of microgravity. "
+],
+[
+"A total of ",
+[
+"u"
+]
+],
+[
+"four people have spent >1 y in space",
+[
+"u",
+"h"
+]
+],
+[
+", with the record of 437 consecutive days on the Mir space station set by Valery Polyakov. The longest Earth-based spaceflight simulation involved four Russians confined in connected hyperbaric chambers for 240 consecutive days. Antarctic winter-over missions have extended up to 363 d."
+]
+]
+},
+{
+"id": "N3-19",
+"contention": "N3",
+"tag": "Immune dysregulation persists through long missions — raising clinical risk in deep space",
+"short": "Crucian 15",
+"cite": "Brian Crucian, NASA Johnson Space Center; Raymond Stowe, Microgen Laboratories; Satish Mehta, NASA Johnson Space Center; et al., “Alterations in adaptive immunity persist during long-duration spaceflight,” npj Microgravity, 2015",
+"url": "https://www.nature.com/articles/npjmgrav201513.pdf",
+"body": [
+[
+"Exploration-class deep space missions will consist of "
+],
+[
+"elevated radiation exposure",
+[
+"u",
+"h"
+]
+],
+[
+" beyond the Van Allen belt, ",
+[
+"u"
+]
+],
+[
+"limited clinical care capability",
+[
+"u",
+"h"
+]
+],
+[
+" based on that of the projected Orion vehicle (plus any ‘transit phase’ module), and other exploration-specific variables (toxins, planetary exploration risks). We suggest that based on the data presented herein, "
+],
+[
+"persistent immune system alterations",
+[
+"u",
+"h"
+]
+],
+[
+" during these missions of exploration could ",
+[
+"u"
+]
+],
+[
+"increase specific clinical risks",
+[
+"u",
+"h"
+]
+],
+[
+" during exploration missions."
+]
+]
+},
+{
+"id": "N3-20",
+"contention": "N3",
+"tag": "Spaceflight alters nearly every arm of the immune system",
+"short": "Crucian 15",
+"cite": "Brian Crucian, NASA Johnson Space Center; Raymond Stowe, Microgen Laboratories; Satish Mehta, NASA Johnson Space Center; et al., “Alterations in adaptive immunity persist during long-duration spaceflight,” npj Microgravity, 2015",
+"url": "https://www.nature.com/articles/npjmgrav201513.pdf",
+"body": [
+[
+"It generally consists of "
+],
+[
+"altered",
+[
+"u",
+"h"
+]
+],
+[
+" cytokine production patterns, ",
+[
+"u"
+]
+],
+[
+"natural killer (NK)-cell function",
+[
+"u",
+"h"
+]
+],
+[
+", leukocyte distribution, monocyte function, granulocyte function, ",
+[
+"u"
+]
+],
+[
+"T-cell",
+[
+"u",
+"h"
+]
+],
+[
+" intracellular signaling, neuroendocrine responses, and leukocyte proliferation",
+[
+"u"
+]
+],
+[
+" following activation. "
+],
+[
+"The capability of ",
+[
+"u"
+]
+],
+[
+"lymphocytes to migrate through tissues was inhibited",
+[
+"u",
+"h"
+]
+],
+[
+" in modeled microgravity conditions."
+]
+]
+},
+{
+"id": "N3-21",
+"contention": "N3",
+"tag": "Dormant herpes viruses reawaken in astronauts — and can infect crewmates",
+"short": "Mehta 17",
+"cite": "Satish Mehta, NASA Johnson Space Center; Mark Laudenslager, University of Colorado Anschutz; Raymond Stowe, Microgen Laboratories; et al., “Latent virus reactivation in astronauts on the international space station,” npj Microgravity, 2017",
+"url": "https://www.nature.com/articles/s41526-017-0015-y.pdf",
+"body": [
+[
+"In this study, "
+],
+[
+"all but one of the 23 astronauts",
+[
+"u",
+"h"
+]
+],
+[
+" studied shed EBV at some time point",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"VZV is an important health risk to crewmembers (some have experienced ",
+[
+"u"
+]
+],
+[
+"shingles",
+[
+"u",
+"h"
+]
+],
+[
+" before or during the course of spaceflight), and CMV can be ",
+[
+"u"
+]
+],
+[
+"immuno-suppressive",
+[
+"u",
+"h"
+]
+],
+[
+". CMV may play a role in immune dysfunction observed in crewmembers. Viral reactivation has been reported in ground-based models of spaceflight although to a lesser extent than spaceflight. Previously, we have shown that "
+],
+[
+"the VZV shed in saliva by crewmembers contains ",
+[
+"u"
+]
+],
+[
+"live, infectious virus capable of infecting other crew members",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-22",
+"contention": "N3",
+"tag": "Isolation, confinement, sleep loss, radiation and microgravity combine to suppress immunity",
+"short": "Mehta 17",
+"cite": "Satish Mehta, NASA Johnson Space Center; Mark Laudenslager, University of Colorado Anschutz; Raymond Stowe, Microgen Laboratories; et al., “Latent virus reactivation in astronauts on the international space station,” npj Microgravity, 2017",
+"url": "https://www.nature.com/articles/s41526-017-0015-y.pdf",
+"body": [
+[
+"Virus reactivation was shown to be associated with the ",
+[
+"u"
+]
+],
+[
+"unique combination of stressors",
+[
+"u",
+"h"
+]
+],
+[
+" associated with spaceflight which include psychosocial stressors of ",
+[
+"u"
+]
+],
+[
+"isolation, confinement, anxiety, sleep deprivation",
+[
+"u",
+"h"
+]
+],
+[
+", as well as physical exertion, noise, ",
+[
+"u"
+]
+],
+[
+"increased radiation, and microgravity",
+[
+"u",
+"h"
+]
+],
+[
+". These stressors may be constant or intermittent."
+]
+]
+},
+{
+"id": "N3-23",
+"contention": "N3",
+"tag": "Microgravity changes the brain — the detrimental effects appear in returning space travellers",
+"short": "Van Ombergen 17",
+"cite": "Angelique Van Ombergen, University of Antwerp; Athéna Demertzi, University of Liège; Elena Tomilovskaya, Institute of Biomedical Problems, Russian Academy of Sciences; et al., “The effect of spaceflight and microgravity on the human brain,” Journal of Neurology, 2017",
+"url": "https://link.springer.com/content/pdf/10.1007/s00415-017-8427-x.pdf",
+"body": [
+[
+"Currently, "
+],
+[
+"there is ",
+[
+"u"
+]
+],
+[
+"paucity in the knowledge",
+[
+"u",
+"h"
+]
+],
+[
+" of the effect of spaceflight and microgravity on the human brain",
+[
+"u"
+]
+],
+[
+", complicating advancement of space neurosciences. Overall, "
+],
+[
+"cerebellar, sensorimotor, and vestibular brain regions",
+[
+"u",
+"h"
+]
+],
+[
+" seem to be affected most",
+[
+"u"
+]
+],
+[
+". Previous vestibular-related space research has focused primarily on peripheral hampered function, but the current research suggests that the central deconditioning is at least as important. Elaborating on the understanding of how the brain reacts to and behaves in microgravity is a crucial step in the development of more adequate countermeasures against "
+],
+[
+"the ",
+[
+"u"
+]
+],
+[
+"detrimental changes",
+[
+"u",
+"h"
+]
+],
+[
+" often seen in space travellers early after return",
+[
+"u"
+]
+],
+[
+". This is "
+],
+[
+"pivotal to guarantee the safety",
+[
+"u",
+"h"
+]
+],
+[
+" and efficiency of future space missions",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-24",
+"contention": "N3",
+"tag": "Radiation accelerates atherosclerosis and can lead to cardiac dysfunction",
+"short": "Krittanawong 22",
+"cite": "Chayakrit Krittanawong, Baylor College of Medicine and NYU Langone; Nitin Kumar Singh, California Institute of Technology; Richard Scheuring, NASA Johnson Space Center; et al., “Human Health during Space Travel: State-of-the-Art Review,” Cells, 2022",
+"url": "https://www.mdpi.com/2073-4409/12/1/40/pdf?version=1671846779",
+"body": [
+[
+"Prior human studies with supplemental data obtained from animal studies, have shown that "
+],
+[
+"healthy individuals with ",
+[
+"u"
+]
+],
+[
+"prolonged exposure to ionizing radiation",
+[
+"u",
+"h"
+]
+],
+[
+" may be at increased risk for the development of ",
+[
+"u"
+]
+],
+[
+"accelerated atherosclerosis",
+[
+"u",
+"h"
+]
+],
+[
+" secondary to ",
+[
+"u"
+]
+],
+[
+"radiation-induced endothelial damage",
+[
+"u",
+"h"
+]
+],
+[
+" and a subsequent pro-inflammatory response. One study utilizing human 3D micro-vessel models showed that "
+],
+[
+"ionizing radiation inhibits angiogenesis",
+[
+"u"
+]
+],
+[
+" via mechanisms dependent on the linear energy transfer (LET) of charged particles, "
+],
+[
+"which could eventually lead to ",
+[
+"u"
+]
+],
+[
+"cardiac dysfunction",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-25",
+"contention": "N3",
+"tag": "Even short trips risk radiation-induced cancer — and space radiation is unlike anything on Earth",
+"short": "Krittanawong 22",
+"cite": "Chayakrit Krittanawong, Baylor College of Medicine and NYU Langone; Nitin Kumar Singh, California Institute of Technology; Richard Scheuring, NASA Johnson Space Center; et al., “Human Health during Space Travel: State-of-the-Art Review,” Cells, 2022",
+"url": "https://www.mdpi.com/2073-4409/12/1/40/pdf?version=1671846779",
+"body": [
+[
+"Even during short-duration spaceflight",
+[
+"u",
+"h"
+]
+],
+[
+", the stochastic nature of cancer development makes it possible that space radiation exposure ",
+[
+"u"
+]
+],
+[
+"could cause cancer",
+[
+"u",
+"h"
+]
+],
+[
+" via epigenomic modifications",
+[
+"u"
+]
+],
+[
+". Currently, our epidemiological understanding of radiation-induced cancer risk is based primarily on atomic bomb survivors and accidental radiation exposures, which both show a clear association between radiation exposure and cancer risk. However, these studies are hard to generalize to spaceflight as the patient populations vary significantly (generally healthy astronauts vs. atomic bomb survivors [NCRP 126]). Moreover, "
+],
+[
+"the radiation encountered in space is ",
+[
+"u"
+]
+],
+[
+"notably different",
+[
+"u",
+"h"
+]
+],
+[
+" than that associated with atomic bomb exposure",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-26",
+"contention": "N3",
+"tag": "Solar flares can trigger acute radiation sickness on long missions",
+"short": "Krittanawong 22",
+"cite": "Chayakrit Krittanawong, Baylor College of Medicine and NYU Langone; Nitin Kumar Singh, California Institute of Technology; Richard Scheuring, NASA Johnson Space Center; et al., “Human Health during Space Travel: State-of-the-Art Review,” Cells, 2022",
+"url": "https://www.mdpi.com/2073-4409/12/1/40/pdf?version=1671846779",
+"body": [
+[
+"In summary, "
+],
+[
+"high doses of space radiation lead to ",
+[
+"u"
+]
+],
+[
+"bone destruction",
+[
+"u",
+"h"
+]
+],
+[
+" with increased bone resorption and reduced bone formation",
+[
+"u"
+]
+],
+[
+", while low doses of space radiation actually have a positive impact with increased mineralization and reduced bone resorption. Most importantly, "
+],
+[
+"space radiation, particularly ",
+[
+"u"
+]
+],
+[
+"solar particle events",
+[
+"u",
+"h"
+]
+],
+[
+" in the case of a flare, may induce ",
+[
+"u"
+]
+],
+[
+"acute radiation effects",
+[
+"u",
+"h"
+]
+],
+[
+", leading to ",
+[
+"u"
+]
+],
+[
+"hematopoietic syndrome",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"This risk is ",
+[
+"u"
+]
+],
+[
+"highest for longer duration missions",
+[
+"u",
+"h"
+]
+]
+]
+},
+{
+"id": "N3-27",
+"contention": "N3",
+"tag": "A Mars mission could destroy half a woman's ovarian reserve",
+"short": "Gimunová 24",
+"cite": "Marta Gimunová, Ana Carolina Paludo, Martina Bernaciková and Julie Bienertova-Vasku, Faculty of Sports Studies, Masaryk University, “The effect of space travel on human reproductive health: a systematic review,” NPJ microgravity, 2024",
+"url": "https://europepmc.org/article/PMC/PMC10796912",
+"body": [
+[
+"Female mouse models show that "
+],
+[
+"microgravity affects embryonic stem cell growth and differentiation, resulting in ",
+[
+"u"
+]
+],
+[
+"impaired decidualization",
+[
+"u",
+"h"
+]
+],
+[
+" of the endometrium needed for ",
+[
+"u"
+]
+],
+[
+"implantation and maintaining pregnancy",
+[
+"u",
+"h"
+]
+],
+[
+". Data from therapeutic radiation on ovaries suggests that "
+],
+[
+"space radiation exposure during a typical Mars mission may ",
+[
+"u"
+]
+],
+[
+"reduce the ovarian reserve by 50%",
+[
+"u",
+"h"
+]
+],
+[
+" by destroying some of the primordial follicles",
+[
+"u"
+]
+],
+[
+". Furthermore, space radiation may lead to a decreased time interval to menopause, leading to "
+],
+[
+"a ",
+[
+"u"
+]
+],
+[
+"decreased reproductive capacity",
+[
+"u",
+"h"
+]
+],
+[
+" of the female astronaut",
+[
+"u"
+]
+],
+[
+". Exposure to total body radiation of 15 Gy leads to the loss of ovarian function in humans."
+]
+]
+},
+{
+"id": "N3-28",
+"contention": "N3",
+"tag": "Colonizing other planets requires reproduction — which space travel impairs",
+"short": "Gimunová 24",
+"cite": "Marta Gimunová, Ana Carolina Paludo, Martina Bernaciková and Julie Bienertova-Vasku, Faculty of Sports Studies, Masaryk University, “The effect of space travel on human reproductive health: a systematic review,” NPJ microgravity, 2024",
+"url": "https://europepmc.org/article/PMC/PMC10796912",
+"body": [
+[
+"To undertake multi-year missions in deep space, ",
+[
+"u"
+]
+],
+[
+"colonize other planets",
+[
+"u",
+"h"
+]
+],
+[
+", and/or prepare appropriate safety measures for space tourism, "
+],
+[
+"it is important to investigate the possible effects of space travel on ",
+[
+"u"
+]
+],
+[
+"human reproduction",
+[
+"u",
+"h"
+]
+],
+[
+". During space travel, astronauts are exposed to several hazardous factors, such as alterations in gravitation forces, including hypogravity and hypergravity, or ionizing radiation. "
+],
+[
+"Exposure to microgravity has been demonstrated to ",
+[
+"u"
+]
+],
+[
+"impair the endocrine system",
+[
+"u",
+"h"
+]
+],
+[
+" in males, ",
+[
+"u"
+]
+],
+[
+"muscle mass, and bone mass",
+[
+"u",
+"h"
+]
+],
+[
+"; it also leads to altered fluid and electrolyte balance, cardiovascular changes, or increased glomerular filtration rate in both genders."
+]
+]
+},
+{
+"id": "N3-29",
+"contention": "N3",
+"tag": "No one knows whether humans can sustain a pregnancy off Earth",
+"short": "Cole 25",
+"cite": "Victor Cole, Singapore Institute of Technology; Julian Savulescu, Centre for Biomedical Ethics, National University of Singapore; Sebastian Illanes, Universidad de los Andes; et al., “A biological and ethical assessment of whether humans could or should reproduce in space,” NPJ microgravity, 2025",
+"url": "https://europepmc.org/article/PMC/PMC12623868",
+"body": [
+[
+"Whether or not humans can ",
+[
+"u"
+]
+],
+[
+"establish and maintain a successful pregnancy",
+[
+"u",
+"h"
+]
+],
+[
+" away from the Earth’s protective environment ",
+[
+"u"
+]
+],
+[
+"remains largely unknown",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-30",
+"contention": "N3",
+"tag": "Microgravity, radiation, regolith and stress each threaten a pregnancy",
+"short": "Cole 25",
+"cite": "Victor Cole, Singapore Institute of Technology; Julian Savulescu, Centre for Biomedical Ethics, National University of Singapore; Sebastian Illanes, Universidad de los Andes; et al., “A biological and ethical assessment of whether humans could or should reproduce in space,” NPJ microgravity, 2025",
+"url": "https://europepmc.org/article/PMC/PMC12623868",
+"body": [
+[
+"As outlined above, data from space flight exposures (on animals, cell systems and adult astronauts) and simulated (parabolic flights, random positioning machines) space exposures "
+],
+[
+"demonstrate a ",
+[
+"u"
+]
+],
+[
+"host of tissue specific adverse effects",
+[
+"u",
+"h"
+]
+],
+[
+" that appear likely to impact the ",
+[
+"u"
+]
+],
+[
+"viability and development of human pregnancy",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Exposure to ",
+[
+"u"
+]
+],
+[
+"microgravity, radiation, regolith and stress",
+[
+"u",
+"h"
+]
+],
+[
+" each have the potential to impact a human pregnancy",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-31",
+"contention": "N3",
+"tag": "Longtermist dreams can't justify ignoring the welfare of mothers and children now",
+"short": "Cole 25",
+"cite": "Victor Cole, Singapore Institute of Technology; Julian Savulescu, Centre for Biomedical Ethics, National University of Singapore; Sebastian Illanes, Universidad de los Andes; et al., “A biological and ethical assessment of whether humans could or should reproduce in space,” NPJ microgravity, 2025",
+"url": "https://europepmc.org/article/PMC/PMC12623868",
+"body": [
+[
+"However, "
+],
+[
+"whatever the intuitive or intellectual appeal of longtermism",
+[
+"u",
+"h"
+]
+],
+[
+", the justification of research programmes—not least those which have ",
+[
+"u"
+]
+],
+[
+"welfare implications for mothers and their nascent children",
+[
+"u",
+"h"
+]
+],
+[
+"—must inevitably deal with ",
+[
+"u"
+]
+],
+[
+"short-term and foreseeable consequences as a priority",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-32",
+"contention": "N3",
+"tag": "The species-survival argument \"would cut no ice\" with regulators",
+"short": "Cole 25",
+"cite": "Victor Cole, Singapore Institute of Technology; Julian Savulescu, Centre for Biomedical Ethics, National University of Singapore; Sebastian Illanes, Universidad de los Andes; et al., “A biological and ethical assessment of whether humans could or should reproduce in space,” NPJ microgravity, 2025",
+"url": "https://europepmc.org/article/PMC/PMC12623868",
+"body": [
+[
+"A utilitarian argument for opening a pathway to humans becoming a sustainably multiplanetary species as a ",
+[
+"u"
+]
+],
+[
+"hedge against future extinction",
+[
+"u",
+"h"
+]
+],
+[
+" ",
+[
+"u"
+]
+],
+[
+"would cut no ice with regulators",
+[
+"u",
+"h"
+]
+],
+[
+" given current guidelines and regulations",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-33",
+"contention": "N3",
+"tag": "Space agencies should prevent pregnancies in space altogether",
+"short": "Cole 25",
+"cite": "Victor Cole, Singapore Institute of Technology; Julian Savulescu, Centre for Biomedical Ethics, National University of Singapore; Sebastian Illanes, Universidad de los Andes; et al., “A biological and ethical assessment of whether humans could or should reproduce in space,” NPJ microgravity, 2025",
+"url": "https://europepmc.org/article/PMC/PMC12623868",
+"body": [
+[
+"Research ethics considerations aside, "
+],
+[
+"given the ",
+[
+"u"
+]
+],
+[
+"multiple threats to pregnancies and maternal wellbeing",
+[
+"u",
+"h"
+]
+],
+[
+" already identified, we would recommend that space agencies and commercial space operators ",
+[
+"u"
+]
+],
+[
+"take all reasonable steps to avoid pregnancies occurring in space",
+[
+"u",
+"h"
+]
+],
+[
+", e.g., through "
+],
+[
+"mandatory pre-mission pregnancy testing and ",
+[
+"u"
+]
+],
+[
+"mandatory contraception",
+[
+"u",
+"h"
+]
+],
+[
+" on longer duration mixed-sex missions (e.g., by long-acting contraceptive implants)."
+]
+]
+},
+{
+"id": "N3-34",
+"contention": "N3",
+"tag": "Musk's Mars settlement plans threaten to escape ethical oversight",
+"short": "Cole 25",
+"cite": "Victor Cole, Singapore Institute of Technology; Julian Savulescu, Centre for Biomedical Ethics, National University of Singapore; Sebastian Illanes, Universidad de los Andes; et al., “A biological and ethical assessment of whether humans could or should reproduce in space,” NPJ microgravity, 2025",
+"url": "https://europepmc.org/article/PMC/PMC12623868",
+"body": [
+[
+"The purported growth of commercial space activity and the ambition of the likes of entrepreneurs such as Elon Musk to establish ",
+[
+"u"
+]
+],
+[
+"permanent human settlements on Mars",
+[
+"u",
+"h"
+]
+],
+[
+" may ",
+[
+"u"
+]
+],
+[
+"threaten to circumvent",
+[
+"u",
+"h"
+]
+],
+[
+" the kinds of ",
+[
+"u"
+]
+],
+[
+"ethical oversight",
+[
+"u",
+"h"
+]
+],
+[
+" and control of life science and human subject research",
+[
+"u"
+]
+],
+[
+" that are required of national space agencies such as NASA or supranational entities such as the European Space Agency (ESA)."
+]
+]
+},
+{
+"id": "N3-35",
+"contention": "N3",
+"tag": "Six months later, cosmic radiation's damage to memory hasn't healed",
+"short": "Parihar 16",
+"cite": "Vipan Parihar, Barrett Allen, Chongshan Caressi, Charles Limoli et al., Department of Radiation Oncology, University of California, Irvine, “Cosmic radiation exposure and persistent cognitive dysfunction,” Scientific Reports, 2016",
+"url": "https://www.nature.com/articles/srep34774.pdf",
+"body": [
+[
+"(a) Analysis of the preference for novelty in the Novel Object Recognition (NOR) task demonstrates that "
+],
+[
+"charged particle irradiation ",
+[
+"u"
+]
+],
+[
+"continues to impair",
+[
+"u",
+"h"
+]
+],
+[
+" object recognition memory ",
+[
+"u"
+]
+],
+[
+"6 months following exposure",
+[
+"u",
+"h"
+]
+],
+[
+" to ",
+[
+"u"
+]
+],
+[
+"low doses",
+[
+"u",
+"h"
+]
+],
+[
+" of Ti particles",
+[
+"u"
+]
+],
+[
+", while animals exposed to O remain unaffected."
+]
+]
+},
+{
+"id": "N3-36",
+"contention": "N3",
+"tag": "Cognitive deficits persist 24 weeks after exposure",
+"short": "Parihar 16",
+"cite": "Vipan Parihar, Barrett Allen, Chongshan Caressi, Charles Limoli et al., Department of Radiation Oncology, University of California, Irvine, “Cosmic radiation exposure and persistent cognitive dysfunction,” Scientific Reports, 2016",
+"url": "https://www.nature.com/articles/srep34774.pdf",
+"body": [
+[
+"Given the ",
+[
+"u"
+]
+],
+[
+"wide-ranging cognitive deficits",
+[
+"u",
+"h"
+]
+],
+[
+" found 12 weeks after cosmic radiation exposure, we assessed the ",
+[
+"u"
+]
+],
+[
+"persistence",
+[
+"u",
+"h"
+]
+],
+[
+" of these decrements ",
+[
+"u"
+]
+],
+[
+"24 weeks",
+[
+"u",
+"h"
+]
+],
+[
+" after irradiation",
+[
+"u"
+]
+],
+[
+" (Fig. 2). Analysis at 24 weeks revealed overall significant group differences for the preference of novelty for the NOR task [F (4, 39) = 3.601, P = 0.02]. "
+],
+[
+"Ti particle irradiation was again ",
+[
+"u"
+]
+],
+[
+"most damaging",
+[
+"u",
+"h"
+]
+]
+]
+},
+{
+"id": "N3-37",
+"contention": "N3",
+"tag": "Astronauts developed blood clots in the neck — a previously unknown spaceflight risk",
+"short": "Marshall-Goebel 19",
+"cite": "Karina Marshall-Goebel and Steven Laurie, KBR; Serena Auñón-Chancellor, NASA Johnson Space Center; et al., “Assessment of Jugular Venous Blood Flow Stasis and Thrombosis During Spaceflight,” JAMA network open, 2019",
+"url": "https://europepmc.org/article/PMC/PMC6902784",
+"body": [
+[
+"To our knowledge, this is the first study to demonstrate "
+],
+[
+"blood flow stasis",
+[
+"u",
+"h"
+]
+],
+[
+" in the left IJV in ",
+[
+"u"
+]
+],
+[
+"approximately half of crew members",
+[
+"u",
+"h"
+]
+],
+[
+" during spaceflight and ",
+[
+"u"
+]
+],
+[
+"jugular venous thrombosis",
+[
+"u",
+"h"
+]
+],
+[
+" in some crew members, a ",
+[
+"u"
+]
+],
+[
+"previously unrecognized risk",
+[
+"u",
+"h"
+]
+],
+[
+" of spaceflight",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-38",
+"contention": "N3",
+"tag": "Undetected clots have likely occurred on earlier missions",
+"short": "Marshall-Goebel 19",
+"cite": "Karina Marshall-Goebel and Steven Laurie, KBR; Serena Auñón-Chancellor, NASA Johnson Space Center; et al., “Assessment of Jugular Venous Blood Flow Stasis and Thrombosis During Spaceflight,” JAMA network open, 2019",
+"url": "https://europepmc.org/article/PMC/PMC6902784",
+"body": [
+[
+"Humans have been flying in space for more than 50 years, yet this is the ",
+[
+"u"
+]
+],
+[
+"first report of venous thrombosis",
+[
+"u",
+"h"
+]
+],
+[
+" during spaceflight",
+[
+"u"
+]
+],
+[
+", to our knowledge. Given that the thrombi detected in our study were asymptomatic and only discovered in the course of assessing the IJV, "
+],
+[
+"it is ",
+[
+"u"
+]
+],
+[
+"plausible that undetected thrombi have occurred previously",
+[
+"u",
+"h"
+]
+],
+[
+" during human spaceflight missions",
+[
+"u"
+]
+],
+[
+", albeit without negative clinical outcomes attributed to thrombi sequelae to date."
+]
+]
+},
+{
+"id": "N3-39",
+"contention": "N3",
+"tag": "Space radiation damages the heart and makes the blood-brain barrier leak",
+"short": "Seidler 23",
+"cite": "Rachael Seidler, Professor of Applied Physiology and Kinesiology, University of Florida, “Spending time in space can harm the human body − but scientists are working to mitigate these risks before sending people to Mars,” The Conversation, September 19, 2023",
+"url": "https://theconversation.com/spending-time-in-space-can-harm-the-human-body-but-scientists-are-working-to-mitigate-these-risks-before-sending-people-to-mars-210761",
+"body": [
+[
+"This radiation can ",
+[
+"u"
+]
+],
+[
+"harm the nervous and cardiovascular systems",
+[
+"u",
+"h"
+]
+],
+[
+" including heart and arteries, leading to ",
+[
+"u"
+]
+],
+[
+"cardiovascular disease",
+[
+"u",
+"h"
+]
+],
+[
+". In addition, "
+],
+[
+"it can make the ",
+[
+"u"
+]
+],
+[
+"blood-brain barrier leak",
+[
+"u",
+"h"
+]
+],
+[
+". This can expose the brain to chemicals and proteins that are harmful to it – "
+],
+[
+"compounds that are safe in the blood but ",
+[
+"u"
+]
+],
+[
+"toxic to the brain",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-40",
+"contention": "N3",
+"tag": "Without gravity, the brain shifts upward and presses against the skull",
+"short": "Seidler 23",
+"cite": "Rachael Seidler, Professor of Applied Physiology and Kinesiology, University of Florida, “Spending time in space can harm the human body − but scientists are working to mitigate these risks before sending people to Mars,” The Conversation, September 19, 2023",
+"url": "https://theconversation.com/spending-time-in-space-can-harm-the-human-body-but-scientists-are-working-to-mitigate-these-risks-before-sending-people-to-mars-210761",
+"body": [
+[
+"My work and that of others has shown that this results in "
+],
+[
+"an ",
+[
+"u"
+]
+],
+[
+"expansion of fluid-filled spaces",
+[
+"u",
+"h"
+]
+],
+[
+" in the middle of the brain",
+[
+"u"
+]
+],
+[
+". Having extra fluid in the skull and no gravity to “hold the brain down” "
+],
+[
+"causes the brain to sit higher in the skull, ",
+[
+"u"
+]
+],
+[
+"compressing the top of the brain against the inside of the skull",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-41",
+"contention": "N3",
+"tag": "Cosmic rays impair learning, memory and mood — jeopardizing astronaut safety",
+"short": "Limoli 19",
+"cite": "Charles Limoli, Professor of Radiation Oncology, and Janet Baulch, Project Scientist in Radiation Oncology, University of California, Irvine, “Astronauts’ brains are subject to long-lasting damage due to low dose space radiation,” The Conversation, August 5, 2019",
+"url": "https://theconversation.com/astronauts-brains-are-subject-to-long-lasting-damage-due-to-low-dose-space-radiation-121407",
+"body": [
+[
+"The ",
+[
+"u"
+]
+],
+[
+"most worrisome consequence",
+[
+"u",
+"h"
+]
+],
+[
+" of these radiation exposures are the adverse effects on the astronauts’ brains",
+[
+"u"
+]
+],
+[
+". According to the results of our new study in mice, "
+],
+[
+"exposure to cosmic rays ",
+[
+"u"
+]
+],
+[
+"impairs brain function",
+[
+"u",
+"h"
+]
+],
+[
+" causing problems with ",
+[
+"u"
+]
+],
+[
+"learning, memory and mood",
+[
+"u",
+"h"
+]
+],
+[
+" that may, if the results hold true for humans, influence a person’s ability to adapt and respond in unexpected or stressful situations. "
+],
+[
+"This outcome could ",
+[
+"u"
+]
+],
+[
+"jeopardize astronaut safety and mission success",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-42",
+"contention": "N3",
+"tag": "Shielding itself generates neutrons that shred brain cells",
+"short": "Limoli 19",
+"cite": "Charles Limoli, Professor of Radiation Oncology, and Janet Baulch, Project Scientist in Radiation Oncology, University of California, Irvine, “Astronauts’ brains are subject to long-lasting damage due to low dose space radiation,” The Conversation, August 5, 2019",
+"url": "https://theconversation.com/astronauts-brains-are-subject-to-long-lasting-damage-due-to-low-dose-space-radiation-121407",
+"body": [
+[
+"The cosmic radiation particles traveling near the speed of light ",
+[
+"u"
+]
+],
+[
+"collide with the spacecraft",
+[
+"u",
+"h"
+]
+],
+[
+" and generate fragmentation products including ",
+[
+"u"
+]
+],
+[
+"neutrons",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"These fragmentation products still have the energy to ",
+[
+"u"
+]
+],
+[
+"pass through the human body",
+[
+"u",
+"h"
+]
+],
+[
+". As the neutrons interact with other nuclei in the body they produce "
+],
+[
+"free radicals",
+[
+"u",
+"h"
+]
+],
+[
+", reactive molecules that can ",
+[
+"u"
+]
+],
+[
+"damage cell membranes, DNA",
+[
+"u",
+"h"
+]
+],
+[
+" and other fine structures in organs",
+[
+"u"
+]
+],
+[
+". In the brain, my co-investigators and I believe, they damage the microscopic structures of the brain’s cells, or neurons. These include regions of the dendrites, thread-like projections that connect to other brain cells, myelin and synapses that are all vital for forming networks and communic"
+]
+]
+},
+{
+"id": "N3-43",
+"contention": "N3",
+"tag": "Irradiated brain circuits could no longer communicate",
+"short": "Limoli 19",
+"cite": "Charles Limoli, Professor of Radiation Oncology, and Janet Baulch, Project Scientist in Radiation Oncology, University of California, Irvine, “Astronauts’ brains are subject to long-lasting damage due to low dose space radiation,” The Conversation, August 5, 2019",
+"url": "https://theconversation.com/astronauts-brains-are-subject-to-long-lasting-damage-due-to-low-dose-space-radiation-121407",
+"body": [
+[
+"My co-authors and I discovered that in the brains of the irradiated mice, "
+],
+[
+"the circuits connecting the neurons into networks ",
+[
+"u"
+]
+],
+[
+"could no longer communicate efficiently",
+[
+"u",
+"h"
+]
+],
+[
+". This might be due to damage to fine structures on the neurons, or "
+],
+[
+"connections in some neural circuits that may be ",
+[
+"u"
+]
+],
+[
+"completely broken",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Either change could adversely ",
+[
+"u"
+]
+],
+[
+"diminish cognitive function",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-44",
+"contention": "N3",
+"tag": "Space is brutally unforgiving — the body evolved for Earth",
+"short": "Van Ombergen 25",
+"cite": "Angelique Van Ombergen, European Space Agency and University of Antwerp; Damian Bailey, Professor of Physiology and Biochemistry, University of South Wales, “Mission to Mars: how space exploration pushes the human body to its limits,” The Conversation, October 31, 2025",
+"url": "https://theconversation.com/mission-to-mars-how-space-exploration-pushes-the-human-body-to-its-limits-267837",
+"body": [
+[
+"That mission will last around three years and cover hundreds of millions of kilometres. "
+],
+[
+"The crew will face ",
+[
+"u"
+]
+],
+[
+"radiation, isolation, weightlessness and confinement",
+[
+"u",
+"h"
+]
+],
+[
+", creating stresses ",
+[
+"u"
+]
+],
+[
+"unlike any encountered",
+[
+"u",
+"h"
+]
+],
+[
+" by astronauts before",
+[
+"u"
+]
+],
+[
+". For physiologists, this is the ultimate frontier: a living laboratory where the human body is pushed to, and sometimes beyond, its biological limits. "
+],
+[
+"Space is ",
+[
+"u"
+]
+],
+[
+"brutally unforgiving",
+[
+"u",
+"h"
+]
+],
+[
+". It is a vacuum flooded with radiation and violent temperature extremes, where "
+],
+[
+"the absence of gravity ",
+[
+"u"
+]
+],
+[
+"dismantles the systems that evolved to keep us alive",
+[
+"u",
+"h"
+]
+],
+[
+" on Earth",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-45",
+"contention": "N3",
+"tag": "Cosmic rays fracture DNA in ways our biology cannot repair",
+"short": "Van Ombergen 25",
+"cite": "Angelique Van Ombergen, European Space Agency and University of Antwerp; Damian Bailey, Professor of Physiology and Biochemistry, University of South Wales, “Mission to Mars: how space exploration pushes the human body to its limits,” The Conversation, October 31, 2025",
+"url": "https://theconversation.com/mission-to-mars-how-space-exploration-pushes-the-human-body-to-its-limits-267837",
+"body": [
+[
+"Radiation remains spaceflight’s ",
+[
+"u"
+]
+],
+[
+"most insidious hazard",
+[
+"u",
+"h"
+]
+],
+[
+". Galactic cosmic rays, made up of high-energy protons and heavy ions, "
+],
+[
+"slice through cells and ",
+[
+"u"
+]
+],
+[
+"fracture DNA",
+[
+"u",
+"h"
+]
+],
+[
+" in ways that biology on Earth was ",
+[
+"u"
+]
+],
+[
+"never built to repair",
+[
+"u",
+"h"
+]
+],
+[
+". Exposure to these rays can cause DNA damage and chromosomal rearrangements that "
+],
+[
+"raise the ",
+[
+"u"
+]
+],
+[
+"risk of cancer",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-46",
+"contention": "N3",
+"tag": "Astronauts lose 1–1.5% of their bone mass every month",
+"short": "Van Ombergen 25",
+"cite": "Angelique Van Ombergen, European Space Agency and University of Antwerp; Damian Bailey, Professor of Physiology and Biochemistry, University of South Wales, “Mission to Mars: how space exploration pushes the human body to its limits,” The Conversation, October 31, 2025",
+"url": "https://theconversation.com/mission-to-mars-how-space-exploration-pushes-the-human-body-to-its-limits-267837",
+"body": [
+[
+"Microgravity presents another paradox. "
+],
+[
+"In orbit, astronauts lose ",
+[
+"u"
+]
+],
+[
+"1–1.5% of their bone mass each month",
+[
+"u",
+"h"
+]
+],
+[
+", and ",
+[
+"u"
+]
+],
+[
+"muscles weaken despite daily exercise",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-47",
+"contention": "N3",
+"tag": "A six-month ISS stay delivers a lethal X-ray-equivalent dose",
+"short": "Archer 16",
+"cite": "Martin Archer, Space Plasma Physicist, Queen Mary University of London, “How much radiation damage do astronauts really suffer in space?,” The Conversation, June 16, 2016",
+"url": "https://theconversation.com/how-much-radiation-damage-do-astronauts-really-suffer-in-space-60475",
+"body": [
+[
+"This turns out to be "
+],
+[
+"around ",
+[
+"u"
+]
+],
+[
+"300 joules",
+[
+"u",
+"h"
+]
+],
+[
+", which is in fact that of a ",
+[
+"u"
+]
+],
+[
+"lethal X-ray dose",
+[
+"u",
+"h"
+]
+],
+[
+". By comparison, "
+],
+[
+"we only get a ",
+[
+"u"
+]
+],
+[
+"0.07-joule",
+[
+"u",
+"h"
+]
+],
+[
+" dose here on Earth in six months",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-48",
+"contention": "N3",
+"tag": "Shielding astronauts from the radiation belts is still a major concern",
+"short": "Archer 16",
+"cite": "Martin Archer, Space Plasma Physicist, Queen Mary University of London, “How much radiation damage do astronauts really suffer in space?,” The Conversation, June 16, 2016",
+"url": "https://theconversation.com/how-much-radiation-damage-do-astronauts-really-suffer-in-space-60475",
+"body": [
+[
+"These radiation belts pose a ",
+[
+"u"
+]
+],
+[
+"severe problem to manned space missions",
+[
+"u",
+"h"
+]
+],
+[
+". The only time we’ve sent astronauts fully through them was in the Apollo missions and thankfully the path taken and short exposure time helped reduce the dosage. "
+],
+[
+"NASA has admitted that ",
+[
+"u"
+]
+],
+[
+"shielding astronauts",
+[
+"u",
+"h"
+]
+],
+[
+" from the radiation belts is ",
+[
+"u"
+]
+],
+[
+"still a major concern",
+[
+"u",
+"h"
+]
+],
+[
+". Plenty of unmanned tests are planned to see how effective our current shielding technology is."
+]
+]
+},
+{
+"id": "N3-49",
+"contention": "N3",
+"tag": "The effects of spaceflight on the body are complex and largely harmful",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Effect of spaceflight on the human body,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Effect_of_spaceflight_on_the_human_body",
+"body": [
+[
+"The effects of spaceflight on the human body are complex and ",
+[
+"u"
+]
+],
+[
+"largely harmful",
+[
+"u",
+"h"
+]
+],
+[
+" over both short and long term",
+[
+"u"
+]
+],
+[
+". Significant adverse effects of long-term weightlessness include "
+],
+[
+"muscle atrophy",
+[
+"u",
+"h"
+]
+],
+[
+" and ",
+[
+"u"
+]
+],
+[
+"deterioration of the skeleton",
+[
+"u",
+"h"
+]
+],
+[
+" (spaceflight osteopenia). Other significant effects include "
+],
+[
+"a slowing of cardiovascular system functions, decreased production of red blood cells (",
+[
+"u"
+]
+],
+[
+"space anemia",
+[
+"u",
+"h"
+]
+],
+[
+"), balance disorders, ",
+[
+"u"
+]
+],
+[
+"eyesight disorders",
+[
+"u",
+"h"
+]
+],
+[
+" and ",
+[
+"u"
+]
+],
+[
+"changes in the immune system",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "N3-50",
+"contention": "N3",
+"tag": "Space is lethal without protection",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Effect of spaceflight on the human body,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Effect_of_spaceflight_on_the_human_body",
+"body": [
+[
+"The environment of space is ",
+[
+"u"
+]
+],
+[
+"lethal without appropriate protection",
+[
+"u",
+"h"
+]
+],
+[
+": the greatest threat in the vacuum of space derives from the lack of oxygen and pressure, although temperature and radiation also pose risks. The effects of space exposure can result in "
+],
+[
+"ebullism, hypoxia, hypocapnia, and ",
+[
+"u"
+]
+],
+[
+"decompression sickness",
+[
+"u",
+"h"
+]
+],
+[
+". In addition to these, there is also "
+],
+[
+"cellular mutation and destruction",
+[
+"u",
+"h"
+]
+],
+[
+" from high energy photons and sub-atomic particles",
+[
+"u"
+]
+],
+[
+" that are present in the surroundings."
+]
+]
+}
+]

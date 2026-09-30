@@ -1,0 +1,54 @@
+/* ---------- Prep vault ---------- */
+.vault-tabs { margin: 0 0 18px; }
+.vault-tabs > button { display: inline-flex; align-items: center; gap: 6px; }
+
+.lib { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 22px; align-items: start; }
+@media (max-width: 900px) { .lib { grid-template-columns: minmax(0, 1fr); } }
+
+.lib-rail { position: sticky; top: 12px; display: grid; gap: 12px; }
+@media (max-width: 900px) { .lib-rail { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); } .lib-c.all { grid-column: span 2; } }
+.lib-group { display: grid; gap: 2px; }
+.lib-side { font-size: 10.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--aff); padding: 4px 10px; }
+.lib-side.neg { color: var(--neg); }
+.lib-c { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 34px; padding: 6px 10px; border-radius: var(--r-2); text-align: left; font-size: var(--fs-13); font-weight: 600; color: var(--text-1); }
+.lib-c:hover { background: var(--paper-lo); color: var(--ink); }
+.lib-c.on { background: var(--ink); color: #fff; }
+.lib-c b { font-family: var(--font-display); font-stretch: 75%; font-weight: 850; margin-right: 4px; }
+.lib-c em { font-style: normal; font-size: var(--fs-11); color: var(--text-3); }
+.lib-c.on em { color: rgba(255, 255, 255, 0.6); }
+.lib-c.all { border: 1px solid var(--line-1); background: var(--paper-hi); }
+.lib-c.all.on { background: var(--ink); border-color: var(--ink); }
+
+.lib-main { min-width: 0; display: grid; gap: 14px; }
+.lib-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.lib-search { flex: 1 1 260px; display: flex; align-items: center; gap: 8px; height: 38px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--paper-hi); color: var(--text-2); }
+.lib-search:focus-within { border-color: var(--accent); }
+.lib-search input { flex: 1; min-width: 0; border: 0; outline: none; background: none; font-size: var(--fs-13); color: var(--ink); }
+.lib-target { display: flex; align-items: center; gap: 8px; font-size: var(--fs-12); font-weight: 650; color: var(--text-2); }
+.lib-target .select { width: auto; max-width: 240px; height: 36px; }
+.lib-head { padding: 16px 18px; border-radius: var(--r-3); border-left: 4px solid var(--aff); background: var(--paper-hi); border-top: 1px solid var(--line-1); border-right: 1px solid var(--line-1); border-bottom: 1px solid var(--line-1); }
+.lib-head.neg { border-left-color: var(--neg); }
+.lib-head-k { font-size: 10.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+.lib-head h2 { font-family: var(--font-display); font-stretch: 75%; font-weight: 850; font-size: 30px; color: var(--ink); line-height: 1.05; margin: 4px 0; }
+.lib-head p { color: var(--text-1); }
+.lib-count { font-size: var(--fs-12); }
+.lib-list { display: grid; gap: 12px; }
+.lib-more { justify-self: center; }
+
+/* A card, formatted like a Verbatim speech doc */
+.lib-card { padding: 18px 20px; border-radius: var(--r-3); background: #fff; border: 1px solid var(--line-1); display: grid; gap: 6px; min-width: 0; }
+.lib-card.compact { padding: 12px 14px; }
+.lc-top { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; }
+.lc-tag { font-family: Calibri, Carlito, var(--font-ui); font-size: 17px; line-height: 1.3; font-weight: 700; color: var(--ink); min-width: 0; }
+.lib-card.compact .lc-tag { font-size: 15px; }
+.lc-actions { display: flex; gap: 4px; flex: none; }
+.lc-cite { font-family: Calibri, Carlito, var(--font-ui); font-size: 12.5px; color: var(--text-1); line-height: 1.45; }
+.lc-cite b { font-size: 15px; color: var(--ink); }
+.lc-url { font-size: 11px; color: var(--text-3); overflow-wrap: anywhere; }
+.lc-url:hover { color: var(--accent); }
+.lc-body { font-family: Calibri, Carlito, var(--font-ui); font-size: 15px; line-height: 1.55; color: var(--ink); overflow-wrap: anywhere; }
+.lc-body .small { font-size: 10.5px; color: var(--text-2); }
+.lc-body .u { text-decoration: underline; text-underline-offset: 2px; }
+.lc-body .h { background: var(--marker); }
+.lc-body .e { font-weight: 700; outline: 1px solid var(--ink); outline-offset: -1px; }
+.lib-card.compact .lc-body { font-size: 13.5px; }

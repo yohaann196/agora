@@ -96,12 +96,14 @@ export interface Flow {
   format: FlowFormat
   affFirst: boolean
   sheets: FlowSheet[]
+  /** The speech docs open beside this flow, one per tab (ids of vault docs). */
+  docs?: string[]
   updatedAt: number
 }
 
 /* --------------------------------- Recents -------------------------------- */
 
-export type RecentKind = 'debater' | 'doc' | 'flow' | 'brief' | 'school'
+export type RecentKind = 'debater' | 'doc' | 'flow' | 'school'
 
 export interface Recent {
   kind: RecentKind

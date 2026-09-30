@@ -1,12 +1,11 @@
-import { ArrowRight, BookMarked, Check, FileStack, Globe, History, MapPin, Newspaper, Scissors, Shield, Swords, TableProperties, Timer, Trophy } from 'lucide-react'
+import { ArrowRight, Check, History, MapPin, Swords, TableProperties, Timer, Trophy } from 'lucide-react'
 import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router'
 import { Sparkline } from '../components/ui/charts'
 import { Avatar, RankChange } from '../components/ui/primitives'
 import { RESOLUTION } from '../data/debateSeeds'
-import { currentBrief } from '../data/briefs'
 import { count, useIndex, useRankings } from '../rankings/data'
-import { BriefCover } from './BriefsPage'
+import { CARD_COUNTS, CONTENTIONS, TOTAL_CARDS } from '../data/cards'
 import { EventTabs } from './EventTabs'
 import { updatedLabel } from './RankingsPage'
 import './landing.css'
@@ -44,15 +43,9 @@ function LiveTop() {
   )
 }
 
-const PREP = [
-  { icon: Globe, title: 'Evidence search', body: 'Search encyclopedias, scholarly papers and books in one place, plus every card you’ve already cut. Open a source and read it without leaving Debate Utils.', to: '/app/evidence' },
-  { icon: Scissors, title: 'Card cutter', body: 'Select a passage, write a tag, cut. Author, date, title and URL are filled in for you, so every card is cited the moment it exists.', to: '/app/evidence' },
-  { icon: FileStack, title: 'Contention vault', body: 'Build cases in Pockets, Hats, Blocks and Tags with Verbatim keys, underlining and highlighting. Read time counts only what you’ll actually read.', to: '/app/vaults?type=contention' },
-  { icon: Shield, title: 'Block vault', body: 'Keep frontlines and framework blocks in one searchable place, and send any block into your speech with one click.', to: '/app/vaults?type=block' },
-]
 
 const FAQ = [
-  { q: 'Is Debate Utils free?', a: 'Yes, everything is free during the beta: prep tools, rankings, profiles and monthly briefs.' },
+  { q: 'Is Debate Utils free?', a: 'Yes. Everything is free during the beta: the prep vault, flow & timer, rankings and profiles.' },
   { q: 'Where do the rankings come from?', a: 'Public Tabroom round results. National-circuit results come from two open datasets (Shreeram Modi’s debate-rankings, and the NSD × DebateDrills × DebateLand rankings data), refreshed every week. Local tournaments are added on top. Everything is rated with Glicko-2 in one pool, and the methodology page explains every step.' },
   { q: 'Why is my local tournament missing?', a: 'Local results are being added tournament by tournament. Circuit rounds count double a local round, so a strong local record helps, and a circuit result helps more.' },
   { q: 'I have a profile. Can I correct or remove it?', a: 'Yes. Every profile has a link to request a correction or removal, and removal requests are honoured.' },
@@ -69,7 +62,7 @@ export function Landing() {
   const top = data?.debaters.find((d) => d.rank === 1)
 
   useEffect(() => {
-    document.title = 'Debate Utils — Yohaan’s debate tools, LD rankings & briefs'
+    document.title = 'Debate Utils — Yohaan’s debate tools & LD rankings'
     if (pathname === '/prep') document.getElementById('prep')?.scrollIntoView({ block: 'start' })
   }, [pathname])
 
@@ -83,7 +76,7 @@ export function Landing() {
             <span>debate utilities.</span>
           </h1>
           <p className="hero-lede">
-            Rankings, research and prep in one place. Find evidence, cut cards, build contention and block vaults, flow your rounds, and see exactly where you stand in the biggest LD rankings ever built.
+            Rankings and prep in one place. Pull cut cards for every contention on the topic, flow rounds next to your speech docs, and see exactly where you stand in the biggest LD rankings ever built.
           </p>
           <div className="hero-ctas">
             <Link to="/app" className="btn primary lg">Open the tools <ArrowRight /></Link>
@@ -94,28 +87,37 @@ export function Landing() {
         <LiveTop />
       </section>
 
-      <Link to={`/briefs/${currentBrief.id}`} className="topic-strip">
+      <Link to="/app/vault" className="topic-strip">
         <span className="ts-label">Current LD topic</span>
         <span className="ts-res">{RESOLUTION}</span>
-        <span className="ts-cta">Read the brief <ArrowRight size={14} /></span>
+        <span className="ts-cta">Open the prep vault <ArrowRight size={14} /></span>
       </Link>
 
       <section className="wrap section" id="prep">
         <div className="sec-head">
           <span className="sec-kicker">Prep</span>
-          <h2 className="sec-title">Every tool between the topic and the round.</h2>
-          <p className="sec-lede">Four tools that work together: what you find becomes a card, cards go into vaults, vaults become speeches.</p>
+          <h2 className="sec-title">Prep vault.</h2>
+          <p className="sec-lede">
+            {TOTAL_CARDS ? `${TOTAL_CARDS} cut cards` : 'Cut cards'} for the current LD topic, split into five aff and five neg contentions. Every card is the source’s own words with a full cite, underlined and highlighted. Copy one into Word or Google Docs with the formatting intact, or send it straight into a speech doc. Your cases, blocks and speech docs live here too.
+          </p>
         </div>
-        <div className="prep-grid">
-          {PREP.map((p, i) => (
-            <Link key={p.title} to={p.to} className={`prep-card pc${i}`}>
-              <span className="pc-icon"><p.icon /></span>
-              <h3>{p.title}</h3>
-              <p>{p.body}</p>
-              <span className="pc-go">Open <ArrowRight size={14} /></span>
-            </Link>
+        <Link to="/app/vault" className="vault-card">
+          {(['aff', 'neg'] as const).map((side) => (
+            <div key={side} className={`vc-side ${side}`}>
+              <span className="vc-label">{side === 'aff' ? 'Aff' : 'Neg'}</span>
+              <ol>
+                {CONTENTIONS.filter((c) => c.side === side).map((c) => (
+                  <li key={c.id}>
+                    <b>{c.title}</b>
+                    <span>{c.claim}</span>
+                    {CARD_COUNTS[c.id] ? <em className="num">{CARD_COUNTS[c.id]}</em> : null}
+                  </li>
+                ))}
+              </ol>
+            </div>
           ))}
-        </div>
+          <span className="vc-go">Open the prep vault <ArrowRight size={15} /></span>
+        </Link>
         <div className="flow-band">
           <div>
             <h3><TableProperties /> Flow &amp; Timer</h3>
@@ -194,26 +196,6 @@ export function Landing() {
         </div>
       </section>
 
-      <section className="wrap section briefs-band">
-        <div className="bb-copy">
-          <span className="sec-kicker"><Newspaper size={14} /> Monthly Briefs</span>
-          <h2 className="sec-title">A new brief every month. Know the topic before your first round.</h2>
-          <p className="sec-lede">
-            Each issue breaks down the current LD resolution: definitions and burdens, the best aff and neg arguments with their answers, the frameworks that fit, and a reading list of real sources you can cut from in one click. Once the season starts, it adds what real results say is winning.
-          </p>
-          <ul className="bb-list">
-            {['Topic primer the week a resolution drops', 'Mid-topic meta from real round data', 'Reading lists linked straight into the card cutter'].map((t) => (
-              <li key={t}><BookMarked size={16} /> {t}</li>
-            ))}
-          </ul>
-          <div className="hero-ctas">
-            <Link to={`/briefs/${currentBrief.id}`} className="btn primary lg">Read the {currentBrief.month.split(' ')[0]} brief <ArrowRight /></Link>
-            <Link to="/briefs" className="btn lg">All issues</Link>
-          </div>
-        </div>
-        <BriefCover b={currentBrief} big />
-      </section>
-
       <section className="wrap section">
         <div className="pricing card">
           <div>
@@ -222,7 +204,7 @@ export function Landing() {
             <p className="sec-lede">Everything is included. Team plans for squads and coaches are coming later this season.</p>
           </div>
           <ul className="price-list">
-            {['Evidence search and card cutter', 'Contention and block vaults', 'Flow & Timer for LD, PF and Policy', 'LD rankings and debater profiles', 'Monthly Briefs'].map((t) => (
+            {['Prep vault: cut cards for every contention', 'Your cases, blocks and speech docs', 'Flow & Timer with speech docs alongside', 'LD rankings and debater profiles'].map((t) => (
               <li key={t}><Check size={16} /> {t}</li>
             ))}
           </ul>

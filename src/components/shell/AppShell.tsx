@@ -66,6 +66,8 @@ export function AppShell() {
   }, [])
 
   const key = location.pathname
+  // An open flow takes the whole screen; the sidebar slides in over it on demand.
+  const focus = /^\/app\/flow\/[^/]+/.test(location.pathname)
   useEffect(() => {
     viewport.current?.scrollTo({ top: 0 })
     useOS.getState().setMobileNav(false)
@@ -73,7 +75,7 @@ export function AppShell() {
 
   return (
     <MotionConfig reducedMotion={reduceMotion ? 'always' : 'user'}>
-      <div className="shell">
+      <div className={`shell ${focus ? 'focus' : ''}`}>
         <Sidebar />
         <div className="main">
           <TopBar />

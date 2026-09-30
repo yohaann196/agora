@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Download, FileInput, Plus, Star, Trash2, X } from 'lucide-react'
+import { ArrowRight, Download, FileInput, PanelLeft, PanelRightClose, PanelRightOpen, Plus, Star, Trash2, X } from 'lucide-react'
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router'
 import { PageHeader, timeAgo } from '../../components/ui/primitives'
@@ -10,6 +10,7 @@ import { useOS } from '../../store'
 import { download } from '../docs/docExport'
 import { NotFound } from '../workspace/NotFound'
 import { RoundTimer } from './RoundTimer'
+import { SpeechDocs } from './SpeechDocs'
 import { useTimer } from './timerStore'
 import './flow.css'
 
@@ -134,6 +135,37 @@ function FlowBoard({ flow }: { flow: Flow }) {
   const [focus, setFocus] = useState<{ c: number; r: number } | null>(null)
   const pending = useRef<string | null>(null)
   const boardRef = useRef<HTMLDivElement>(null)
+  const pageRef = useRef<HTMLDivElement>(null)
+  const [split, setSplit] = useState(() => {
+    try {
+      return Number(localStorage.getItem('du:flow-split')) || 42
+    } catch {
+      return 42
+    }
+  })
+  const [docsOpen, setDocsOpen] = useState(true)
+
+  /** Drag the divider to trade space between the flow and the speech docs. */
+  const startDrag = (e: React.PointerEvent) => {
+    e.preventDefault()
+    const rect = pageRef.current?.getBoundingClientRect()
+    if (!rect) return
+    const onMove = (ev: PointerEvent) => setSplit(Math.min(70, Math.max(24, ((rect.right - ev.clientX) / rect.width) * 100)))
+    const onUp = () => {
+      window.removeEventListener('pointermove', onMove)
+      window.removeEventListener('pointerup', onUp)
+      setSplit((v) => {
+        try {
+          localStorage.setItem('du:flow-split', String(Math.round(v)))
+        } catch {
+          // Width just won't be remembered.
+        }
+        return v
+      })
+    }
+    window.addEventListener('pointermove', onMove)
+    window.addEventListener('pointerup', onUp)
+  }
 
   const sheet = flow.sheets.find((s) => s.id === sheetId) ?? flow.sheets[0]
   const cols = FORMATS[flow.format].flowColumns
@@ -252,9 +284,12 @@ function FlowBoard({ flow }: { flow: Flow }) {
   const focusedMark = focus ? sheet.marks[`${focus.c}:${focus.r}`] : undefined
 
   return (
-    <div className="page flow-page">
+    <div className={`page flow-page ${docsOpen ? '' : 'no-docs'}`} ref={pageRef} style={{ ['--split' as string]: `${split}%` }}>
       <section className="fl-main">
         <header className="fl-head">
+          <button className="btn icon ghost sm" onClick={() => useOS.getState().setMobileNav(true)} aria-label="Open the sidebar" title="Open the sidebar">
+            <PanelLeft />
+          </button>
           <input className="fl-title" value={flow.title} onChange={(e) => updateFlow(flow.id, { title: e.target.value })} aria-label="Flow title" />
           <div className="seg" role="radiogroup" aria-label="Format">
             {(Object.keys(FORMATS) as FlowFormat[]).map((f) => (
@@ -267,6 +302,9 @@ function FlowBoard({ flow }: { flow: Flow }) {
             </label>
           )}
           <span className="spacer" />
+          <button className="btn sm ghost" onClick={() => setDocsOpen((v) => !v)} aria-pressed={docsOpen} title={docsOpen ? 'Hide speech docs' : 'Show speech docs'}>
+            {docsOpen ? <PanelRightClose /> : <PanelRightOpen />} Docs
+          </button>
           <button className="btn sm" onClick={() => download(`${flow.title} — ${sheet.title}.csv`.replace(/[\\/:*?"<>|]+/g, ''), toCsv(flow, sheet), 'text/csv')}><Download /> CSV</button>
           <button
             className="btn ghost sm danger"
@@ -366,9 +404,15 @@ function FlowBoard({ flow }: { flow: Flow }) {
           </p>
         </div>
       </section>
-      <aside className="fl-side">
-        <RoundTimer format={flow.format} affFirst={flow.affFirst} />
-      </aside>
+      {docsOpen && (
+        <>
+          <div className="fl-divider" role="separator" aria-orientation="vertical" aria-label="Resize speech docs" onPointerDown={startDrag} />
+          <aside className="fl-side">
+            <RoundTimer format={flow.format} affFirst={flow.affFirst} compact />
+            <SpeechDocs flow={flow} />
+          </aside>
+        </>
+      )}
     </div>
   )
 }

@@ -1,9 +1,8 @@
 import { useMemo } from 'react'
-import { briefs } from '../data/briefs'
 import { schoolSlug, useRankings } from '../rankings/data'
 import { useOS } from '../store'
 
-export type HitKind = 'debater' | 'school' | 'brief' | 'doc' | 'flow'
+export type HitKind = 'debater' | 'school' | 'doc' | 'flow'
 
 export interface Hit {
   kind: HitKind
@@ -46,10 +45,6 @@ export function useSearch(q: string, limit = 12): Hit[] {
     for (const s of schools.values()) {
       const m = match(s.name, t)
       if (m) hits.push({ kind: 'school', id: s.name, label: s.name, sub: `${s.n} ranked debater${s.n === 1 ? '' : 's'}${s.state ? ` · ${s.state}` : ''}`, to: `/schools/${schoolSlug(s.name)}`, score: m + 0.2 })
-    }
-    for (const b of briefs.filter((x) => x.status === 'published')) {
-      const m = Math.max(match(b.title, t), match(b.topic, t) * 0.8, match(`brief ${b.month}`, t))
-      if (m) hits.push({ kind: 'brief', id: b.id, label: b.title, sub: `Brief No. ${b.issue} · ${b.month}`, to: `/briefs/${b.id}`, score: m + 0.3 })
     }
     for (const d of docs) {
       const m = match(d.title, t)

@@ -1,0 +1,3962 @@
+[
+{
+"id": "A3-01",
+"contention": "A3",
+"tag": "Space industry can solve Earth's economic and environmental problems — and it fits inside existing space budgets",
+"short": "Metzger 16",
+"cite": "Philip Metzger, Planetary Scientist, Florida Space Institute, University of Central Florida, “Space development and space science together, an historic opportunity,” Space Policy, 2016",
+"url": "https://arxiv.org/pdf/1609.00737",
+"body": [
+[
+"The national space programs have an ",
+[
+"u"
+]
+],
+[
+"historic opportunity",
+[
+"u",
+"h"
+]
+],
+[
+" to help solve the ",
+[
+"u"
+]
+],
+[
+"global-scale economic and environmental problems",
+[
+"u",
+"h"
+]
+],
+[
+" of Earth",
+[
+"u"
+]
+],
+[
+" while becoming more effective at science through the use of space resources. Space programs will be more cost-effective when they work to "
+],
+[
+"establish a ",
+[
+"u"
+]
+],
+[
+"supply chain in space",
+[
+"u",
+"h"
+]
+],
+[
+", mining and manufacturing then replicating the assets of the supply chain so it grows to larger capacity",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"This has become achievable because of advances in ",
+[
+"u"
+]
+],
+[
+"robotics and artificial intelligence",
+[
+"u",
+"h"
+]
+],
+[
+". It is roughly estimated that developing a lunar outpost that relies upon and also develops the supply chain "
+],
+[
+"will cost about ",
+[
+"u"
+]
+],
+[
+"1/3 or less of the existing annual budgets",
+[
+"u",
+"h"
+]
+],
+[
+" of the national space programs",
+[
+"u"
+]
+],
+[
+". It will require a sustained commitment of several decades to complete, during which time science and exploration become increasingly effective. At the end, "
+],
+[
+"this space industry will capable of addressing global-scale challenges including ",
+[
+"u"
+]
+],
+[
+"limited resources, clean energy, economic development, and preservation of the environment",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-02",
+"contention": "A3",
+"tag": "Fusion and terrestrial renewables don't address the root problem — our limited globe",
+"short": "Metzger 16",
+"cite": "Philip Metzger, Planetary Scientist, Florida Space Institute, University of Central Florida, “Space development and space science together, an historic opportunity,” Space Policy, 2016",
+"url": "https://arxiv.org/pdf/1609.00737",
+"body": [
+[
+"Other potential solutions, including nuclear fusion and terrestrial renewable energy sources, ",
+[
+"u"
+]
+],
+[
+"do not address the root problem of our limited globe",
+[
+"u",
+"h"
+]
+],
+[
+" and there are real questions whether they will be ",
+[
+"u"
+]
+],
+[
+"inadequate or too late",
+[
+"u",
+"h"
+]
+],
+[
+". While industry in space likewise cannot provide perfect assurance, "
+],
+[
+"it is ",
+[
+"u"
+]
+],
+[
+"uniquely able to solve the root problem",
+[
+"u",
+"h"
+]
+],
+[
+", and it gives us an important chance that we should grasp",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-03",
+"contention": "A3",
+"tag": "Space-based solar power is a fourth option that needs no new physics",
+"short": "Metzger 16",
+"cite": "Philip Metzger, Planetary Scientist, Florida Space Institute, University of Central Florida, “Space development and space science together, an historic opportunity,” Space Policy, 2016",
+"url": "https://arxiv.org/pdf/1609.00737",
+"body": [
+[
+"Space development leading to SBSP gives us a ",
+[
+"u"
+]
+],
+[
+"fourth possibility",
+[
+"u",
+"h"
+]
+],
+[
+" to escape these perils, one that ",
+[
+"u"
+]
+],
+[
+"requires no new physics",
+[
+"u",
+"h"
+]
+],
+[
+" like fusion, ",
+[
+"u"
+]
+],
+[
+"costs less than renewables",
+[
+"u",
+"h"
+]
+],
+[
+" for higher penetration, and provides ",
+[
+"u"
+]
+],
+[
+"EROI potentially much higher than any other",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"It ",
+[
+"u"
+]
+],
+[
+"should not be discarded or delayed",
+[
+"u",
+"h"
+]
+],
+[
+", either",
+[
+"u"
+]
+],
+[
+". Among all the possible solutions, "
+],
+[
+"SBSP is uniquely positioned to overcome the economic barriers facing renewable energy",
+[
+"u"
+]
+],
+[
+" because it can already be justified from existing space exploration budgets."
+]
+]
+},
+{
+"id": "A3-04",
+"contention": "A3",
+"tag": "We're reaching the limits of a planetary civilization — energy demand will quadruple",
+"short": "Metzger 16",
+"cite": "Philip Metzger, Planetary Scientist, Florida Space Institute, University of Central Florida, “Space development and space science together, an historic opportunity,” Space Policy, 2016",
+"url": "https://arxiv.org/pdf/1609.00737",
+"body": [
+[
+"symptoms of a common problem: "
+],
+[
+"we are getting close to the ",
+[
+"u"
+]
+],
+[
+"limits of a planetary civilization",
+[
+"u",
+"h"
+]
+],
+[
+" 6. Because of that limit "
+],
+[
+"we ",
+[
+"u"
+]
+],
+[
+"cannot forever continue",
+[
+"u",
+"h"
+]
+],
+[
+" doing greater things as a species while ",
+[
+"u"
+]
+],
+[
+"relying on a single planet",
+[
+"u",
+"h"
+]
+],
+[
+". 5.3.3 Objection: Space Industry Cannot Help Enough Another objection is that it is unreasonable to think we can put enough of our industry into space to make a difference. Lunar industry can make SBSP to beam energy to Earth as massless photons, but transporting manufactured goods that have mass is more problematic. 7 The energy sector is a small fraction of the overall economy (there are more machines using energy than machines generating it), so how can it be worthwhile to move only the energy sector into space? I have already argued that "
+],
+[
+"computing can eventually be put into space after SRSI has been bootstrapped, and this will relieve a potentially ",
+[
+"u"
+]
+],
+[
+"giant burden from Earth’s environment",
+[
+"u",
+"h"
+]
+],
+[
+". In addition, "
+],
+[
+"moving the energy sector, or a part of it, off-Earth is not a negligible accomplishment",
+[
+"u"
+]
+],
+[
+". Projections say "
+],
+[
+"world population may exceed ",
+[
+"u"
+]
+],
+[
+"11 billion",
+[
+"u",
+"h"
+]
+],
+[
+" by the end of the century and power demand could reach 51 TW",
+[
+"u"
+]
+],
+[
+" (1610 EJ annually) 8, "
+],
+[
+"four times the current demand",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-05",
+"contention": "A3",
+"tag": "Moving computing off-world frees Earth from its energy burden",
+"short": "Metzger 16",
+"cite": "Philip Metzger, Planetary Scientist, Florida Space Institute, University of Central Florida, “Space development and space science together, an historic opportunity,” Space Policy, 2016",
+"url": "https://arxiv.org/pdf/1609.00737",
+"body": [
+[
+"With such a communication network, "
+],
+[
+"the bulk of ",
+[
+"u"
+]
+],
+[
+"computing can be located off-world",
+[
+"u",
+"h"
+]
+],
+[
+", ",
+[
+"u"
+]
+],
+[
+"relieving the Earth of the energy demands",
+[
+"u",
+"h"
+]
+],
+[
+" for both manufacturing and operating computers",
+[
+"u"
+]
+],
+[
+". Only the compressed data streams for user interfaces need be transmitted to and from the Earth. While space communications will have greater latency, there are techniques in conjunction with terrestrial networks and computing plus increasing artificial intelligence to make it acceptable. "
+],
+[
+"Since the in-space computers and network will be made by the autonomous SRSI, the ",
+[
+"u"
+]
+],
+[
+"cost will be very small",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"This will give humanity the benefit of ",
+[
+"u"
+]
+],
+[
+"much more computing than terrestrial energy and resources could ever provide",
+[
+"u",
+"h"
+]
+]
+]
+},
+{
+"id": "A3-06",
+"contention": "A3",
+"tag": "A water economy mined from the Moon and asteroids is the crucial first step",
+"short": "Metzger 16",
+"cite": "Philip Metzger, Planetary Scientist, Florida Space Institute, University of Central Florida, “Space development and space science together, an historic opportunity,” Space Policy, 2016",
+"url": "https://arxiv.org/pdf/1609.00737",
+"body": [
+[
+"6.2 Building a Cis-Lunar Water Economy "
+],
+[
+"Many space settlement advocates believe that ",
+[
+"u"
+]
+],
+[
+"mining water for propellant",
+[
+"u",
+"h"
+]
+],
+[
+" is the ",
+[
+"u"
+]
+],
+[
+"crucial element",
+[
+"u",
+"h"
+]
+],
+[
+" in a strategy to ",
+[
+"u"
+]
+],
+[
+"start space industry",
+[
+"u",
+"h"
+]
+],
+[
+". Therefore, "
+],
+[
+"it is of ",
+[
+"u"
+]
+],
+[
+"paramount importance",
+[
+"u",
+"h"
+]
+],
+[
+" in Stage 1 to ensure water mining becomes profitable",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-07",
+"contention": "A3",
+"tag": "Space opens our closed planetary economy to essentially unlimited resources",
+"short": "Crawford 14",
+"cite": "Ian Crawford, Professor of Planetary Science and Astrobiology, Birkbeck, University of London, “Lunar Resources: A Review,” Progress in Physical Geography (accepted preprint), 2014",
+"url": "https://arxiv.org/pdf/1410.6865",
+"body": [
+[
+"I Introduction To-date, "
+],
+[
+"all human economic activity has depended on the material and energy resources of a ",
+[
+"u"
+]
+],
+[
+"single planet",
+[
+"u",
+"h"
+]
+],
+[
+", and it has long been recognized that "
+],
+[
+"developments in space exploration could in principle ",
+[
+"u"
+]
+],
+[
+"open our closed planetary economy",
+[
+"u",
+"h"
+]
+],
+[
+" to ",
+[
+"u"
+]
+],
+[
+"essentially unlimited external resources of energy and raw materials",
+[
+"u",
+"h"
+]
+],
+[
+" (e.g. Martin, 1985; Hartmann, 1985; Schultz, 1988; Lewis, 1996; Wingo, 2004; Metzger et al., 2013; a thorough review of the literature as it stood at the end of the 20th century has been given by Hempsell, 1998)."
+]
+]
+},
+{
+"id": "A3-08",
+"contention": "A3",
+"tag": "The Moon has abundant raw materials — they can bootstrap a space economy that benefits Earth",
+"short": "Crawford 14",
+"cite": "Ian Crawford, Professor of Planetary Science and Astrobiology, Birkbeck, University of London, “Lunar Resources: A Review,” Progress in Physical Geography (accepted preprint), 2014",
+"url": "https://arxiv.org/pdf/1410.6865",
+"body": [
+[
+"VII Conclusions From the discussion above, it is clear that "
+],
+[
+"the Moon does possess ",
+[
+"u"
+]
+],
+[
+"abundant raw materials",
+[
+"u",
+"h"
+]
+],
+[
+" that are of ",
+[
+"u"
+]
+],
+[
+"potential economic value",
+[
+"u",
+"h"
+]
+],
+[
+" for future human activities, and especially for future activities in space",
+[
+"u"
+]
+],
+[
+". It is true that, on the basis of current knowledge, it is difficult to identify any single lunar resource that is likely to be sufficiently valuable to drive a lunar resource extraction industry which has near-term profit as an objective. In particular, I have argued that claims for lunar 3He in this respect, through its alleged ability to make a major contribution to Earth’s future energy needs, have been exaggerated. Rather, I have identified "
+],
+[
+"a hierarchy of applications for lunar resources, beginning with the use of lunar materials to facilitate human activities on the Moon itself",
+[
+"u"
+]
+],
+[
+" (including scientific exploration, resource prospecting, and, perhaps, tourism), "
+],
+[
+"progressing to the use of lunar resources to ",
+[
+"u"
+]
+],
+[
+"underpin a growing industrial capability",
+[
+"u",
+"h"
+]
+],
+[
+" in cis-lunar space",
+[
+"u"
+]
+],
+[
+". In this way, "
+],
+[
+"gradually increasing access to lunar resources may help ‘",
+[
+"u"
+]
+],
+[
+"bootstrap",
+[
+"u",
+"h"
+]
+],
+[
+"’ a ",
+[
+"u"
+]
+],
+[
+"space-based economy",
+[
+"u",
+"h"
+]
+],
+[
+" fr"
+]
+]
+},
+{
+"id": "A3-09",
+"contention": "A3",
+"tag": "Launching from the Moon takes 22 times less energy than from Earth",
+"short": "Crawford 14",
+"cite": "Ian Crawford, Professor of Planetary Science and Astrobiology, Birkbeck, University of London, “Lunar Resources: A Review,” Progress in Physical Geography (accepted preprint), 2014",
+"url": "https://arxiv.org/pdf/1410.6865",
+"body": [
+[
+"For example, "
+],
+[
+"escaping the effective gravitational influence of the Earth (the zero level in the diagram) requires the same energy as climbing a ",
+[
+"u"
+]
+],
+[
+"6400 km high mountain",
+[
+"u",
+"h"
+]
+],
+[
+"; the corresponding value for the Moon is ",
+[
+"u"
+]
+],
+[
+"only 290 km",
+[
+"u",
+"h"
+]
+],
+[
+" (i.e. it requires ",
+[
+"u"
+]
+],
+[
+"22 times less energy",
+[
+"u",
+"h"
+]
+],
+[
+" to escape from the Moon as from the Earth)",
+[
+"u"
+]
+],
+[
+". Note that "
+],
+[
+"all locations in cis-lunar space, including low Earth orbit (LEO) and geostationary orbit (GEO), require ",
+[
+"u"
+]
+],
+[
+"far less energy to access from the surface of the Moon",
+[
+"u",
+"h"
+]
+],
+[
+" than from the surface of the Earth",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-10",
+"contention": "A3",
+"tag": "Lunar resources will be essential to developing near-Earth space",
+"short": "Crawford 14",
+"cite": "Ian Crawford, Professor of Planetary Science and Astrobiology, Birkbeck, University of London, “Lunar Resources: A Review,” Progress in Physical Geography (accepted preprint), 2014",
+"url": "https://arxiv.org/pdf/1410.6865",
+"body": [
+[
+"It has long been recognized (e.g. Ehricke, 1985; Spudis, 1996; Koelle, 1992; Eckart, 1999; Spudis and Lavoie, 2011; Metzger et al., 2013) that "
+],
+[
+"lunar resources will be ",
+[
+"u"
+]
+],
+[
+"valuable, and perhaps essential",
+[
+"u",
+"h"
+]
+],
+[
+", in the ",
+[
+"u"
+]
+],
+[
+"future economic development of near-Earth space",
+[
+"u",
+"h"
+]
+],
+[
+". This is because, while establishing resource extraction industries on the Moon will be a significant investment, "
+],
+[
+"the energy required to transport materials from the lunar surface to any location in Earth or lunar orbit, or indeed anywhere else in the inner Solar System, will be ",
+[
+"u"
+]
+],
+[
+"much less than the cost of lifting these materials out of Earth’s gravity",
+[
+"u",
+"h"
+]
+],
+[
+" (Fig. 10)."
+]
+]
+},
+{
+"id": "A3-11",
+"contention": "A3",
+"tag": "The clean energy transition needs far more critical metals than we're producing",
+"short": "Fleming 23",
+"cite": "Maxwell Fleming, Ian Lange and Sayeh Shojaeinia, Colorado School of Mines; Martin Stuermer, International Monetary Fund, “Mining in space could spur sustainable growth,” Proceedings of the National Academy of Sciences, 2023",
+"url": "https://doi.org/10.1073/pnas.2221345120",
+"body": [
+[
+"The extraction of mineral resources ",
+[
+"u"
+]
+],
+[
+"increased more than 60 times",
+[
+"u",
+"h"
+]
+],
+[
+" over the last century",
+[
+"u"
+]
+],
+[
+", amid population growth and higher average living standards (1). While this trend could be weakened by recycling and a more efficient use of materials, "
+],
+[
+"the ",
+[
+"u"
+]
+],
+[
+"clean energy transition requires a strong increase",
+[
+"u",
+"h"
+]
+],
+[
+" in the use and production of critical metals such as ",
+[
+"u"
+]
+],
+[
+"copper, cobalt, and nickel",
+[
+"u",
+"h"
+]
+],
+[
+" (2–5). "
+],
+[
+"This could lead to upward pressures on prices, ",
+[
+"u"
+]
+],
+[
+"potentially delaying the clean energy transition",
+[
+"u",
+"h"
+]
+],
+[
+" (6)."
+]
+]
+},
+{
+"id": "A3-12",
+"contention": "A3",
+"tag": "Earth's best ore is running out — lower-grade mining means more energy, water, waste and carbon",
+"short": "Fleming 23",
+"cite": "Maxwell Fleming, Ian Lange and Sayeh Shojaeinia, Colorado School of Mines; Martin Stuermer, International Monetary Fund, “Mining in space could spur sustainable growth,” Proceedings of the National Academy of Sciences, 2023",
+"url": "https://doi.org/10.1073/pnas.2221345120",
+"body": [
+[
+"At the same time, "
+],
+[
+"negative environmental externalities",
+[
+"u",
+"h"
+]
+],
+[
+" from mining will likely increase",
+[
+"u"
+]
+],
+[
+". While output continues to rise, "
+],
+[
+"many ",
+[
+"u"
+]
+],
+[
+"high-grade deposits have already been exhausted",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Mining deposits of lower ore grades ",
+[
+"u"
+]
+],
+[
+"raise energy and water requirements",
+[
+"u",
+"h"
+]
+],
+[
+" and produce ",
+[
+"u"
+]
+],
+[
+"more waste and carbon dioxide emissions",
+[
+"u",
+"h"
+]
+],
+[
+" (2, 7)."
+]
+]
+},
+{
+"id": "A3-13",
+"contention": "A3",
+"tag": "Lithium and cobalt demand could rise twenty-fold and six-fold under net zero",
+"short": "Fleming 23",
+"cite": "Maxwell Fleming, Ian Lange and Sayeh Shojaeinia, Colorado School of Mines; Martin Stuermer, International Monetary Fund, “Mining in space could spur sustainable growth,” Proceedings of the National Academy of Sciences, 2023",
+"url": "https://doi.org/10.1073/pnas.2221345120",
+"body": [
+[
+"Limiting climate change could ",
+[
+"u"
+]
+],
+[
+"substantially boost",
+[
+"u",
+"h"
+]
+],
+[
+" the consumption and production of metals like copper, nickel, cobalt, and lithium",
+[
+"u"
+]
+],
+[
+" on Earth ((2, 4, 5)). For example, "
+],
+[
+"an electric car requires about ",
+[
+"u"
+]
+],
+[
+"three times more copper",
+[
+"u",
+"h"
+]
+],
+[
+" than a conventional car",
+[
+"u"
+]
+],
+[
+" ((2, 20)). "
+],
+[
+"The total consumption of lithium and cobalt, for example, could rise ",
+[
+"u"
+]
+],
+[
+"more than twenty-fold and sixfold",
+[
+"u",
+"h"
+]
+],
+[
+", while nickel could see a ",
+[
+"u"
+]
+],
+[
+"fourfold increase",
+[
+"u",
+"h"
+]
+],
+[
+" of total consumption",
+[
+"u"
+]
+],
+[
+" (3)."
+]
+]
+},
+{
+"id": "A3-14",
+"contention": "A3",
+"tag": "Asteroids hold richer deposits of critical minerals than Earth",
+"short": "Fleming 23",
+"cite": "Maxwell Fleming, Ian Lange and Sayeh Shojaeinia, Colorado School of Mines; Martin Stuermer, International Monetary Fund, “Mining in space could spur sustainable growth,” Proceedings of the National Academy of Sciences, 2023",
+"url": "https://doi.org/10.1073/pnas.2221345120",
+"body": [
+[
+"Minerals are differently distributed in Space compared to Earth. "
+],
+[
+"The average geological abundance of certain metals is ",
+[
+"u"
+]
+],
+[
+"higher in metallic asteroids than on Earth",
+[
+"u",
+"h"
+]
+],
+[
+". There is evidence that "
+],
+[
+"this is the case for ",
+[
+"u"
+]
+],
+[
+"critical minerals like Cobalt and Nickel",
+[
+"u",
+"h"
+]
+],
+[
+" but also for ",
+[
+"u"
+]
+],
+[
+"Platinum-Group Metals",
+[
+"u",
+"h"
+]
+],
+[
+" such as Iridium",
+[
+"u"
+]
+],
+[
+" (41, 42). "
+],
+[
+"This evidence is based on ",
+[
+"u"
+]
+],
+[
+"large samples",
+[
+"u",
+"h"
+]
+],
+[
+" of asteroids",
+[
+"u"
+]
+],
+[
+". It is mostly based on years of density, spectroscopy, and radar reflectivity studies but also samples of meteorites (41)."
+]
+]
+},
+{
+"id": "A3-15",
+"contention": "A3",
+"tag": "Once emissions limits bind, metal production shifts to space and soon exceeds Earth's output",
+"short": "Fleming 23",
+"cite": "Maxwell Fleming, Ian Lange and Sayeh Shojaeinia, Colorado School of Mines; Martin Stuermer, International Monetary Fund, “Mining in space could spur sustainable growth,” Proceedings of the National Academy of Sciences, 2023",
+"url": "https://doi.org/10.1073/pnas.2221345120",
+"body": [
+[
+"Fig. 4 shows the resulting transition from metal production on Earth to Space. Production initially occurs on Earth, due to the historical accumulation of R&D knowledge, and the initially nonbinding "
+],
+[
+"emission constraint",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Once the emission constraint begins to bind, ",
+[
+"u"
+]
+],
+[
+"metal output on Earth falls",
+[
+"u",
+"h"
+]
+],
+[
+" in accordance with declining capital investment, depreciating capital stocks, and "
+],
+[
+"labor allocation shifting to Space",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Metal output in Space rapidly grows to exceed output on Earth",
+[
+"u",
+"h"
+]
+],
+[
+" following this Space investment-intensive period."
+]
+]
+},
+{
+"id": "A3-16",
+"contention": "A3",
+"tag": "Space solar can supply clean baseload power anywhere and end fossil fuel dependence",
+"short": "Alam 24",
+"cite": "Khandoker Shahjahan Alam, A. M. A. Daiyan Kaif and Sajal Kumar Das, Rajshahi University of Engineering and Technology, “Towards net zero: A technological review on the potential of space-based solar power and wireless power transmission,” Heliyon, 2024",
+"url": "https://doi.org/10.1016/j.heliyon.2024.e29996",
+"body": [
+[
+"Space solar can solve this renewable energy supply conundrum and assist in reaching ",
+[
+"u"
+]
+],
+[
+"net zero by 2050",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Solar energy obtained from space can provide ",
+[
+"u"
+]
+],
+[
+"safe, sustainable, environmental friendly, and economical",
+[
+"u",
+"h"
+]
+],
+[
+" electricity wherever on Earth",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Humanity can ",
+[
+"u"
+]
+],
+[
+"transition away from fossil fuels",
+[
+"u",
+"h"
+]
+],
+[
+" with the aid of space solar power",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"This will ",
+[
+"u"
+]
+],
+[
+"significantly reduce our reliance",
+[
+"u",
+"h"
+]
+],
+[
+" on nonrenewable resources",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Clean baseload electricity",
+[
+"u",
+"h"
+]
+],
+[
+" that is available ",
+[
+"u"
+]
+],
+[
+"regardless of location, time, or weather",
+[
+"u",
+"h"
+]
+],
+[
+" is the objective of SBSP."
+]
+]
+},
+{
+"id": "A3-17",
+"contention": "A3",
+"tag": "Energy demand will double while fossil power keeps poisoning us — we need clean energy now",
+"short": "Alam 24",
+"cite": "Khandoker Shahjahan Alam, A. M. A. Daiyan Kaif and Sajal Kumar Das, Rajshahi University of Engineering and Technology, “Towards net zero: A technological review on the potential of space-based solar power and wireless power transmission,” Heliyon, 2024",
+"url": "https://doi.org/10.1016/j.heliyon.2024.e29996",
+"body": [
+[
+"Worldwide energy consumption is ",
+[
+"u"
+]
+],
+[
+"expected to double",
+[
+"u",
+"h"
+]
+],
+[
+" or increase by 50%, according to some studies, in 30 years",
+[
+"u"
+]
+],
+[
+". The impact of climate change on land and resources is equally significant. "
+],
+[
+"Now is the time",
+[
+"u",
+"h"
+]
+],
+[
+" for sustainable, inexpensive, scalable, and secure clean energy",
+[
+"u"
+]
+],
+[
+". Due to the increased demand for energy, "
+],
+[
+"the rate of pollution growth is ",
+[
+"u"
+]
+],
+[
+"accelerating at a rate never before seen",
+[
+"u",
+"h"
+]
+],
+[
+". This rise is due to the use of coal, natural gas, and oil to produce energy. Traditional energy production methods emit hazardous acid gases, mercury, non-mercury toxics, and organic air toxics. 50–60% of mercury, 75% of acid gases, and 20–50% of hazardous metals are produced by power plants in the US. According to a study, "
+],
+[
+"power plants release ",
+[
+"u"
+]
+],
+[
+"10B tons of CO2 annually",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"We must ",
+[
+"u"
+]
+],
+[
+"prioritize the generation of renewable energy",
+[
+"u",
+"h"
+]
+],
+[
+" and a sustainable society",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-18",
+"contention": "A3",
+"tag": "Ground solar loses 70% of sunlight to night and weather",
+"short": "Alam 24",
+"cite": "Khandoker Shahjahan Alam, A. M. A. Daiyan Kaif and Sajal Kumar Das, Rajshahi University of Engineering and Technology, “Towards net zero: A technological review on the potential of space-based solar power and wireless power transmission,” Heliyon, 2024",
+"url": "https://doi.org/10.1016/j.heliyon.2024.e29996",
+"body": [
+[
+"The sun is the primary energy source, in this solar system. "
+],
+[
+"70% of solar energy",
+[
+"u",
+"h"
+]
+],
+[
+" that reaches the earth's surface is ",
+[
+"u"
+]
+],
+[
+"lost due to the day-night cycle",
+[
+"u",
+"h"
+]
+],
+[
+" and the inability to efficiently utilize solar energy",
+[
+"u"
+]
+],
+[
+". The efficiency of the most modern solar cells is just over 40%, whereas the efficiency of the most common solar cells ranges between 22% and 27%. To address these issues, "
+],
+[
+"scientists have investigated ",
+[
+"u"
+]
+],
+[
+"space-based solar power",
+[
+"u",
+"h"
+]
+],
+[
+" (SBSP) for decades",
+[
+"u"
+]
+],
+[
+". This concept entails launching solar power satellites (SPS) into orbit in order to collect and transmit solar energy."
+]
+]
+},
+{
+"id": "A3-19",
+"contention": "A3",
+"tag": "Space solar strengthens grid resilience and energy security — space has 10–40 times more energy per square meter",
+"short": "Alam 24",
+"cite": "Khandoker Shahjahan Alam, A. M. A. Daiyan Kaif and Sajal Kumar Das, Rajshahi University of Engineering and Technology, “Towards net zero: A technological review on the potential of space-based solar power and wireless power transmission,” Heliyon, 2024",
+"url": "https://doi.org/10.1016/j.heliyon.2024.e29996",
+"body": [
+[
+"SBSP platforms can ",
+[
+"u"
+]
+],
+[
+"enhance energy security",
+[
+"u",
+"h"
+]
+],
+[
+" without a unified grid and provide flexible and ",
+[
+"u"
+]
+],
+[
+"reliable baseload power",
+[
+"u",
+"h"
+]
+],
+[
+" moving Earth towards ",
+[
+"u"
+]
+],
+[
+"cleaner energy independence",
+[
+"u",
+"h"
+]
+],
+[
+". By continuously accessing one-third of Earth's surface, an SBSP platform in geostationary orbit may send energy to distant places. "
+],
+[
+"An SBSP system can immediately ",
+[
+"u"
+]
+],
+[
+"reroute power transmission during a nationwide blackout",
+[
+"u",
+"h"
+]
+],
+[
+". In non-crisis settings, the SBSP platform can mitigate load surges across time zones because energy consumption peaks in the morning and evening,. SBSP can supply energy to offshore desalination facilities, offshore carbon capture plants, and other off-grid places. Solar energy use in electricity is rising, while "
+],
+[
+"space holds ",
+[
+"u"
+]
+],
+[
+"10 – 40 times more energy",
+[
+"u",
+"h"
+]
+],
+[
+" per square meter",
+[
+"u"
+]
+],
+[
+". Hence, "
+],
+[
+"an SBSP platform can ",
+[
+"u"
+]
+],
+[
+"increase grid resilience",
+[
+"u",
+"h"
+]
+],
+[
+" and encourage renewable energy",
+[
+"u"
+]
+],
+[
+" while constructing new transmission infrastructures."
+]
+]
+},
+{
+"id": "A3-20",
+"contention": "A3",
+"tag": "Falling launch and component costs have made space solar newly feasible",
+"short": "Alam 24",
+"cite": "Khandoker Shahjahan Alam, A. M. A. Daiyan Kaif and Sajal Kumar Das, Rajshahi University of Engineering and Technology, “Towards net zero: A technological review on the potential of space-based solar power and wireless power transmission,” Heliyon, 2024",
+"url": "https://doi.org/10.1016/j.heliyon.2024.e29996",
+"body": [
+[
+"Long thought of as an appealing yet pricey source of renewable energy, "
+],
+[
+"advocates of space-based solar power claim that this dream has now become ",
+[
+"u"
+]
+],
+[
+"economically and technically feasible over the past decade",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-21",
+"contention": "A3",
+"tag": "SPS-ALPHA could continuously deliver almost limitless solar energy to Earth",
+"short": "Mankins 12",
+"cite": "John Mankins, former head of Advanced Concepts Studies, NASA; President, Artemis Innovation Management Solutions — NASA Innovative Advanced Concepts final report, “SPS-ALPHA: The First Practical Solar Power Satellite via Arbitrarily Large Phased Array,” NASA Innovative Advanced Concepts Phase 1 final report, 2012",
+"url": "https://ntrs.nasa.gov/api/citations/20190002466/downloads/20190002466.pdf",
+"body": [
+[
+"The SPS-ALPHA architecture has the potential not only to make possible the vision of ",
+[
+"u"
+]
+],
+[
+"continuously delivering almost limitless solar energy to markets on Earth",
+[
+"u",
+"h"
+]
+],
+[
+", but also to ",
+[
+"u"
+]
+],
+[
+"transform a range of future space mission applications",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-22",
+"contention": "A3",
+"tag": "Biomining is cheaper and cleaner — it can supply settlements from local rock",
+"short": "Santomartino 23",
+"cite": "Rosa Santomartino, University of Edinburgh; Nils Averesch, Stanford University; Charles Cockell, University of Edinburgh; et al., “Toward sustainable space exploration: a roadmap for harnessing the power of microorganisms,” Nature Communications, 2023",
+"url": "https://www.nature.com/articles/s41467-023-37070-2.pdf",
+"body": [
+[
+"Beyond LEO, the cost of the development of infrastructure increases dramatically. Therefore, a ",
+[
+"u"
+]
+],
+[
+"cost-effective supply of resources",
+[
+"u",
+"h"
+]
+],
+[
+" is required",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"One option is to ",
+[
+"u"
+]
+],
+[
+"harness in situ resources",
+[
+"u",
+"h"
+]
+],
+[
+" available at the destination through biomining",
+[
+"u"
+]
+],
+[
+". Biomining, the use of microorganisms to extract valuable metals from crude minerals (e.g., regolith) and mine waste, has seen extensive effort for adaptation to space applications. Space biomining is primarily limited by economics: "
+],
+[
+"biologically mediated processes are often ",
+[
+"u"
+]
+],
+[
+"less expensive and less environmentally harmful",
+[
+"u",
+"h"
+]
+],
+[
+" than hydrometallurgical processes",
+[
+"u"
+]
+],
+[
+" but can rarely provide the same high rates of separation. However, when taking into account the environmental and health costs associated with mining activities on Earth, "
+],
+[
+"biomining is ",
+[
+"u"
+]
+],
+[
+"already cost-effective",
+[
+"u",
+"h"
+]
+],
+[
+" for a variety of resources",
+[
+"u"
+]
+],
+[
+" (copper, gold, nickel and cobalt extraction are all performed at a commercial scale)."
+]
+]
+},
+{
+"id": "A3-23",
+"contention": "A3",
+"tag": "Microbes can recover precious metals from waste — cutting resupply from Earth",
+"short": "Santomartino 23",
+"cite": "Rosa Santomartino, University of Edinburgh; Nils Averesch, Stanford University; Charles Cockell, University of Edinburgh; et al., “Toward sustainable space exploration: a roadmap for harnessing the power of microorganisms,” Nature Communications, 2023",
+"url": "https://www.nature.com/articles/s41467-023-37070-2.pdf",
+"body": [
+[
+"Valuable metals (Fe, Cu, rare earth elements, Al, Si, Zn), including ",
+[
+"u"
+]
+],
+[
+"precious metals",
+[
+"u",
+"h"
+]
+],
+[
+" (Au, Pt and platinum group elements)",
+[
+"u"
+]
+],
+[
+", as well as certain non-metals (Cl, P, N and even O) "
+],
+[
+"can be ",
+[
+"u"
+]
+],
+[
+"recovered",
+[
+"u",
+"h"
+]
+],
+[
+" from metallic structures and electronic devices ",
+[
+"u"
+]
+],
+[
+"with biology",
+[
+"u",
+"h"
+]
+],
+[
+". Reclaiming metals from electronic waste (e.g., computer components, switchboards, solar panels) "
+],
+[
+"could ",
+[
+"u"
+]
+],
+[
+"reduce the need for resupply",
+[
+"u",
+"h"
+]
+],
+[
+" and/or the more effortful sourcing from in situ resources through e.g., biomining (see section 'Biomining'). Physicochemical processes are available; however, "
+],
+[
+"bioleaching technologies are considered ",
+[
+"u"
+]
+],
+[
+"more environmentally friendly and sustainable",
+[
+"u",
+"h"
+]
+],
+[
+", in terms of costs and energy requirements."
+]
+]
+},
+{
+"id": "A3-24",
+"contention": "A3",
+"tag": "Water can come from the Moon, Mars and asteroids — the key to long-duration settlement",
+"short": "Santomartino 23",
+"cite": "Rosa Santomartino, University of Edinburgh; Nils Averesch, Stanford University; Charles Cockell, University of Edinburgh; et al., “Toward sustainable space exploration: a roadmap for harnessing the power of microorganisms,” Nature Communications, 2023",
+"url": "https://www.nature.com/articles/s41467-023-37070-2.pdf",
+"body": [
+[
+"A requirement for any microbial-based biotechnology is "
+],
+[
+"liquid water, ",
+[
+"u"
+]
+],
+[
+"one of the most critical commodities",
+[
+"u",
+"h"
+]
+],
+[
+" for any long-term space activity",
+[
+"u"
+]
+],
+[
+". On the ISS, water is currently obtained by the Water Recovery System, which is part of ECLSS: urine, humidity condensate, and human waste are recycled to generate potable water, through multiple processes including distillation, filtration, high-temperature catalysis and chemical disinfection. "
+],
+[
+"This may not be sufficient on long-duration missions and, ultimately, ",
+[
+"u"
+]
+],
+[
+"settlements",
+[
+"u",
+"h"
+]
+],
+[
+". Therefore, water recovery must be improved by a more complete loop-closure (Fig. 1). Moreover, "
+],
+[
+"additional water could be ",
+[
+"u"
+]
+],
+[
+"obtained from different locations on the Moon and Mars, or from asteroids",
+[
+"u",
+"h"
+]
+],
+[
+", by mechanic/physical processes and/or biomining (see the section 'Biomining')."
+]
+]
+},
+{
+"id": "A3-25",
+"contention": "A3",
+"tag": "Goldman Sachs: a space renaissance is starting — a thriving space economy is the path to civilization's next step",
+"short": "Pittman 17",
+"cite": "Robert Pittman and Daniel Rasky, Space Portal Office, NASA Ames Research Center, “DEEP SPACE INDUSTRIALIZATION: Key To Sustainable Exploration, Development and Settlement of the Solar System,” NASA Technical Reports Server, 2017",
+"url": "https://ntrs.nasa.gov/api/citations/20200000424/downloads/20200000424.pdf",
+"body": [
+[
+"The space economy in 2016 was estimated by the Space Foundation to be ",
+[
+"u"
+]
+],
+[
+"$329 billion",
+[
+"u",
+"h"
+]
+],
+[
+" with the bulk of this coming from revenue associated with geostationary communications satellites. But a recent report by the Goldman Sachs Group highlighted the potential for the development of new markets such as space mining: “"
+],
+[
+"We believe a ",
+[
+"u"
+]
+],
+[
+"new space renaissance",
+[
+"u",
+"h"
+]
+],
+[
+" is starting, where a positive feedback mechanism of exploration and budget allocation could ",
+[
+"u"
+]
+],
+[
+"fuel development of the space economy",
+[
+"u",
+"h"
+]
+],
+[
+". Beyond growth, the market is also shifting towards the private sector, where corporations are replacing government agencies, enabling the later to venture further out while pushing boundaries of their own to "
+],
+[
+"create new businesses like space tourism, ",
+[
+"u"
+]
+],
+[
+"asteroid mining",
+[
+"u",
+"h"
+]
+],
+[
+", and on-orbit manufacturing and satellite services",
+[
+"u"
+]
+],
+[
+". Scientists and Silicon Valley entrepreneurs claim "
+],
+[
+"the conquest of space is the ",
+[
+"u"
+]
+],
+[
+"next step for human civilization",
+[
+"u",
+"h"
+]
+],
+[
+", but exploration leads the way and we believe "
+],
+[
+"a ",
+[
+"u"
+]
+],
+[
+"thriving space economy",
+[
+"u",
+"h"
+]
+],
+[
+" is the primary path to realizing it",
+[
+"u"
+]
+],
+[
+".”"
+]
+]
+},
+{
+"id": "A3-26",
+"contention": "A3",
+"tag": "Congress directed NASA to expand human presence and enable a thriving space economy",
+"short": "Pittman 17",
+"cite": "Robert Pittman and Daniel Rasky, Space Portal Office, NASA Ames Research Center, “DEEP SPACE INDUSTRIALIZATION: Key To Sustainable Exploration, Development and Settlement of the Solar System,” NASA Technical Reports Server, 2017",
+"url": "https://ntrs.nasa.gov/api/citations/20200000424/downloads/20200000424.pdf",
+"body": [
+[
+"Congress is also re-vectoring NASA to look beyond its traditional exploration role by adding new roles such as “to ",
+[
+"u"
+]
+],
+[
+"expand human presence throughout the solar system",
+[
+"u",
+"h"
+]
+],
+[
+"” and “enable a ",
+[
+"u"
+]
+],
+[
+"thriving space economy",
+[
+"u",
+"h"
+]
+],
+[
+" in the 21st century”",
+[
+"u"
+]
+],
+[
+"3. "
+],
+[
+"The initial market for space commodities is not for delivery back to Earth but will most likely be more economically attractive for ",
+[
+"u"
+]
+],
+[
+"utilization in space",
+[
+"u",
+"h"
+]
+],
+[
+". Hence the early markets for space commodities is directly linked to the development of a deep space (beyond geostationary orbit) ecosystem. Conversely, "
+],
+[
+"this deep space ecosystem will be ",
+[
+"u"
+]
+],
+[
+"greatly accelerated",
+[
+"u",
+"h"
+]
+],
+[
+" if ",
+[
+"u"
+]
+],
+[
+"local materials can be mined",
+[
+"u",
+"h"
+]
+],
+[
+", processed",
+[
+"u"
+]
+],
+[
+" and economically"
+]
+]
+},
+{
+"id": "A3-27",
+"contention": "A3",
+"tag": "Asteroids are low-energy targets for mining water, platinum and rare earths",
+"short": "Pittman 17",
+"cite": "Robert Pittman and Daniel Rasky, Space Portal Office, NASA Ames Research Center, “DEEP SPACE INDUSTRIALIZATION: Key To Sustainable Exploration, Development and Settlement of the Solar System,” NASA Technical Reports Server, 2017",
+"url": "https://ntrs.nasa.gov/api/citations/20200000424/downloads/20200000424.pdf",
+"body": [
+[
+"Near Earth Asteroids (NEAs) are another source of resources that could become ",
+[
+"u"
+]
+],
+[
+"accessible in the next decade",
+[
+"u",
+"h"
+]
+],
+[
+". Companies such as Planetary Resources 29 and Deep Space Industries 30 have their sights set on "
+],
+[
+"harvesting space resources starting with ",
+[
+"u"
+]
+],
+[
+"water",
+[
+"u",
+"h"
+]
+],
+[
+" but also including such commodities as ",
+[
+"u"
+]
+],
+[
+"platinum group metals, rare earth elements",
+[
+"u",
+"h"
+]
+],
+[
+". While these objects come close to Earth’s orbit on an irregular basis "
+],
+[
+"the change in velocity (",
+[
+"u"
+]
+],
+[
+"delta V",
+[
+"u",
+"h"
+]
+],
+[
+")to reach some of these objects can be ",
+[
+"u"
+]
+],
+[
+"quite small",
+[
+"u",
+"h"
+]
+],
+[
+" which make them potentially ",
+[
+"u"
+]
+],
+[
+"attractive objects for mining",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-28",
+"contention": "A3",
+"tag": "Reusability plus living off the land is the key to opening cis-lunar space",
+"short": "Pittman 17",
+"cite": "Robert Pittman and Daniel Rasky, Space Portal Office, NASA Ames Research Center, “DEEP SPACE INDUSTRIALIZATION: Key To Sustainable Exploration, Development and Settlement of the Solar System,” NASA Technical Reports Server, 2017",
+"url": "https://ntrs.nasa.gov/api/citations/20200000424/downloads/20200000424.pdf",
+"body": [
+[
+"8. Reusable Space Infrastructure "
+],
+[
+"Just as ",
+[
+"u"
+]
+],
+[
+"reusability",
+[
+"u",
+"h"
+]
+],
+[
+" is key to reducing the cost of space launch from Earth it, along with ",
+[
+"u"
+]
+],
+[
+"ISRU",
+[
+"u",
+"h"
+]
+],
+[
+" (in situ resource utilization or ",
+[
+"u"
+]
+],
+[
+"living off the land",
+[
+"u",
+"h"
+]
+],
+[
+") could be the ",
+[
+"u"
+]
+],
+[
+"key to opening up cis-lunar space",
+[
+"u",
+"h"
+]
+],
+[
+" for exploration and development. By harvesting propellant from the lunar surface and using it to refuel reusable lunar landers the cost of traveling to the lunar surface could be dramatically reduced. One company that is interested in improving access to the lunar surface is Blue Origin. A March 2, 2017 story in the Washington Post (which Bezos owns) described a proposal that Bezos had made to the new Trump Administration with regard to a lunar delivery system that he is proposing to partner with NASA to develop 26. Bezos believes he can have a vehicle capable of delivering 500kg to the lunar surface in the 2020 timeframe doing for the Moon what he had done here on Earth with Amazon, delivering pretty much anything, just about anywhere. Bezos plans on improving the lunar landing capability of Blue Moon to at least 10,000 lb. (4545 kg). Even traditional aerospace companies have visions of a thriving space economy that harvest and utilizes space resource. United Launch Alliance (ULA) is a joint venture between aerospace giants Boeing and Lockheed Martin. ULA builds and launches both the Atlas and Delta rocket families for government and commercial customers. In 2015 ULA introduced their Cislunar 1000 concept. This concept describes how, over the next thirty years, the space economy could grown from its current level of ~$330 billion to $2.7 trillion and the number of people living and working in space could grown from 6 to 1000 or more. One of the key features of the ULA concept is the redesign of their upper stage from a single use (Centaur), expendable system to a reusable and refuelable space tug which could operate indefinitely (ACES). ULA also has developed a concept for using a modified version of the ACES vehicle (the XEUS) as a lunar transport vehicle that could carry cargo and people to and from the Lunar"
+]
+]
+},
+{
+"id": "A3-29",
+"contention": "A3",
+"tag": "The technology to harvest asteroid resources is available now",
+"short": "Mazanek 15",
+"cite": "Daniel Mazanek and Raymond Merrill, NASA Langley Research Center; John Brophy, Jet Propulsion Laboratory; Robert Mueller, NASA Kennedy Space Center, “Asteroid Redirect Mission concept: A bold approach for utilizing space resources,” Acta Astronautica, 2015",
+"url": "https://ntrs.nasa.gov/api/citations/20150001246/downloads/20150001246.pdf",
+"body": [
+[
+"The utilization of natural resources from asteroids is an idea that is ",
+[
+"u"
+]
+],
+[
+"older than the Space Age",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"The ",
+[
+"u"
+]
+],
+[
+"technologies are now available",
+[
+"u",
+"h"
+]
+],
+[
+" to transform this endeavour ",
+[
+"u"
+]
+],
+[
+"from an idea into reality",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-30",
+"contention": "A3",
+"tag": "NASA can provide the first market for asteroid resources and give birth to a trans-lunar economy",
+"short": "Mazanek 15",
+"cite": "Daniel Mazanek and Raymond Merrill, NASA Langley Research Center; John Brophy, Jet Propulsion Laboratory; Robert Mueller, NASA Kennedy Space Center, “Asteroid Redirect Mission concept: A bold approach for utilizing space resources,” Acta Astronautica, 2015",
+"url": "https://ntrs.nasa.gov/api/citations/20150001246/downloads/20150001246.pdf",
+"body": [
+[
+"It is NASA’s role to advance the development of technologies and requisite systems to prove their feasibility and ",
+[
+"u"
+]
+],
+[
+"transfer that technology to industry",
+[
+"u",
+"h"
+]
+],
+[
+" for large-scale development",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"By developing long-lead technologies and providing an ",
+[
+"u"
+]
+],
+[
+"initial market for asteroidal resources",
+[
+"u",
+"h"
+]
+],
+[
+" in space, a ",
+[
+"u"
+]
+],
+[
+"new trans-lunar economy can be born",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-31",
+"contention": "A3",
+"tag": "Commercial control of space resources means industrial expansion beyond exploration",
+"short": "Mazanek 15",
+"cite": "Daniel Mazanek and Raymond Merrill, NASA Langley Research Center; John Brophy, Jet Propulsion Laboratory; Robert Mueller, NASA Kennedy Space Center, “Asteroid Redirect Mission concept: A bold approach for utilizing space resources,” Acta Astronautica, 2015",
+"url": "https://ntrs.nasa.gov/api/citations/20150001246/downloads/20150001246.pdf",
+"body": [
+[
+"Commercial Entities "
+],
+[
+"Commercial entities exist today",
+[
+"u",
+"h"
+]
+],
+[
+" with the stated goal of developing space resources",
+[
+"u"
+]
+],
+[
+". Planetary Resources, Inc. and Deep Space Industries were created recently to prospect for and eventually exploit asteroidal resources for use both in space and in terrestrial markets. By providing material in an accessible location, those companies and others will be better able to demonstrate ISRU techniques and begin maturing their resource extraction, processing, transfer, and storage capabilities while they also develop the systems to deliver them to NEAs in their native orbits. "
+],
+[
+"By enabling commercial entities to control part or all of the resource extraction, transport, and storage operations, ",
+[
+"u"
+]
+],
+[
+"industrial expansion in space",
+[
+"u",
+"h"
+]
+],
+[
+" is ",
+[
+"u"
+]
+],
+[
+"not limited to supporting exploration only",
+[
+"u",
+"h"
+]
+],
+[
+". This also "
+],
+[
+"allows the ",
+[
+"u"
+]
+],
+[
+"terrestrial mining and manufacturing industries",
+[
+"u",
+"h"
+]
+],
+[
+" to more easily leverage lower cost space transportation",
+[
+"u"
+]
+],
+[
+" and other required assets."
+]
+]
+},
+{
+"id": "A3-32",
+"contention": "A3",
+"tag": "Launching from the Moon to orbit takes 20 times less energy — the business case is simple",
+"short": "Crawford 14",
+"cite": "Ian Crawford, Professor of Planetary Science and Astrobiology, Birkbeck, University of London, “Why we should mine the moon,” The Conversation, November 28, 2014",
+"url": "https://theconversation.com/why-we-should-mine-the-moon-34285",
+"body": [
+[
+"In addition, "
+],
+[
+"lunar surface rocks and soils are ",
+[
+"u"
+]
+],
+[
+"rich",
+[
+"u",
+"h"
+]
+],
+[
+" in potentially useful but heavy (and thus expensive to launch from Earth) raw materials such as ",
+[
+"u"
+]
+],
+[
+"magnesium, aluminium, silicon, iron and titanium",
+[
+"u",
+"h"
+]
+],
+[
+". Therefore, "
+],
+[
+"if a ",
+[
+"u"
+]
+],
+[
+"lunar industrial infrastructure",
+[
+"u",
+"h"
+]
+],
+[
+" is gradually built up, the Moon may be able to provide more sophisticated products to Earth-orbiting facilities",
+[
+"u"
+]
+],
+[
+". Examples might include titanium and aluminium alloys for structural components, and silicon-based photovoltaic cells for solar power. "
+],
+[
+"The key ",
+[
+"u"
+]
+],
+[
+"business case",
+[
+"u",
+"h"
+]
+],
+[
+" for sourcing these materials on the Moon is ",
+[
+"u"
+]
+],
+[
+"simple",
+[
+"u",
+"h"
+]
+],
+[
+". It takes about ",
+[
+"u"
+]
+],
+[
+"20 times less energy",
+[
+"u",
+"h"
+]
+],
+[
+" to launch a given mass from the surface of the Moon into Earth orbit",
+[
+"u"
+]
+],
+[
+" compared to launching it from the Earth’s surface to Earth orbit."
+]
+]
+},
+{
+"id": "A3-33",
+"contention": "A3",
+"tag": "Lunar resources can bootstrap a self-sustaining space economy that benefits the global economy",
+"short": "Crawford 14",
+"cite": "Ian Crawford, Professor of Planetary Science and Astrobiology, Birkbeck, University of London, “Why we should mine the moon,” The Conversation, November 28, 2014",
+"url": "https://theconversation.com/why-we-should-mine-the-moon-34285",
+"body": [
+[
+"We need to think of a hierarchy of future applications. "
+],
+[
+"This begins with the use of lunar materials to facilitate human activities on the Moon itself",
+[
+"u"
+]
+],
+[
+". We can then "
+],
+[
+"progress to the use of lunar resources to ",
+[
+"u"
+]
+],
+[
+"underpin a future industrial capability",
+[
+"u",
+"h"
+]
+],
+[
+" within the Earth-Moon system",
+[
+"u"
+]
+],
+[
+". In this way, "
+],
+[
+"gradually increasing access to lunar resources may help “",
+[
+"u"
+]
+],
+[
+"bootstrap",
+[
+"u",
+"h"
+]
+],
+[
+"” a ",
+[
+"u"
+]
+],
+[
+"self-sustaining space-based economy",
+[
+"u",
+"h"
+]
+],
+[
+" from which the ",
+[
+"u"
+]
+],
+[
+"global economy will ultimately benefit",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-34",
+"contention": "A3",
+"tag": "Lunar mining could spare Earth the environmental costs of rare-earth extraction",
+"short": "Crawford 14",
+"cite": "Ian Crawford, Professor of Planetary Science and Astrobiology, Birkbeck, University of London, “Why we should mine the moon,” The Conversation, November 28, 2014",
+"url": "https://theconversation.com/why-we-should-mine-the-moon-34285",
+"body": [
+[
+"Other possible lunar materials which might conceivably be economically imported to the Earth include "
+],
+[
+"platinum group elements",
+[
+"u",
+"h"
+]
+],
+[
+" (currently valued at between ",
+[
+"u"
+]
+],
+[
+"$20,000 and $50,000 per kilo",
+[
+"u",
+"h"
+]
+],
+[
+")",
+[
+"u"
+]
+],
+[
+" extracted from iron meteorites that may have survived impact with the lunar surface, and materials (for example, "
+],
+[
+"economically valuable ",
+[
+"u"
+]
+],
+[
+"rare-earth elements",
+[
+"u",
+"h"
+]
+],
+[
+" which are known to be concentrated in some regions of the Moon",
+[
+"u"
+]
+],
+[
+") "
+],
+[
+"for which the ",
+[
+"u"
+]
+],
+[
+"environmental costs of terrestrial mining",
+[
+"u",
+"h"
+]
+],
+[
+" may one day make ",
+[
+"u"
+]
+],
+[
+"lunar sources more attractive",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-35",
+"contention": "A3",
+"tag": "Space can open our closed planetary economy",
+"short": "Crawford 14",
+"cite": "Ian Crawford, Professor of Planetary Science and Astrobiology, Birkbeck, University of London, “Why we should mine the moon,” The Conversation, November 28, 2014",
+"url": "https://theconversation.com/why-we-should-mine-the-moon-34285",
+"body": [
+[
+"To date, "
+],
+[
+"all human economic activity has depended on the material and energy resources of a ",
+[
+"u"
+]
+],
+[
+"single planet",
+[
+"u",
+"h"
+]
+],
+[
+"; understandably, perhaps. It is conceivable though that "
+],
+[
+"future advances in space exploration could change this by ",
+[
+"u"
+]
+],
+[
+"opening our closed planetary economy",
+[
+"u",
+"h"
+]
+],
+[
+" to ",
+[
+"u"
+]
+],
+[
+"essentially unlimited external resources",
+[
+"u",
+"h"
+]
+],
+[
+" of energy and raw materials",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-36",
+"contention": "A3",
+"tag": "Trillions in precious metals are waiting in asteroids",
+"short": "Hughes 18",
+"cite": "Amanda Jane Hughes, Postdoctoral Researcher in Astrophysics, Liverpool John Moores University, “Mining asteroids could unlock untold wealth – here’s how to get started,” The Conversation, May 2, 2018",
+"url": "https://theconversation.com/mining-asteroids-could-unlock-untold-wealth-heres-how-to-get-started-95675",
+"body": [
+[
+"Several privately funded space companies are locked in a race to claim the ",
+[
+"u"
+]
+],
+[
+"trillions of pounds worth of precious metals",
+[
+"u",
+"h"
+]
+],
+[
+" thought to exist in asteroids",
+[
+"u"
+]
+],
+[
+". The UK has now entered the race, with the Asteroid Mining Corporation becoming the first of these new firms in the country. In theory, the business case speaks for itself – "
+],
+[
+"the incredible expense of space missions would be ",
+[
+"u"
+]
+],
+[
+"more than compensated for",
+[
+"u",
+"h"
+]
+],
+[
+". But how do you actually go about mining an asteroid? How do you pick one to mine? These are some of the questions I’ve been pondering while carrying out a feasibility study for the corporation."
+]
+]
+},
+{
+"id": "A3-37",
+"contention": "A3",
+"tag": "Asteroid mining is already driving investment and scientific discovery",
+"short": "Hughes 18",
+"cite": "Amanda Jane Hughes, Postdoctoral Researcher in Astrophysics, Liverpool John Moores University, “Mining asteroids could unlock untold wealth – here’s how to get started,” The Conversation, May 2, 2018",
+"url": "https://theconversation.com/mining-asteroids-could-unlock-untold-wealth-heres-how-to-get-started-95675",
+"body": [
+[
+"The challenges are considerable – and while it may be some time before we see the first space mining trillionaires, "
+],
+[
+"it is ",
+[
+"u"
+]
+],
+[
+"undeniable",
+[
+"u",
+"h"
+]
+],
+[
+" that prospect of asteroid mining is helping to ",
+[
+"u"
+]
+],
+[
+"attract funding and accelerate scientific understanding",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"New instrumentation and engineering technologies",
+[
+"u",
+"h"
+]
+],
+[
+" will be developed",
+[
+"u"
+]
+],
+[
+" in order to meet the practical challenges of mining asteroids and "
+],
+[
+"a detailed database on the composition of asteroids would aid in scientific understanding of the ",
+[
+"u"
+]
+],
+[
+"formation and evolution of our solar system",
+[
+"u",
+"h"
+]
+],
+[
+". Watch this space."
+]
+]
+},
+{
+"id": "A3-38",
+"contention": "A3",
+"tag": "Space resources will raise living standards worldwide without further damaging Earth",
+"short": "Roesler 13",
+"cite": "Gordon Roesler, Visiting Researcher and Senior Project Engineer, Australian Centre for Space Engineering Research, UNSW, “Buy, sell, lift-off: the global economy is going interplanetary,” The Conversation, April 4, 2013",
+"url": "https://theconversation.com/buy-sell-lift-off-the-global-economy-is-going-interplanetary-13222",
+"body": [
+[
+"Harvesting space resources will ",
+[
+"u"
+]
+],
+[
+"raise living standards worldwide",
+[
+"u",
+"h"
+]
+],
+[
+", ",
+[
+"u"
+]
+],
+[
+"without further damaging Earth",
+[
+"u",
+"h"
+]
+],
+[
+". So how can those resources be tapped in a way that will produce a return on investment? "
+],
+[
+"That question may have been hypothetical in the past; now, it’s of ",
+[
+"u"
+]
+],
+[
+"pressing concern",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-39",
+"contention": "A3",
+"tag": "Every tonne mined in space saves at least $7 million in launch costs",
+"short": "Roesler 13",
+"cite": "Gordon Roesler, Visiting Researcher and Senior Project Engineer, Australian Centre for Space Engineering Research, UNSW, “Buy, sell, lift-off: the global economy is going interplanetary,” The Conversation, April 4, 2013",
+"url": "https://theconversation.com/buy-sell-lift-off-the-global-economy-is-going-interplanetary-13222",
+"body": [
+[
+"By contrast, "
+],
+[
+"resources obtained and used in space have an ",
+[
+"u"
+]
+],
+[
+"inherent value",
+[
+"u",
+"h"
+]
+],
+[
+": the ",
+[
+"u"
+]
+],
+[
+"avoided cost of launching",
+[
+"u",
+"h"
+]
+],
+[
+" equivalent resources from Earth",
+[
+"u"
+]
+],
+[
+". Today that’s "
+],
+[
+"at least US$7 million a tonne",
+[
+"u",
+"h"
+]
+],
+[
+" to low Earth orbit, and perhaps ",
+[
+"u"
+]
+],
+[
+"three times",
+[
+"u",
+"h"
+]
+],
+[
+" that to higher orbits",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"That represents an ",
+[
+"u"
+]
+],
+[
+"attractive price",
+[
+"u",
+"h"
+]
+],
+[
+" for those resources",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-40",
+"contention": "A3",
+"tag": "Like aviation, the space resources market will start small and grow for decades",
+"short": "Roesler 13",
+"cite": "Gordon Roesler, Visiting Researcher and Senior Project Engineer, Australian Centre for Space Engineering Research, UNSW, “Buy, sell, lift-off: the global economy is going interplanetary,” The Conversation, April 4, 2013",
+"url": "https://theconversation.com/buy-sell-lift-off-the-global-economy-is-going-interplanetary-13222",
+"body": [
+[
+"Perhaps the ",
+[
+"u"
+]
+],
+[
+"commercial aviation industry",
+[
+"u",
+"h"
+]
+],
+[
+" provides a better model",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"This market, ",
+[
+"u"
+]
+],
+[
+"so critical to the global economy",
+[
+"u",
+"h"
+]
+],
+[
+", has ",
+[
+"u"
+]
+],
+[
+"grown for decades",
+[
+"u",
+"h"
+]
+],
+[
+" at 4% even in the US, and 5% worldwide",
+[
+"u"
+]
+],
+[
+". As we all know, "
+],
+[
+"that industry ",
+[
+"u"
+]
+],
+[
+"began modestly",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-41",
+"contention": "A3",
+"tag": "The climate crisis makes space mining newly relevant — net zero needs a surge in battery metals",
+"short": "Steyn 21",
+"cite": "Elizabeth Steyn, Assistant Professor of Mining and Finance Law, Western University; Institute for Earth and Space Exploration, “Space mining is not science fiction, and Canada could figure prominently,” The Conversation, April 4, 2021",
+"url": "https://theconversation.com/space-mining-is-not-science-fiction-and-canada-could-figure-prominently-155855",
+"body": [
+[
+"In this era of ",
+[
+"u"
+]
+],
+[
+"climate crisis",
+[
+"u",
+"h"
+]
+],
+[
+", space mining is a topic of ",
+[
+"u"
+]
+],
+[
+"increasing relevance",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"The need for a ",
+[
+"u"
+]
+],
+[
+"net-zero carbon economy",
+[
+"u",
+"h"
+]
+],
+[
+" requires a ",
+[
+"u"
+]
+],
+[
+"surge in the supply",
+[
+"u",
+"h"
+]
+],
+[
+" of non-renewable natural resources such as ",
+[
+"u"
+]
+],
+[
+"battery metals",
+[
+"u",
+"h"
+]
+],
+[
+". This forms the background to a new space race involving nations and the private sector."
+]
+]
+},
+{
+"id": "A3-42",
+"contention": "A3",
+"tag": "A metals supercycle looms — demand wildly outstrips supply",
+"short": "Steyn 21",
+"cite": "Elizabeth Steyn, Assistant Professor of Mining and Finance Law, Western University; Institute for Earth and Space Exploration, “Space mining is not science fiction, and Canada could figure prominently,” The Conversation, April 4, 2021",
+"url": "https://theconversation.com/space-mining-is-not-science-fiction-and-canada-could-figure-prominently-155855",
+"body": [
+[
+"On Earth, attempts to address global warming include "
+],
+[
+"switching to a net-zero carbon economy through mass rollouts of electric vehicle fleets and investments in large-scale renewable generation infrastructure",
+[
+"u"
+]
+],
+[
+". Doing this successfully "
+],
+[
+"would require ",
+[
+"u"
+]
+],
+[
+"vast quantities of battery metals",
+[
+"u",
+"h"
+]
+],
+[
+" (lithium, cobalt, nickel), critical minerals (copper) and ",
+[
+"u"
+]
+],
+[
+"rare Earth elements",
+[
+"u",
+"h"
+]
+],
+[
+" — so much so that "
+],
+[
+"market analysts have warned of a potential ",
+[
+"u"
+]
+],
+[
+"metals supercycle",
+[
+"u",
+"h"
+]
+],
+[
+". In a supercycle, "
+],
+[
+"demand wildly outstrips supply",
+[
+"u",
+"h"
+]
+],
+[
+", ",
+[
+"u"
+]
+],
+[
+"relentlessly driving up prices",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-43",
+"contention": "A3",
+"tag": "Resource shortages plus the wealth of a single asteroid make space mining economically feasible",
+"short": "Steyn 21",
+"cite": "Elizabeth Steyn, Assistant Professor of Mining and Finance Law, Western University; Institute for Earth and Space Exploration, “Space mining is not science fiction, and Canada could figure prominently,” The Conversation, April 4, 2021",
+"url": "https://theconversation.com/space-mining-is-not-science-fiction-and-canada-could-figure-prominently-155855",
+"body": [
+[
+"Economic feasibility means that space mining would have to make financial sense. "
+],
+[
+"The ",
+[
+"u"
+]
+],
+[
+"looming shortage",
+[
+"u",
+"h"
+]
+],
+[
+" in non-renewable natural resources coupled with ",
+[
+"u"
+]
+],
+[
+"technological advances",
+[
+"u",
+"h"
+]
+],
+[
+" and the ",
+[
+"u"
+]
+],
+[
+"mind-boggling mineral wealth",
+[
+"u",
+"h"
+]
+],
+[
+" present in ",
+[
+"u"
+]
+],
+[
+"even a single asteroid",
+[
+"u",
+"h"
+]
+],
+[
+" may well make it so",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-44",
+"contention": "A3",
+"tag": "Miners are already looking to space as the next frontier",
+"short": "Steyn 21",
+"cite": "Elizabeth Steyn, Assistant Professor of Mining and Finance Law, Western University; Institute for Earth and Space Exploration, “Space mining is not science fiction, and Canada could figure prominently,” The Conversation, April 4, 2021",
+"url": "https://theconversation.com/space-mining-is-not-science-fiction-and-canada-could-figure-prominently-155855",
+"body": [
+[
+"For this reason, "
+],
+[
+"the mining industry is ",
+[
+"u"
+]
+],
+[
+"actively looking towards new frontiers",
+[
+"u",
+"h"
+]
+],
+[
+" in mining",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"These include the circular economy (recycling and enhanced mine waste management), deep sea mining and ",
+[
+"u"
+]
+],
+[
+"space mining",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Space mining holds the ",
+[
+"u"
+]
+],
+[
+"potential for rich rewards",
+[
+"u",
+"h"
+]
+],
+[
+", but also comes with robust challenges."
+]
+]
+},
+{
+"id": "A3-45",
+"contention": "A3",
+"tag": "A single small metallic asteroid holds over $20 trillion in metals",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Asteroid mining,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Asteroid_mining",
+"body": [
+[
+"In 1997, it was speculated that "
+],
+[
+"a relatively small metallic asteroid with a diameter of 1.6 km (1 mi) contains ",
+[
+"u"
+]
+],
+[
+"more than US$20 trillion",
+[
+"u",
+"h"
+]
+],
+[
+" worth of industrial and precious metals",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"A comparatively small M-type asteroid with a mean diameter of 1 km (0.62 mi) could contain more than ",
+[
+"u"
+]
+],
+[
+"two billion metric tons",
+[
+"u",
+"h"
+]
+],
+[
+" of iron–nickel ore, or ",
+[
+"u"
+]
+],
+[
+"two to three times the world production",
+[
+"u",
+"h"
+]
+],
+[
+" of 2004",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-46",
+"contention": "A3",
+"tag": "Earth's crust is depleted of the metals modern technology needs — asteroids are not",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Asteroid mining,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Asteroid_mining",
+"body": [
+[
+"Although asteroids and Earth accreted from the same starting materials, "
+],
+[
+"Earth's relatively stronger gravity ",
+[
+"u"
+]
+],
+[
+"pulled all heavy siderophilic",
+[
+"u",
+"h"
+]
+],
+[
+" (iron-loving) elements ",
+[
+"u"
+]
+],
+[
+"into its core",
+[
+"u",
+"h"
+]
+],
+[
+" during its molten youth more than four billion years ago. "
+],
+[
+"This left the ",
+[
+"u"
+]
+],
+[
+"crust depleted",
+[
+"u",
+"h"
+]
+],
+[
+" of such valuable elements until a rain of ",
+[
+"u"
+]
+],
+[
+"asteroid impacts re-infused",
+[
+"u",
+"h"
+]
+],
+[
+" the depleted crust with metals like gold, cobalt, iron, manganese, molybdenum, nickel, osmium, palladium, platinum",
+[
+"u"
+]
+],
+[
+", rhenium, rhodium, ruthenium and tungsten (some flow from core to surface does occur, e.g. at the Bushveld Igneous Complex, a famously rich source of platinum-group metals). Today, these metals are mined from Earth's crust, and "
+],
+[
+"they are ",
+[
+"u"
+]
+],
+[
+"essential for economic and technological progress",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-47",
+"contention": "A3",
+"tag": "Resource depletion on Earth drives the case for asteroid mining",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Asteroid mining,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Asteroid_mining",
+"body": [
+[
+"As concerns about ",
+[
+"u"
+]
+],
+[
+"resource depletion on Earth",
+[
+"u",
+"h"
+]
+],
+[
+" have increased, the prospect of ",
+[
+"u"
+]
+],
+[
+"extracting valuable elements from asteroids",
+[
+"u",
+"h"
+]
+],
+[
+" for use on Earth—or using space-based resources to build ",
+[
+"u"
+]
+],
+[
+"solar-power satellites and space habitats",
+[
+"u",
+"h"
+]
+],
+[
+", has attracted greater interest",
+[
+"u"
+]
+],
+[
+". Hypothetically, "
+],
+[
+"water processed from ice could ",
+[
+"u"
+]
+],
+[
+"refuel orbiting propellant depots",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-48",
+"contention": "A3",
+"tag": "The environmental motive: stop over-consuming Earth",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Asteroid mining,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Asteroid_mining",
+"body": [
+[
+"New reasons emerged for pursuing asteroid mining. These reasons tended to revolve around ",
+[
+"u"
+]
+],
+[
+"environmental concerns",
+[
+"u",
+"h"
+]
+],
+[
+", such as fears over humans ",
+[
+"u"
+]
+],
+[
+"over-consuming the Earth's natural resources",
+[
+"u",
+"h"
+]
+],
+[
+" and trying to ",
+[
+"u"
+]
+],
+[
+"capture energy from the Sun in space",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-49",
+"contention": "A3",
+"tag": "Space solar collectors are lit over 99% of the time — ground panels average 29% of the day",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Space-based solar power,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Space-based_solar_power",
+"body": [
+[
+"A satellite could be illuminated ",
+[
+"u"
+]
+],
+[
+"over 99% of the time",
+[
+"u",
+"h"
+]
+],
+[
+" and be in Earth's shadow a maximum of only 72 minutes per night at the spring and fall equinoxes at local midnight. "
+],
+[
+"Orbiting satellites can be exposed to a consistently high degree of solar radiation, generally for ",
+[
+"u"
+]
+],
+[
+"24 hours per day",
+[
+"u",
+"h"
+]
+],
+[
+", whereas earth surface solar panels currently collect power for an ",
+[
+"u"
+]
+],
+[
+"average of 29% of the day",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A3-50",
+"contention": "A3",
+"tag": "Space solar avoids atmospheric loss and night",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Space-based solar power,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Space-based_solar_power",
+"body": [
+[
+"Space-based solar power (SBSP or SSP) is the concept of collecting solar power in outer space with solar power satellites (SPS) and distributing it to Earth. "
+],
+[
+"Its advantages include a ",
+[
+"u"
+]
+],
+[
+"higher collection of energy",
+[
+"u",
+"h"
+]
+],
+[
+" due to the ",
+[
+"u"
+]
+],
+[
+"lack of reflection and absorption by the atmosphere",
+[
+"u",
+"h"
+]
+],
+[
+", the possibility of ",
+[
+"u"
+]
+],
+[
+"very little night",
+[
+"u",
+"h"
+]
+],
+[
+", and a better ability to orient to face the Sun",
+[
+"u"
+]
+],
+[
+". Space-based solar power systems convert sunlight to some other form of energy (such as microwaves) which can be transmitted through the atmosphere to receivers on the Earth's surface."
+]
+]
+}
+]
