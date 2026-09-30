@@ -131,7 +131,7 @@ function LibraryPicker({ docId, onClose }: { docId: string; onClose: () => void 
       </div>
       <div className="sd-lib-list">
         {!cards && <div className="skeleton" style={{ height: 120 }} />}
-        {cards && !cards.length && <p className="dim">The card library is being cut.</p>}
+        {cards && !cards.length && <p className="dim">The card library couldn’t load.</p>}
         {shown.map((c) => (
           <CardView
             key={c.id}

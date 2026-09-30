@@ -1,0 +1,4151 @@
+[
+{
+"id": "A2-01",
+"contention": "A2",
+"tag": "Every moment we stay Earthbound, the universe's resources burn away unused",
+"short": "Bostrom 03",
+"cite": "Nick Bostrom, Professor of Philosophy, Oxford University; Director, Future of Humanity Institute, “Astronomical Waste: The Opportunity Cost of Delayed Technological Development,” Utilitas, 2003",
+"url": "https://nickbostrom.com/papers/astronomical-waste/",
+"body": [
+[
+"As I write these words, "
+],
+[
+"suns are illuminating and heating empty rooms",
+[
+"u",
+"h"
+]
+],
+[
+", ",
+[
+"u"
+]
+],
+[
+"unused energy",
+[
+"u",
+"h"
+]
+],
+[
+" is being flushed down black holes, and our great common endowment of negentropy is being ",
+[
+"u"
+]
+],
+[
+"irreversibly degraded",
+[
+"u",
+"h"
+]
+],
+[
+" into entropy on a ",
+[
+"u"
+]
+],
+[
+"cosmic scale",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"These are resources that an advanced civilization could have used to create value-structures, such as ",
+[
+"u"
+]
+],
+[
+"sentient beings living worthwhile lives",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-02",
+"contention": "A2",
+"tag": "Each second of delayed colonization loses over ten trillion potential human lives",
+"short": "Bostrom 03",
+"cite": "Nick Bostrom, Professor of Philosophy, Oxford University; Director, Future of Humanity Institute, “Astronomical Waste: The Opportunity Cost of Delayed Technological Development,” Utilitas, 2003",
+"url": "https://nickbostrom.com/papers/astronomical-waste/",
+"body": [
+[
+"What matters for present purposes is not the exact numbers but the fact that they are ",
+[
+"u"
+]
+],
+[
+"huge",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Even with the ",
+[
+"u"
+]
+],
+[
+"most conservative estimate",
+[
+"u",
+"h"
+]
+],
+[
+", assuming a biological implementation of all persons, the potential for ",
+[
+"u"
+]
+],
+[
+"over ten trillion potential human beings is lost for every second of postponement of colonization",
+[
+"u",
+"h"
+]
+],
+[
+" of our supercluster",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-03",
+"contention": "A2",
+"tag": "That lost potential is a correspondingly huge loss of value",
+"short": "Bostrom 03",
+"cite": "Nick Bostrom, Professor of Philosophy, Oxford University; Director, Future of Humanity Institute, “Astronomical Waste: The Opportunity Cost of Delayed Technological Development,” Utilitas, 2003",
+"url": "https://nickbostrom.com/papers/astronomical-waste/",
+"body": [
+[
+"From a utilitarian perspective, "
+],
+[
+"this huge loss of potential human lives constitutes a correspondingly ",
+[
+"u"
+]
+],
+[
+"huge loss of potential value",
+[
+"u",
+"h"
+]
+],
+[
+". I am assuming here that the human lives that could have been created would have been worthwhile ones. Since it is commonly supposed that even current human lives are typically worthwhile, this is a weak assumption. "
+],
+[
+"Any civilization advanced enough to ",
+[
+"u"
+]
+],
+[
+"colonize the local supercluster",
+[
+"u",
+"h"
+]
+],
+[
+" would likely also have the ability to establish at least the minimally favorable conditions required for ",
+[
+"u"
+]
+],
+[
+"future lives to be worth living",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-04",
+"contention": "A2",
+"tag": "Not just utilitarianism — any aggregative view without time-discounting condemns astronomical waste",
+"short": "Bostrom 03",
+"cite": "Nick Bostrom, Professor of Philosophy, Oxford University; Director, Future of Humanity Institute, “Astronomical Waste: The Opportunity Cost of Delayed Technological Development,” Utilitas, 2003",
+"url": "https://nickbostrom.com/papers/astronomical-waste/",
+"body": [
+[
+"Utilitarians are ",
+[
+"u"
+]
+],
+[
+"not the only ones",
+[
+"u",
+"h"
+]
+],
+[
+" who should strongly oppose astronomical waste",
+[
+"u"
+]
+],
+[
+". There are many views about what has value that would concur with the assessment that "
+],
+[
+"the current rate of wastage constitutes an ",
+[
+"u"
+]
+],
+[
+"enormous loss of potential value",
+[
+"u",
+"h"
+]
+],
+[
+". For example, we can take a thicker conception of human welfare than commonly supposed by utilitarians (whether of a hedonistic, experientialist, or desire-satisfactionist bent), such as "
+],
+[
+"a conception that locates value also in ",
+[
+"u"
+]
+],
+[
+"human flourishing, meaningful relationships",
+[
+"u",
+"h"
+]
+],
+[
+", noble character, individual expression, aesthetic appreciation",
+[
+"u"
+]
+],
+[
+", and so forth. "
+],
+[
+"So long as the evaluation function is ",
+[
+"u"
+]
+],
+[
+"aggregative",
+[
+"u",
+"h"
+]
+],
+[
+" (does not count one person’s welfare for less just because there are many other persons in existence who also enjoy happy lives) "
+],
+[
+"and is not relativized to a particular point in time (",
+[
+"u"
+]
+],
+[
+"no time-discounting",
+[
+"u",
+"h"
+]
+],
+[
+"), ",
+[
+"u"
+]
+],
+[
+"the conclusion will hold",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-05",
+"contention": "A2",
+"tag": "Safety first: reducing existential risk to reach the stars outweighs speed",
+"short": "Bostrom 03",
+"cite": "Nick Bostrom, Professor of Philosophy, Oxford University; Director, Future of Humanity Institute, “Astronomical Waste: The Opportunity Cost of Delayed Technological Development,” Utilitas, 2003",
+"url": "https://nickbostrom.com/papers/astronomical-waste/",
+"body": [
+[
+"If what we are concerned with is (something like) maximizing the expected number of worthwhile lives that we will create, then "
+],
+[
+"in addition to the opportunity cost of delayed colonization, we have to take into account the ",
+[
+"u"
+]
+],
+[
+"risk of failure to colonize at all",
+[
+"u",
+"h"
+]
+],
+[
+". We might fall victim to "
+],
+[
+"an existential risk, one where an adverse outcome would either ",
+[
+"u"
+]
+],
+[
+"annihilate Earth-originating intelligent life",
+[
+"u",
+"h"
+]
+],
+[
+" or ",
+[
+"u"
+]
+],
+[
+"permanently and drastically curtail its potential",
+[
+"u",
+"h"
+]
+],
+[
+". Because the lifespan of galaxies is measured in billions of years, whereas the time-scale of any delays that we could realistically affect would rather be measured in years or decades, "
+],
+[
+"the consideration of ",
+[
+"u"
+]
+],
+[
+"risk trumps",
+[
+"u",
+"h"
+]
+],
+[
+" the consideration of opportunity cost",
+[
+"u"
+]
+],
+[
+". For example, "
+],
+[
+"a ",
+[
+"u"
+]
+],
+[
+"single percentage point",
+[
+"u",
+"h"
+]
+],
+[
+" of reduction of existential risks would be worth (from a utilitarian expected utility point-of-view) a delay of ",
+[
+"u"
+]
+],
+[
+"over 10 million years",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-06",
+"contention": "A2",
+"tag": "Existential risk reduction is more important than any other global public good",
+"short": "Bostrom 13",
+"cite": "Nick Bostrom, Professor of Philosophy, Oxford University; Director, Future of Humanity Institute, “Existential Risk Prevention as Global Priority,” Global Policy, 2013",
+"url": "https://existential-risk.com/concept.pdf",
+"body": [
+[
+"Existential risk is a concept that can focus long-term global efforts and sustainability concerns. "
+],
+[
+"The biggest existential risks are ",
+[
+"u"
+]
+],
+[
+"anthropogenic",
+[
+"u",
+"h"
+]
+],
+[
+" and related to potential future technologies",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"A moral case can be made that existential risk reduction is ",
+[
+"u"
+]
+],
+[
+"strictly more important than any other global public good",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Sustainability should be reconceptualised in dynamic terms, as aiming for a ",
+[
+"u"
+]
+],
+[
+"sustainable trajectory",
+[
+"u",
+"h"
+]
+],
+[
+" rather than a sustainable state",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Some small existential risks can be mitigated today directly (e.g. ",
+[
+"u"
+]
+],
+[
+"asteroids",
+[
+"u",
+"h"
+]
+],
+[
+") or indirectly (by building ",
+[
+"u"
+]
+],
+[
+"resilience and reserves",
+[
+"u",
+"h"
+]
+],
+[
+" to increase ",
+[
+"u"
+]
+],
+[
+"survivability",
+[
+"u",
+"h"
+]
+],
+[
+" in a range of extreme scenarios)"
+]
+]
+},
+{
+"id": "A2-07",
+"contention": "A2",
+"tag": "The potential for Earth-originating life is literally astronomical — history has barely begun",
+"short": "Bostrom 13",
+"cite": "Nick Bostrom, Professor of Philosophy, Oxford University; Director, Future of Humanity Institute, “Existential Risk Prevention as Global Priority,” Global Policy, 2013",
+"url": "https://existential-risk.com/concept.pdf",
+"body": [
+[
+"If we do not destroy mankind, these few thousand years may be only a ",
+[
+"u"
+]
+],
+[
+"tiny fraction",
+[
+"u",
+"h"
+]
+],
+[
+" of the whole of civilised human history",
+[
+"u"
+]
+],
+[
+". The difference between 2 and 3 may thus be the difference between this tiny fraction and all of the rest of this history. "
+],
+[
+"If we compare this possible history to a day, what has occurred so far is ",
+[
+"u"
+]
+],
+[
+"only a fraction of a second",
+[
+"u",
+"h"
+]
+],
+[
+" (Parfit, 1984, pp. 453–454). "
+],
+[
+"To calculate the loss associated with an existential catastrophe, we must consider ",
+[
+"u"
+]
+],
+[
+"how much value would come to exist in its absence",
+[
+"u",
+"h"
+]
+],
+[
+". It turns out that "
+],
+[
+"the ultimate potential for Earth-originating intelligent life is ",
+[
+"u"
+]
+],
+[
+"literally astronomical",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-08",
+"contention": "A2",
+"tag": "Maxipok: reducing existential risk should dominate our concern for humankind",
+"short": "Bostrom 13",
+"cite": "Nick Bostrom, Professor of Philosophy, Oxford University; Director, Future of Humanity Institute, “Existential Risk Prevention as Global Priority,” Global Policy, 2013",
+"url": "https://existential-risk.com/concept.pdf",
+"body": [
+[
+"Maxipok These considerations suggest that "
+],
+[
+"the loss in expected value resulting from an existential catastrophe is ",
+[
+"u"
+]
+],
+[
+"so enormous",
+[
+"u",
+"h"
+]
+],
+[
+" that the objective of reducing existential risks should be a ",
+[
+"u"
+]
+],
+[
+"dominant consideration",
+[
+"u",
+"h"
+]
+],
+[
+" whenever we act out of an impersonal concern for humankind as a whole",
+[
+"u"
+]
+],
+[
+". It may be useful to adopt the following rule of thumb for such impersonal moral action: Maxipok "
+],
+[
+"Maximise the probability",
+[
+"u",
+"h"
+]
+],
+[
+" of an ‘OK outcome’, where an OK outcome is any outcome that ",
+[
+"u"
+]
+],
+[
+"avoids existential catastrophe",
+[
+"u",
+"h"
+]
+],
+[
+". At best, maxipok is a rule of thumb or a prima facie suggestion. It is not a principle of absolute validity, since there clearly are moral ends other than the prevention of existential catastrophe. The principle’s usefulness is as an aid to prioritisation. "
+],
+[
+"Unrestricted altruism is not so common that we can afford to fritter it away on a plethora of feel-good projects of suboptimal efficacy",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"If benefiting humanity by increasing existential safety achieves expected good on a scale ",
+[
+"u"
+]
+],
+[
+"many orders of magnitude greater",
+[
+"u",
+"h"
+]
+],
+[
+" than that of alternative contributions, we would do well to focus on this ",
+[
+"u"
+]
+],
+[
+"most efficient philanthropy",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-09",
+"contention": "A2",
+"tag": "Reducing existential risk is a dominant priority across moral theories",
+"short": "Bostrom 13",
+"cite": "Nick Bostrom, Professor of Philosophy, Oxford University; Director, Future of Humanity Institute, “Existential Risk Prevention as Global Priority,” Global Policy, 2013",
+"url": "https://existential-risk.com/concept.pdf",
+"body": [
+[
+"4. Outlook We have seen that "
+],
+[
+"reducing existential risk emerges as a ",
+[
+"u"
+]
+],
+[
+"dominant priority",
+[
+"u",
+"h"
+]
+],
+[
+" in many aggregative consequentialist moral theories (and as a ",
+[
+"u"
+]
+],
+[
+"very important concern in many other moral theories",
+[
+"u",
+"h"
+]
+],
+[
+")",
+[
+"u"
+]
+],
+[
+". The concept of existential risk can thus "
+],
+[
+"help the morally or altruistically motivated to identify actions that have the ",
+[
+"u"
+]
+],
+[
+"highest expected value",
+[
+"u",
+"h"
+]
+],
+[
+". In particular, given certain assumptions, the problem of making the right decision simplifies to that of following the maxipok principle. Barriers to thought and action In light of this result, which suggests that there may be a very high value in studying existential risks and in analysing potential mitigation strategies, "
+],
+[
+"it is striking ",
+[
+"u"
+]
+],
+[
+"how little academic attention",
+[
+"u",
+"h"
+]
+],
+[
+" these issues have received",
+[
+"u"
+]
+]
+]
+},
+{
+"id": "A2-10",
+"contention": "A2",
+"tag": "Experts put the odds of extinction this century near one in five",
+"short": "Bostrom 13",
+"cite": "Nick Bostrom, Professor of Philosophy, Oxford University; Director, Future of Humanity Institute, “Existential Risk Prevention as Global Priority,” Global Policy, 2013",
+"url": "https://existential-risk.com/concept.pdf",
+"body": [
+[
+"Note 1. One informal poll among mainly academic experts on various global catastrophic risks gave "
+],
+[
+"a median estimate of ",
+[
+"u"
+]
+],
+[
+"19 per cent",
+[
+"u",
+"h"
+]
+],
+[
+" probability that the human species will ",
+[
+"u"
+]
+],
+[
+"go extinct before the end of this century",
+[
+"u",
+"h"
+]
+],
+[
+" (Sandberg and Bostrom, 2008). These respondents’ views are not necessarily representative of the wider expert community. "
+],
+[
+"The UK’s influential ",
+[
+"u"
+]
+],
+[
+"Stern Review",
+[
+"u",
+"h"
+]
+],
+[
+" on the Economics of Climate Change (2006) used an extinction probability of 0.1 per cent per year",
+[
+"u"
+]
+],
+[
+" in calculating an effective discount rate. This is "
+],
+[
+"equivalent to assuming a ",
+[
+"u"
+]
+],
+[
+"9.5 per cent risk of human extinction",
+[
+"u",
+"h"
+]
+],
+[
+" within the next hundred years",
+[
+"u"
+]
+],
+[
+" (UK Treasury 2006, Chapter 2, Technical Appendix, p. 47)."
+]
+]
+},
+{
+"id": "A2-11",
+"contention": "A2",
+"tag": "We are on the first page of humanity's story — ignoring the long-run future is a serious mistake",
+"short": "Greaves 21",
+"cite": "Hilary Greaves, Professor of Philosophy and Director, Global Priorities Institute, Oxford; William MacAskill, Associate Professor of Philosophy, Oxford, “The Case for Strong Longtermism,” Global Priorities Institute Working Paper, 2021",
+"url": "https://globalprioritiesinstitute.org/wp-content/uploads/The-Case-for-Strong-Longtermism-GPI-Working-Paper-June-2021-2-2.pdf",
+"body": [
+[
+"A striking fact about the history of civilisation is just "
+],
+[
+"how early we are",
+[
+"u",
+"h"
+]
+],
+[
+" in it",
+[
+"u"
+]
+],
+[
+". There are 5000 years of recorded history behind us, but how many years are still to come? If we merely last as long as the typical mammalian species, we still have over 200,000 years to go (Barnosky et al. 2011); "
+],
+[
+"there could be a further ",
+[
+"u"
+]
+],
+[
+"one billion years",
+[
+"u",
+"h"
+]
+],
+[
+" until the Earth is no longer habitable for humans",
+[
+"u"
+]
+],
+[
+" (Wolf and Toon 2015); and "
+],
+[
+"trillions of years",
+[
+"u",
+"h"
+]
+],
+[
+" until the last conventional star formations",
+[
+"u"
+]
+],
+[
+" (Adams and Laughlin 1999:34). "
+],
+[
+"Even on the most conservative of these timelines, we have progressed through a ",
+[
+"u"
+]
+],
+[
+"tiny fraction of history",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"If humanity’s saga were a novel, we would be on the ",
+[
+"u"
+]
+],
+[
+"very first page",
+[
+"u",
+"h"
+]
+],
+[
+". Normally, we pay scant attention to this fact. Political discussions are normally centered around the here and now, focused on the latest scandal or the next election. When a pundit takes a “long-term” view, they talk about the next five or ten years. With the exceptions of climate change and nuclear waste, we essentially never think about how our actions today might influence civilisation hundreds or thousands of years hence. We believe that "
+],
+[
+"this neglect of the very long-run future is a ",
+[
+"u"
+]
+],
+[
+"serious mistake",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-12",
+"contention": "A2",
+"tag": "Space settlement removes the limits on future population — trillions of lives per planet",
+"short": "Greaves 21",
+"cite": "Hilary Greaves, Professor of Philosophy and Director, Global Priorities Institute, Oxford; William MacAskill, Associate Professor of Philosophy, Oxford, “The Case for Strong Longtermism,” Global Priorities Institute Working Paper, 2021",
+"url": "https://globalprioritiesinstitute.org/wp-content/uploads/The-Case-for-Strong-Longtermism-GPI-Working-Paper-June-2021-2-2.pdf",
+"body": [
+[
+"The first concerns space settlement. "
+],
+[
+"There are currently ",
+[
+"u"
+]
+],
+[
+"no known obstacles",
+[
+"u",
+"h"
+]
+],
+[
+" to the viability of space settlement",
+[
+"u"
+]
+],
+[
+", and some scientific investigations suggesting its feasibility using known science (Sandberg and Armstrong 2013; Beckstead 2014). "
+],
+[
+"If humanity lives not only on Earth but also on other planets",
+[
+"u"
+]
+],
+[
+" — in our own solar system, elsewhere in the Milky Way, or in other galaxies too — then "
+],
+[
+"terrestrial constraints on future population size disappear",
+[
+"u",
+"h"
+]
+],
+[
+", and ",
+[
+"u"
+]
+],
+[
+"astronomically larger populations",
+[
+"u",
+"h"
+]
+],
+[
+" become possible",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Even if we only settle the solar system, civilisation would have ",
+[
+"u"
+]
+],
+[
+"over 5 billion years",
+[
+"u",
+"h"
+]
+],
+[
+" until the end of the main sequence lifetime of the Sun (Sackmann et al. 1993:462; Schröder and Smith 2008:157-8), and we would have "
+],
+[
+"access to over ",
+[
+"u"
+]
+],
+[
+"two billion times as much sunlight",
+[
+"u",
+"h"
+]
+],
+[
+" power as we do now",
+[
+"u"
+]
+],
+[
+" (Stix 2002:6; Sarbu and Sebarchievici 2017:16). If we are able to widely settle the rest of the Milky Way, then we could access "
+],
+[
+"well over ",
+[
+"u"
+]
+],
+[
+"250 million rocky habitable-zone planets",
+[
+"u",
+"h"
+]
+],
+[
+" (Bryson et al. 2021:22), each of which has "
+],
+[
+"the potential to support ",
+[
+"u"
+]
+],
+[
+"trillions of lives",
+[
+"u",
+"h"
+]
+],
+[
+" over the course of their sun’s lifetimes."
+]
+]
+},
+{
+"id": "A2-13",
+"contention": "A2",
+"tag": "The expected size of the future is asymmetric — small chances of vast futures dominate",
+"short": "Greaves 21",
+"cite": "Hilary Greaves, Professor of Philosophy and Director, Global Priorities Institute, Oxford; William MacAskill, Associate Professor of Philosophy, Oxford, “The Case for Strong Longtermism,” Global Priorities Institute Working Paper, 2021",
+"url": "https://globalprioritiesinstitute.org/wp-content/uploads/The-Case-for-Strong-Longtermism-GPI-Working-Paper-June-2021-2-2.pdf",
+"body": [
+[
+"Importantly, "
+],
+[
+"it is the ",
+[
+"u"
+]
+],
+[
+"expected number",
+[
+"u",
+"h"
+]
+],
+[
+" of future beings, not the median, that is relevant",
+[
+"u"
+]
+],
+[
+" for our purposes. In addition to the possibility of numbers like the higher benchmarks indicated above, it is of course also possible that the future duration and/or population size of humanity are much smaller. However, "
+],
+[
+"the effects of these possibilities on the expected number are ",
+[
+"u"
+]
+],
+[
+"highly asymmetric",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Even a 50% credence that the number of future beings will be zero would decrease the expected number by ",
+[
+"u"
+]
+],
+[
+"only a factor of two",
+[
+"u",
+"h"
+]
+],
+[
+". In contrast, "
+],
+[
+"a credence as small as ",
+[
+"u"
+]
+],
+[
+"1%",
+[
+"u",
+"h"
+]
+],
+[
+" that the future will contain, for example, 1 trillion beings per century for 100 million years",
+[
+"u"
+]
+],
+[
+" (rather than 10 billion per century for 1 million years) "
+],
+[
+"increases the expected number by a ",
+[
+"u"
+]
+],
+[
+"factor of 100",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-14",
+"contention": "A2",
+"tag": "Humanity is better equipped to survive than any species before — expect millions of years ahead",
+"short": "Greaves 21",
+"cite": "Hilary Greaves, Professor of Philosophy and Director, Global Priorities Institute, Oxford; William MacAskill, Associate Professor of Philosophy, Oxford, “The Case for Strong Longtermism,” Global Priorities Institute Working Paper, 2021",
+"url": "https://globalprioritiesinstitute.org/wp-content/uploads/The-Case-for-Strong-Longtermism-GPI-Working-Paper-June-2021-2-2.pdf",
+"body": [
+[
+"There is, in expectation, a ",
+[
+"u"
+]
+],
+[
+"vast number of lives",
+[
+"u",
+"h"
+]
+],
+[
+" in the future of human civilisation",
+[
+"u"
+]
+],
+[
+". Any estimate of just how “vast” is of course approximate. Nonetheless, we will argue, existing work supports estimates that are sufficiently large for our argument to go through. There are several techniques one can use for estimating the expected number of future beings. Let us start with the question of the expected duration of humanity’s future existence, temporarily setting aside questions of how large the population might be at any future time. Firstly, one might use evidence regarding the age of our species to ground judgments on the annual risk of extinction from natural causes, and extrapolate from there. Given that Homo sapiens has existed for over 200,000 years, Snyder-Beattie et al. (2019:2) thereby estimate that "
+],
+[
+"the expected future lifespan of humanity is at least 87,000 years",
+[
+"u"
+]
+],
+[
+", as far as natural causes of extinction are concerned. Secondly, one might undertake reference class forecasting (Kahneman and Lovallo 1993; Flyvbjerg 2008). Here, the lifespans of other sufficiently similar species serve as benchmarks. Estimates of the average lifespan of mammalian species (resp. hominins) are between 0.5 and 6 million years (resp. around 1 million years) (Snyder-Beattie et al. 2019:6). Thus reference class forecasting, naively applied, "
+],
+[
+"suggests ",
+[
+"u"
+]
+],
+[
+"at least 1 million years",
+[
+"u",
+"h"
+]
+],
+[
+" for the expected future duration of humanity",
+[
+"u"
+]
+],
+[
+". Both of these estimates, however, ignore the fact that "
+],
+[
+"humans today are ",
+[
+"u"
+]
+],
+[
+"highly atypical",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Humanity today is significantly ",
+[
+"u"
+]
+],
+[
+"better equipped to survive extinction-level threats",
+[
+"u",
+"h"
+]
+],
+[
+" than either other species are",
+[
+"u"
+]
+],
+[
+", or than our own species was in the past, "
+],
+[
+"thanks to a combination of ",
+[
+"u"
+]
+],
+[
+"technological capabilities and geographical diversity",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-15",
+"contention": "A2",
+"tag": "It would be overconfident to rule out a civilization spread across many solar systems",
+"short": "Greaves 21",
+"cite": "Hilary Greaves, Professor of Philosophy and Director, Global Priorities Institute, Oxford; William MacAskill, Associate Professor of Philosophy, Oxford, “The Case for Strong Longtermism,” Global Priorities Institute Working Paper, 2021",
+"url": "https://globalprioritiesinstitute.org/wp-content/uploads/The-Case-for-Strong-Longtermism-GPI-Working-Paper-June-2021-2-2.pdf",
+"body": [
+[
+"One might feel sceptical about these scenarios. But "
+],
+[
+"given that there are ",
+[
+"u"
+]
+],
+[
+"no known scientific obstacles",
+[
+"u",
+"h"
+]
+],
+[
+" to them, it would be ",
+[
+"u"
+]
+],
+[
+"overconfident",
+[
+"u",
+"h"
+]
+],
+[
+" to be certain, or near-certain, that ",
+[
+"u"
+]
+],
+[
+"space settlement",
+[
+"u",
+"h"
+]
+],
+[
+", or digital sentience, will not occur",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Imagine that you could peer into the future, and thereby discovered that Earth-originating civilisation has ",
+[
+"u"
+]
+],
+[
+"spread across many solar systems",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"How surprised would you be, compared to how surprised you would be if you ",
+[
+"u"
+]
+],
+[
+"won the lottery",
+[
+"u",
+"h"
+]
+],
+[
+"?",
+[
+"u"
+]
+]
+]
+},
+{
+"id": "A2-16",
+"contention": "A2",
+"tag": "Even the smallest credence in settling the Milky Way drives the expected value of the future",
+"short": "Greaves 21",
+"cite": "Hilary Greaves, Professor of Philosophy and Director, Global Priorities Institute, Oxford; William MacAskill, Associate Professor of Philosophy, Oxford, “The Case for Strong Longtermism,” Global Priorities Institute Working Paper, 2021",
+"url": "https://globalprioritiesinstitute.org/wp-content/uploads/The-Case-for-Strong-Longtermism-GPI-Working-Paper-June-2021-2-2.pdf",
+"body": [
+[
+"since the number of lives in the future according to different possible scenarios is spread over ",
+[
+"u"
+]
+],
+[
+"many orders of magnitude",
+[
+"u",
+"h"
+]
+],
+[
+", in any such expected value calculation, "
+],
+[
+"it tends to be the ",
+[
+"u"
+]
+],
+[
+"“largest” scenario",
+[
+"u",
+"h"
+]
+],
+[
+" in which one has any nonzero credence that ",
+[
+"u"
+]
+],
+[
+"drives the overall estimate",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Even a ",
+[
+"u"
+]
+],
+[
+"0.01% credence",
+[
+"u",
+"h"
+]
+],
+[
+" that biological humanity ",
+[
+"u"
+]
+],
+[
+"settles the Milky Way",
+[
+"u",
+"h"
+]
+],
+[
+" at carrying capacity",
+[
+"u"
+]
+],
+[
+", for example, contributes at least"
+]
+]
+},
+{
+"id": "A2-17",
+"contention": "A2",
+"tag": "Targeted existential-risk spending beats the best near-term charity",
+"short": "Greaves 21",
+"cite": "Hilary Greaves, Professor of Philosophy and Director, Global Priorities Institute, Oxford; William MacAskill, Associate Professor of Philosophy, Oxford, “The Case for Strong Longtermism,” Global Priorities Institute Working Paper, 2021",
+"url": "https://globalprioritiesinstitute.org/wp-content/uploads/The-Case-for-Strong-Longtermism-GPI-Working-Paper-June-2021-2-2.pdf",
+"body": [
+[
+"We also estimate that "
+],
+[
+"$1 billion of ",
+[
+"u"
+]
+],
+[
+"carefully targeted spending",
+[
+"u",
+"h"
+]
+],
+[
+" would suffice to avoid catastrophic outcomes in (at the very least) 1% of the scenarios where they would otherwise occur",
+[
+"u"
+]
+],
+[
+". On these estimates, "
+],
+[
+"$1 billion of spending would provide at least a 0.001% absolute reduction in existential risk",
+[
+"u"
+]
+],
+[
+". That would mean that "
+],
+[
+"every $100 spent",
+[
+"u",
+"h"
+]
+],
+[
+" had, on average, an impact as valuable as ",
+[
+"u"
+]
+],
+[
+"saving one trillion",
+[
+"u",
+"h"
+]
+],
+[
+" (resp., one million, 100) lives on our main (resp. low, restricted) estimate",
+[
+"u"
+]
+],
+[
+" – "
+],
+[
+"far more than the near-future benefits of bednet distribution",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-18",
+"contention": "A2",
+"tag": "Even with discounting, ensuring humanity has a future becomes more important, not less",
+"short": "Beard 24",
+"cite": "SJ Beard and Patrick Kaczmarek, Centre for the Study of Existential Risk, University of Cambridge, “Existential Risk, Astronomical Waste, and the Reasonableness of a Pure Time Preference for Well-Being,” The Monist, 2024",
+"url": "https://academic.oup.com/monist/article-pdf/107/2/157/56983323/onae005.pdf",
+"body": [
+[
+"However, it doesn’t mean that "
+],
+[
+"we don’t need to care about changes in the quantity of future well-being that are large in both absolute terms and relative to the expected quantity of future well-being, such as ",
+[
+"u"
+]
+],
+[
+"whether any people will exist in the future at all",
+[
+"u",
+"h"
+]
+],
+[
+" or whether they will experience a very good future or a future of mere subsistence. Yes, a pure time preference will reduce the strength of our obligations to mitigate existential risk relative to doing nothing to benefit future people, to some degree. However, "
+],
+[
+"this reduction will be ",
+[
+"u"
+]
+],
+[
+"relatively small and unimportant",
+[
+"u",
+"h"
+]
+],
+[
+". On the other hand, "
+],
+[
+"introducing a pure time preference for well-being will mean that our ",
+[
+"u"
+]
+],
+[
+"obligations to ensure that humanity has a future become far more important",
+[
+"u",
+"h"
+]
+],
+[
+" than our obligations to maximize the sum of future well-being",
+[
+"u"
+]
+],
+[
+". In this sense, these arguments may leave us with "
+],
+[
+"even more reason to prevent",
+[
+"u",
+"h"
+]
+],
+[
+" the real-world ",
+[
+"u"
+]
+],
+[
+"existential catastrophes",
+[
+"u",
+"h"
+]
+],
+[
+" facing humanity",
+[
+"u"
+]
+],
+[
+", many of which stem from our headlong rush towards technological maturity, than we had before."
+]
+]
+},
+{
+"id": "A2-19",
+"contention": "A2",
+"tag": "A preference for the present doesn't weaken the case for existential risk mitigation",
+"short": "Beard 24",
+"cite": "SJ Beard and Patrick Kaczmarek, Centre for the Study of Existential Risk, University of Cambridge, “Existential Risk, Astronomical Waste, and the Reasonableness of a Pure Time Preference for Well-Being,” The Monist, 2024",
+"url": "https://academic.oup.com/monist/article-pdf/107/2/157/56983323/onae005.pdf",
+"body": [
+[
+"We conclude by considering the practical implications of our argument and find that, "
+],
+[
+"while it is ",
+[
+"u"
+]
+],
+[
+"often assumed",
+[
+"u",
+"h"
+]
+],
+[
+" that a preference for present over future well-being ",
+[
+"u"
+]
+],
+[
+"weakens the case for existential risk mitigation",
+[
+"u",
+"h"
+]
+],
+[
+", ",
+[
+"u"
+]
+],
+[
+"this likely is not the case",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-20",
+"contention": "A2",
+"tag": "Our future could be far worse than our present — or there could be no future at all",
+"short": "Beard 24",
+"cite": "SJ Beard and Patrick Kaczmarek, Centre for the Study of Existential Risk, University of Cambridge, “Existential Risk, Astronomical Waste, and the Reasonableness of a Pure Time Preference for Well-Being,” The Monist, 2024",
+"url": "https://academic.oup.com/monist/article-pdf/107/2/157/56983323/onae005.pdf",
+"body": [
+[
+"However, many people would not see this as the climate policy choice we face (Rendall 2019; Shue 2021), and "
+],
+[
+"it certainly does not describe the reality of existential risk",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Our futures could be ",
+[
+"u"
+]
+],
+[
+"much worse than our present",
+[
+"u",
+"h"
+]
+],
+[
+", and it may be that climate change, or other phenomena, will mean that ",
+[
+"u"
+]
+],
+[
+"humanity has no future at all",
+[
+"u",
+"h"
+]
+],
+[
+". Indeed, the idea that we should make sacrifices in the name of economic growth (described here as climate mitigation) may be precisely what is causing climate change. Instead, this trade-off presented in the debate between Nordhaus and Stern is similar to another argument that has been made around existential risk, Nick Bostrom’s (2003) argument against astronomical waste. On this argument, "
+],
+[
+"we should do whatever we can to move towards a state of ‘",
+[
+"u"
+]
+],
+[
+"technological maturity",
+[
+"u",
+"h"
+]
+],
+[
+"’ (in which posthumans ",
+[
+"u"
+]
+],
+[
+"colonize the stars",
+[
+"u",
+"h"
+]
+],
+[
+") ",
+[
+"u"
+]
+],
+[
+"as quickly as possible",
+[
+"u",
+"h"
+]
+],
+[
+", because the amount of well-being that might exist in such a state is ",
+[
+"u"
+]
+],
+[
+"so much greater",
+[
+"u",
+"h"
+]
+]
+]
+},
+{
+"id": "A2-21",
+"contention": "A2",
+"tag": "Parfit: if we survive, our descendants could end these risks by spreading through the galaxy",
+"short": "Kaczmarek 18",
+"cite": "Patrick Kaczmarek, PhD in Philosophy, University of Glasgow, quoting Derek Parfit, Senior Research Fellow, All Souls College, Oxford, “A fairness-based astronomical waste argument,” PhD thesis, University of Glasgow, 2018",
+"url": "https://theses.gla.ac.uk/8889/1/2107KaczmarekPhd.pdf",
+"body": [
+[
+"“"
+],
+[
+"What now matters most",
+[
+"u",
+"h"
+]
+],
+[
+" is how we respond to various risks to the ",
+[
+"u"
+]
+],
+[
+"survival of humanity",
+[
+"u",
+"h"
+]
+],
+[
+". We are creating some of these risks, and discovering how we could respond to these and other risks. "
+],
+[
+"If we reduce these risks, and humanity survives the next few centuries, our descendants or successors could ",
+[
+"u"
+]
+],
+[
+"end these risks by spreading through this galaxy",
+[
+"u",
+"h"
+]
+],
+[
+". Life can be wonderful as well as terrible, and we shall increasingly have the power to make life good. "
+],
+[
+"Since human history may be ",
+[
+"u"
+]
+],
+[
+"only just beginning",
+[
+"u",
+"h"
+]
+],
+[
+", we can expect that future humans, or suprahumans, may achieve some ",
+[
+"u"
+]
+],
+[
+"great goods that we cannot now even imagine",
+[
+"u",
+"h"
+]
+],
+[
+". In Nietzsche’s words, there has never been such a new dawn and clear horizon, and such an open sea. If we are the only rational beings in the Universe, as some recent evidence suggests, "
+],
+[
+"it matters even more whether we shall have descendants or successors during the ",
+[
+"u"
+]
+],
+[
+"billions of years",
+[
+"u",
+"h"
+]
+],
+[
+" in which that would be possible",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-22",
+"contention": "A2",
+"tag": "Our obligation to the future is about steering humanity's long-term trajectory",
+"short": "Kaczmarek 18",
+"cite": "Patrick Kaczmarek, PhD in Philosophy, University of Glasgow, “A fairness-based astronomical waste argument,” PhD thesis, University of Glasgow, 2018",
+"url": "https://theses.gla.ac.uk/8889/1/2107KaczmarekPhd.pdf",
+"body": [
+[
+"1. "
+],
+[
+"The problem of ",
+[
+"u"
+]
+],
+[
+"what we owe future persons",
+[
+"u",
+"h"
+]
+],
+[
+" mustn’t be framed in terms of how much to save for posterity, but rather with reference to ",
+[
+"u"
+]
+],
+[
+"which steps we ought to take",
+[
+"u",
+"h"
+]
+],
+[
+" towards manipulating the ",
+[
+"u"
+]
+],
+[
+"trajectory of humanity’s long-term evolution",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-23",
+"contention": "A2",
+"tag": "A lot now hangs on our choices — survival alone isn't enough, we must choose well",
+"short": "Kaczmarek 18",
+"cite": "Patrick Kaczmarek, PhD in Philosophy, University of Glasgow, “A fairness-based astronomical waste argument,” PhD thesis, University of Glasgow, 2018",
+"url": "https://theses.gla.ac.uk/8889/1/2107KaczmarekPhd.pdf",
+"body": [
+[
+"A lot now hangs on the choices we make",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Perhaps at some stage of history we might reach a ",
+[
+"u"
+]
+],
+[
+"level of maturity that insulates us",
+[
+"u",
+"h"
+]
+],
+[
+" from even man-made threats",
+[
+"u"
+]
+],
+[
+". But "
+],
+[
+"it won’t be enough to ",
+[
+"u"
+]
+],
+[
+"merely survive",
+[
+"u",
+"h"
+]
+],
+[
+" the next few centuries",
+[
+"u"
+]
+],
+[
+". There are infinitely many possible worlds in which we do survive in the long-run, "
+],
+[
+"spreading out into ",
+[
+"u"
+]
+],
+[
+"several galaxies",
+[
+"u",
+"h"
+]
+],
+[
+", and yet life is worse, even far worse, than it would have been had we made ",
+[
+"u"
+]
+],
+[
+"some other choice",
+[
+"u",
+"h"
+]
+],
+[
+" along the way",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-24",
+"contention": "A2",
+"tag": "The threats are real and growing — poor choices now mean extinction or permanent crippling",
+"short": "Kaczmarek 18",
+"cite": "Patrick Kaczmarek, PhD in Philosophy, University of Glasgow, “A fairness-based astronomical waste argument,” PhD thesis, University of Glasgow, 2018",
+"url": "https://theses.gla.ac.uk/8889/1/2107KaczmarekPhd.pdf",
+"body": [
+[
+"All three categories involve threats to humanity’s ",
+[
+"u"
+]
+],
+[
+"long-term potential",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"We are creating some of these risks",
+[
+"u",
+"h"
+]
+],
+[
+" to humanity’s survival",
+[
+"u"
+]
+],
+[
+". For example, there is some risk of a deadly pathogen being released accidentally, unilaterally by a misguided or misinformed agent acting from impersonal concern, or maliciously by some omnicidal group. Furthermore, "
+],
+[
+"we are growingly becoming capable of, not only mixing ",
+[
+"u"
+]
+],
+[
+"deadlier virus-cocktails",
+[
+"u",
+"h"
+]
+],
+[
+", but doing so outside of the laboratory",
+[
+"u"
+]
+],
+[
+". In both cases, "
+],
+[
+"governments and other relevant actors have been ",
+[
+"u"
+]
+],
+[
+"slow to react",
+[
+"u",
+"h"
+]
+],
+[
+" to this evolving landscape. This is distressing news; for "
+],
+[
+"if we now make poor choices, humanity may either ",
+[
+"u"
+]
+],
+[
+"go extinct or be irreversibly crippled",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-25",
+"contention": "A2",
+"tag": "Totalism: failing to prolong humanity is astronomically wasteful",
+"short": "Kaczmarek 18",
+"cite": "Patrick Kaczmarek, PhD in Philosophy, University of Glasgow, “A fairness-based astronomical waste argument,” PhD thesis, University of Glasgow, 2018",
+"url": "https://theses.gla.ac.uk/8889/1/2107KaczmarekPhd.pdf",
+"body": [
+[
+"To illustrate, "
+],
+[
+"if one subscribes to the Totalism package, then he will claim that our ",
+[
+"u"
+]
+],
+[
+"failure to prolong mankind",
+[
+"u",
+"h"
+]
+],
+[
+"—even if every member’s life were barely worth living!—is ",
+[
+"u"
+]
+],
+[
+"astronomically wasteful in moral terms",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-26",
+"contention": "A2",
+"tag": "Longtermism: positively influencing the long-term future is a key moral priority of our time",
+"short": "Persson 24",
+"cite": "Ingmar Persson, University of Gothenburg; Julian Savulescu, Oxford Uehiro Centre for Practical Ethics, “On the prospects of longtermism,” Bioethics, 2024",
+"url": "https://europepmc.org/article/PMC/PMC11497828",
+"body": [
+[
+"In his well‐argued and well‐researched book What We Owe the Future William MacAskill ‘defends and explores the implications of longtermism, the view that "
+],
+[
+"positively influencing the long‐term future is one of the ",
+[
+"u"
+]
+],
+[
+"key moral priorities of our time",
+[
+"u",
+"h"
+]
+],
+[
+"’ (p. 253). He takes it that ‘there are two ways of positively influencing the long‐term future: "
+],
+[
+"by increasing ‘the average value of the future civilisation over its life span’ and by ‘",
+[
+"u"
+]
+],
+[
+"increasing its life span",
+[
+"u",
+"h"
+]
+],
+[
+"’",
+[
+"u"
+]
+],
+[
+" (p. 254). Since he thinks it ‘most plausible’ that ‘wellbeing is all that matters, morally’ (p. 214) and that other sentient beings than humans count morally, an alternative formulation of his suggestion could be that "
+],
+[
+"an important moral aim is to see to it that the average well‐being of future sentient beings is as positive as possible and that there will exist in the future sentient beings with such a high average level of well‐being for ",
+[
+"u"
+]
+],
+[
+"as long as possible",
+[
+"u",
+"h"
+]
+],
+[
+", "
+],
+[
+"‘for ",
+[
+"u"
+]
+],
+[
+"millions or even billions of years",
+[
+"u",
+"h"
+]
+],
+[
+" to come’",
+[
+"u"
+]
+],
+[
+" (p. 27)."
+]
+]
+},
+{
+"id": "A2-27",
+"contention": "A2",
+"tag": "Human power to cause harm keeps growing — the threat of catastrophe is greater than ever",
+"short": "Persson 24",
+"cite": "Ingmar Persson, University of Gothenburg; Julian Savulescu, Oxford Uehiro Centre for Practical Ethics, “On the prospects of longtermism,” Bioethics, 2024",
+"url": "https://europepmc.org/article/PMC/PMC11497828",
+"body": [
+[
+"As the ",
+[
+"u"
+]
+],
+[
+"human power to cause harm continues to grow",
+[
+"u",
+"h"
+]
+],
+[
+", and the risk that it will be used seemingly increases rather than decreases in view of the ",
+[
+"u"
+]
+],
+[
+"scarcity of resources",
+[
+"u",
+"h"
+]
+],
+[
+" that is likely to result from ",
+[
+"u"
+]
+],
+[
+"climate change and overexploitation",
+[
+"u",
+"h"
+]
+],
+[
+", the ",
+[
+"u"
+]
+],
+[
+"threat of a major catastrophe seems greater than ever",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-28",
+"contention": "A2",
+"tag": "Early choices lock in values for millennia — we have a narrow window to shape them",
+"short": "Persson 24",
+"cite": "Ingmar Persson, University of Gothenburg; Julian Savulescu, Oxford Uehiro Centre for Practical Ethics, “On the prospects of longtermism,” Bioethics, 2024",
+"url": "https://europepmc.org/article/PMC/PMC11497828",
+"body": [
+[
+"He draws attention to the phenomenon of "
+],
+[
+"a ",
+[
+"u"
+]
+],
+[
+"value lock‐in",
+[
+"u",
+"h"
+]
+],
+[
+": ‘an event that causes a single value system, or a set of value systems, to ",
+[
+"u"
+]
+],
+[
+"persist for an extremely long time",
+[
+"u",
+"h"
+]
+],
+[
+"’",
+[
+"u"
+]
+],
+[
+" (p. 78). He proposes that in ‘history as a whole’ "
+],
+[
+"values exhibit a dynamic of ‘",
+[
+"u"
+]
+],
+[
+"early plasticity, later rigidity",
+[
+"u",
+"h"
+]
+],
+[
+"’",
+[
+"u"
+]
+],
+[
+" (p. 43). That is to say, during a certain period, it may have been an open question what attitude a community like early Christians will adopt to a certain practice like male circumcision or infanticide, but "
+],
+[
+"eventually its attitude was ",
+[
+"u"
+]
+],
+[
+"fixed for well over a millennium",
+[
+"u",
+"h"
+]
+],
+[
+" and became very hard to change",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-29",
+"contention": "A2",
+"tag": "NASA: sustaining space exploration is as compelling as sustaining the human race",
+"short": "Cook 07",
+"cite": "Stephen Cook, Director, and Robert Armstrong Jr., Deputy Manager, Exploration Launch Projects Office, NASA Marshall Space Flight Center, “Why We Explore: The Value of Space Exploration for Future Generations,” NASA Technical Reports Server, 2007",
+"url": "https://ntrs.nasa.gov/api/citations/20070036793/downloads/20070036793.pdf",
+"body": [
+[
+"Security has many facets. "
+],
+[
+"Sustaining the momentum of space exploration is ",
+[
+"u"
+]
+],
+[
+"no less compelling than sustaining the human race",
+[
+"u",
+"h"
+]
+],
+[
+". In 2006, noted scientist "
+],
+[
+"Dr. Stephen Hawking became a vocal proponent of ",
+[
+"u"
+]
+],
+[
+"colonizing space",
+[
+"u",
+"h"
+]
+],
+[
+", an ",
+[
+"u"
+]
+],
+[
+"elemental human preservation safety measure",
+[
+"u",
+"h"
+]
+],
+[
+" that is rarely discussed?"
+]
+]
+},
+{
+"id": "A2-30",
+"contention": "A2",
+"tag": "Space advocates must show exploration's value for future generations",
+"short": "Cook 07",
+"cite": "Stephen Cook, Director, and Robert Armstrong Jr., Deputy Manager, Exploration Launch Projects Office, NASA Marshall Space Flight Center, “Why We Explore: The Value of Space Exploration for Future Generations,” NASA Technical Reports Server, 2007",
+"url": "https://ntrs.nasa.gov/api/citations/20070036793/downloads/20070036793.pdf",
+"body": [
+[
+"In the interest of ensuring prolonged support, the Agency encourages space advocates of all stripes to "
+],
+[
+"accurately portray both the ",
+[
+"u"
+]
+],
+[
+"tangible and intangible benefits",
+[
+"u",
+"h"
+]
+],
+[
+" of space exploration, especially its ",
+[
+"u"
+]
+],
+[
+"value for future generations",
+[
+"u",
+"h"
+]
+],
+[
+". This may be done not only by emphasizing the nation's return on its aerospace investment, but also by highlighting enabling security features and by "
+],
+[
+"promoting the ",
+[
+"u"
+]
+],
+[
+"scientific and technological benefits",
+[
+"u",
+"h"
+]
+],
+[
+" that accrue from the human exploration of space",
+[
+"u"
+]
+],
+[
+". As America embarks on a new era of leadership and international partnership on the next frontier, "
+],
+[
+"we are poised to master space by ",
+[
+"u"
+]
+],
+[
+"living offplanet",
+[
+"u",
+"h"
+]
+],
+[
+" on the Moon to prepare astronauts for longer journeys to Mars",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-31",
+"contention": "A2",
+"tag": "Every dollar of R&D returns about $9 in economic gain",
+"short": "Cook 07",
+"cite": "Stephen Cook, Director, and Robert Armstrong Jr., Deputy Manager, Exploration Launch Projects Office, NASA Marshall Space Flight Center, “Why We Explore: The Value of Space Exploration for Future Generations,” NASA Technical Reports Server, 2007",
+"url": "https://ntrs.nasa.gov/api/citations/20070036793/downloads/20070036793.pdf",
+"body": [
+[
+"NASA, in turn, "
+],
+[
+"invested about ",
+[
+"u"
+]
+],
+[
+"85 percent",
+[
+"u",
+"h"
+]
+],
+[
+" of its budget with industry",
+[
+"u"
+]
+],
+[
+" to perform mission-related work. 7 It has been estimated that, on average, "
+],
+[
+"each dollar",
+[
+"u",
+"h"
+]
+],
+[
+" spent on U.S. research and development ",
+[
+"u"
+]
+],
+[
+"returns about $9",
+[
+"u",
+"h"
+]
+],
+[
+" in technology-induced economic gain",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-32",
+"contention": "A2",
+"tag": "Temporal impartiality: equal concern for people wherever they are in time",
+"short": "Steele 22",
+"cite": "Katie Steele, Associate Professor in Philosophy, Australian National University, “Longtermism – why the million-year philosophy can’t be ignored,” The Conversation, December 19, 2022",
+"url": "https://theconversation.com/longtermism-why-the-million-year-philosophy-cant-be-ignored-193538",
+"body": [
+[
+"Longtermism extends this thinking to what impartiality demands in the temporal sense: ",
+[
+"u"
+]
+],
+[
+"equal concern for people’s wellbeing wherever they are in time",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"If we care about the wellbeing of unborn people in the distant future, we ",
+[
+"u"
+]
+],
+[
+"can’t outright dismiss potential far-off threats to humanity",
+[
+"u",
+"h"
+]
+],
+[
+" – especially since there may be ",
+[
+"u"
+]
+],
+[
+"truly staggering numbers of future people",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-33",
+"contention": "A2",
+"tag": "Expected value: a 1% chance of helping a trillion future people can outweigh helping a billion today",
+"short": "Steele 22",
+"cite": "Katie Steele, Associate Professor in Philosophy, Australian National University, “Longtermism – why the million-year philosophy can’t be ignored,” The Conversation, December 19, 2022",
+"url": "https://theconversation.com/longtermism-why-the-million-year-philosophy-cant-be-ignored-193538",
+"body": [
+[
+"For instance, "
+],
+[
+"is doing something with a ",
+[
+"u"
+]
+],
+[
+"1% chance of helping a trillion people",
+[
+"u",
+"h"
+]
+],
+[
+" in the future better than doing something that is certain to help a billion people today?",
+[
+"u"
+]
+],
+[
+" ("
+],
+[
+"The “expectation value” of the number of people helped by the speculative action is 1% of a trillion, or ",
+[
+"u"
+]
+],
+[
+"10 billion",
+[
+"u",
+"h"
+]
+],
+[
+" – so it ",
+[
+"u"
+]
+],
+[
+"might outweigh the billion people",
+[
+"u",
+"h"
+]
+],
+[
+" to be helped today",
+[
+"u"
+]
+],
+[
+".)"
+]
+]
+},
+{
+"id": "A2-34",
+"contention": "A2",
+"tag": "Longtermism is just common sense extended through time",
+"short": "Steele 22",
+"cite": "Katie Steele, Associate Professor in Philosophy, Australian National University, “Longtermism – why the million-year philosophy can’t be ignored,” The Conversation, December 19, 2022",
+"url": "https://theconversation.com/longtermism-why-the-million-year-philosophy-cant-be-ignored-193538",
+"body": [
+[
+"In 2017, the Scottish philosopher William MacAskill coined the name "
+],
+[
+"“longtermism” to describe the idea “that ",
+[
+"u"
+]
+],
+[
+"positively affecting the long-run future is a key moral priority of our time",
+[
+"u",
+"h"
+]
+],
+[
+"”",
+[
+"u"
+]
+],
+[
+". The label took off among like-minded philosophers and members of the “effective altruism” movement, "
+],
+[
+"which sets out to use ",
+[
+"u"
+]
+],
+[
+"evidence and reason",
+[
+"u",
+"h"
+]
+],
+[
+" to determine how individuals can best help the world",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-35",
+"contention": "A2",
+"tag": "Future people are powerless today — they can't vote, lobby or bargain",
+"short": "Noetel 22",
+"cite": "Michael Noetel, Senior Lecturer in Psychology, Australian Catholic University, “What do we owe future generations? And what can we do to make their world a better place?,” The Conversation, September 18, 2022",
+"url": "https://theconversation.com/what-do-we-owe-future-generations-and-what-can-we-do-to-make-their-world-a-better-place-189591",
+"body": [
+[
+"They ",
+[
+"u"
+]
+],
+[
+"cannot vote or lobby",
+[
+"u",
+"h"
+]
+],
+[
+" or run for public office, so politicians have ",
+[
+"u"
+]
+],
+[
+"scant incentive",
+[
+"u",
+"h"
+]
+],
+[
+" to think about them",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"They can’t bargain or trade with us, so they have ",
+[
+"u"
+]
+],
+[
+"little representation",
+[
+"u",
+"h"
+]
+],
+[
+" in the market",
+[
+"u"
+]
+],
+[
+", And they can’t make their views heard directly: they can’t tweet, or write articles in newspapers, or march in the streets. They are utterly disenfranchised. But "
+],
+[
+"the things we do now influence them",
+[
+"u",
+"h"
+]
+],
+[
+": for better or worse",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"We make ",
+[
+"u"
+]
+],
+[
+"laws that govern them",
+[
+"u",
+"h"
+]
+],
+[
+", build infrastructure for them and take out loans for them to pay back",
+[
+"u"
+]
+],
+[
+". So what happens when we consider future generations while we make decisions today?"
+]
+]
+},
+{
+"id": "A2-36",
+"contention": "A2",
+"tag": "Even conservative assumptions mean 9.1 trillion future people",
+"short": "Noetel 22",
+"cite": "Michael Noetel, Senior Lecturer in Psychology, Australian Catholic University, “What do we owe future generations? And what can we do to make their world a better place?,” The Conversation, September 18, 2022",
+"url": "https://theconversation.com/what-do-we-owe-future-generations-and-what-can-we-do-to-make-their-world-a-better-place-189591",
+"body": [
+[
+"Future people count, and MacAskill counts those people. "
+],
+[
+"The ",
+[
+"u"
+]
+],
+[
+"sheer number of future people",
+[
+"u",
+"h"
+]
+],
+[
+" might make their wellbeing a ",
+[
+"u"
+]
+],
+[
+"key moral priority",
+[
+"u",
+"h"
+]
+],
+[
+". According to MacAskill and others, "
+],
+[
+"humanity’s future could be vast: ",
+[
+"u"
+]
+],
+[
+"much, much more than the 8 billion alive today",
+[
+"u",
+"h"
+]
+],
+[
+". While it’s hard to feel the gravitas, "
+],
+[
+"our actions may affect a ",
+[
+"u"
+]
+],
+[
+"dizzying number",
+[
+"u",
+"h"
+]
+],
+[
+" of people",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Even if we last just 1 million years, as long as the average mammal – and even if the global population fell to 1 billion people – then there would be ",
+[
+"u"
+]
+],
+[
+"9.1 trillion people in the future",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-37",
+"contention": "A2",
+"tag": "Considering future people is the next step in widening our moral circle",
+"short": "Noetel 22",
+"cite": "Michael Noetel, Senior Lecturer in Psychology, Australian Catholic University, “What do we owe future generations? And what can we do to make their world a better place?,” The Conversation, September 18, 2022",
+"url": "https://theconversation.com/what-do-we-owe-future-generations-and-what-can-we-do-to-make-their-world-a-better-place-189591",
+"body": [
+[
+"This is the key question in What We Owe the Future. It argues for what MacAskill calls longtermism: “"
+],
+[
+"the idea that positively influencing the longterm future is a key moral priority of our time",
+[
+"u"
+]
+],
+[
+".” "
+],
+[
+"He describes it as an ",
+[
+"u"
+]
+],
+[
+"extension of civil rights and women’s suffrage",
+[
+"u",
+"h"
+]
+],
+[
+"; as humanity marches on, "
+],
+[
+"we strive to consider a ",
+[
+"u"
+]
+],
+[
+"wider circle of people",
+[
+"u",
+"h"
+]
+],
+[
+" when making decisions about how to structure our societies",
+[
+"u"
+]
+],
+[
+". MacAskill makes a compelling case that we should consider how to ensure a good future not only for our children’s children, but also the children of their children. In short, MacAskill argues that "
+],
+[
+"“",
+[
+"u"
+]
+],
+[
+"future people count, there could be a lot of them, and we can make their lives go better",
+[
+"u",
+"h"
+]
+],
+[
+".”",
+[
+"u"
+]
+]
+]
+},
+{
+"id": "A2-38",
+"contention": "A2",
+"tag": "We owe it to our great-grandchildren to protect the future",
+"short": "Noetel 22",
+"cite": "Michael Noetel, Senior Lecturer in Psychology, Australian Catholic University, “What do we owe future generations? And what can we do to make their world a better place?,” The Conversation, September 18, 2022",
+"url": "https://theconversation.com/what-do-we-owe-future-generations-and-what-can-we-do-to-make-their-world-a-better-place-189591",
+"body": [
+[
+"Longtermism is one of those good ideas. "
+],
+[
+"It helps us better place our present in ",
+[
+"u"
+]
+],
+[
+"humanity’s bigger story",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"It’s humbling and inspiring to see the ",
+[
+"u"
+]
+],
+[
+"role we can play in protecting the future",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"We can enjoy life now and ",
+[
+"u"
+]
+],
+[
+"safeguard the future",
+[
+"u",
+"h"
+]
+],
+[
+" for our great grandchildren",
+[
+"u"
+]
+],
+[
+". MasAskill clearly shows that "
+],
+[
+"we owe it to them",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-39",
+"contention": "A2",
+"tag": "Longtermism: future people matter just as much, and there may be vastly more of them",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Longtermism,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Longtermism",
+"body": [
+[
+"The key argument for longtermism has been summarized as follows: \""
+],
+[
+"future people ",
+[
+"u"
+]
+],
+[
+"matter morally just as much",
+[
+"u",
+"h"
+]
+],
+[
+" as people alive today",
+[
+"u"
+]
+],
+[
+";... "
+],
+[
+"there may well be ",
+[
+"u"
+]
+],
+[
+"more people alive in the future",
+[
+"u",
+"h"
+]
+],
+[
+" than there are in the present or have been in the past",
+[
+"u"
+]
+],
+[
+"; and... "
+],
+[
+"we can ",
+[
+"u"
+]
+],
+[
+"positively affect",
+[
+"u",
+"h"
+]
+],
+[
+" future peoples' lives",
+[
+"u"
+]
+],
+[
+".\" These three ideas taken together suggest, to those advocating longtermism, that "
+],
+[
+"it is the ",
+[
+"u"
+]
+],
+[
+"responsibility of those living now",
+[
+"u",
+"h"
+]
+],
+[
+" to ensure that future generations get to ",
+[
+"u"
+]
+],
+[
+"survive and flourish",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-40",
+"contention": "A2",
+"tag": "Ord: our generation is one page in a much longer story",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, quoting Toby Ord, Senior Research Fellow in Philosophy, Oxford, “Longtermism,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Longtermism",
+"body": [
+[
+"In his book The Precipice: Existential Risk and the Future of Humanity, philosopher Toby Ord describes longtermism as follows: \"longtermism... is especially concerned with the impacts of our actions upon the longterm future. "
+],
+[
+"It takes seriously the fact that our own generation is but ",
+[
+"u"
+]
+],
+[
+"one page in a much longer story",
+[
+"u",
+"h"
+]
+],
+[
+", and that our ",
+[
+"u"
+]
+],
+[
+"most important role",
+[
+"u",
+"h"
+]
+],
+[
+" may be how we shape—or fail to shape—that story",
+[
+"u"
+]
+],
+[
+". "
+],
+[
+"Working to ",
+[
+"u"
+]
+],
+[
+"safeguard humanity's potential",
+[
+"u",
+"h"
+]
+],
+[
+" is one avenue for such a lasting impact",
+[
+"u"
+]
+],
+[
+" and there may be others too.\" In addition, Ord notes that \""
+],
+[
+"longtermism is animated by a moral re-orientation toward the ",
+[
+"u"
+]
+],
+[
+"vast future that existential risks threaten to foreclose",
+[
+"u",
+"h"
+]
+],
+[
+".\""
+]
+]
+},
+{
+"id": "A2-41",
+"contention": "A2",
+"tag": "Future generations will be the vast majority of everyone who ever lives",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Longtermism,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Longtermism",
+"body": [
+[
+"Longtermism has been defended by appealing to various moral theories. "
+],
+[
+"Utilitarianism may motivate longtermism given the importance it places on pursuing the ",
+[
+"u"
+]
+],
+[
+"greatest good for the greatest number",
+[
+"u",
+"h"
+]
+],
+[
+", with future generations expected to be the ",
+[
+"u"
+]
+],
+[
+"vast majority of all people to ever exist",
+[
+"u",
+"h"
+]
+],
+[
+". Consequentialist moral theories such as utilitarianism may generally be sympathetic to longtermism since "
+],
+[
+"whatever the theory considers morally valuable, there is likely going to be ",
+[
+"u"
+]
+],
+[
+"much more of it in the future",
+[
+"u",
+"h"
+]
+],
+[
+" than in the present",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-42",
+"contention": "A2",
+"tag": "Existential catastrophe is terminal and permanent — it harms every future generation",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Global catastrophic risk,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Global_catastrophic_risk",
+"body": [
+[
+"Existential risks are defined as \"risks that threaten the ",
+[
+"u"
+]
+],
+[
+"destruction of humanity's long-term potential",
+[
+"u",
+"h"
+]
+],
+[
+".\"",
+[
+"u"
+]
+],
+[
+" The instantiation of an existential risk (an existential catastrophe) "
+],
+[
+"would either cause ",
+[
+"u"
+]
+],
+[
+"outright human extinction",
+[
+"u",
+"h"
+]
+],
+[
+" or ",
+[
+"u"
+]
+],
+[
+"irreversibly lock in",
+[
+"u",
+"h"
+]
+],
+[
+" a drastically inferior state of affairs",
+[
+"u"
+]
+],
+[
+". Existential risks are a sub-class of global catastrophic risks, where "
+],
+[
+"the damage is not only global but also ",
+[
+"u"
+]
+],
+[
+"terminal and permanent",
+[
+"u",
+"h"
+]
+],
+[
+", preventing recovery and thereby affecting both current and ",
+[
+"u"
+]
+],
+[
+"all future generations",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-43",
+"contention": "A2",
+"tag": "The absence of past extinction is weak evidence of future safety",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Global catastrophic risk,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Global_catastrophic_risk",
+"body": [
+[
+"All past predictions of human extinction have proven to be false",
+[
+"u"
+]
+],
+[
+". To some, this makes future warnings seem less credible. "
+],
+[
+"Nick Bostrom argues that the ",
+[
+"u"
+]
+],
+[
+"absence of human extinction in the past is weak evidence",
+[
+"u",
+"h"
+]
+],
+[
+" that there will be no human extinction in the future, due to ",
+[
+"u"
+]
+],
+[
+"survivor bias",
+[
+"u",
+"h"
+]
+],
+[
+" and other anthropic effects",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-44",
+"contention": "A2",
+"tag": "Some threats — like the Sun's expansion — are certain on a long enough timeline",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Global catastrophic risk,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Global_catastrophic_risk",
+"body": [
+[
+"Potential global catastrophic risks are conventionally classified as anthropogenic or non-anthropogenic hazards. "
+],
+[
+"Examples of non-anthropogenic risks are an ",
+[
+"u"
+]
+],
+[
+"asteroid or comet impact",
+[
+"u",
+"h"
+]
+],
+[
+" event, a ",
+[
+"u"
+]
+],
+[
+"supervolcanic eruption",
+[
+"u",
+"h"
+]
+],
+[
+", a ",
+[
+"u"
+]
+],
+[
+"natural pandemic",
+[
+"u",
+"h"
+]
+],
+[
+", a lethal ",
+[
+"u"
+]
+],
+[
+"gamma-ray burst",
+[
+"u",
+"h"
+]
+],
+[
+", a geomagnetic storm from a coronal mass ejection destroying electronic equipment, natural long-term climate change, hostile extraterrestrial life, "
+],
+[
+"or the ",
+[
+"u"
+]
+],
+[
+"Sun transforming into a red giant star",
+[
+"u",
+"h"
+]
+],
+[
+" and possibly ",
+[
+"u"
+]
+],
+[
+"engulfing the Earth",
+[
+"u",
+"h"
+]
+],
+[
+" billions of years in the future",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-45",
+"contention": "A2",
+"tag": "Strong sustainability: no present gain justifies leaving future generations worse off",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, encyclopedia overview with sourced citations, “Intergenerational equity,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Intergenerational_equity",
+"body": [
+[
+"From the \"strong sustainability\" perspective, "
+],
+[
+"no amount of economic progress",
+[
+"u",
+"h"
+]
+],
+[
+" (or as measured by contemporary metrics) ",
+[
+"u"
+]
+],
+[
+"can justify leaving future generations with a degraded environment",
+[
+"u",
+"h"
+]
+],
+[
+". Sharon Beder cautions that the \"weak\" perspective lacks a knowledge of the future and which intrinsically valuable resources will not be able to be replaced by technology."
+]
+]
+},
+{
+"id": "A2-46",
+"contention": "A2",
+"tag": "We are the guardians of the future against the claims of the present",
+"short": "Wikipedia 26",
+"cite": "Wikipedia contributors, quoting economist James Tobin, “Intergenerational equity,” Wikipedia, accessed September 2026",
+"url": "https://en.wikipedia.org/wiki/Intergenerational_equity",
+"body": [
+[
+"This concept was originally set out in 1974 by economist James Tobin, who wrote that \""
+],
+[
+"The trustees of endowed institutions are the ",
+[
+"u"
+]
+],
+[
+"guardians of the future against the claims of the present",
+[
+"u",
+"h"
+]
+],
+[
+". "
+],
+[
+"Their task in managing the endowment is to ",
+[
+"u"
+]
+],
+[
+"preserve equity among generations",
+[
+"u",
+"h"
+]
+],
+[
+".\""
+]
+]
+},
+{
+"id": "A2-47",
+"contention": "A2",
+"tag": "Americans extend moral concern 700 years into the future",
+"short": "Law 26",
+"cite": "Kyle Fiore Law, Postdoctoral Research Scholar in Sustainability, and Stylianos Syropoulos, Assistant Professor of Psychology, Arizona State University, “Americans care more about future generations than many think – and that gap could matter for policy,” The Conversation, April 30, 2026",
+"url": "https://theconversation.com/americans-care-more-about-future-generations-than-many-think-and-that-gap-could-matter-for-policy-280315",
+"body": [
+[
+"We found that "
+],
+[
+"Americans, on average, extended at least some moral concern about ",
+[
+"u"
+]
+],
+[
+"28 generations into the future",
+[
+"u",
+"h"
+]
+],
+[
+", or ",
+[
+"u"
+]
+],
+[
+"roughly 700 years",
+[
+"u",
+"h"
+]
+],
+[
+". But there was a mismatch about when other people’s concern faded – "
+],
+[
+"respondents guessed that it happened around 21 generations out, about ",
+[
+"u"
+]
+],
+[
+"175 years sooner",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-48",
+"contention": "A2",
+"tag": "Most Americans care about future generations — they just underestimate each other",
+"short": "Law 26",
+"cite": "Kyle Fiore Law, Postdoctoral Research Scholar in Sustainability, and Stylianos Syropoulos, Assistant Professor of Psychology, Arizona State University, “Americans care more about future generations than many think – and that gap could matter for policy,” The Conversation, April 30, 2026",
+"url": "https://theconversation.com/americans-care-more-about-future-generations-than-many-think-and-that-gap-could-matter-for-policy-280315",
+"body": [
+[
+"While it may sound like a niche moral view to care about future generations in this way, our new research, published in the academic journal Futures, suggests otherwise. In fact, "
+],
+[
+"Americans appear to ",
+[
+"u"
+]
+],
+[
+"care substantially about future generations",
+[
+"u",
+"h"
+]
+],
+[
+". Nevertheless, "
+],
+[
+"they also ",
+[
+"u"
+]
+],
+[
+"systematically underestimate",
+[
+"u",
+"h"
+]
+],
+[
+" how much other Americans care",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-49",
+"contention": "A2",
+"tag": "Decisions made now on pandemics, nuclear risk and new technology reach far into the future",
+"short": "Law 26",
+"cite": "Kyle Fiore Law, Postdoctoral Research Scholar in Sustainability, and Stylianos Syropoulos, Assistant Professor of Psychology, Arizona State University, “Americans care more about future generations than many think – and that gap could matter for policy,” The Conversation, April 30, 2026",
+"url": "https://theconversation.com/americans-care-more-about-future-generations-than-many-think-and-that-gap-could-matter-for-policy-280315",
+"body": [
+[
+"Public support for ",
+[
+"u"
+]
+],
+[
+"long-term policies",
+[
+"u",
+"h"
+]
+],
+[
+" depends partly on what people think other people value",
+[
+"u"
+]
+],
+[
+". Research on climate policy, for example, shows that Americans often underestimate how much support already exists for major mitigation measures. "
+],
+[
+"When people wrongly think their view is unusual, they can become ",
+[
+"u"
+]
+],
+[
+"less likely to speak up",
+[
+"u",
+"h"
+]
+],
+[
+", join with others or pressure leaders to act",
+[
+"u"
+]
+],
+[
+". Our findings suggest a similar dynamic may shape support for future-oriented policies more broadly. "
+],
+[
+"For issues such as ",
+[
+"u"
+]
+],
+[
+"pandemic preparedness, nuclear risk and emerging technologies",
+[
+"u",
+"h"
+]
+],
+[
+", ",
+[
+"u"
+]
+],
+[
+"decisions made now can affect people far into the future",
+[
+"u",
+"h"
+]
+],
+[
+"."
+]
+]
+},
+{
+"id": "A2-50",
+"contention": "A2",
+"tag": "Maximizing the chance that humanity settles space is what matters most",
+"short": "Greaves 21",
+"cite": "Hilary Greaves, Professor of Philosophy and Director, Global Priorities Institute, Oxford; William MacAskill, Associate Professor of Philosophy, Oxford, “The Case for Strong Longtermism,” Global Priorities Institute Working Paper, 2021",
+"url": "https://globalprioritiesinstitute.org/wp-content/uploads/The-Case-for-Strong-Longtermism-GPI-Working-Paper-June-2021-2-2.pdf",
+"body": [
+[
+"The argument in this paper has some precedent in the literature. Nick Bostrom (2003) has argued that "
+],
+[
+"total utilitarianism implies we should ",
+[
+"u"
+]
+],
+[
+"maximise the chance that humanity ultimately settles space",
+[
+"u",
+"h"
+]
+],
+[
+". Nick Beckstead (2013) argues, from a somewhat broader set of assumptions, that "
+],
+[
+"“",
+[
+"u"
+]
+],
+[
+"what matters most",
+[
+"u",
+"h"
+]
+],
+[
+"” is that we do what’s best for humanity’s ",
+[
+"u"
+]
+],
+[
+"long-term trajectory",
+[
+"u",
+"h"
+]
+],
+[
+". In this paper, "
+],
+[
+"we make the argument for strong longtermism more rigorous, and we show that it follows from a ",
+[
+"u"
+]
+],
+[
+"much broader set",
+[
+"u",
+"h"
+]
+],
+[
+" of empirical, moral and decision-theoretic views",
+[
+"u"
+]
+],
+[
+"."
+]
+]
+}
+]

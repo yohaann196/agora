@@ -41,7 +41,7 @@ export const CONTENTIONS: Contention[] = [
   { id: 'N5', side: 'neg', n: 5, title: 'Conflict', claim: 'Expansion into space breeds militarization and raises the risk of catastrophe.' },
 ]
 
-/** Card counts per contention, written by scripts/cards/build.ts. */
+/** Card counts per contention. */
 export const CARD_COUNTS: Record<string, number> = meta.counts
 export const TOTAL_CARDS = Object.values(CARD_COUNTS).reduce((a, b) => a + b, 0)
 

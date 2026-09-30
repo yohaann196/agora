@@ -126,7 +126,7 @@ function CardLibrary() {
         )}
 
         {!cards && <div className="skeleton" style={{ height: 320 }} />}
-        {cards && !cards.length && <div className="empty">The card library is being cut. Check back soon.</div>}
+        {cards && !cards.length && <div className="empty">The card library couldn’t load. Try reloading the page.</div>}
         {cards && cards.length > 0 && (
           <>
             <p className="lib-count dim">{shown.length} card{shown.length === 1 ? '' : 's'}{q ? ` matching “${q}”` : ''}</p>
